@@ -10,7 +10,7 @@ Soy estudiante de desarrollo web, actualmente ejerciendo filmmaking. Tengo 22 a�
 ## Juliana Moncada:
 Tengo 27 años, soy de Medellín, Colombia. De profesión soy ingeniera biomédica y actualmente trabajo en una empresa de diseño e impresión 3D para reconstrucciones craneomaxilofaciales. Me gusta viajar, explorar espacios gastronómicos y pasar tiempo con mis mascotas.
 
-## Ma. Virginia:
+## Ma. Virginia Rodríguez Ardiles:
 Soy de Buenos Aires, Argentina, Diseñadora Textil, Profesora y actualmente estudiando programación.
 
 ## Clemente Solana Silveira: 
