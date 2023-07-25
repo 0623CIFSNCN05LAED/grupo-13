@@ -1,6 +1,7 @@
 # Descripción del producto y público objetivo
 
-Nuestra especialidad son las cervezas nacionales e internacionales, artesanales e industriales. Nuestro objetivo es ofrecer productos de calidad a un buen precio. Nos enfocamos en clientes mayores de 18 años el cual es un público muy amplio, por lo que nuestro sitio es dinámico, simple y fácil de usar.
+Nuestra especialidad son las cervezas nacionales e internacionales, artesanales e industriales. Nuestro objetivo es ofrecer productos de calidad a un buen precio. 
+Nos enfocamos en clientes mayores de 18 años, lo cual implica un público muy amplio, por lo que nuestro sitio es dinámico, simple y fácil de usar.
 
 # Integrantes del grupo
 
@@ -22,6 +23,9 @@ Soy estudiante de desarrollo web, trabajo como coordinadora logística y tengo 1
 #### Florencia Martin Mersing:
 Soy de Mar del Plata, Argentina. Tengo 34 años, trabajo como administrativa, y actualmente estoy realizando un curso de programación.
 
+#### Sofía Belén Chiodi Acosta:
+Tengo 28 años, soy de Buenos Aires, Argentina. Soy contadora y actualmente trabajo como analista en una empresa. Me gusta leer, viajar, jugar juegos y conocer cafeterías.
+
 # Listado de paginas referenciales
 
 - Almacen de cervezas: https://almacendecervezas.com.ar/
@@ -29,3 +33,4 @@ Soy de Mar del Plata, Argentina. Tengo 34 años, trabajo como administrativa, y 
 - Pilsen: https://www.pilsen.com.co/
 - Craft Society: https://www.craftsociety.com.ar/
 - Cerveza Patagonia: https://www.cervezapatagonia.com.ar/nuestras-cervezas
+- Estación de Bebidas: https://www.estaciondebebidas.com/
