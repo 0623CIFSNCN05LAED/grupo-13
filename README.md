@@ -24,8 +24,8 @@ Soy de Mar del Plata, Argentina. Tengo 34 años, trabajo como administrativa, y 
 
 # Listado de paginas referenciales
 
-Almacen de cervezas: https://almacendecervezas.com.ar/
-3 cordilleras: https://3cordilleras.com/
-Pilsen: https://www.pilsen.com.co/
-Craft Society: https://www.craftsociety.com.ar/
-Cerveza Patagonia: https://www.cervezapatagonia.com.ar/nuestras-cervezas
+- Almacen de cervezas: https://almacendecervezas.com.ar/
+- 3 cordilleras: https://3cordilleras.com/
+- Pilsen: https://www.pilsen.com.co/
+- Craft Society: https://www.craftsociety.com.ar/
+- Cerveza Patagonia: https://www.cervezapatagonia.com.ar/nuestras-cervezas
