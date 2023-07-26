@@ -28,9 +28,9 @@ Tengo 28 años, soy de Buenos Aires, Argentina. Soy contadora y actualmente trab
 
 # Listado de paginas referenciales
 
-- Almacen de cervezas: https://almacendecervezas.com.ar/
-- 3 cordilleras: https://3cordilleras.com/
-- Pilsen: https://www.pilsen.com.co/
-- Craft Society: https://www.craftsociety.com.ar/
-- Cerveza Patagonia: https://www.cervezapatagonia.com.ar/nuestras-cervezas
-- Estación de Bebidas: https://www.estaciondebebidas.com/
+- Almacen de cervezas: https://almacendecervezas.com.ar/ página de venta de cervezas de múltiples marcas, incluye un botón de búsqueda de productos, cervezas y accesorios de cervezas, un botón para ordenar por popularidad, precio, a – z y nuevas opciones.
+- 3 cordilleras: https://3cordilleras.com/ sitio web oficial de la marca de cerveza cuenta con una animación en su página de inicio muy llamativa, con un menú de navegación que aparece a medida que uno se moviliza en el sitio web. Tiene detalles interesantes de tipografía, logos.
+- Pilsen: https://www.pilsen.com.co/ cuenta con una tienda interesante online, además de botón de inicio de sesión de usuario, registro, etc. Categorías de diferentes cervezas.
+- Craft Society: https://www.craftsociety.com.ar/ es un sitio de venta de bebidas. Tiene una interfaz sencilla de usar, minimalista. Solicita la confirmación de edad (mayor de 18 años). Cuenta con filtros a aplicar tales como marca y precios.
+- Cerveza Patagonia: https://www.cervezapatagonia.com.ar/nuestras-cervezas cervecería artesanal, cuenta con un sitio llamativo con cambio automático de imágenes en su página incial y animaciones en su menú de navegación, links a redes sociales, etc.
+- Estación de Bebidas: https://www.estaciondebebidas.com/ e commerce que se dedica a la venta de múltiples tipos de bebidas, tiene una animación interesante en el header. Su tienda fue creada con mi tienda nube. Incorpora newsletter.
