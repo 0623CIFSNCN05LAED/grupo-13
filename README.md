@@ -26,6 +26,11 @@ Soy de Mar del Plata, Argentina. Tengo 34 años, trabajo como administrativa, y 
 #### Sofía Belén Chiodi Acosta:
 Tengo 28 años, soy de Buenos Aires, Argentina. Soy contadora y actualmente trabajo como analista en una empresa. Me gusta leer, viajar, jugar juegos y conocer cafeterías.
 
+# Links del proyecto integrador:
+
+- Trello: https://trello.com/b/2PxyRwvn/trabajo-integrador
+- Figma: https://www.figma.com/file/iZAQuwxVFRovHSh6KU38pg/E-BEER?type=design&node-id=0-1&mode=design&t=lFOyNEEJOo8db7X5-0
+
 # Listado de paginas referenciales
 
 - Almacen de cervezas: https://almacendecervezas.com.ar/ página de venta de cervezas de múltiples marcas, incluye un botón de búsqueda de productos, cervezas y accesorios de cervezas, un botón para ordenar por popularidad, precio, a – z y nuevas opciones.
