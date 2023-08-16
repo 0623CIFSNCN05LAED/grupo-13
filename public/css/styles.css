@@ -52,6 +52,9 @@
 .nav-user-buttons li:last-child {
   border-bottom: none;
 }
+.nav-user-buttons i {
+  display: none;
+}
 
 .burguer-menu {
   color: white;
@@ -119,6 +122,9 @@
   }
   .nav-container a:hover {
     border-bottom: 2px solid #e99401;
+  }
+  .nav-user-buttons i {
+    display: inherit;
   }
 
   .nav-user-buttons li:nth-child(1) {
