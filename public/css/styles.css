@@ -114,6 +114,7 @@
     transition: all 0s ease-in-out;
     padding: 0;
     width: fit-content;
+    width: -moz-fit-content;
     border: none;
   }
   .nav-container a {
