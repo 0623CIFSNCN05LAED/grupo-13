@@ -5,22 +5,92 @@
   padding: 20px;
   height: 100px;
   background-color: #1e1e1e;
+  position: relative;
 }
 .header-container img {
-  width: 25%;
-}
-
-.nav-container {
-  display: none;
+  width: 100px;
+  padding-left: 5px;
 }
 
 .close-icon {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-right: 5%;
+  position: absolute;
+  top: -70px;
+  right: 40px;
   color: white;
 }
 
-.user-buttons {
+.nav-container {
+  text-align: center;
+  width: 100vw;
+  position: absolute;
+  height: 100vh;
+  top: 100px;
+  margin: 20px -20px 20px -20px;
+}
+.nav-container li {
+  padding: 35px 0 35px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nav-container li:first-child {
+  border-top: none;
+}
+.nav-container a {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.user-buttons i {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-container {
+    top: 100px;
+    align-items: center;
+  }
+  .nav-container li {
+    padding: 75px 0 75px 0;
+  }
+  .nav-container li a {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-container {
+    justify-content: space-around;
+  }
+  .nav-container {
+    display: flex;
+    position: initial;
+    height: 100px;
+    text-align: left;
+    margin: 0;
+  }
+  .nav-container ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+  }
+  .nav-container li {
+    display: inline-block;
+    padding: 0 25px;
+  }
+  .nav-container li a {
+    font-size: 24px;
+    color: white;
+  }
+  #user-button1 {
+    margin-left: 450px;
+  }
+  .user-buttons a {
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1.5vw;
+  }
 }
