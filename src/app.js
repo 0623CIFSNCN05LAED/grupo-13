@@ -17,3 +17,6 @@ app.get('/', (req, res) => {
 app.get('/carrito.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/carrito.html'))
 })
+app.get('/carritoLleno.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/carritoLleno.html'))
+})
