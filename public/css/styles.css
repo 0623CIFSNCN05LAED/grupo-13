@@ -147,7 +147,7 @@
   margin-bottom: 20px;
 }
 .card-description button {
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px 20px;
   width: 100%;
@@ -383,6 +383,7 @@
   }
   .card {
     transition: all 0.2s ease-in-out;
+    cursor: pointer;
   }
   .card:hover {
     transform: scale(105%);
