@@ -35,11 +35,9 @@
   }
   .nav-container ul:nth-child(1) {
     padding-top: 50px;
-    display: ;
   }
   .nav-container ul:nth-child(2) {
     top: 510px;
-    display: ;
   }
   .nav-container li {
     text-align: center;
@@ -406,7 +404,6 @@
       transition: all 0s ease-in-out;
       padding: 0;
       width: fit-content;
-      width: -moz-fit-content;
       border: none;
     }
     .nav-container a {
