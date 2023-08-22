@@ -20,6 +20,6 @@ app.get('/product-cart', (req, res) => {
 app.get('/product-cart-filled', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/product-cart-filled.html'))
 })
-app.get('/contacto', (req, res) => {
+app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/contacto.html'))
 })
