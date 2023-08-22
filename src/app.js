@@ -14,12 +14,12 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/index.html'))
 })
-app.get('/carrito.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/carrito.html'))
+app.get('/product-cart', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/product-cart.html'))
 })
-app.get('/carritoLleno.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/carritoLleno.html'))
+app.get('/product-cart-filled', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/product-cart-filled.html'))
 })
-app.get('/contacto.html', (req, res) => {
+app.get('/contacto', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/contacto.html'))
 })
