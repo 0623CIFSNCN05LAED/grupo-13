@@ -343,6 +343,7 @@
     width: 60%;
   }
 
+  /*Carrito vacío*/
   .backToHome {
     margin: 50px auto;
     width: 30%;
@@ -354,4 +355,39 @@
     transform: scale(105%);
     cursor: pointer;
   }
+
+  /*Carrito lleno*/
+
+  .addMore {
+    transition: all 0.2s ease-in-out;
+  }
+  .addMore:hover {
+    transform: scale(200%);
+    cursor: pointer;
+  }
+
+  .takeMore {
+    transition: all 0.2s ease-in-out;
+  }
+  .takeMore:hover {
+    transform: scale(200%);
+    cursor: pointer;
+  }
+
+  .productDelete {
+    transition: all 0.2s ease-in-out;
+  }
+  .productDelete:hover {
+    transform: scale(105%);
+    cursor: pointer;
+  }
+
+  .buyButton {
+    transition: all 0.2s ease-in-out;
+  }
+  .buyButton:hover {
+    transform: scale(105%);
+    cursor: pointer;
+  }
+
 }
