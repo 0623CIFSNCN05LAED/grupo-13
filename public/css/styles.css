@@ -124,7 +124,6 @@
   justify-content: flex-end;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
-  /* border: 2px solid #1e1e1e; */
 }
 .card-image {
   height: 100%;
@@ -147,7 +146,7 @@
   margin-bottom: 20px;
 }
 .card-description button {
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px 20px;
   width: 100%;
@@ -168,11 +167,10 @@
   background-color: #1e1e1e;
   color: white;
 }
-.footer-container header {
+.footer-disclaimer {
   text-align: center;
   font-size: 12px;
 }
-
 .footer-grid-container {
   margin-top: 50px;
   display: grid;
@@ -221,14 +219,15 @@
 }
 
 .footer-newsletter-container {
-  margin: 50px auto 20px auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .footer-newsletter-container h4 {
   font-size: 24px;
   font-weight: 500;
 }
-.footer-newsletter-container input {
+.footer-newsletter-input {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
@@ -257,16 +256,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Contact */
-  .contact-form {
-    width: 60%;
-  }
-  .contact-form button {
-    width: 30%;
-  }
-
   /* Footer */
-  .footer-newsletter-container input {
+  .footer-newsletter-input {
     width: 80%;
   }
   .footer-grid-container {
@@ -391,6 +382,7 @@
   }
   .card {
     transition: all 0.2s ease-in-out;
+    cursor: pointer;
   }
   .card:hover {
     transform: scale(105%);
@@ -418,7 +410,7 @@
     margin-top: 10px;
   }
 
-  .footer-newsletter-container input {
+  .footer-newsletter-input {
     width: 40%;
   }
 }
