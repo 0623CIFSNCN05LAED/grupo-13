@@ -22,3 +22,6 @@ app.get('/product-cart-filled', (req, res) => {
 app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/contact.html'))
 })
+app.get('/product-detail', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/product-detail.html'))
+})
