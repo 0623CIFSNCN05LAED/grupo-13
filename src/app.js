@@ -10,24 +10,24 @@ app.listen(PORT, () => {
   console.log(`El server está corriendo en http://localhost:${PORT}`);
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/coming-age.html'))
-})
-app.get('/home', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/index.html'))
-})
-app.get('/product-cart', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/product-cart.html'))
-})
-app.get('/product-cart-filled', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/product-cart-filled.html'))
-})
-app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/contact.html'))
-})
-app.get('/product-detail', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/product-detail.html'))
-})
-app.get('/listaproductos', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/listaproductos.html'))
-})
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/coming-age.html"));
+});
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/index.html"));
+});
+app.get("/product-cart", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/product-cart.html"));
+});
+app.get("/product-cart-filled", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/product-cart-filled.html"));
+});
+app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/contact.html"));
+});
+app.get("/product-detail", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/product-detail.html"));
+});
+app.get("/product-list", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/product-list.html"));
+});
