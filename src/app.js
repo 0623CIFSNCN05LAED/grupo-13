@@ -1,12 +1,9 @@
 const express = require("express");
 const path = require("path");
 
-const app = express();
-
-const PORT = 3000;
-
 app.use(express.static(path.join(__dirname, "../public")));
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`El server está corriendo en http://localhost:${PORT}`);
 });
@@ -16,10 +13,4 @@ app.get("/", (req, res) => {
 });
 app.get("/carrito.html", (req, res) => {
   res.sendFile(path.join(__dirname, "views/carrito.html"));
-});
-app.get("/login.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/login.html"));
-});
-app.get("/register.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/register.html"));
 });
