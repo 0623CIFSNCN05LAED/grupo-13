@@ -18,9 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Bayon&family=Outfit:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/product-list.css" />
+    
 
     <title>E-BEER - Inicio</title>
   </head>
@@ -58,19 +59,19 @@
     </header>
 
     <main>
-      <h2 class="titulo-np">Nuestros productos</h2>
-      <div class="container-search">
-        <form action="/" method="POST" class="search" >
+      <h2 class="pl-titulo">Nuestros productos</h2>
+      <div class="pl-container-search">
+        <form action="/" method="POST" class="pl-search" >
             <input type="text" name="search"
                 placeholder="Buscar producto" />
-            <button type="submit" class="loop-icon">
+            <button type="submit" class="pl-loop-icon">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </form>
       </div>
-      <div class="form-b-s">
-        <form action="/marca" method="POST" class="form-b" >                      
-            <select class="brand">
+      <div class="pl-form-b-s">
+        <form action="/marca" method="POST" class="pl-form-b" >                      
+            <select class="pl-brand">
               <option>Marca</option>
               <option value="">Stella Artois</option>
               <option value="">Corona</option>
@@ -78,8 +79,8 @@
               <option value="">Quilmes</option>
             </select>            
         </form>
-        <form action="/Medida" method="POST" class="form-s" >            
-            <select class="size">
+        <form action="/Medida" method="POST" class="pl-form-s" >            
+            <select class="pl-size">
               <option>Medida     </option>
               <option value="">1 litro</option>
               <option value="">473 ml</option>
@@ -87,7 +88,7 @@
             </select>          
         </form>
       </div>
-      <section class="articles">
+      <section class="pl-articles">
         <article>          
           <img src="/images/Product1.jpg" alt="Título del producto 1">        
           <div>
@@ -127,8 +128,51 @@
       </section>
     </main>
 
-    <footer>
-        
+
+
+    <footer class="footer-container">
+      <header>
+        <h4>
+          BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS. NO
+          COMPARTA EL CONTENIDO CON MENORES. E-BEER®
+        </h4>
+      </header>
+
+      <main>
+        <section class="footer-grid-container">
+          <article class="footer-social-icons">
+            <p>Redes Sociales</p>
+            <div>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </article>
+
+          <article class="footer-contact-container">
+            <p>Contacto</p>
+            <a href="">+54 1234-1234</a>
+            <a href="">contacto@e-beer.com</a>
+          </article>
+
+          <article class="footer-terms-container">
+            <a href="">Términos y condiciones</a>
+            <a href="">Políticas de privacidad</a>
+          </article>
+        </section>
+
+        <article class="footer-newsletter-container">
+          <h4>Suscribete al Newsletter</h4>
+          <label for="email">
+            <input id="email" type="email" placeholder="Ingresar email" />
+          </label>
+        </article>
+      </main>
+
+      <footer class="footer-copyright">
+        <p>Todos los derechos reservados ©2023 E-BEER</p>
+      </footer>
+            
     </footer>
   </body>
 </html>
