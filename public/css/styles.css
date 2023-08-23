@@ -167,11 +167,10 @@
   background-color: #1e1e1e;
   color: white;
 }
-.footer-container header {
+.footer-disclaimer {
   text-align: center;
   font-size: 12px;
 }
-
 .footer-grid-container {
   margin-top: 50px;
   display: grid;
@@ -220,14 +219,15 @@
 }
 
 .footer-newsletter-container {
-  margin: 50px auto 20px auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .footer-newsletter-container h4 {
   font-size: 24px;
   font-weight: 500;
 }
-.footer-newsletter-container input {
+.footer-newsletter-input {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
@@ -257,7 +257,7 @@
   }
 
   /* Footer */
-  .footer-newsletter-container input {
+  .footer-newsletter-input {
     width: 80%;
   }
   .footer-grid-container {
@@ -410,7 +410,7 @@
     margin-top: 10px;
   }
 
-  .footer-newsletter-container input {
+  .footer-newsletter-input {
     width: 40%;
   }
 }
