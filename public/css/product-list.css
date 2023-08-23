@@ -99,6 +99,9 @@
   @media (min-width: 768px) and (max-width: 1023px) {
  
     /*Product list tablet*/
+  .nav-container ul{
+      display: none;
+    } 
   .pl-articles {
       display: flex;
       flex-wrap: wrap;
@@ -113,6 +116,9 @@
   @media (min-width: 1024px) {
 
   /*Product list desktop*/
+  .nav-container ul{
+    display: flex;
+  } 
    .pl-articles {
     display: flex;
     flex-wrap: wrap;
