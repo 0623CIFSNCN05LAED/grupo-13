@@ -79,7 +79,7 @@
 
 /*Carrito lleno*/
 
-main {
+.mainCart {
   width: 90%;
   margin: 50px auto;
 }
@@ -291,7 +291,7 @@ main {
     padding-right: 38%;
     padding-left: 38%;
   }
-}
+
 
   /*Carrito lleno*/
   
@@ -302,6 +302,7 @@ main {
   }
   .productsList {
     width: 70%;
+    padding: 0px 20px 0px 20px;
   }
   .productsList h2 {
   display: flex;
@@ -320,8 +321,8 @@ main {
   flex-direction: column;
   width: 30%;
   border-left: 1px solid black;
-  padding-left: ;
   justify-content: space-between;
+  padding: 0px 20px 0px 20px;
   }
   .purchase h2 {
   display: -webkit-box;
@@ -333,6 +334,7 @@ main {
   border-top: none;
   text-align: center;
   }
+}
 
 /* Desktop */
 @media (min-width: 1023px) {
