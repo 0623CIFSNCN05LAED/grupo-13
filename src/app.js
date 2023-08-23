@@ -28,8 +28,8 @@ app.get("/contact", (req, res) => {
 app.get("/product-detail", (req, res) => {
   res.sendFile(path.join(__dirname, "views/product-detail.html"));
 });
-app.get("/listaproductos", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/listaproductos.html"));
+app.get("/product-list", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/product-list.html"));
 });
 
 app.get("/login", (req, res) => {
