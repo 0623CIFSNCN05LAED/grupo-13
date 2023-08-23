@@ -20,12 +20,10 @@
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
-  flex-wrap: nowrap;
 }
 .nav-container ul {
   display: none;
   position: absolute;
-  display: none;
   top: 100px;
   width: 100%;
   margin-right: -20px;
@@ -61,23 +59,6 @@
   margin-right: 20px;
 }
 
-main {
-  width: 90%;
-  margin: 0 auto;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .nav-container ul:nth-child(1) {
-    display: none;
-  }
-  .nav-container ul:nth-child(2) {
-    display: none;
-  }
-}
-
-/* Tablet */
-@media (min-width: 768px) {
 /* Home */
 .home-container {
   display: flex;
@@ -143,7 +124,6 @@ main {
   justify-content: flex-end;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
-  /* border: 2px solid #1e1e1e; */
 }
 .card-image {
   height: 100%;
@@ -260,9 +240,9 @@ main {
   font-weight: 300;
   margin: 50px 0 30px 0;
 }
-}
+
 /* Tablet */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   /* Header */
   .nav-container {
     padding-right: 20px;

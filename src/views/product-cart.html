@@ -19,11 +19,14 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
+<<<<<<< HEAD:src/views/carrito.html
+=======
+    <link rel="stylesheet" href="/css/styles.css" />
+>>>>>>> 8d0763ed28b42d7e58b1b529bcaf740b506b83e3:src/views/product-cart.html
     <link rel="stylesheet" href="/css/cart.css" />
 
-    <title>E-BEER - Inicio</title>
+    <title>E-BEER - Carrito</title>
   </head>
   <body>
     <header>
@@ -44,7 +47,7 @@
 
           <ul class="nav-user-buttons">
             <li>
-              <a href="carrito.html"
+              <a href="product-cart"
                 ><i class="fa-solid fa-cart-shopping"></i>
                 <span>Carrito</span></a
               >
@@ -63,28 +66,70 @@
       </div>
     </header>
 
-    <main>
-
+    <main class="cart-container">
       <section class="emptyCart">
         <h2>Ups, ¡Esta vacío!</h2>
 
         <article class="emptyCartMessage">
-            <div>
-              <h3>No tenés ningún producto en tu carrito.</h3>
-            </div>
+          <div>
+            <h3>No tenés ningún producto en tu carrito.</h3>
+          </div>
         </article>
       </section>
 
       <section class="backToHome">
         <article class="backButton">
-            <div>
-              <a href="/">VOLVER</a>
-            </div>
+          <div>
+            <a href="/">Volver</a>
+          </div>
         </article>
       </section>
-
     </main>
 
-    <footer></footer>
+    <footer class="footer-container">
+      <header>
+        <h4>
+          BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS. NO
+          COMPARTA EL CONTENIDO CON MENORES. E-BEER®
+        </h4>
+      </header>
+
+      <main>
+        <section class="footer-grid-container">
+          <article class="footer-social-icons">
+            <p>Redes Sociales</p>
+            <div>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </article>
+
+          <article class="footer-contact-container">
+            <p>Contacto</p>
+            <a href="">+54 1234-1234</a>
+            <a href="">contacto@e-beer.com</a>
+          </article>
+
+          <article class="footer-terms-container">
+            <a href="">Términos y condiciones</a>
+            <a href="">Políticas de privacidad</a>
+          </article>
+
+          <!-- <article></article> -->
+        </section>
+
+        <article class="footer-newsletter-container">
+          <h4>Suscribete al Newsletter</h4>
+          <label for="email">
+            <input id="email" type="email" placeholder="Ingresar email" />
+          </label>
+        </article>
+      </main>
+
+      <footer class="footer-copyright">
+        <p>Todos los derechos reservados ©2023 E-BEER</p>
+      </footer>
+    </footer>
   </body>
 </html>
