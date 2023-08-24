@@ -19,8 +19,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
 
     <title>E-BEER - Contacto</title>
   </head>
@@ -28,27 +29,30 @@
     <header>
       <div class="header-container">
         <div class="nav-icon">
-          <a href="/">
+          <a href="/home">
             <img src="/images/logo.png" alt="imagen logo" />
           </a>
         </div>
 
         <nav class="nav-container">
           <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="">Productos</a></li>
+            <li><a href="/home">Inicio</a></li>
+            <li><a href="/product-list">Productos</a></li>
             <li><a href="">Nosotros</a></li>
             <li><a href="/contact">Contacto</a></li>
           </ul>
 
           <ul class="nav-user-buttons">
             <li>
-              <a href="product-cart"
-                ><i class="fa-solid fa-cart-shopping"></i> Carrito</a
+              <a href="/product-cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span>Carrito</span></a
               >
             </li>
             <li>
-              <a href=""><i class="fa-solid fa-user"></i> Acceder</a>
+              <a href="/login"
+                ><i class="fa-solid fa-user"></i> <span>Acceder</span></a
+              >
             </li>
           </ul>
 
@@ -58,46 +62,80 @@
         </nav>
       </div>
     </header>
-    <div class="contact_form">
-      <h2>Contacto</h2>
-      <p class="contact_email">contacto@e-beer.com</p>
-      <p>
+    <main>
+      <form class="contact-form">
+        <h2 class="contact-title">Contacto</h2>
+        <a href="mailto:@contacto@e-beer.com" class="contact-email"
+          >contacto@e-beer.com</a
+        >
         <input
-          class="form_input"
+          class="contact-input"
           type="text"
           name="nombre"
           placeholder="Nombre completo"
         />
-      </p>
-      <p>
         <input
-          class="form_input"
+          class="contact-input"
           type="email"
           name="email"
           placeholder="E-mail"
         />
-      </p>
-      <p>
         <input
-          class="form_input"
+          class="contact-input"
           type="number"
           name="telefono"
           placeholder="Teléfono"
         />
-      </p>
-      <p>
-        <textarea class="form_textarea" placeholder="Comentarios"></textarea>
-      </p>
-      <p>
-        <button class="form_button" type="submit" name="submit_form">
-          <p>Enviar</p>
-        </button>
-      </p>
-      <p>
-        <button class="form_button" type="reset" name="reset_form">
-          <p>Resetear</p>
-        </button>
-      </p>
-    </div>
+        <textarea placeholder="Comentarios"></textarea>
+        <div class="contact-buttons-container">
+          <a href="/home"><input type="submit" class="contact-submit" /></a>
+          <input class="contact-reset" type="reset" name="reset" />
+        </div>
+      </form>
+    </main>
+
+    <footer class="footer-container">
+      <h4 class="footer-disclaimer">
+        BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS. NO
+        COMPARTA EL CONTENIDO CON MENORES. E-BEER®
+      </h4>
+      <section class="footer-grid-container">
+        <article class="footer-social-icons">
+          <p>Redes Sociales</p>
+          <div>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </article>
+
+        <article class="footer-contact-container">
+          <p>Contacto</p>
+          <a href="">+54 1234-1234</a>
+          <a href="">contacto@e-beer.com</a>
+        </article>
+
+        <article class="footer-terms-container">
+          <a href="">Términos y condiciones</a>
+          <a href="">Políticas de privacidad</a>
+        </article>
+      </section>
+
+      <article class="footer-newsletter-container">
+        <h4>Suscribete al Newsletter</h4>
+        <label for="email">
+          <input
+            id="email"
+            type="email"
+            placeholder="Ingresar email"
+            class="footer-newsletter-input"
+          />
+        </label>
+      </article>
+
+      <section class="footer-copyright">
+        <p>Todos los derechos reservados ©2023 E-BEER</p>
+      </section>
+    </footer>
   </body>
 </html>
