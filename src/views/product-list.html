@@ -63,8 +63,12 @@
     </header>
 
     <main>
-      <h2 class="pl-titulo">Nuestros productos</h2>
-      <div class="pl-container-search">
+      <section class="pl-products">
+      <section>
+        <h2 class="pl-titulo">Nuestros productos</h2>
+      </section>  
+      <section class="filters">  
+        <div class="pl-container-search">
         <form action="/" method="POST" class="pl-search">
           <input type="text" name="search" placeholder="Buscar producto" />
           <button type="submit" class="pl-loop-icon">
@@ -91,6 +95,8 @@
           </select>
         </form>
       </div>
+      </section>
+      
       <section class="pl-articles">
         <article>
           <img src="/images/Product1.jpg" alt="Título del producto 1" />
@@ -128,6 +134,7 @@
             <button>Añadir al carrito</button>
           </div>
         </article>
+      </section>
       </section>
     </main>
 
