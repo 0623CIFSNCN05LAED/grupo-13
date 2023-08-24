@@ -2,16 +2,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   text-decoration: none;
   list-style: none;
 }
 
-img {
-  max-width: 150px;
+body {
+  background-color: #fafafa;
 }
 
 button {
   border: none;
-  background: none;
 }

@@ -1,27 +1,44 @@
-const express = require('express')
-const path = require('path')
+const express = require('express');
+const path = require('path');
 
-const app = express()
+const app = express();
 
-const PORT = 3000
+app.use(express.static(path.join(__dirname, '../public')));
 
-
-
-app.use(express.static(path.join(__dirname, '../public')))
-
-app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`El server está corriendo en http://localhost:${PORT}`)
-})
+  console.log(`El server está corriendo en http://localhost:${PORT}`);
+});
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/home.html'))
-})
-app.get('/carrito.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/carrito.html'))
-})
+  res.sendFile(path.join(__dirname, 'views/coming-age.html'));
+});
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/index.html'));
+});
+app.get('/product-cart', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/product-cart.html'));
+});
+app.get('/product-cart-filled', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/product-cart-filled.html'));
+});
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/contact.html'));
+});
+app.get('/product-detail', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/product-detail.html'));
+});
+app.get('/product-list', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/product-list.html'));
+});
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/login.html'));
+});
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/register.html'));
+});
 
-app.get('/add-edit-form.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/add-edit-form.html'))
-})
+app.get('/add-edit-form', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/add-edit-form.html'));
+});
+

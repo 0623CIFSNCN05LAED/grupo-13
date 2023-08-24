@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/app.js"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.1",
-    "connect-livereload": "^0.6.1",
     "express": "^4.18.2",
-    "livereload": "^0.9.3"
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
