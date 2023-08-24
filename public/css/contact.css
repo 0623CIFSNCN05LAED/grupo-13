@@ -75,6 +75,7 @@
   cursor: pointer;
   font-size: 16px;
   border: none;
+  align-items: center;
 }
 
 .contact-reset {
