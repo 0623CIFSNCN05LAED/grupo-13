@@ -13,3 +13,9 @@ Por el momento no es necesario hacer reuniones daily para poder responder a las 
 4. Hacer menos: ---
 
 5. Dejar de hacer: ---
+
+# Retrospectiva SPRINT Nº2:
+
+Decidimos realizar nuestras retro utilizando Google Jamboard, link:
+
+https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?ts=64e9256f&f=0
