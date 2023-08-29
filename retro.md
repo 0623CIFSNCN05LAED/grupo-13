@@ -36,6 +36,9 @@ Aquí detallamos lo expuesto en el jam:
 3. Continuar haciendo: 
    
     - Reunión one-on-one: grupales por issues particulares que se presenten en la tarea de cada uno/a.
+    - Celebrar los logros y éxitos del equipo.
+    - Mantener una comunicación abierta y transparente entre los miembros del equipo.
+    - Mantener un tablero de tareas actualizado para visualizar el progreso del trabajo.
 
 4. Hacer menos:
 
