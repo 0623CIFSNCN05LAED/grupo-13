@@ -18,13 +18,15 @@
       href="https://fonts.googleapis.com/css2?family=Bayon&family=Outfit:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/product-list.css" />
+    <link rel="stylesheet" href="/css/about-us.css" />
 
-    <title>E-BEER - Productos</title>
+    <title>E-BEER - Nosotros</title>
   </head>
   <body>
+    
     <header>
       <div class="header-container">
         <div class="nav-icon">
@@ -62,80 +64,27 @@
       </div>
     </header>
 
-    <main>
-      <section class="pl-products">
-      <section>
-        <h2 class="pl-titulo">Nuestros productos</h2>
-      </section>  
-      <section class="filters">  
-        <div class="pl-container-search">
-        <form action="/" method="POST" class="pl-search">
-          <input type="text" name="search" placeholder="Buscar producto" />
-          <button type="submit" class="pl-loop-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
-      <div class="pl-form-b-s">
-        <form action="/marca" method="POST" class="pl-form-b">
-          <select class="pl-brand">
-            <option>Marca</option>
-            <option value="">Stella Artois</option>
-            <option value="">Corona</option>
-            <option value="">Patagonia</option>
-            <option value="">Quilmes</option>
-          </select>
-        </form>
-        <form action="/Medida" method="POST" class="pl-form-s">
-          <select class="pl-size">
-            <option>Medida</option>
-            <option value="">1 litro</option>
-            <option value="">473 ml</option>
-            <option value="">330 ml</option>
-          </select>
-        </form>
-      </div>
-      </section>
-      
-      <section class="pl-articles">
-        <article>
-          <img src="/images/Product1.jpg" alt="Título del producto 1" />
-          <div>
-            <h3>Título del producto 1</h3>
-            <p>$ 5.000</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
-        <article>
-          <img src="/images/Product2.jpg" alt="Título del producto 2" />
-          <div>
-            <h3>Título del producto 2</h3>
-            <p>$ 3.000</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
-        <article>
-          <img src="/images/Product3.jpg" alt="Título del producto 3" />
-          <div>
-            <h3>Título del producto 3</h3>
-            <p>$ 10.000</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
-        <article>
-          <img src="/images/Product4.jpg" alt="Título del producto 4" />
-          <div>
-            <h3>Título del producto 4</h3>
-            <p>$ 6.500</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
-      </section>
-      </section>
+    <main class="about-us-main">
+        <section class="about-us-text">
+            <div>
+                <h2 class="about-us-title">Acerca de E-beer</h2>    
+            </div>
+            <div>
+              <img src="/images/logo.png" alt="logo E-beer">
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil corrupti facere libero rem, aut labore sequi, minus nisi totam accusantium harum ducimus pariatur architecto omnis quis sit aliquam praesentium!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ab quod neque voluptatem vero, soluta id! Harum excepturi earum qui sapiente veniam ex rerum nostrum repellendus, perspiciatis ad. Cumque, ut!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima beatae voluptates accusantium debitis cum enim, laudantium eius nobis ipsam impedit, soluta minus nulla, molestias animi delectus asperiores doloribus! Quidem, officiis.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima beatae voluptates accusantium debitis cum enim, laudantium eius nobis ipsam impedit, soluta minus nulla, molestias animi delectus asperiores doloribus! Quidem, officiis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos necessitatibus perspiciatis quis enim! Fuga dolore quam illo veniam velit porro ducimus veritatis mollitia fugit qui asperiores praesentium, molestias illum exercitationem.
+            </p>
+            
+        </section>
     </main>
 
     <footer class="footer-container">
@@ -181,5 +130,6 @@
         <p>Todos los derechos reservados ©2023 E-BEER</p>
       </section>
     </footer>
+
   </body>
 </html>
