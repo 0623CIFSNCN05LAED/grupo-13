@@ -73,4 +73,7 @@
     width: 40%;
     margin: 80px auto;
   }
+  .age-terms {
+    justify-content: center;
+  }
 }
