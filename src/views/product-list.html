@@ -64,76 +64,130 @@
 
     <main>
       <section class="pl-products">
-      <section>
-        <h2 class="pl-titulo">Nuestros productos</h2>
-      </section>  
-      <section class="filters">  
-        <div class="pl-container-search">
-        <form action="/" method="POST" class="pl-search">
-          <input type="text" name="search" placeholder="Buscar producto" />
-          <button type="submit" class="pl-loop-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
-      <div class="pl-form-b-s">
-        <form action="/marca" method="POST" class="pl-form-b">
-          <select class="pl-brand">
-            <option>Marca</option>
-            <option value="">Stella Artois</option>
-            <option value="">Corona</option>
-            <option value="">Patagonia</option>
-            <option value="">Quilmes</option>
-          </select>
-        </form>
-        <form action="/Medida" method="POST" class="pl-form-s">
-          <select class="pl-size">
-            <option>Medida</option>
-            <option value="">1 litro</option>
-            <option value="">473 ml</option>
-            <option value="">330 ml</option>
-          </select>
-        </form>
-      </div>
-      </section>
+        <section class="pl-products-title">
+          <h2>Nuestros Productos</h2>
+        </section>
+
+        <section class="pl-filters">
+          <article class="pl-container-search">
+            <form action="/" method="POST">
+              <input type="text" name="search" placeholder="Buscar producto" />
+
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </article>
+
+          <article class="pl-container-selects">
+            <form action="/marca" method="POST" class="pl-form-brand">
+              <select>
+                <option>Marca</option>
+                <option value="">Stella Artois</option>
+                <option value="">Corona</option>
+                <option value="">Patagonia</option>
+                <option value="">Quilmes</option>
+              </select>
+            </form>
+
+            <form action="/medida" method="POST" class="pl-form-size">
+              <select>
+                <option>Medida</option>
+                <option value="">1 litro</option>
+                <option value="">473 ml</option>
+                <option value="">330 ml</option>
+              </select>
+            </form>
+          </article>
+        </section>
+
       
-      <section class="pl-articles">
-        <article>
-          <img src="/images/Product1.jpg" alt="Título del producto 1" />
-          <div>
-            <h3>Título del producto 1</h3>
-            <p>$ 5.000</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
-        <article>
-          <img src="/images/Product2.jpg" alt="Título del producto 2" />
-          <div>
-            <h3>Título del producto 2</h3>
-            <p>$ 3.000</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
-        <article>
-          <img src="/images/Product3.jpg" alt="Título del producto 3" />
-          <div>
-            <h3>Título del producto 3</h3>
-            <p>$ 10.000</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
-        <article>
-          <img src="/images/Product4.jpg" alt="Título del producto 4" />
-          <div>
-            <h3>Título del producto 4</h3>
-            <p>$ 6.500</p>
-            <a href="/product-detail">ver más</a>
-            <button>Añadir al carrito</button>
-          </div>
-        </article>
+      <section class="featured-products">
+        <div class="cards-container">       
+
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image">
+              <img src="" alt="" />
+            </div>
+            <div class="card-description">
+              <h3>Quilmes x6 1L</h3>
+              <p>$10.000</p>
+              <button>Añadir al carrito</button>
+            </div>
+          </article>
+
+        
+        </div>
       </section>
       </section>
     </main>
