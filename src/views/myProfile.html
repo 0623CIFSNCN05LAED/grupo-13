@@ -21,9 +21,9 @@
 
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/myProfile.css" />
 
-    <title>E-BEER - Contacto</title>
+    <title>E-BEER - Mi perfil</title>
   </head>
   <body>
     <header>
@@ -38,7 +38,7 @@
           <ul>
             <li><a href="/home">Inicio</a></li>
             <li><a href="/product-list">Productos</a></li>
-            <li><a href="/about-us">Nosotros</a></li>
+            <li><a href="">Nosotros</a></li>
             <li><a href="/contact">Contacto</a></li>
           </ul>
 
@@ -62,38 +62,53 @@
         </nav>
       </div>
     </header>
-    <main>
-      <form class="contact-form">
-        <h2 class="contact-title">Contacto</h2>
-        <a href="mailto:@contacto@e-beer.com" class="contact-email"
-          >contacto@e-beer.com</a
-        >
-        <input
-          class="contact-input inputs"
-          type="text"
-          name="nombre"
-          placeholder="Nombre completo"
-          minlength="5"
-        />
-        <input
-          class="contact-input inputs"
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          minlength="8"
-        />
-        <input
-          class="contact-input inputs"
-          type="number"
-          name="telefono"
-          placeholder="Teléfono"
-        />
-        <textarea placeholder="Comentarios" class="inputs"></textarea>
-        <div class="contact-buttons-container">
-          <a href="/home"><input type="submit" class="contact-submit" /></a>
-          <input class="contact-reset" type="reset" name="reset" />
-        </div>
-      </form>
+
+    <main class="myProfile-container">
+      <section class="topProfile">
+        <article class="profilePicture">
+            <img src="/images/profilePicture.jpeg" alt="fotoDePerfil" />
+            <div class="productDescription">
+        </article>
+        <article class="myData">
+            <h3>Tipo de perfil:<br> consumidor</h3><br>
+            <p>Luis D</p>
+            <p>luis_d@gmail.com</p>
+        </article>  
+      </section>
+      <section class="bottomProfile">
+        <form action="/" class="formProfile">
+            <div class="title">
+                <h2>Mi perfil</h2>
+            </div>
+            <article class="data">
+                <div>
+                    <p class="profileOptions">Teléfono</p>
+                    <p class="box">+ 54 9 3434255679</p>
+                </div>
+                <div class="dateOfBirth">
+                    <p class="profileOptions">Fecha de nacimiento</p>
+                    <input class="box" type="date" name="birthDate" value="1994-11-19" min="1900-01-01" max="2005-08-19">
+                </div>
+                <div>
+                    <p class="profileOptions">Domicilio de entrega</p>
+                    <p class="box">San Martin 309 piso 10, Paraná, Entre Ríos</p>
+                </div>
+            </article>
+        </form>
+        <article class="otherOptions">
+            <div class="title">
+                <h2>Otras opciones</h2>
+            </div>
+            <div class="buttons">
+                <div class="btn-yellow">
+                    <a href="">Historial de compras</a>
+                </div>
+                <div class="btn-yellow">
+                    <a href="">Mis tarjetas</a>
+                </div>
+            </div>
+        </article>
+      </section>
     </main>
 
     <footer class="footer-container">

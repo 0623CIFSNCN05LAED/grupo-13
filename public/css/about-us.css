@@ -1,0 +1,25 @@
+/* Main */
+.about-us-main{
+    display: flex;
+    justify-content: center;
+}
+.about-us-text{
+    width: 70%;
+    text-align: center;
+    margin: 30px 50px 30px 50px;
+}
+.about-us-title{
+    font-size: 32px;
+    font-weight: 500;
+    margin: 20px 0px 20px 0px;
+}
+.about-us-text p {
+    margin: 20px 0px 20px 0px;
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .about-us-text{
+    width: 70%;
+}
+}
