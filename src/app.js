@@ -42,3 +42,9 @@ app.get('/add-edit-form', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/add-edit-form.html'));
 });
 
+app.get('/myProfile', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/myProfile.html'));
+});
+app.get('/myProfileAdmin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/myProfileAdmin.html'));
+});
