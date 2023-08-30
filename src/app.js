@@ -44,3 +44,9 @@ app.get('/about-us', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/about-us.html'));
 });
 
+app.get('/myProfile', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/myProfile.html'));
+});
+app.get('/myProfileAdmin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/myProfileAdmin.html'));
+});
