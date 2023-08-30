@@ -1,170 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bayon&family=Outfit:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/register.css" />
-    <title>E-BEER - Login</title>
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="nav-icon">
-          <a href="/home">
-            <img src="/images/logo.png" alt="imagen logo" />
-          </a>
-        </div>
-
-        <nav class="nav-container">
-          <ul>
-            <li><a href="/home">Inicio</a></li>
-            <li><a href="/product-list">Productos</a></li>
-            <li><a href="">Nosotros</a></li>
-            <li><a href="/contact">Contacto</a></li>
-          </ul>
-
-          <ul class="nav-user-buttons">
-            <li>
-              <a href="/product-cart"
-                ><i class="fa-solid fa-cart-shopping"></i>
-                <span>Carrito</span></a
-              >
-            </li>
-            <li>
-              <a href="/login"
-                ><i class="fa-solid fa-user"></i> <span>Acceder</span></a
-              >
-            </li>
-          </ul>
-
-          <div class="burguer-menu">
-            <i class="fa-solid fa-bars fa-2xl"></i>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bayon&family=Outfit:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/register.css" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <title>E-BEER - Login</title>
+      </head>
+      <body>
+        <main>
+          <!-- Logo -->
+          <div class="logo-register">
+            <img src="/images/logo.png" alt="logo" />
           </div>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <!-- Logo -->
-      <div class="logo-register">
-        <img src="/images/logo.png" alt="logo" />
-      </div>
+    
+          <div class="form-containerR">
+            <section class="text-rightR">
+              <div>
+                <p class="e-beerR">E-BEER</p>
+              </div>
+    
+              <div class="registerInicioText">
+                <p class="inicioTextR">Regístrate</p>
+                <p class="inicioText2R">e inicia sesión</p>
+              </div>
+            </section>
+    
+            <form class="registerForm" action="/" method="get">
 
-      <div class="form-containerR">
-        <section class="text-rightR">
-          <div>
-            <p class="e-beerR">E-BEER</p>
+              <p class="datosPersonalesR">Datos personales</p>
+              <label for="nombre"></label>
+              <input
+                type="name"
+                name="name"
+                id="name"
+                placeholder="Nombre"
+                autocomplete="name"
+              />
+              <label for="apellido"></label>
+              <input
+                type="name"
+                name="name"
+                id="name"
+                placeholder="Apellido"
+                autocomplete="name"
+              />
+              <label for="e-mail"></label>
+              <input
+                type="email"
+                name="e-mail"
+                id="e-mail"
+                placeholder="Correo electrónico"
+                autocomplete="email"
+              />
+              <label for="contraseña"></label>
+              <input
+                type="password"
+                name="contraseña"
+                id="contraseña"
+                placeholder="Ingresar contraseña"
+                autocomplete="current-password"
+              />
+              <label class="news">
+                <input class="news" type="checkbox" name="opcion" value="news">
+                  Quiero recibir ofertas destacadas por e-mail
+                </label>
+              <button type="submit">Registrate</button>
+              <p class="registerLogin"><a href="login.html">¿Ya tenés cuenta? Ingresa</a></p>
+              
+            </form>
           </div>
-
-          <div class="registerInicioText">
-            <p class="inicioTextR">Regístrate</p>
-            <p class="inicioText2R">e inicia sesión</p>
-          </div>
-        </section>
-
-        <form class="registerForm" action="/" method="get">
-          <p class="datosPersonalesR">Datos personales</p>
-          <label for="nombre"></label>
-          <input
-            type="name"
-            name="name"
-            id="name"
-            placeholder="Nombre"
-            autocomplete="name"
-          />
-          <label for="apellido"></label>
-          <input
-            type="name"
-            name="name"
-            id="name"
-            placeholder="Apellido"
-            autocomplete="name"
-          />
-          <label for="e-mail"></label>
-          <input
-            type="email"
-            name="e-mail"
-            id="e-mail"
-            placeholder="Correo electrónico"
-            autocomplete="email"
-          />
-          <label for="contraseña"></label>
-          <input
-            type="password"
-            name="contraseña"
-            id="contraseña"
-            placeholder="Ingresar contraseña"
-            autocomplete="current-password"
-          />
-          <label class="news">
-            <input class="news" type="checkbox" name="opcion" value="news" />
-            Quiero recibir ofertas destacadas por e-mail
-          </label>
-          <button type="submit">Registrate</button>
-          <p class="registerLogin">
-            <a href="login.html">¿Ya tenés cuenta? Ingresa</a>
-          </p>
-        </form>
-      </div>
-    </main>
-    <footer class="footer-container">
-      <h4 class="footer-disclaimer">
-        BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS. NO
-        COMPARTA EL CONTENIDO CON MENORES. E-BEER®
-      </h4>
-      <section class="footer-grid-container">
-        <article class="footer-social-icons">
-          <p>Redes Sociales</p>
-          <div>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-          </div>
-        </article>
-
-        <article class="footer-contact-container">
-          <p>Contacto</p>
-          <a href="">+54 1234-1234</a>
-          <a href="">contacto@e-beer.com</a>
-        </article>
-
-        <article class="footer-terms-container">
-          <a href="">Términos y condiciones</a>
-          <a href="">Políticas de privacidad</a>
-        </article>
-      </section>
-
-      <article class="footer-newsletter-container">
-        <h4>Suscribete al Newsletter</h4>
-        <label for="email">
-          <input
-            id="email"
-            type="email"
-            placeholder="Ingresar email"
-            class="footer-newsletter-input"
-          />
-        </label>
-      </article>
-
-      <section class="footer-copyright">
-        <p>Todos los derechos reservados ©2023 E-BEER</p>
-      </section>
-    </footer>
-  </body>
+          
+        </main>
 </html>
 
 <!--<div class="logo-register">
