@@ -1,3 +1,24 @@
+/* Variables Globales */
+:root {
+  /* Colors */
+  --yellow: #ffb432;
+  --black: #1e1e1e;
+  --green: #2e9709;
+  --red: #b70d0d;
+  --light-grey: #fafafa;
+
+  /* Texts */
+  --text-sm: 14px; /* Textos */
+  --text-md: 16px; /* Precios */
+  --text-lg: 18px; /* Subtitulos */
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px; /* Titulos */
+
+  /* Layout */
+  --container-lg: 1170px;
+}
+
 /* login */
 
 .logo-login {
@@ -16,7 +37,7 @@
 .loginForm {
   margin: 0 auto;
   padding: 20px;
-  background-color: #1e1e1e;
+  background-color: var(--black);
   border-radius: 10px;
   margin-left: 0px;
   margin-right: 0px;
@@ -37,7 +58,7 @@
   flex-direction: column;
   margin-right: 300px;
   margin-right: 0px;
-  color: #1e1e1e;
+  color: var(--black);
   margin-bottom: 10px;
 }
 
@@ -95,27 +116,31 @@ button {
 }
 
 input {
-  background-color: #fafafa;
+  background-color: var(--light-grey);
   padding: 5px;
   border-radius: 5px;
   border: none;
   font-family: "Outfit", sans-serif;
   size: 5px;
   font-size: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 20px;
+  width: 100%;
 }
 
 button {
-  background-color: #e99401;
-  color: black;
-  border: none;
+  background-color: var(--yellow);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
   font-weight: bold;
   margin-top: 30px;
   width: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(105%);
 }
 
 .span {
@@ -133,7 +158,7 @@ button {
   margin-right: 10px;
 }
 .textL a {
-  color: #e99401;
+  color: var(--yellow);
   font-family: "Outfit", sans-serif;
 }
 /*ver media queries*/
