@@ -28,7 +28,11 @@
   background-color: #ffb432;
   cursor: pointer;
   font-weight: bold;
+  text-align: center;
   transition: all 0.2s ease-in-out;
+}
+.btn-yellow a {
+  color: black;
 }
 .btn-yellow:hover {
   transform: scale(105%);
