@@ -138,11 +138,6 @@ header {
   border-radius : 10px;
 }
 
-#btn-restablecer {
-  background-color: #E95501;
-  color : white
-
-}
 
 /*Celular*/
 @media (max-width: 768px) {
@@ -151,16 +146,6 @@ header {
     padding-right: 5%;
   }
 
-  .restablecer{
-    margin-top: -10px !important;
-    border : 1px solid;
-    margin-bottom: 20px !important;
-  }
-
-  .guardar{
-    margin-bottom: 0px;
-    border : 1px solid;
-  }
 }
 
 
