@@ -1,3 +1,4 @@
+
 /* Variables Globales */
 :root {
   /* Colors */
@@ -249,3 +250,231 @@ button:hover {
     color: #fafafa;
   }
 }
+
+/*register*/
+
+.logo-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo-register img {
+  max-width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.registerForm {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.form-containerR {
+  padding: 20px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-rightR {
+  display: flex;
+  flex-direction: column;
+  margin-right: 300px;
+  margin-right: 0px;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+}
+
+.e-beerR {
+  font-size: 80px;
+  margin-bottom: 20px;
+  font-family: "Bayon", sans-serif;
+  text-align: center;
+  margin-right: 0px;
+  margin-bottom: 30px;
+}
+
+.registerTextInicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inicioTextR {
+  padding-bottom: 10px;
+  font-family: "Outfit", sans-serif;
+  padding: 20px;
+  padding-right: 30px;
+  text-align: center;
+  margin-top: -40px;
+  font-size: 20px;
+}
+.inicioText2R {
+  padding-bottom: 10px;
+  font-family: "Outfit", sans-serif;
+  padding: 20px;
+  padding-right: 30px;
+  text-align: left;
+  margin-top: -40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+}
+.datosPersonalesR {
+  color: #fafafa;
+  font-size: 16px;
+
+  text-align: left;
+  font-family: "Outfit", sans-serif;
+  margin-right: 100px;
+}
+label,
+input,
+button {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input {
+  background-color: #fafafa;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Outfit", sans-serif;
+  size: 5px;
+  font-size: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.news[type="checkbox"] {
+  margin-top: 10px;
+}
+
+.registerLogin a {
+  color: #e99401;
+  font-family: "Outfit", sans-serif;
+}
+button {
+  background-color: #e99401;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 30px;
+  width: 140px;
+}
+
+.news {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 10px;
+  color: #fafafa;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-family: "Outfit", sans-serif;
+}
+/*ver media queries*/
+
+@media (min-width: 768px) {
+  .form-containerR {
+    flex-direction: row-reverse;
+    margin: 0 auto;
+    width: unset;
+  }
+  .e-beerR {
+    margin-top: 60px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+    margin-left: 70px;
+  }
+
+  .inicioTextR {
+    text-align: left;
+    margin-right: 70px;
+    margin-bottom: 0px;
+    margin-top: -150px;
+    margin-left: 50px;
+  }
+  .inicioText2R {
+    text-align: left;
+    margin-right: 70px;
+    margin-left: 50px;
+  }
+  .registerForm {
+    width: 400px;
+  }
+  .news {
+    align-items: center;
+  }
+  .datosPersonalesR {
+    font-size: 18px;
+    margin-right: 210px;
+    font-family: "Outfit", sans-serif;
+    color: #fafafa;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-containerR {
+    flex-direction: row-reverse;
+    margin: 0 auto;
+    width: unset;
+  }
+  .e-beerR {
+    margin-top: 60px;
+    margin-right: 70px;
+    margin-bottom: 100px;
+    text-align: center;
+    margin-left: 70px;
+  }
+
+  .inicioTextR {
+    text-align: left;
+    margin-right: 70px;
+    margin-bottom: 0px;
+    margin-top: -150px;
+    margin-left: 50px;
+  }
+  .inicioText2R {
+    text-align: left;
+    margin-right: 70px;
+    margin-left: 50px;
+  }
+  .registerForm {
+    width: 400px;
+  }
+  .news {
+    align-items: center;
+  }
+  .datosPersonalesR {
+    font-size: 18px;
+    margin-right: 210px;
+    font-family: "Outfit", sans-serif;
+    color: #fafafa;
+  }
+}
+

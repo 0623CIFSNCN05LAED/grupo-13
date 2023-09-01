@@ -1,0 +1,157 @@
+.myProfile-container {
+    width: 90%;
+    margin: 50px auto;
+  }
+.topProfile {
+    display: flex;
+    flex-direction: row;
+    padding: 0 15px 0 15px;
+    background-color: #f0f0f0;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.profilePicture img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.myData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: 10px;
+}
+.bottomProfile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    background-color: #f0f0f0;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.data div {
+    width: 100%;
+}
+.dateOfBirth input {
+    width: 100%;
+    border: none;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.box{
+    border-radius: 20px;
+    background-color: var(--light-grey);
+    text-align: center;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+}
+.profileOptions{
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.buttons {
+    text-align: center;
+}
+.buttons div {
+    margin-bottom: 15px;
+}
+.btn-yellow a{
+    color: black;
+}
+.btn-yellow {
+    transition: none
+  }
+.btn-yellow:hover {
+    transform: none
+  }
+
+/* Tablet */
+@media (min-width: 768px) {
+    .topProfile {
+        display: flex;
+        flex-direction: row;
+    }
+    .profilePicture img {
+        width: 350px;
+    }
+    .myData {
+        width: 100%;
+    }
+
+    .data {
+        display: flex;
+        flex-direction: row;
+    }
+    .data div {
+        width: 50%;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .dateOfBirth input {
+        width: 100%;
+        border: none;
+    }
+    .buttons {
+        display: flex;
+    }
+    .buttons div {
+        margin-bottom: 15px;
+        margin-right: 15px;
+        margin-left: 15px;
+        width: 50%;
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1023px) {
+    main {
+        display: flex;
+    }
+    .topProfile {
+        width: 20%;
+        margin-right: 20px;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profilePicture img {
+        width: 100%;
+        margin-right: 0px;
+    }
+    .myData {
+        width: 100%;
+        display: flex;
+        margin-bottom: 15px;
+    }
+    .bottomProfile {
+        width: 80%;
+        height: auto;
+    }
+    .btn-yellow {
+        transition: all 0.2s ease-in-out;
+      }
+      .btn-yellow:hover {
+        transform: scale(105%);
+      }
+  }
