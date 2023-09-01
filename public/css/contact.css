@@ -56,44 +56,36 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  margin-top: 10px;
 }
 
 .contact-submit {
-  background-color: #e99401;
-  color: #1e1e1e;
-  font-weight: bold;
-  height: 35px;
-  padding: 5px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  text-transform: uppercase;
-  border-radius: 10px;
-  width: 120px;
+  background-color: #ffb432;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 16px;
-  border: none;
-  align-items: center;
+  font-weight: bold;
+  width: 110px;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-submit:hover {
+  transform: scale(105%);
 }
 
 .contact-reset {
-  background-color: #e99401;
-  color: #1e1e1e;
-  font-weight: bold;
-  height: 35px;
-  padding: 5px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  text-transform: uppercase;
-  border-radius: 10px;
-  width: 120px;
+  background-color: #ffb432;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 16px;
-  border: none;
+  font-weight: bold;
+  width: 110px;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-reset:hover {
+  transform: scale(105%);
 }
 
 /* Tablet */
@@ -102,8 +94,11 @@
   .contact-form {
     width: 60%;
   }
-  .contact-form button {
-    width: 30%;
+  .contact-submit{
+    width: 140px;
+  }
+  .contact-reset{
+    width: 140px;
   }
 }
 
@@ -112,14 +107,10 @@
   .contact-form {
     width: 50%;
   }
-
-  .contact-form button {
-    height: 35px;
-    padding: 5px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 30%;
+  .contact-submit{
+    width: 180px;
+  }
+  .contact-reset{
+    width: 180px;
   }
 }
