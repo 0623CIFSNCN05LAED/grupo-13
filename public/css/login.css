@@ -1,358 +1,99 @@
-
-/* Variables Globales */
-:root {
-  /* Colors */
-  --yellow: #ffb432;
-  --black: #1e1e1e;
-  --green: #2e9709;
-  --red: #b70d0d;
-  --light-grey: #fafafa;
-
-  /* Texts */
-  --text-sm: 14px; /* Textos */
-  --text-md: 16px; /* Precios */
-  --text-lg: 18px; /* Subtitulos */
-  --text-xl: 20px;
-  --text-2xl: 24px;
-  --text-3xl: 32px; /* Titulos */
-
-  /* Layout */
-  --container-lg: 1170px;
-}
-
-/* login */
-
-.logo-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.logo-login img {
-  max-width: 100%;
-  height: auto;
-  align-items: center;
-}
-
-.loginForm {
+.login-container {
+  padding: 50px 0;
   margin: 0 auto;
-  padding: 20px;
+}
+
+.form-container {
   background-color: var(--black);
+  margin: 40px 20px;
+  padding: 30px 20px;
   border-radius: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 50px;
-  margin-bottom: 10px;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.form-containerL {
-  padding: 20px;
-  flex-direction: column;
+.form-title {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-}
-
-.text-rightL {
-  display: flex;
-  flex-direction: column;
-  margin-right: 300px;
-  margin-right: 0px;
-  color: var(--black);
-  margin-bottom: 10px;
-}
-
-.e-beerL {
-  font-size: 80px;
-  margin-bottom: 20px;
-  font-family: "Bayon", sans-serif;
-  text-align: center;
-  margin-right: 0px;
-  margin-bottom: 30px;
-}
-
-.loginTextInicio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.inicioTextL {
-  padding-bottom: 10px;
-  font-family: "Outfit", sans-serif;
-  padding: 20px;
-  padding-right: 30px;
-  text-align: center;
-  margin-top: -40px;
-  font-size: 20px;
-}
-.inicioText2L {
-  padding-bottom: 10px;
-  font-family: "Outfit", sans-serif;
-  padding: 20px;
-  padding-right: 30px;
-  text-align: left;
-  margin-top: -40px;
-  font-size: 20px;
   text-align: center;
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 500px;
+.form-title h1 {
+  font-size: 64px;
+  font-family: 'Bayon', sans-serif;
+}
+.form-title p {
+  font-size: 24px;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 20px;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px;
 }
 
-label,
-input,
-button {
-  margin-bottom: 10px;
-  width: 100%;
+.form-container button {
+  margin: 20px auto;
 }
 
-input {
-  background-color: var(--light-grey);
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  font-family: "Outfit", sans-serif;
-  size: 5px;
-  font-size: 10px;
-  padding: 10px 20px;
-  width: 100%;
+.links-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  gap: 10px;
 }
-
-button {
-  background-color: var(--yellow);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 30px;
-  width: 140px;
+.links-container a {
+  color: white;
+}
+.links-container span {
+  color: var(--yellow);
   transition: all 0.2s ease-in-out;
 }
 
-button:hover {
-  transform: scale(105%);
+@media (min-width: 768px) {
+  .login-container {
+    max-width: 60vw;
+  }
+  .form-title h1 {
+    font-size: 100px;
+  }
+  .form-title p {
+    font-size: 28px;
+    font-weight: 300;
+    margin-top: -30px;
+    color: rgba(0, 0, 0, 0.8);
+  }
 }
 
-.span {
-  display: flex;
-}
-.textSmallL {
-  display: flex;
-  font-size: 10px;
-  margin-top: 30px;
-  justify-content: space-between;
-  color: white;
-  font-family: "Outfit", sans-serif;
-}
-.textL {
-  margin-right: 10px;
-}
-.textL a {
-  color: var(--yellow);
-  font-family: "Outfit", sans-serif;
-}
-/*ver media queries*/
-@media (min-width: 1024px) {
-  .form-containerL {
-    flex-direction: row;
-    margin: 0 auto;
-    width: unset;
-  }
-  .e-beerL {
-    margin-top: 60px;
-    margin-right: 70px;
-    margin-bottom: 100px;
-    text-align: center;
+@media (min-width: 1023px) {
+  main {
+    display: flex;
+    min-height: 60vh;
+    align-items: center;
   }
 
-  .inicioTextL {
+  .login-container {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 80vw;
+  }
+
+  .form-container {
+    width: 60%;
+  }
+
+  .form-title {
+    max-width: 40%;
+    padding-right: 50px;
     text-align: left;
-    margin-right: 70px;
-    margin-bottom: 0px;
-    margin-top: -150px;
-    margin-left: 20px;
   }
-  .inicioText2L {
-    text-align: left;
-    margin-right: 70px;
-    margin-left: 20px;
-  }
-}
-=======
-/* login */
-
-.logo-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.logo-login img {
-  max-width: 100%;
-  height: auto;
-  align-items: center;
-}
-
-.loginForm {
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-}
-
-.form-containerL {
-  padding: 20px;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.text-rightL {
-  display: flex;
-  flex-direction: column;
-  margin-right: 300px;
-  margin-right: 0px;
-  color: #1e1e1e;
-  margin-bottom: 10px;
-}
-
-.e-beerL {
-  font-size: 80px;
-  margin-bottom: 20px;
-  font-family: "Bayon", sans-serif;
-  text-align: center;
-  margin-right: 0px;
-  margin-bottom: 30px;
-}
-
-.loginTextInicio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.inicioTextL {
-  padding-bottom: 10px;
-  font-family: "Outfit", sans-serif;
-  padding: 20px;
-  padding-right: 30px;
-  text-align: center;
-  margin-top: -40px;
-  font-size: 20px;
-}
-.inicioText2L {
-  padding-bottom: 10px;
-  font-family: "Outfit", sans-serif;
-  padding: 20px;
-  padding-right: 30px;
-  text-align: left;
-  margin-top: -40px;
-  font-size: 20px;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px;
-}
-
-label,
-input,
-button {
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-input {
-  background-color: #fafafa;
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  font-family: "Outfit", sans-serif;
-  size: 5px;
-  font-size: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-button {
-  background-color: #e99401;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 30px;
-  width: 140px;
-}
-
-.span {
-  display: flex;
-}
-.textSmallL {
-  display: flex;
-  font-size: 10px;
-  margin-top: 30px;
-  justify-content: space-between;
-  color: white;
-  font-family: "Outfit", sans-serif;
-}
-.textL {
-  margin-right: 10px;
-}
-.textL a {
-  color: #e99401;
-  font-family: "Outfit", sans-serif;
-}
-/*ver media queries*/
-@media (min-width: 1024px) {
-  .form-containerL {
-    flex-direction: row;
-    margin: 0 auto;
-    width: unset;
-  }
-  .e-beerL {
-    margin-top: 60px;
-    margin-right: 70px;
-    margin-bottom: 100px;
-    text-align: center;
-  }
-
-  .inicioTextL {
-    text-align: left;
-    margin-right: 70px;
-    margin-bottom: 0px;
-    margin-top: -150px;
-    margin-left: 20px;
-  }
-  .inicioText2L {
-    text-align: left;
-    margin-right: 70px;
-    margin-left: 20px;
+  .form-title p {
+    max-width: 100%;
   }
 }
 
+@media (min-width: 1439px) {
+  .login-container {
+    justify-content: center;
+  }
+}

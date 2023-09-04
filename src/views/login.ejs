@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <!-- Títulos del login -->
+      <section class="login-container">
+        <article class="form-title">
+          <h1>E-BEER</h1>
+
+          <p>Inicia sesión y adentrate en nuestra tienda</p>
+        </article>
+
+        <!-- Formulario del login -->
+        <article class="form-container">
+          <form action="/" method="get">
+            <label for="e-mail">
+              <input
+                class="inputs"
+                type="email"
+                name="e-mail"
+                id="e-mail"
+                placeholder="Correo electrónico"
+                autocomplete="email"
+              />
+            </label>
+
+            <label for="contraseña">
+              <input
+                class="inputs"
+                type="password"
+                name="contraseña"
+                id="contraseña"
+                placeholder="Ingresar contraseña"
+                autocomplete="current-password"
+              />
+            </label>
+
+            <button class="btn-yellow" type="submit">Iniciar sesión</button>
+
+            <section class="links-container">
+              <a href="#">¿Olvidaste tu contraseña?</a>
+              <a href="/users/register"
+                >¿No tenés cuenta? <span>Crear cuenta</span></a
+              >
+            </section>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

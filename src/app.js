@@ -1,7 +1,12 @@
 const express = require('express');
 const path = require('path');
 
+const mainRoutes = require('./routes/mainRoutes.js');
+const productsRoutes = require('./routes/productsRoutes.js'); 
+const usersRoutes = require('./routes/usersRoutes.js'); 
+
 const app = express();
+const router = express.Router();
 
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -10,42 +15,9 @@ app.listen(PORT, () => {
   console.log(`El server está corriendo en http://localhost:${PORT}`);
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/coming-age.html'));
-});
-app.get('/home', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/index.html'));
-});
-app.get('/product-cart', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/product-cart.html'));
-});
-app.get('/product-cart-filled', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/product-cart-filled.html'));
-});
-app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/contact.html'));
-});
-app.get('/product-detail', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/product-detail.html'));
-});
-app.get('/product-list', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/product-list.html'));
-});
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/login.html'));
-});
-app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/register.html'));
-});
-app.get('/add-edit-form', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/add-edit-form.html'));
-});
-app.get('/about-us', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/about-us.html'));
-});
-app.get('/myProfile', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/myProfile.html'));
-});
-app.get('/myProfileAdmin', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/myProfileAdmin.html'));
-});
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views' );
+
+app.use('/', mainRoutes); // Todas las url que comiencen con /, se dirigen al archivo mainRoutes
+app.use('/products', productsRoutes); // Todas las url que comiencen con /products, se dirigen al archivo productsRoutes
+app.use('/users', usersRoutes); // Todas las url que comiencen con /users, se dirigen al archivo usersRoutes

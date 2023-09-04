@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/cart.css" />
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main class="mainCart">
+      <section class="productsContainer">
+        <section class="productsList">
+          <h2>Productos</h2>
+
+          <article class="productCard">
+            <div class="productImageTitle">
+              <img src="/images/cervezaoK.png" alt="Cerveza" />
+              <div class="productDescription">
+                <h3>Cerveza Corona 350 ml x1 pack x6 botellas</h3>
+              </div>
+            </div>
+            <div class="productManage">
+              <div class="productQuantity">
+                <a href="" class="addMore">+</a>
+                <p class="quantityNumber">1</p>
+                <a href="" class="takeMore">-</a>
+              </div>
+              <div class="productPrice">
+                <p class="value">$1.900</p>
+              </div>
+              <div class="productDelete">
+                <a href="">Eliminar</a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <div class="purchase">
+          <h2>Su orden</h2>
+          <article class="summary">
+            <div class="productsValue">
+              <p>Producto/s</p>
+              <p>$1.900</p>
+            </div>
+            <div class="deliveryValue">
+              <p>Envío</p>
+              <p>$1.900</p>
+            </div>
+            <div class="totalValue">
+              <p class="total">TOTAL:</p>
+              <p class="totalNumber">$3.800</p>
+            </div>
+
+            <article class="btn-yellow">
+              <div>
+                <a href="">COMPRAR</a>
+              </div>
+            </article>
+          </article>
+        </div>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

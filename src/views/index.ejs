@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/partials/card.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main class="home-container">
+      <section class="carrusel-container">
+        <img src="" alt="" />
+
+        <ul>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+        </ul>
+      </section>
+
+      <section class="featured-products">
+        <div class="featured-products-title">
+          <h2>Nuestros productos más vendidos</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="cards-container">
+          <%- include('./partials/card.ejs') %> <%-
+          include('./partials/card.ejs') %> <%- include('./partials/card.ejs')
+          %> <%- include('./partials/card.ejs') %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
