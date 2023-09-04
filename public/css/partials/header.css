@@ -67,21 +67,19 @@ header {
 .form-div {
   padding-left: 20%;
   padding-right: 20%;
-
 }
 
 .black-bg {
-  background-color :black !important ;
+  background-color: black !important ;
 }
 
-.rounded-border{
-  border-radius : 10px;
+.rounded-border {
+  border-radius: 10px;
 }
 
 #btn-restablecer {
-  background-color: #E95501;
-  color : white
-
+  background-color: #e95501;
+  color: white;
 }
 
 /*Celular*/
@@ -91,18 +89,17 @@ header {
     padding-right: 5%;
   }
 
-  .restablecer{
+  .restablecer {
     margin-top: -10px !important;
-    border : 1px solid;
+    border: 1px solid;
     margin-bottom: 20px !important;
   }
 
-  .guardar{
+  .guardar {
     margin-bottom: 0px;
-    border : 1px solid;
+    border: 1px solid;
   }
 }
-
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -114,13 +111,13 @@ header {
   }
 }
 
-
 /* Desktop */
 @media (min-width: 1024px) {
   .header-container {
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--container-lg);
     margin: 0 auto;
+    padding: 0;
   }
   .header-container img {
     width: 100px;

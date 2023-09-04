@@ -54,9 +54,24 @@
   .login-container {
     max-width: 60vw;
   }
+  .form-title h1 {
+    font-size: 100px;
+  }
+  .form-title p {
+    font-size: 28px;
+    font-weight: 300;
+    margin-top: -30px;
+    color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 @media (min-width: 1023px) {
+  main {
+    display: flex;
+    min-height: 60vh;
+    align-items: center;
+  }
+
   .login-container {
     display: flex;
     justify-content: space-evenly;
@@ -64,19 +79,21 @@
   }
 
   .form-container {
-    width: 40%;
+    width: 60%;
   }
 
   .form-title {
     max-width: 40%;
+    padding-right: 50px;
+    text-align: left;
+  }
+  .form-title p {
+    max-width: 100%;
   }
 }
 
 @media (min-width: 1439px) {
   .login-container {
     justify-content: center;
-  }
-  .form-container {
-    width: 30%;
   }
 }

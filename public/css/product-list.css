@@ -17,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   margin-top: 20px;
-  width: 80%;
+  width: 56%;
 }
 
 .pl-container-search form {
@@ -38,7 +38,7 @@
 
 .pl-container-selects {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 20px;
 }
 .pl-container-selects select {
@@ -60,6 +60,14 @@
 }
 
 @media (min-width: 1024px) {
+  .searchbar {
+    order: 2;
+    width: 270px;
+  }
+  .pl-filters {
+    width: 42%;
+  }
+
   .pl-container-selects {
     justify-content: center;
     gap: 30px;
