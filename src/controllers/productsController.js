@@ -10,7 +10,10 @@ const productsController = {
   },
   productList: (req, res) => {
     return res.render('product-list');
-  }
+  },
+  addEditForm: (req, res) => {
+    return res.render('add-edit-form');
+  },
 };
 
 module.exports = productsController;
