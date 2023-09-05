@@ -3,28 +3,22 @@
   flex-direction: column;
 }
 
-.carrusel-container {
-  background-color: #c9c9c9;
-  height: 300px;
+
+/* Estilos de carrousel: */
+
+.carrousel-container {
+  display: flex;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  height: 50vh;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  animation: slide 9s infinite;
 }
-.carrusel-container ul {
-  display: flex;
-  position: relative;
-  top: -36px;
-  margin: 0 auto;
-}
-.carrusel-container li {
-  border: 1px solid #8f8f8f;
-  background-color: #8f8f8f;
-  border-radius: 100%;
-  width: 16px;
-  height: 16px;
-  margin: 0 20px;
-  cursor: pointer;
+.carrousel-container img {
+  flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
+  scroll-snap-align: center;
 }
 
 .featured-products {
