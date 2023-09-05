@@ -5,9 +5,6 @@
     <link rel="stylesheet" href="/css/add-edit-form.css" />
 	<link rel="stylesheet" href="/css/styles.css" />
 	<link rel="stylesheet" href="/css/contact.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
   </head>
 
   <body>
@@ -18,11 +15,21 @@
         <h2 class="edit-title">Registro</h2>
         <a href="mailto:@contacto@e-beer.com" class="edit-email ">contacto@e-beer.com</a>
   
-  
+		<section class="search-bar-container">
+			<article class="search-bar-form">
+				<form action="/" method="POST">
+					<input type="text" class="search-input" placeholder="Buscar producto">
+					<button type="submit">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</button>
+				</form>
+
+			</article>
+		</section>
         <div class="row pr-5 ml-3 center ">
           <div class="col-sm-6">
             <div class="mt-5 mb-2 pl-2 input-group ">
-              <input type="text" class="form-control bar-input " placeholder="Buscar">
+              <input type="text" class="" placeholder="Buscar">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-search"></i></span>
               </div>
@@ -32,7 +39,7 @@
               <div class="search-input">
                 <label class="btn btn-secondary mt-3">
                   Seleccionar archivo
-                  <input type="file" accept="image/png, image/jpeg" id="SmallFile" style="display: none;">
+                  <input type="file" class="input" accept="image/png, image/jpeg" id="SmallFile" style="display: none;">
                 </label>
                 <p class="mt-2 text-muted small">Ningún archivo seleccionado</p>
               </div>
