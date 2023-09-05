@@ -30,3 +30,20 @@ los impedimentos encontrados y las soluciones propuestas indicando los integrant
 3. Definimos una reunión para el domingo 03/09 para dividir las tareas del sprint 3.
 4. Creamos carpetas del sprint 3.
 5. Se verifican requisitos de la página creación y edición de productos.
+
+# Domingo 03/09:
+
+1. Verificamos el progreso de las tareas para el Sprint 3.
+2. Resolvimos conjuntamente los 4 issues asignados al proyecto integrador.
+3. Se actualizan los archivos de todas las ramas.
+4. Se crea una nueva rama "ejs" para trabajar de manera conjunta las tareas del nuevo sprint.
+5. Creamos las divisiones de carpetas necesarias.
+6. Resolvimos conjuntamente las consignas del Sprint 3.
+7. Se unifican estilos y estructuras de archivos.
+
+# Lunes 04/09:
+
+1. Se verifica el progreso del Sprint durante la clase 27.
+2. Encontramos un error en los estilos de "add-edit-form".
+3. Se opta por la division de la pagina en 2 archivos diferentes (add-form y edit-form).
+4. Se dividen tareas para finalizar con las consignas del sprint 3.
