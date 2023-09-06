@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/product-add-form.css" />
+    <link rel="stylesheet" href="/css/product-edit-form.css" />
   </head>
 
   <body>
@@ -44,8 +44,12 @@
         </div>
 
         <div class="add-buttons-container">
-          <button class="add-button">Agregar</button>
+          <!-- <button class="add-button">
+            Agregar
+          </button> -->
+          <a href="product-add-form.ejs" class="add-button">Agregar</a>
           <button class="edit-button">Editar</button>
+          <button class="delete-button">Eliminar</button>
         </div>
       </form>
     </main>

@@ -14,6 +14,12 @@ const productsController = {
   productAddForm: (req, res) => {
     return res.render('product-add-form');
   },
+  productEditForm: (req, res) => {
+    return res.render('product-edit-form');
+  },
+  productForm: (req, res) => {
+    return res.render('product-form');
+  },
 };
 
 module.exports = productsController;
