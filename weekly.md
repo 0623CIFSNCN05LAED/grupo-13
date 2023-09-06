@@ -54,4 +54,4 @@ los impedimentos encontrados y las soluciones propuestas indicando los integrant
 2. Corregimos conjuntamente errores de routeo en archivos.
 3. Se cuestiona el formato actual de las páginas para creación y edición de productos, y se decide crear una nueva pagina previa que redireccione al usuario según la tarea que quiera realizar (cargar un nuevo producto, o bien editar uno existente).
 4. Unificamos estilos en las nuevas páginas creadas.
-5. Se propone una nueva reunión pre-entrega para el miércoles 07/09.
+5. Se propone una nueva reunión pre-entrega para el miércoles 06/09.
