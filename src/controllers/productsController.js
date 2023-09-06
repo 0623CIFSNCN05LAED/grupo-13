@@ -10,6 +10,9 @@ const productsController = {
   },
   productList: (req, res) => {
     return res.render('product-list');
+  },
+  productAddForm: (req, res) => {
+    return res.render('product-add-form');
   }
 };
 
