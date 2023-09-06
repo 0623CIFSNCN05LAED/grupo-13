@@ -92,21 +92,6 @@
   transform: scale(105%);
 }
 
-.edit-button {
-  background-color: #ffb432;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  width: 110px;
-  transition: all 0.2s ease-in-out;
-}
-
-.edit-button:hover {
-  transform: scale(105%);
-}
-
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   /* Contact */
