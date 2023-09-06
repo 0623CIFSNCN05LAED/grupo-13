@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/product-add-form.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <form class="add-form">
+        <h2 class="add-title">Registro de productos</h2>
+
+        <input
+          class="add-input"
+          type="text"
+          name="nombre del producto"
+          placeholder="Nombre del producto"
+        />
+        <input class="add-input" type="text" name="marca" placeholder="Marca" />
+        <input
+          class="add-input"
+          type="text"
+          name="medida"
+          placeholder="Medida"
+        />
+        <input
+          class="add-input"
+          type="number"
+          name="precio"
+          placeholder="Precio"
+        />
+
+        <textarea placeholder="Descripción"></textarea>
+
+        <div class="product-picture">
+          <label for="productPicture">Selecciona una imagen del producto</label>
+          <input
+            type="file"
+            id="productPicture"
+            name="productPicture"
+            accept=".jpg"
+          />
+        </div>
+
+        <div class="add-buttons-container">
+          <button class="add-button">Agregar</button>
+          <button class="edit-button">Editar</button>
+        </div>
+      </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
