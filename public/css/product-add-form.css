@@ -33,14 +33,30 @@
   font-size: 15px;
 }
 
-.product-picture img {  
-  background-color: #fafafa;
-  border-radius: 14px;
-  margin-top: 10px;  
-  margin-bottom: 20px;
-  width: 50%;
-  height: auto;
-  font-size: 15px;
+.product-picture {
+  position: relative;
+  display: inline-block;
+}
+
+.product-picture label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border-style: none;
+  width: 100%;
+  height: 45px;
+  background-color: #ffb432;
+  cursor: pointer;
+  color: black;
+  font-size: 14px;
+}
+
+.product-picture input[type='file'] {
+  opacity: 0;
+  display: block;
+  width: 250px;
+  height: 20px;
 }
 
 .add-form textarea {
@@ -97,10 +113,10 @@
   .add-form {
     width: 60%;
   }
-  .add-button{
+  .add-button {
     width: 140px;
   }
-  .edit-button{
+  .edit-button {
     width: 140px;
   }
 }
@@ -111,12 +127,10 @@
     max-width: 700px;
     width: 50%;
   }
-  .add-button{
+  .add-button {
     width: 180px;
   }
-  .edit-button{
+  .edit-button {
     width: 180px;
   }
 }
-
-
