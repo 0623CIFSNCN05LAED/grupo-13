@@ -7,11 +7,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .contact-title h1 {
-  font-size: 32px;
+  font-size: 65px;
   font-weight: 500;
+  font-family: BAYON;
 }
 
 .contact-title a {
@@ -19,38 +21,6 @@
   color: var(--dark-grey);
   text-decoration: none;
 }
-
-/* .form-container {
-  
-} */
-
-/* .contact-email {
-  width: max-content;
-  font-size: 20px;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-} */
-
-/* .contact-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* .contact-contarinerasdf {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 50px auto;
-  max-width: 1170px;
-} */
-
-/* .contact-title {
-  font-size: 32px;
-  font-weight: 500;
-} */
 
 .contact-form {
   background-color: #1e1e1e;
