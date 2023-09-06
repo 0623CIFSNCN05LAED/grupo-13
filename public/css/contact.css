@@ -116,7 +116,7 @@
 /* Desktop */
 @media (min-width: 1024px) {
   .contact-form {
-    width: 50%;
+    width: 40%;
   }
   .contact-submit {
     width: 180px;
