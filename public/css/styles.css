@@ -6,6 +6,7 @@
   --green: #2e9709;
   --red: #b70d0d;
   --light-grey: #fafafa;
+  --dark-grey: rgba(0, 0, 0, 0.8);
 
   /* Texts */
   --text-sm: 14px; /* Textos */

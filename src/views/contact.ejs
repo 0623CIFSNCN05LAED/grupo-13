@@ -7,37 +7,47 @@
 
   <body>
     <%- include('./partials/header.ejs') %>
-
     <main>
-      <form class="contact-form">
-        <h2 class="contact-title">Contacto</h2>
-        <a href="mailto:@contacto@e-beer.com" class="contact-email"
-          >contacto@e-beer.com</a
-        >
-        <input
-          class="contact-input"
-          type="text"
-          name="nombre"
-          placeholder="Nombre completo"
-        />
-        <input
-          class="contact-input"
-          type="email"
-          name="email"
-          placeholder="E-mail"
-        />
-        <input
-          class="contact-input"
-          type="number"
-          name="telefono"
-          placeholder="Teléfono"
-        />
-        <textarea placeholder="Comentarios"></textarea>
-        <div class="contact-buttons-container">
-          <a href="/home"><input type="submit" class="contact-submit" /></a>
-          <input class="contact-reset" type="reset" name="reset" />
-        </div>
-      </form>
+      <section class="contact-container">
+        <article class="contact-title">
+          <h1>Contacto</h1>
+          <a href="mailto:@contacto@e-beer.com"
+            ><i
+              class="fa-solid fa-envelope"
+              style="color: rgba(0, 0, 0, 0.8)"
+            ></i>
+            contacto@e-beer.com</a
+          >
+        </article>
+
+        <article class="form-container">
+          <form class="contact-form">
+            <input
+              class="contact-input"
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+            />
+            <input
+              class="contact-input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+            />
+            <input
+              class="contact-input"
+              type="number"
+              name="telefono"
+              placeholder="Teléfono"
+            />
+            <textarea placeholder="Comentarios"></textarea>
+            <div class="contact-buttons-container">
+              <a href="/home"><input type="submit" class="contact-submit" /></a>
+              <input class="contact-reset" type="reset" name="reset" />
+            </div>
+          </form>
+        </article>
+      </section>
     </main>
 
     <%- include('./partials/footer.ejs') %>

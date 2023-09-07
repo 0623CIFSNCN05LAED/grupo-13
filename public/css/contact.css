@@ -1,8 +1,32 @@
+.contact-container {
+  padding: 50px 0;
+  margin: 0 auto;
+}
+
+.contact-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-title h1 {
+  font-size: 65px;
+  font-weight: 500;
+  font-family: BAYON;
+}
+
+.contact-title a {
+  font-size: 18px;
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+
 .contact-form {
   background-color: #1e1e1e;
   width: 85%;
   height: auto;
-  margin: 80px auto;
+  margin: 0px auto;
   border-radius: 10px;
   padding-top: 30px;
   padding-bottom: 20px;
@@ -15,18 +39,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.contact-title {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.contact-email {
-  width: max-content;
-  font-size: 20px;
-  text-decoration: none;
-  color: inherit;
 }
 
 .contact-input {
@@ -90,14 +102,13 @@
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Contact */
   .contact-form {
     width: 60%;
   }
-  .contact-submit{
+  .contact-submit {
     width: 140px;
   }
-  .contact-reset{
+  .contact-reset {
     width: 140px;
   }
 }
@@ -105,12 +116,12 @@
 /* Desktop */
 @media (min-width: 1024px) {
   .contact-form {
-    width: 50%;
+    width: 40%;
   }
-  .contact-submit{
+  .contact-submit {
     width: 180px;
   }
-  .contact-reset{
+  .contact-reset {
     width: 180px;
   }
 }
