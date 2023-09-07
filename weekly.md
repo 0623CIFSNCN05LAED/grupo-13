@@ -47,3 +47,11 @@ los impedimentos encontrados y las soluciones propuestas indicando los integrant
 2. Encontramos un error en los estilos de "add-edit-form".
 3. Se opta por la division de la pagina en 2 archivos diferentes (add-form y edit-form).
 4. Se dividen tareas para finalizar con las consignas del sprint 3.
+
+# Martes 05/09:
+
+1. Se verifica el progreso realizado en las tareas pendientes del Sprint 3.
+2. Corregimos conjuntamente errores de routeo en archivos.
+3. Se cuestiona el formato actual de las páginas para creación y edición de productos, y se decide crear una nueva pagina previa que redireccione al usuario según la tarea que quiera realizar (cargar un nuevo producto, o bien editar uno existente).
+4. Unificamos estilos en las nuevas páginas creadas.
+5. Se propone una nueva reunión pre-entrega para el miércoles 06/09.
