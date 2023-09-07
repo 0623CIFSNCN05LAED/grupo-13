@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/product-edit-form.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <form class="edit-form">
+        <h2 class="edit-title">Edición de productos</h2>
+        <div class="edit-searchNav">
+          <input
+            type="text"
+            placeholder="Buscar productos, marcas y más…"
+            maxlength="120"
+            autocapitalize="off"
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input
+          class="edit-input"
+          type="text"
+          name="nombre del producto"
+          placeholder="Nombre del producto"
+        />
+        <input
+          class="edit-input"
+          type="text"
+          name="marca"
+          placeholder="Marca"
+        />
+        <input
+          class="edit-input"
+          type="text"
+          name="medida"
+          placeholder="Medida"
+        />
+        <input
+          class="edit-input"
+          type="number"
+          name="precio"
+          placeholder="Precio"
+        />
+
+        <textarea placeholder="Descripción"></textarea>
+
+        <div class="product-picture">
+          <label for="productPicture">Selecciona una imagen del producto</label>
+          <input
+            type="file"
+            id="productPicture"
+            name="productPicture"
+            accept=".jpg"
+          />
+        </div>
+
+        <div class="edit-buttons-container">
+          <!-- <button class="add-button">
+            Agregar
+          </button> -->
+
+          <button class="edit-button">Editar</button>
+          <button class="delete-button">Eliminar</button>
+        </div>
+      </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
