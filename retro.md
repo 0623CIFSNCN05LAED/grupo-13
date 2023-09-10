@@ -52,4 +52,35 @@ Aquí detallamos lo expuesto en el jam:
 
 # Retrospectiva SPRINT Nº3:
 
-Jamboard, Starfish retrospective: https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?ts=64e9256f&f=0
+Jamboard, Starfish retrospective (página 2): https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?ts=64e9256f&f=0
+
+Aquí detallamos lo expuesto en el jam:
+
+1. Comenzar a hacer:
+
+   - Confirmar asistencia a las reuniones a través de las votaciones en Discord
+   - Fijar fecha límite para resolución de tareas y verificación en la reunión preentrega
+
+2. Hacer más:
+
+   - Mantener un tablero de tareas actualizado para visualizar el progreso del trabajo.
+   - Crear nuevas ramas para las tareas asignadas
+
+3. Continuar haciendo:
+
+   - Reunión one-on-one: grupales por issues particulares que se presenten en la tarea de cada uno/a.
+   - Celebrar los logros y éxitos del equipo.
+   - Mantener una comunicación abierta y transparente entre los miembros del equipo.
+   - Reunión weekly para ver nuestro progreso: fija los martes 19:30 hs (ARG) y 17:30 hs (COL)
+   - Compartir buenas prácticas (documentación, tips, enlaces) y generar hilos sobre consultas particulares mediante #threads en Discord
+   - Meet daily cuando es necesario para cumplir con lo solicitado
+
+4. Hacer menos:
+
+   - No dar aviso por ausencia a una reunión pactada y aceptada previamente.
+   - Dejar de trabajar desde la rama principal hasta que se realice el merge
+
+5. Dejar de hacer:
+
+   - No quedarse con dudas: que produzcan un retraso en el desarrollo de una tarea asignada.
+   - No dejar flujos importantes sin verificar: en días previos a la entrega.
