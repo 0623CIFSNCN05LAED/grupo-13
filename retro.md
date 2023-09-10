@@ -49,3 +49,7 @@ Aquí detallamos lo expuesto en el jam:
    - Pullear de otras ramas a Main.
    - No quedarse con dudas: que produzcan un retraso en el desarrollo de una tarea asignada.
    - No dejar flujos importantes sin verificar: en días previos a la entrega.
+
+# Retrospectiva SPRINT Nº3:
+
+Jamboard, Starfish retrospective: https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?ts=64e9256f&f=0
