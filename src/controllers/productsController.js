@@ -15,6 +15,10 @@ const productsController = {
     let productEdit = req.params.productEdit;
     return res.send(productEdit);
   },
+  productEditDelete: (req, res) => {
+    let productEditDelete = req.params.productEditDelete;
+    return res.send(productEditDelete);
+  },
   productCrud: (req, res) => {
     return res.render('product-crud');
   },
