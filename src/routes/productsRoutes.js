@@ -3,13 +3,20 @@ const express = require('express');
 const productsRouter = express.Router();
 const productsController = require('../controllers/productsController');
 
-productsRouter.get('/', productsController.products); // product list
-productsRouter.get('/create', productsController.productAddForm); // product add form
-productsRouter.get('/:id', productsController.productDetail); // product detail segun el ID ingresado en url
-productsRouter.post('/', productsController.productAddPost); // url que contiene la info enviada por el formulario de add form
-productsRouter.get('/:id/edit', productsController.productEditForm); // product edit form
-productsRouter.put('/:id', productsController.productEditPut); // url que contiene la info enviada por el formulario de edit product al editar
-productsRouter.delete('/:id', productsController.productEditDelete); // url que contiene la info enviada por el formulario de edit product al eliminar
+/* PRODUCT LIST */
+productsRouter.get('/', productsController.products);
+
+/* PRODUCT DETAIL */
+productsRouter.get('/detail/:id', productsController.productDetail); // Segun el ID ingresado la URL
+
+/* PRODUCT ADD FORM */
+productsRouter.get('/create', productsController.addForm); // muestra el formulario ADD PRODUCT
+productsRouter.post('/create', productsController.create); // URL que contiene la info del producto creado con ADD FORM al enviar
+
+productsRouter.get('/:id/edit', productsController.productEditForm); // EDIT-FORM product edit form
+productsRouter.put('/:id', productsController.productEditPut); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al editar
+productsRouter.delete('/:id', productsController.productEditDelete); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al eliminar
+
 productsRouter.get('/crud', productsController.productCrud); // tabla de edicion de productos cuando se ingresa con perfil admin
 
 productsRouter.get('/cart', productsController.productCart);
