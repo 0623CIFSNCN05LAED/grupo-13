@@ -12,7 +12,7 @@ const productsController = {
     res.render('product-add-form');
   },
   create: (req, res) => {
-    const product = req.params;
+    const product = req.body;
     console.log(product);
     res.redirect('/products');
   },
