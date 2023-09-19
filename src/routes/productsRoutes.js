@@ -13,7 +13,7 @@ productsRouter.get('/detail/:id', productsController.productDetail); // Segun el
 productsRouter.get('/create', productsController.addForm); // muestra el formulario ADD PRODUCT
 productsRouter.post('/create', productsController.create); // URL que contiene la info del producto creado con ADD FORM al enviar
 
-productsRouter.get('/:id/edit', productsController.productEditForm); // EDIT-FORM product edit form
+productsRouter.get('/:id/edit', productsController.productEditForm); // muestra el formulario EDIT-FORM
 productsRouter.put('/:id', productsController.productEditPut); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al editar
 productsRouter.delete('/:id', productsController.productEditDelete); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al eliminar
 
