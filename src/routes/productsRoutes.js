@@ -12,9 +12,11 @@ productsRouter.get('/detail/:id', productsController.productDetail); // Segun el
 /* PRODUCT ADD FORM */
 productsRouter.get('/create', productsController.addForm); // muestra el formulario ADD PRODUCT
 productsRouter.post('/create', productsController.create); // URL que contiene la info del producto creado con ADD FORM al enviar
+productsRouter.get('/:id/edit', productsController.editProduct); // muestra el formulario EDIT-FORM segun el ID
+productsRouter.put('/:id/edit', productsController.productEditPut); // url que va a contener la info enviada por el formulario de EDIT PRODUCT al presionar enviar
 
-productsRouter.get('/:id/edit', productsController.productEditForm); // muestra el formulario EDIT-FORM
-productsRouter.put('/:id', productsController.productEditPut); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al editar
+// productsRouter.put('/detail/:id', productsController.productEditPut);
+
 productsRouter.delete('/:id', productsController.productEditDelete); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al eliminar
 
 productsRouter.get('/crud', productsController.productCrud); // tabla de edicion de productos cuando se ingresa con perfil admin
