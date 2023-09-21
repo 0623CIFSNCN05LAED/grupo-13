@@ -4,31 +4,156 @@
     <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/product-crud.css" />
     <link rel="stylesheet" href="/css/partials/card.css" />
+    <link rel="stylesheet" href="/css/partials/normalize.css" />
+    <link rel="stylesheet" href="/css/partials/styles.css" />
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
 
     <main>
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Image</th>
-          <th>Category</th>
-          <th>Size</th>
-          <th>Price</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>lala</td>
-          <td>hola</td>
-          <td>img1</td>
-          <td>birra</td>
-          <td>1</td>
-          <td>$10</td>
-        </tr>
-      </table>
+      <h2>Administración de productos</h2>
+
+      <section>
+        <article class="btn-add-container">
+          <button class="btn-add">
+            Agregar
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </article>
+
+        <article class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Imagen</th>
+                <th>Categoria</th>
+                <th>Medida</th>
+                <th>Precio</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>lala</td>
+                <td>hola</td>
+                <td>img1</td>
+                <td>birra</td>
+                <td>1</td>
+                <td>$10</td>
+                <td>
+                  <button class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn-delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>lala</td>
+                <td>hola</td>
+                <td>img1</td>
+                <td>birra</td>
+                <td>1</td>
+                <td>$10</td>
+                <td>
+                  <button class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn-delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>lala</td>
+                <td>hola</td>
+                <td>img1</td>
+                <td>birra</td>
+                <td>1</td>
+                <td>$10</td>
+                <td>
+                  <button class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn-delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>lala</td>
+                <td>hola</td>
+                <td>img1</td>
+                <td>birra</td>
+                <td>1</td>
+                <td>$10</td>
+                <td>
+                  <button class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn-delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>lala</td>
+                <td>hola</td>
+                <td>img1</td>
+                <td>birra</td>
+                <td>1</td>
+                <td>$10</td>
+                <td>
+                  <button class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn-delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article>
+          <ul class="pagination">
+            <li>
+              <button>
+                <i class="fa-solid fa-arrow-left"></i>
+                Anterior
+              </button>
+            </li>
+            <li>1</li>
+            <li>
+              <button>
+                Siguiente
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </li>
+          </ul>
+        </article>
+      </section>
     </main>
 
     <%- include('./partials/footer.ejs') %>
