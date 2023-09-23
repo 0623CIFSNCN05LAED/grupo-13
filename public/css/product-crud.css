@@ -15,17 +15,17 @@ h2 {
 
 .table-container {
   overflow-x: auto;
+  max-width: 1024px;
 }
 
 table {
   overflow-x: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
   text-align: center;
   width: 100%;
-  max-width: 1024px;
 }
 
 tbody {
@@ -81,36 +81,31 @@ i {
   color: white;
 }
 
-.pagination {
+.pagination-container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 15px;
-  font-weight: bold;
-}
-.pagination li button {
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
+  gap: 30px;
+  font-size: var(--text-sm);
   border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10px 10px;
+  padding-right: 20px;
+}
+
+.rows-per-page-container select {
+  margin-left: 10px;
+  border: none;
   cursor: pointer;
-  font-weight: 500;
-  gap: 10px;
 }
-.pagination li:nth-child(1) button {
-  border-radius: 5px 0 0 5px;
-  background-color: var(--yellow);
+
+.pagination-btns-container button:nth-child(1) {
+  margin-right: 25px;
 }
-.pagination li:nth-child(2) {
-  padding: 4px 20px;
-  background-color: var(--yellow);
+.pagination-btns-container button {
+  border: none;
+  background-color: unset;
+}
+.pagination-btns-container button i {
+  color: var(--black);
   opacity: 0.8;
-  cursor: default;
-}
-.pagination li:nth-child(3) button {
-  border-radius: 0 5px 5px 0;
-  background-color: var(--yellow);
-}
-.pagination i {
-  color: black;
 }
