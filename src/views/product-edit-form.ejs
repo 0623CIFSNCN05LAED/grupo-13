@@ -8,7 +8,7 @@
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <form class="edit-form">
+      <form class="edit-form" action="/products/:id/edit?_method=PUT" method="POST">
         <h2 class="edit-title">Edición de productos</h2>
         <div class="edit-searchNav">
           <input
@@ -18,6 +18,7 @@
             autocapitalize="off"
             spellcheck="false"
             autocomplete="off"
+            
           />
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -26,27 +27,37 @@
           type="text"
           name="nombre del producto"
           placeholder="Nombre del producto"
+          value="<%= editId.name %>"
         />
         <input
           class="edit-input"
           type="text"
-          name="marca"
-          placeholder="Marca"
+          name="category"
+          placeholder="Categoría"
+          value="<%= editId.category %>"
         />
         <input
           class="edit-input"
           type="text"
           name="medida"
           placeholder="Medida"
+          value="<%= editId.size %>"
         />
         <input
           class="edit-input"
           type="number"
           name="precio"
           placeholder="Precio"
+          value="<%= editId.price %>"
         />
 
-        <textarea placeholder="Descripción"></textarea>
+        <input 
+          class="edit-input"
+          type="text"
+          name="description"
+          placeholder="Descripción"
+          value="<%= editId.description %>"
+        />
 
         <div class="product-picture">
           <label for="productPicture">Selecciona una imagen del producto</label>
@@ -63,7 +74,7 @@
             Agregar
           </button> -->
 
-          <button class="edit-button">Editar</button>
+          <button class="tapToRegister" type="submit">Editar</button>
           <button class="delete-button">Eliminar</button>
         </div>
       </form>

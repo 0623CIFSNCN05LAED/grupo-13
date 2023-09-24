@@ -8,30 +8,39 @@
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <form class="add-form">
+      <form class="add-form" action="/products/create" method="POST">
         <h2 class="add-title">Registro de productos</h2>
 
         <input
           class="add-input"
           type="text"
-          name="nombre del producto"
+          id="productName"
+          name="productName"
           placeholder="Nombre del producto"
         />
-        <input class="add-input" type="text" name="marca" placeholder="Marca" />
         <input
           class="add-input"
           type="text"
-          name="medida"
+          id="brand"
+          name="brand"
+          placeholder="Marca"
+        />
+        <input
+          class="add-input"
+          type="text"
+          id="size"
+          name="size"
           placeholder="Medida"
         />
         <input
           class="add-input"
           type="number"
-          name="precio"
+          id="price"
+          name="price"
           placeholder="Precio"
         />
 
-        <textarea placeholder="Descripción"></textarea>
+        <textarea name="description" placeholder="Descripción"></textarea>
 
         <div class="product-picture">
           <label for="productPicture">Selecciona una imagen del producto</label>
