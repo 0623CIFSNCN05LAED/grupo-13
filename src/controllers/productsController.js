@@ -1,23 +1,25 @@
 const productServices = require('../services/productServices');
 
 const productsController = {
-  // Product list
-  products: (req, res) => {
+  // Index de las rutas /products
+  index: (req, res) => {
     const products = productServices.getAllProducts();
     res.render('products', { products });
   },
   // Product detail
-  productDetail: (req, res) => {
-    res.render('product-detail');
+  detail: (req, res) => {
+    const id = req.params.id;
+    const product = productServices.getProductById(id);
+    res.render('product-detail', { product });
   },
-  // addForm - product add form view
+  // AddForm
   addForm: (req, res) => {
     res.render('product-add-form');
   },
   create: (req, res) => {
     const product = req.body;
     console.log(product);
-    res.redirect('products');
+    res.render('products');
   },
 
   //   const editId = allProducts[id];

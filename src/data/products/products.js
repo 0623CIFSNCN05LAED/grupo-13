@@ -10,9 +10,9 @@ module.exports = {
   findAll: function () {
     return this.getProducts();
   },
-  findById: (id) => {
-    const products = this.getProducts().find((product) => product.id == id);
-    return products;
+  findById: function (id) {
+    const product = this.getProducts().find((product) => product.id == id);
+    return product;
   },
   create: function (product) {
     console.log(`Creating product ${product.name}`);
