@@ -1,11 +1,20 @@
-const products = require('../data/products/products');
+const db = require('../data/db');
 
 const productServices = {
   getAllProducts: () => {
-    return products;
+    return db.products.findAll();
   },
   getProduct: (id) => {
-    return products.find((product) => product.id == id);
+    return db.products.findById(id);
+  },
+  createProduct: (product) => {
+    db.products.create(product);
+  },
+  updateProduct: (id, product) => {
+    db.products.update(id, product);
+  },
+  deleteProduct: (id) => {
+    db.products.delete(id);
   },
 };
 
