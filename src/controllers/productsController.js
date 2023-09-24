@@ -19,16 +19,16 @@ const productsController = {
     console.log(product);
     res.redirect('products');
   },
-  //   const allProducts = productsServices.getProducts(); // invoca el array de objetos dentro del json de productos (listado completo de productos)
-  //   const editId = allProducts[id]; // trae de todos los productos, el producto segun su ubicacion en el array
+
+  //   const editId = allProducts[id];
   //   res.render('product-edit-form', { editId: editId }); // trae la vista con el producto solicitado por el usuario mediante el id en la url
   // },
-  editProduct: (req, res) => {
+  editForm: (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProduct(id);
+    const product = productServices.getProduct(id); // trae de todos los productos, el producto segun su ubicacion en el array
     res.render('product-edit-form', { product });
   },
-  productEditPut: (req, res) => {
+  edit: (req, res) => {
     const id = req.params.id; // id que escribe el usuario por url para obtener la vista del formulario de edicion del producto con ese id
     const editedProduct = productServices.getProduct(id);
 
