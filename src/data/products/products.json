@@ -221,5 +221,23 @@
     "size": "2000",
     "price": 23,
     "image": "default-image.png"
+  },
+  {
+    "id": "4f48fddc-8a3a-4cbe-bc5d-4ea34d97fcbb",
+    "name": "Vir",
+    "description": "La birra con mas onda",
+    "category": "Rubia",
+    "size": "1000",
+    "price": 99999999,
+    "image": "default-image.png"
+  },
+  {
+    "id": "e7179fea-ce77-486c-b7f8-e17de3b4307a",
+    "name": "Marti",
+    "description": "La birra mas potente",
+    "category": "Porter",
+    "size": "1000",
+    "price": 999999,
+    "image": "default-image.png"
   }
 ]

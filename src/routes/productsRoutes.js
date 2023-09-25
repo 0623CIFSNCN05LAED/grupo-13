@@ -5,6 +5,9 @@ const productsController = require('../controllers/productsController'); // vinc
 /* PRODUCT LIST */
 productsRouter.get('/', productsController.index);
 
+/* CRUD */
+productsRouter.get('/crud', productsController.productCrud); // tabla de edicion de productos cuando se ingresa con perfil admin
+
 /* PRODUCT ADD FORM */
 productsRouter.get('/create', productsController.addForm); // muestra el formulario ADD PRODUCT
 productsRouter.post('/create', productsController.store); // URL que contiene la info del producto creado con ADD FORM al enviar
@@ -12,15 +15,13 @@ productsRouter.post('/create', productsController.store); // URL que contiene la
 /* PRODUCT DETAIL */
 productsRouter.get('/:id', productsController.detail); // Segun el ID ingresado la URL
 
-/*  */
+/* PRODUCT EDIT FORM */
 productsRouter.get('/:id/edit', productsController.editForm); // muestra el formulario EDIT-FORM segun el ID
-productsRouter.put('/:id/edit', productsController.edit); // url que va a contener la info enviada por el formulario de EDIT PRODUCT al presionar enviar
+productsRouter.put('/:id/edit', productsController.update); // url que va a contener la info enviada por el formulario de EDIT PRODUCT al presionar enviar
 
 // productsRouter.put('/detail/:id', productsController.productEditPut);
 
 productsRouter.delete('/:id', productsController.productEditDelete); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al eliminar
-
-productsRouter.get('/crud', productsController.productCrud); // tabla de edicion de productos cuando se ingresa con perfil admin
 
 productsRouter.get('/cart', productsController.productCart);
 productsRouter.get('/cart-filled', productsController.productCartFilled);
