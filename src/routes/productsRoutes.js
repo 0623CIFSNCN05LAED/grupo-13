@@ -5,12 +5,14 @@ const productsController = require('../controllers/productsController'); // vinc
 /* PRODUCT LIST */
 productsRouter.get('/', productsController.index);
 
-/* PRODUCT DETAIL */
-productsRouter.get('/:id', productsController.detail); // Segun el ID ingresado la URL
-
 /* PRODUCT ADD FORM */
 productsRouter.get('/create', productsController.addForm); // muestra el formulario ADD PRODUCT
 productsRouter.post('/create', productsController.store); // URL que contiene la info del producto creado con ADD FORM al enviar
+
+/* PRODUCT DETAIL */
+productsRouter.get('/:id', productsController.detail); // Segun el ID ingresado la URL
+
+/*  */
 productsRouter.get('/:id/edit', productsController.editForm); // muestra el formulario EDIT-FORM segun el ID
 productsRouter.put('/:id/edit', productsController.edit); // url que va a contener la info enviada por el formulario de EDIT PRODUCT al presionar enviar
 

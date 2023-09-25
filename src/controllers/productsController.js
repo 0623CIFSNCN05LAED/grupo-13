@@ -18,14 +18,17 @@ const productsController = {
   },
   // Submit add-form
   store: (req, res) => {
-    const product = req.body;
-    console.log(product);
-    res.render('products');
+    const product = {
+      name: req.body.name,
+      description: req.body.description,
+      category: req.body.category,
+      size: req.body.size,
+      price: Number(req.body.price),
+      image: 'default-image.png',
+    };
+    productServices.createProduct(product);
+    res.redirect('/products');
   },
-
-  //   const editId = allProducts[id];
-  //   res.render('product-edit-form', { editId: editId }); // trae la vista con el producto solicitado por el usuario mediante el id en la url
-  // },
   editForm: (req, res) => {
     const id = req.params.id;
     const product = productServices.getProduct(id); // trae de todos los productos, el producto segun su ubicacion en el array
