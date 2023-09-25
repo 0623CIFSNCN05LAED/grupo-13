@@ -12,11 +12,12 @@ const productsController = {
     const product = productServices.getProductById(id);
     res.render('product-detail', { product });
   },
-  // AddForm
+  // /create
   addForm: (req, res) => {
     res.render('product-add-form');
   },
-  create: (req, res) => {
+  // Submit add-form
+  store: (req, res) => {
     const product = req.body;
     console.log(product);
     res.render('products');

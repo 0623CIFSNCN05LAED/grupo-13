@@ -10,7 +10,7 @@ productsRouter.get('/:id', productsController.detail); // Segun el ID ingresado 
 
 /* PRODUCT ADD FORM */
 productsRouter.get('/create', productsController.addForm); // muestra el formulario ADD PRODUCT
-productsRouter.post('/create', productsController.create); // URL que contiene la info del producto creado con ADD FORM al enviar
+productsRouter.post('/create', productsController.store); // URL que contiene la info del producto creado con ADD FORM al enviar
 productsRouter.get('/:id/edit', productsController.editForm); // muestra el formulario EDIT-FORM segun el ID
 productsRouter.put('/:id/edit', productsController.edit); // url que va a contener la info enviada por el formulario de EDIT PRODUCT al presionar enviar
 
