@@ -172,12 +172,13 @@
   },
   {
     "id": 20,
-    "name": "Brahama",
+    "name": "Gaseosa",
     "description": "Bold and robust with notes of coffee and chocolate",
     "image": "beer20.jpg",
     "category": "IPA",
     "size": "350 cc",
-    "price": 593
+    "price": "593",
+    "productPicture": ""
   },
   {
     "id": "512ed788-4b4d-4989-964f-3632dcbf23a0",
@@ -238,6 +239,42 @@
     "category": "Porter",
     "size": "1000",
     "price": 999999,
+    "image": "default-image.png"
+  },
+  {
+    "id": "6a6ec224-5f83-4230-bb30-4c65bdbe255f",
+    "name": "asdasd",
+    "description": "lala",
+    "category": "asfsdgv",
+    "size": "23123",
+    "price": 2342,
+    "image": "default-image.png"
+  },
+  {
+    "id": "9955b8e9-4c52-416b-80cf-71ca64d55f05",
+    "name": "prueba",
+    "description": "lala",
+    "category": "askjldh",
+    "size": "321321",
+    "price": 32123,
+    "image": "default-image.png"
+  },
+  {
+    "id": "b58dc57b-9c46-471a-9e40-ae925fc513c1",
+    "name": "prueba nodemon",
+    "description": "Prueba",
+    "category": "ipa",
+    "size": "123",
+    "price": 56432,
+    "image": "default-image.png"
+  },
+  {
+    "id": "75e12870-9ab6-4bda-a402-a00f8985289d",
+    "name": "prueba2",
+    "description": "prueba",
+    "category": "prueba",
+    "size": "123",
+    "price": 321,
     "image": "default-image.png"
   }
 ]

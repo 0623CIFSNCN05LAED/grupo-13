@@ -31,6 +31,11 @@ module.exports = {
   },
   update: function (id, product) {
     console.log(`Updating product ${product.name}`);
+    const products = this.getProducts();
+    const productToEdit = products.find((product) => product.id == id);
+    Object.assign(productToEdit, product);
+    console.log('productToEdit', productToEdit);
+    this.saveProducts(products);
     return product;
   },
   delete: function (id) {
