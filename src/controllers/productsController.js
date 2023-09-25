@@ -27,7 +27,7 @@ const productsController = {
       image: 'default-image.png',
     };
     productServices.createProduct(product);
-    res.redirect('/crud');
+    res.redirect('crud');
   },
   editForm: (req, res) => {
     const id = req.params.id;
@@ -35,18 +35,10 @@ const productsController = {
     res.render('product-edit-form', { product });
   },
   update: (req, res) => {
-    const id = req.params.id; // id que escribe el usuario por url para obtener la vista del formulario de edicion del producto con ese id
-    const product = productServices.getProduct(id);
-
-    // // const beer = req.body;
-    // if (editedProduct) {
-    //   // Si se encontró un producto con el ID dado, lo enviamos en la respuesta.
-    //   console.log(editedProduct);
-    //   res.send(editedProduct);
-    // } else {
-    //   // Si no se encontró un producto con el ID dado, puedes enviar una respuesta de error.
-    //   res.status(404).send('Producto no encontrado');
-    // }
+    const product = req.body;
+    const id = req.params.id;
+    productServices.updateProduct(id, product);
+    res.redirect('crud');
   },
   productEditDelete: (req, res) => {
     let productDelete = req.params.productDelete;
