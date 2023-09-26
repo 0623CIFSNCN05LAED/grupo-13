@@ -2,19 +2,20 @@
 <html lang="es">
   <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/product-edit-form.css" />
+    <link rel="stylesheet" href="/css/form-styles.css" />
   </head>
 
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
       <form
-        class="edit-form"
+        class="form"
         action="/products/<%= product.id %>/edit?_method=PUT"
-        method="POST" enctype="multipart/form-data"
+        method="POST"
+        enctype="multipart/form-data"
       >
-        <h2 class="edit-title">Edición de productos</h2>
-        <div class="edit-searchNav">
+        <h2 class="title">Edición de productos</h2>
+        <div class="searchNav">
           <input
             type="text"
             placeholder="Buscar productos, marcas y más…"
@@ -27,28 +28,28 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="name"
           placeholder="Nombre del producto"
           value="<%= product.name %>"
         />
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="category"
           placeholder="Categoría"
           value="<%= product.category %>"
         />
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="size"
           placeholder="Medida"
           value="<%= product.size %>"
         />
         <input
-          class="edit-input"
+          class="input"
           type="number"
           name="price"
           placeholder="Precio"
@@ -56,14 +57,14 @@
         />
 
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="description"
           placeholder="Descripción"
           value="<%= product.description %>"
         />
 
-        <div class="product-picture">
+        <div class="picture">
           <label for="productPicture">Selecciona una imagen del producto</label>
           <input
             type="file"
@@ -73,12 +74,8 @@
           />
         </div>
 
-        <div class="edit-buttons-container">
-          <!-- <button class="add-button">
-            Agregar
-          </button> -->
-
-          <button class="btn-yellow" type="submit">Editar</button>
+        <div class="buttons-container">
+          <button class="button" type="submit">Editar</button>
         </div>
       </form>
     </main>
