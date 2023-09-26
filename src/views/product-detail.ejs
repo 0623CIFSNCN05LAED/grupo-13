@@ -21,18 +21,15 @@
 
       <section class="card-container">
         <article class="img-container">
-          <img src="/images/cervezaoK.png" alt="" />
+          <img src="/images/<%= product.image %>" alt="" />
         </article>
         <article class="card-description-container">
           <div class="card-title">
-            <h2>Cerveza</h2>
-            <span>$5.000</span>
+            <h2><%= product.name %></h2>
+            <span>$<%= product.price %></span>
           </div>
           <div class="card-description">
-            <p>
-              La Corona es una cerveza de tipo Lager Pilsner, clara y brillante,
-              de espuma blanca y consistente.
-            </p>
+            <p><%= product.description %></p>
           </div>
 
           <div class="btns-container">
