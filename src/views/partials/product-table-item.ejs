@@ -1,0 +1,30 @@
+<tbody>
+  <tr>
+    <td><%= product.id %></td>
+    <td><%= product.name %></td>
+    <td><%= product.category %></td>
+    <td><%= product.size %></td>
+    <td><%= product.price %></td>
+    <td>
+      <a href="/products/<%= product.id %>">
+        <button class="btn-view">
+          <i class="fa-solid fa-eye"></i>
+        </button>
+      </a>
+    </td>
+    <td>
+      <a href="/products/<%= product.id %>/edit">
+        <button class="btn-edit">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </a>
+    </td>
+    <td>
+      <a href="/products/<%= product.id %>/delete">
+        <button class="btn-delete">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </a>
+    </td>
+  </tr>
+</tbody>
