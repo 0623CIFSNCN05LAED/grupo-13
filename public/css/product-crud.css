@@ -108,6 +108,10 @@ button {
   color: white;
 }
 
+.btn-view {
+  background-color: rgba(35, 49, 128, 0.7);
+}
+
 .btn-edit {
   background-color: rgba(82, 82, 82, 0.7);
 }

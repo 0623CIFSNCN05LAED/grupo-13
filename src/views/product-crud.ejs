@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/partials/normalize.css" />
     <link rel="stylesheet" href="/css/partials/styles.css" />
   </head>
+
   <body>
     <%- include('./partials/header.ejs') %>
 
@@ -67,112 +68,16 @@
                 <tr>
                   <th>ID</th>
                   <th>Nombre</th>
-                  <th>Descripcion</th>
-                  <th>Imagen</th>
                   <th>Categoria</th>
                   <th>Medida</th>
                   <th>Precio</th>
                   <th></th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>lala</td>
-                  <td>hola</td>
-                  <td>img1</td>
-                  <td>birra</td>
-                  <td>1</td>
-                  <td>$10</td>
-                  <td>
-                    <button class="btn-edit">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="btn-delete">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>lala</td>
-                  <td>hola</td>
-                  <td>img1</td>
-                  <td>birra</td>
-                  <td>1</td>
-                  <td>$10</td>
-                  <td>
-                    <button class="btn-edit">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="btn-delete">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>lala</td>
-                  <td>hola</td>
-                  <td>img1</td>
-                  <td>birra</td>
-                  <td>1</td>
-                  <td>$10</td>
-                  <td>
-                    <button class="btn-edit">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="btn-delete">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>lala</td>
-                  <td>hola</td>
-                  <td>img1</td>
-                  <td>birra</td>
-                  <td>1</td>
-                  <td>$10</td>
-                  <td>
-                    <button class="btn-edit">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="btn-delete">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>lala</td>
-                  <td>hola</td>
-                  <td>img1</td>
-                  <td>birra</td>
-                  <td>1</td>
-                  <td>$10</td>
-                  <td>
-                    <button class="btn-edit">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <button class="btn-delete">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
+              <% products.slice(0, 5).forEach(product => { %> <%-
+              include('partials/product-table-item', {product}) %> <% }) %>
             </table>
           </article>
 
