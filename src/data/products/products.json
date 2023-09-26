@@ -172,7 +172,7 @@
   },
   {
     "id": 20,
-    "name": "Gaseosa",
+    "name": "Brahama",
     "description": "Bold and robust with notes of coffee and chocolate",
     "image": "beer20.jpg",
     "category": "IPA",
@@ -184,8 +184,11 @@
     "id": "512ed788-4b4d-4989-964f-3632dcbf23a0",
     "description": "Meme",
     "size": "100ml",
-    "price": 2023,
-    "image": "default-image.png"
+    "price": "2023",
+    "image": "default-image.png",
+    "name": "",
+    "category": "",
+    "productPicture": ""
   },
   {
     "id": "241c6ae6-be45-4a81-a15f-d57fdd31d6f8",
@@ -256,8 +259,9 @@
     "description": "lala",
     "category": "askjldh",
     "size": "321321",
-    "price": 32123,
-    "image": "default-image.png"
+    "price": "32123",
+    "image": "default-image.png",
+    "productPicture": ""
   },
   {
     "id": "b58dc57b-9c46-471a-9e40-ae925fc513c1",

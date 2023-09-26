@@ -21,7 +21,7 @@ productsRouter.put('/:id/edit', productsController.update); // url que va a cont
 
 // productsRouter.put('/detail/:id', productsController.productEditPut);
 
-productsRouter.delete('/:id', productsController.productEditDelete); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al eliminar
+productsRouter.delete('/:id', productsController.destroy); // EDIT-FORM url que contiene la info enviada por el formulario de edit product al eliminar
 
 productsRouter.get('/cart', productsController.productCart);
 productsRouter.get('/cart-filled', productsController.productCartFilled);

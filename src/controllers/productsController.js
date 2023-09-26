@@ -38,11 +38,12 @@ const productsController = {
     const product = req.body;
     const id = req.params.id;
     productServices.updateProduct(id, product);
-    res.redirect('crud');
+    res.redirect('/products/crud');
   },
-  productEditDelete: (req, res) => {
-    let productDelete = req.params.productDelete;
-    res.send(productDelete);
+  destroy: (req, res) => {
+    const id = req.params.id;
+    productServices.deleteProduct(id, product);
+    res.redirect('/product/crud');
   },
   productCrud: (req, res) => {
     res.render('product-crud');
