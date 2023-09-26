@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Tres Cordilleras",
     "description": "Crisp and refreshing with hints of citrus",
-    "image": "beer1.jpg",
+    "image": "default-image.png",
     "category": "Porter",
     "size": "350 cc",
     "price": 2237
@@ -12,7 +12,7 @@
     "id": 2,
     "name": "Budweiser",
     "description": "Rich and malty with a smooth finish",
-    "image": "beer2.jpg",
+    "image": "default-image.png",
     "category": "Brown Ale",
     "size": "1500 cc",
     "price": 1489
@@ -21,7 +21,7 @@
     "id": 3,
     "name": "Heineken",
     "description": "Hoppy and aromatic with a piney undertone",
-    "image": "beer3.jpg",
+    "image": "default-image.png",
     "category": "Porter",
     "size": "1500 cc",
     "price": 1446
@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Pilsen",
     "description": "Light-bodied with a subtle sweetness",
-    "image": "beer4.jpg",
+    "image": "default-image.png",
     "category": "Porter",
     "size": "350 cc",
     "price": 2573
@@ -39,7 +39,7 @@
     "id": 5,
     "name": "Patagonia",
     "description": "Bold and robust with notes of coffee and chocolate",
-    "image": "beer5.jpg",
+    "image": "default-image.png",
     "category": "Stout",
     "size": "350 cc",
     "price": 2267
@@ -48,7 +48,7 @@
     "id": 6,
     "name": "Corona",
     "description": "Crisp and refreshing with hints of citrus",
-    "image": "beer6.jpg",
+    "image": "default-image.png",
     "category": "IPA",
     "size": "1000 cc",
     "price": 631
@@ -57,7 +57,7 @@
     "id": 7,
     "name": "Stella Artois",
     "description": "Rich and malty with a smooth finish",
-    "image": "beer7.jpg",
+    "image": "default-image.png",
     "category": "Lager",
     "size": "1000 cc",
     "price": 2151
@@ -66,7 +66,7 @@
     "id": 8,
     "name": "Quilmes",
     "description": "Hoppy and aromatic with a piney undertone",
-    "image": "beer8.jpg",
+    "image": "default-image.png",
     "category": "Lager",
     "size": "1500 cc",
     "price": 603
@@ -75,7 +75,7 @@
     "id": 9,
     "name": "Miller",
     "description": "Light-bodied with a subtle sweetness",
-    "image": "beer9.jpg",
+    "image": "default-image.png",
     "category": "Brown Ale",
     "size": "1000 cc",
     "price": 598
@@ -84,7 +84,7 @@
     "id": 10,
     "name": "Brahama",
     "description": "Bold and robust with notes of coffee and chocolate",
-    "image": "beer10.jpg",
+    "image": "default-image.png",
     "category": "Porter",
     "size": "500 cc",
     "price": 1775
@@ -93,7 +93,7 @@
     "id": 11,
     "name": "Tres Cordilleras",
     "description": "Crisp and refreshing with hints of citrus",
-    "image": "beer11.jpg",
+    "image": "default-image.png",
     "category": "Pilsner",
     "size": "500 cc",
     "price": 1854
@@ -102,7 +102,7 @@
     "id": 12,
     "name": "Budweiser",
     "description": "Rich and malty with a smooth finish",
-    "image": "beer12.jpg",
+    "image": "default-image.png",
     "category": "Sour",
     "size": "1000 cc",
     "price": 1511
@@ -111,7 +111,7 @@
     "id": 13,
     "name": "Heineken",
     "description": "Hoppy and aromatic with a piney undertone",
-    "image": "beer13.jpg",
+    "image": "default-image.png",
     "category": "Brown Ale",
     "size": "1000 cc",
     "price": 2347
@@ -120,7 +120,7 @@
     "id": 14,
     "name": "Pilsen",
     "description": "Light-bodied with a subtle sweetness",
-    "image": "beer14.jpg",
+    "image": "default-image.png",
     "category": "IPA",
     "size": "500 cc",
     "price": 2081
@@ -129,7 +129,7 @@
     "id": 15,
     "name": "Patagonia",
     "description": "Bold and robust with notes of coffee and chocolate",
-    "image": "beer15.jpg",
+    "image": "default-image.png",
     "category": "Porter",
     "size": "350 cc",
     "price": 1207
@@ -138,7 +138,7 @@
     "id": 16,
     "name": "Corona",
     "description": "Crisp and refreshing with hints of citrus",
-    "image": "beer16.jpg",
+    "image": "default-image.png",
     "category": "Pale Ale",
     "size": "350 cc",
     "price": 1607
@@ -147,7 +147,7 @@
     "id": 17,
     "name": "Stella Artois",
     "description": "Rich and malty with a smooth finish",
-    "image": "beer17.jpg",
+    "image": "default-image.png",
     "category": "Pilsner",
     "size": "500 cc",
     "price": 709
@@ -156,7 +156,7 @@
     "id": 18,
     "name": "Quilmes",
     "description": "Hoppy and aromatic with a piney undertone",
-    "image": "beer18.jpg",
+    "image": "default-image.png",
     "category": "Porter",
     "size": "500 cc",
     "price": 523
@@ -165,7 +165,7 @@
     "id": 19,
     "name": "Miller",
     "description": "Light-bodied with a subtle sweetness",
-    "image": "beer19.jpg",
+    "image": "default-image.png",
     "category": "Brown Ale",
     "size": "500 cc",
     "price": 1273
@@ -174,10 +174,10 @@
     "id": 20,
     "name": "Brahama",
     "description": "Bold and robust with notes of coffee and chocolate",
-    "image": "beer20.jpg",
+    "image": "default-image.png",
     "category": "IPA",
     "size": "350 cc",
-    "price": "593",
-    "productPicture": ""
+    "price": "593"
+    
   }
 ]

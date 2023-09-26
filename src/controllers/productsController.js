@@ -30,7 +30,7 @@ const productsController = {
       category: req.body.category,
       size: req.body.size,
       price: Number(req.body.price),
-      image: 'default-image.png',
+      image: req.file ? req.file.filename : productPicture,
     };
     productServices.createProduct(product);
     res.redirect('crud');
