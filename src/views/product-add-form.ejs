@@ -2,38 +2,43 @@
 <html lang="es">
   <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/product-add-form.css" />
+    <link rel="stylesheet" href="/css/form-styles.css" />
   </head>
 
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <form class="add-form" action="/products/create" method="POST" enctype="multipart/form-data">
-        <h2 class="add-title">Registro de productos</h2>
+      <form
+        class="form"
+        action="/products/create"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <h2 class="title">Registro de productos</h2>
 
         <input
-          class="add-input"
+          class="input"
           type="text"
           id="name"
           name="name"
           placeholder="Nombre del producto"
         />
         <input
-          class="add-input"
+          class="input"
           type="text"
           id="category"
           name="category"
           placeholder="Categoría"
         />
         <input
-          class="add-input"
+          class="input"
           type="text"
           id="size"
           name="size"
           placeholder="Medida"
         />
         <input
-          class="add-input"
+          class="input"
           type="number"
           id="price"
           name="price"
@@ -42,7 +47,7 @@
 
         <textarea name="description" placeholder="Descripción"></textarea>
 
-        <div class="product-picture">
+        <div class="picture">
           <label for="productPicture">Selecciona una imagen del producto</label>
           <input
             type="file"
@@ -52,8 +57,8 @@
           />
         </div>
 
-        <div class="add-buttons-container">
-          <button class="add-button">Agregar</button>
+        <div class="buttons-container">
+          <button class="button">Agregar</button>
         </div>
       </form>
     </main>

@@ -2,19 +2,19 @@
 <html lang="es">
   <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/product-edit-form.css" />
+    <link rel="stylesheet" href="/css/form-styles.css" />
   </head>
 
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
       <form
-        class="edit-form"
+        class="form"
         action="/products/<%= product.id %>/delete?_method=delete"
         method="POST"
       >
-        <h2 class="edit-title">Eliminar productos</h2>
-        <div class="edit-searchNav">
+        <h2 class="title">Eliminar productos</h2>
+        <div class="searchNav">
           <input
             type="text"
             placeholder="Buscar productos, marcas y más…"
@@ -27,28 +27,28 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="name"
           placeholder="Nombre del producto"
           value="<%= product.name %>"
         />
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="category"
           placeholder="Categoría"
           value="<%= product.category %>"
         />
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="size"
           placeholder="Medida"
           value="<%= product.size %>"
         />
         <input
-          class="edit-input"
+          class="input"
           type="number"
           name="price"
           placeholder="Precio"
@@ -56,21 +56,15 @@
         />
 
         <input
-          class="edit-input"
+          class="input"
           type="text"
           name="description"
           placeholder="Descripción"
           value="<%= product.description %>"
         />
 
-        <div class="edit-buttons-container">
-          <button
-            class="btn-yellow"
-            style="background-color: red"
-            type="submit"
-          >
-            Borrar
-          </button>
+        <div class="buttons-container">
+          <button class="delete-button" type="submit">Borrar</button>
         </div>
       </form>
     </main>
