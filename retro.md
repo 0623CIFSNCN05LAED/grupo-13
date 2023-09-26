@@ -84,3 +84,38 @@ Aquí detallamos lo expuesto en el jam:
 
    - No quedarse con dudas: que produzcan un retraso en el desarrollo de una tarea asignada.
    - No dejar flujos importantes sin verificar: en días previos a la entrega.
+
+# Retrospectiva SPRINT Nº4:
+
+Jamboard, Starfish retrospective (página 3):https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?ts=64e9256f&f=2
+
+Aquí detallamos lo expuesto en el jam:
+
+1. Comenzar a hacer:
+
+   - Hacer un repaso general del proyecto pre-entrega
+   - Depurar ramas que ya no se usan luego del merge
+
+2. Hacer más:
+
+   - Mantener el tablero de tareas actualizado para visualizar el progreso del trabajo.
+   - Crear nuevas ramas para tareas más específicas
+   - Confirmar asistencia a las reuniones
+
+3. Continuar haciendo:
+
+   - Reunión one-on-one: grupales por issues particulares
+   - Celebrar los logros y éxitos del equipo.
+   - Mantener una comunicación abierta y transparente entre los miembros del equipo.
+   - Reunión weekly para ver nuestro progreso: fija los martes 19:30 hs (ARG) y 17:30 hs (COL)
+   - Compartir buenas prácticas (documentación, tips, enlaces) y generar hilos sobre consultas particulares mediante #threads en Discord
+   - Actualizar hilos con información mediante #Threads en Discord
+
+4. Hacer menos:
+
+   - Dejar de trabajar en la rama main - excepto merges
+
+5. Dejar de hacer:
+
+   - Disminuir el uso de VS code live share (para evitar errores).
+   - No avisar la ausencia a una reunión
