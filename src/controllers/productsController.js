@@ -1,21 +1,26 @@
-const productServices = require('../services/productServices')
+const productServices = require('../services/productServices');
 
 const productsController = {
   // Index de las rutas /products
   index: (req, res) => {
-    const products = productServices.getAllProducts()
-    res.render('products', { products })
+    const products = productServices.getAllProducts();
+    res.render('products', { products });
   },
   // Product detail
   detail: (req, res) => {
-    const id = req.params.id
-    const product = productServices.getProductById(id)
+    const id = req.params.id;
+    const product = productServices.getProductById(id);
 
-    res.render('product-detail', { product })
+    res.render('product-detail', { product });
   },
   // /create
   addForm: (req, res) => {
-    res.render('product-add-form')
+    res.render('product-add-form');
+  },
+  deleteForm: (req, res) => {
+    const id = req.params.id;
+    const product = productServices.getProduct(id); // trae de todos los productos, el producto segun su ubicacion en el array
+    res.render('product-delete-form', { product });
   },
   // Submit add-form
   store: (req, res) => {
@@ -26,14 +31,14 @@ const productsController = {
       size: req.body.size,
       price: Number(req.body.price),
       image: 'default-image.png',
-    }
-    productServices.createProduct(product)
-    res.redirect('crud')
+    };
+    productServices.createProduct(product);
+    res.redirect('crud');
   },
   editForm: (req, res) => {
-    const id = req.params.id
-    const product = productServices.getProduct(id) // trae de todos los productos, el producto segun su ubicacion en el array
-    res.render('product-edit-form', { product })
+    const id = req.params.id;
+    const product = productServices.getProduct(id); // trae de todos los productos, el producto segun su ubicacion en el array
+    res.render('product-edit-form', { product });
   },
   update: (req, res) => {
     const product = req.body;
@@ -43,22 +48,22 @@ const productsController = {
   },
   destroy: (req, res) => {
     const id = req.params.id;
-    productServices.deleteProduct(id, product);
-    res.redirect('/product/crud');
+    productServices.deleteProduct(id);
+    res.redirect('/products/crud');
   },
   productCrud: (req, res) => {
-    const products = productServices.getAllProducts()
-    res.render('product-crud', { products })
+    const products = productServices.getAllProducts();
+    res.render('product-crud', { products });
   },
   productCart: (req, res) => {
-    res.render('product-cart')
+    res.render('product-cart');
   },
   productCartFilled: (req, res) => {
-    res.render('product-cart-filled')
+    res.render('product-cart-filled');
   },
   productForm: (req, res) => {
-    res.render('product-form')
+    res.render('product-form');
   },
-}
+};
 
-module.exports = productsController
+module.exports = productsController;
