@@ -10,10 +10,10 @@
     <main>
       <form
         class="edit-form"
-        action="/products/<%= product.id %>/edit?_method=PUT"
+        action="/products/<%= product.id %>/delete?_method=delete"
         method="POST"
       >
-        <h2 class="edit-title">Edición de productos</h2>
+        <h2 class="edit-title">Eliminar productos</h2>
         <div class="edit-searchNav">
           <input
             type="text"
@@ -63,22 +63,14 @@
           value="<%= product.description %>"
         />
 
-        <div class="product-picture">
-          <label for="productPicture">Selecciona una imagen del producto</label>
-          <input
-            type="file"
-            id="productPicture"
-            name="productPicture"
-            accept=".jpg"
-          />
-        </div>
-
         <div class="edit-buttons-container">
-          <!-- <button class="add-button">
-            Agregar
-          </button> -->
-
-          <button class="btn-yellow" type="submit">Editar</button>
+          <button
+            class="btn-yellow"
+            style="background-color: red"
+            type="submit"
+          >
+            Borrar
+          </button>
         </div>
       </form>
     </main>
