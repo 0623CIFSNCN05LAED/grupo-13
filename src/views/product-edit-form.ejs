@@ -8,7 +8,11 @@
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <form class="edit-form" action="/products/<%= product.id %>/edit?_method=PUT" method="POST">
+      <form
+        class="edit-form"
+        action="/products/<%= product.id %>/edit?_method=PUT"
+        method="POST"
+      >
         <h2 class="edit-title">Edición de productos</h2>
         <div class="edit-searchNav">
           <input
@@ -27,7 +31,8 @@
           type="text"
           name="name"
           placeholder="Nombre del producto"
-          value="<%= product.name %>"/>
+          value="<%= product.name %>"
+        />
         <input
           class="edit-input"
           type="text"
@@ -50,7 +55,7 @@
           value="<%= product.price %>"
         />
 
-        <input 
+        <input
           class="edit-input"
           type="text"
           name="description"
@@ -74,7 +79,7 @@
           </button> -->
 
           <button class="tapToRegister" type="submit">Editar</button>
-          <button class="delete-button">Eliminar</button>
+          <button class="delete-button" type="destroy">Eliminar</button>
         </div>
       </form>
     </main>

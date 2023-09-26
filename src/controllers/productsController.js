@@ -36,14 +36,15 @@ const productsController = {
     res.render('product-edit-form', { product })
   },
   update: (req, res) => {
-    const product = req.body
-    const id = req.params.id
-    productServices.updateProduct(id, product)
-    res.redirect('crud')
+    const product = req.body;
+    const id = req.params.id;
+    productServices.updateProduct(id, product);
+    res.redirect('/products/crud');
   },
-  productEditDelete: (req, res) => {
-    let productDelete = req.params.productDelete
-    res.send(productDelete)
+  destroy: (req, res) => {
+    const id = req.params.id;
+    productServices.deleteProduct(id, product);
+    res.redirect('/product/crud');
   },
   productCrud: (req, res) => {
     const products = productServices.getAllProducts()
