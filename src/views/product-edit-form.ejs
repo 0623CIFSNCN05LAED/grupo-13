@@ -11,7 +11,7 @@
       <form
         class="edit-form"
         action="/products/<%= product.id %>/edit?_method=PUT"
-        method="POST"
+        method="POST" enctype="multipart/form-data"
       >
         <h2 class="edit-title">Edición de productos</h2>
         <div class="edit-searchNav">
