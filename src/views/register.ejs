@@ -4,9 +4,9 @@
     <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/register.css" />
   </head>
-  
+
   <body>
-    <%- include('./partials/header.ejs') %> 
+    <%- include('./partials/header.ejs') %>
     <main>
       <!-- Logo -->
       <div class="logo-register">
@@ -25,50 +25,67 @@
           </div>
         </section>
 
-        <form class="registerForm" action="/" method="get">
-
+        <form class="registerForm" action="/users/register" method="POST">
           <p class="datosPersonalesR">Datos personales</p>
-          <label for="nombre"></label>
+          <label for="firstName"></label>
           <input
-            type="name"
-            name="name"
-            id="name"
+            type="text"
+            name="firstName"
+            id="firstName"
             placeholder="Nombre"
-            autocomplete="name"
           />
-          <label for="apellido"></label>
+          <label for="lastName"></label>
           <input
-            type="name"
-            name="name"
-            id="name"
+            type="text"
+            name="lastName"
+            id="lastName"
             placeholder="Apellido"
-            autocomplete="name"
           />
-          <label for="e-mail"></label>
+          <label for="email"></label>
           <input
             type="email"
-            name="e-mail"
-            id="e-mail"
+            name="email"
+            id="email"
             placeholder="Correo electrónico"
-            autocomplete="email"
           />
-          <label for="contraseña"></label>
+          <label for="password"></label>
           <input
             type="password"
-            name="contraseña"
-            id="contraseña"
+            name="password"
+            id="password"
             placeholder="Ingresar contraseña"
-            autocomplete="current-password"
           />
-          <label class="news">
-            <input class="news" type="checkbox" name="opcion" value="news">
-              Quiero recibir ofertas destacadas por e-mail
-            </label>
+          <label for="contactNumber"></label>
+          <input
+            type="number"
+            name="contactNumber"
+            id="contactNumber"
+            placeholder="Número de contacto"
+          />
+          <label for="birthdate"></label>
+          <input
+            type="date"
+            name="birthdate"
+            id="birthdate"
+            placeholder="Ingresar fecha de nacimiento"
+          />
+          <label for="address"></label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            placeholder="Ingresar domicilio"
+          />
+          <!-- <label class="news">
+            <input class="news" type="checkbox" name="opcion" value="news" />
+            Quiero recibir ofertas destacadas por e-mail
+          </label> -->
           <button type="submit">Registrate</button>
-          <p class="registerLogin"><a href="login.html">¿Ya tenés cuenta? Ingresa</a></p>
-          
+          <p class="registerLogin">
+            <a href="login.html">¿Ya tenés cuenta? Ingresa</a>
+          </p>
         </form>
-      </div>  
+      </div>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>
@@ -109,4 +126,3 @@
           </div>
          
           -->
-
