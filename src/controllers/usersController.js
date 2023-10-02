@@ -17,10 +17,9 @@ const usersController = {
       contactNumber: Number(req.body.contactNumber),
       birthDate: req.body.birthDate,
       address: req.body.address,
-      //image: req.file ? req.file.filename : userPicture,
+      image: req.file ? req.file.filename : userPicture,
     };
     userServices.createUser(user);
-    console.log(req.body);
     res.redirect('register');
   },
   myProfile: (req, res) => {
