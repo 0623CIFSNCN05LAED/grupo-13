@@ -41,7 +41,8 @@ module.exports = {
   delete: function (id) {
     console.log(`Deleting product with id ${id}`);
     const products = this.getProducts();
-    const nonDeletedProducts = products.filter((product) => product.id !== id);
+    const nonDeletedProducts = products.filter((product) => product.id != id);
+    console.log(nonDeletedProducts);
     this.saveProducts(nonDeletedProducts);
   },
 };

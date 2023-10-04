@@ -7,6 +7,11 @@ const usersController = {
   registerForm: (req, res) => {
     res.render('register');
   },
+  deleteForm: (req, res) => {
+    const id = req.params.id;
+    const user = userServices.getUser(id);
+    res.render('users-delete-form', { user });
+  },
   register: (req, res) => {
     const user = {
       firstName: req.body.firstName,
@@ -34,12 +39,20 @@ const usersController = {
     const user = userServices.getUser(id);
     res.render('myProfileEdit', { user });
   },
+
   update: (req, res) => {
     const user = req.body;
     const id = req.params.id;
     userServices.updateUser(id, user);
     res.redirect('/users/:id');
   },
+
+  destroy: (req, res) => {
+    const id = req.params.id;
+    userServices.deleteUser(id);
+    res.redirect('/users/crud');
+  },
+
   myProfileAdmin: (req, res) => {
     return res.render('myProfileAdmin');
   },
