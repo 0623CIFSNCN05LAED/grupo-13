@@ -15,6 +15,10 @@ module.exports = {
   findAll: function () {
     return this.getUsers();
   },
+  findById: function (id) {
+    const user = this.getUsers().find((user) => user.id == id);
+    return user;
+  },
   create: function (user) {
     console.log(`Creating user ${user.email}`);
     const users = this.getUsers();
@@ -24,5 +28,13 @@ module.exports = {
     };
     users.push(newUser);
     this.saveUsers(users);
+  },
+  update: function (id, user) {
+    console.log(`Updating user ${user.email}`);
+    const users = this.getUsers();
+    const userToEdit = users.find((user) => user.id == id);
+    Object.assign(userToEdit, user);
+    this.saveUsers(users);
+    return user;
   },
 };
