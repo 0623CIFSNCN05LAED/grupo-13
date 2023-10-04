@@ -32,7 +32,31 @@
               </form>
             </article>
 
-        <section class="table-container">
+            <article class="pl-container-selects">
+              <form action="/marca" method="POST" class="pl-form-brand">
+                <select>
+                </select>
+              </form>
+
+                            <form action="/medida" method="POST" class="pl-form-size">
+                <select>
+                  <option></option>
+
+                </select>
+              </form>
+            </article>
+          </section>
+
+
+          <article class="btn-add-container">
+            <button class="btn-add">
+              <a href="/products/create" style="color: black;">Agregar</a>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </article>
+        </div>
+
+        <section class="">
           <article>
             <table>
               <thead>
@@ -48,6 +72,8 @@
                     <th>Dirección</th>
                 </tr>
               </thead>
+              <% users.slice(0, 40).forEach(user => { %> <%-
+              include('partials/user-table-item', {user}) %> <% }) %>
             </table>
           </article>
 
@@ -73,8 +99,5 @@
             </div>
           </article>
         </section>
-      </section>  
+      </section>
     </main>
-    <%- include('./partials/footer.ejs') %>
-  </body>
-</html>

@@ -25,6 +25,10 @@ const usersController = {
   myProfile: (req, res) => {
     return res.render('myProfile');
   },
+  crud: (req, res) => {
+    const users = userServices.getAllUsers();
+    res.render('users-crud', { users });
+  },
   myProfileEdit: (req, res) => {
     const id = req.params.id;
     const user = userServices.getUser(id);
