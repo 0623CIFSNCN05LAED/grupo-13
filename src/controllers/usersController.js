@@ -25,6 +25,17 @@ const usersController = {
   myProfile: (req, res) => {
     return res.render('myProfile');
   },
+  myProfileEdit: (req, res) => {
+    const id = req.params.id;
+    const user = userServices.getUser(id);
+    res.render('myProfileEdit', { user });
+  },
+  update: (req, res) => {
+    const user = req.body;
+    const id = req.params.id;
+    userServices.updateUser(id, user);
+    res.redirect('/users/:id');
+  },
   myProfileAdmin: (req, res) => {
     return res.render('myProfileAdmin');
   },
