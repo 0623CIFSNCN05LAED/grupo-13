@@ -37,4 +37,10 @@ module.exports = {
     this.saveUsers(users);
     return user;
   },
+  delete: function (id) {
+    console.log(`Deleting user ${id}`);
+    const users = this.getUsers();
+    const nonDeletedUsers = users.filter((user) => user.id != id);
+    this.saveUsers(nonDeletedUsers);
+  },
 };

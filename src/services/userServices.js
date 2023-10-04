@@ -17,6 +17,9 @@ const userServices = {
   updateUser: (id, user) => {
     db.users.update(id, user);
   },
+  deleteUser: (id) => {
+    db.users.delete(id);
+  },
 };
 
 module.exports = userServices;

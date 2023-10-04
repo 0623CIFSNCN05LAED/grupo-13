@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/form-styles.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <form
+        class="form"
+        action="/users/<%= user.id %>/delete?_method=delete"
+        method="POST"
+      >
+        <h2 class="title">Eliminar usuarios</h2>
+        <div class="searchNav">
+          <input
+            type="text"
+            placeholder="Buscar productos, marcas y más…"
+            maxlength="120"
+            autocapitalize="off"
+            spellcheck="false"
+            autocomplete="off"
+            value="<%= user.id %>"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input
+          class="input"
+          type="text"
+          name="firstName"
+          placeholder="Nombre del usuario"
+          value="<%= user.firstName %>"
+        />
+        <input
+          class="input"
+          type="text"
+          name="lastName"
+          placeholder="Apellido del usuario"
+          value="<%= user.lastName %>"
+        />
+        <input
+          class="input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          value="<%= user.email %>"
+        />
+
+        <input
+          class="input"
+          type="accessType"
+          name="accessType"
+          placeholder="accessType"
+          value="<%= user.accessType %>"
+        />
+
+        <input
+          class="input"
+          type="text"
+          name="contactNumber"
+          placeholder="Número de contacto"
+          value="<%= user.contactNumber %>"
+        />
+        <input
+          class="input"
+          type="text"
+          name="birthDate"
+          placeholder="Fecha de cumpleaños"
+          value="<%= user.birthDate %>"
+        />
+        <input
+          class="input"
+          type="text"
+          name="address"
+          placeholder="Dirección"
+          value="<%= user.address %>"
+        />
+        <div class="buttons-container">
+          <button class="delete-button" type="submit">Borrar</button>
+        </div>
+      </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
