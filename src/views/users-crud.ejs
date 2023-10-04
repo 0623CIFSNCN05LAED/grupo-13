@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('./partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/product-crud.css" />
+    <link rel="stylesheet" href="/css/partials/normalize.css" />
+    <link rel="stylesheet" href="/css/partials/styles.css" />
+    <title>Edit My Profile</title>
+    
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <h2>Administración de usuarios</h2>
+
+        <section>
+        <div class="head-table-container">
+          <section class="pl-filters">
+            <article class="searchbar">
+              <form action="/" method="POST">
+                <input
+                  type="text"
+                  name="search"
+                  placeholder="Buscar usuario"
+                />
+
+                <button type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </article>
+
+            <article class="pl-container-selects">
+              <form action="/marca" method="POST" class="pl-form-brand">
+                <select>
+                </select>
+              </form>
+
+                            <form action="/medida" method="POST" class="pl-form-size">
+                <select>
+                  <option></option>
+
+                </select>
+              </form>
+            </article>
+          </section>
+
+
+          <article class="btn-add-container">
+            <button class="btn-add">
+              <a href="/products/create" style="color: black;">Agregar</a>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </article>
+        </div>
+
+        <section class="">
+          <article>
+            <table>
+              <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>E-mail</th>
+                    <th>Tipo de acceso</th>
+                    <th>Foto de perfil</th>
+                    <th>Teléfono</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Dirección</th>
+                </tr>
+              </thead>
+              <% users.slice(0, 40).forEach(user => { %> <%-
+              include('partials/user-table-item', {user}) %> <% }) %>
+            </table>
+          </article>
+
+          <article class="pagination-container">
+            <div class="rows-per-page-container">
+              <label for="rowsPerPage">Filas por página: </label>
+              <select name="rowsPerPage" id="rowsPerPage">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+              </select>
+            </div>
+
+            <div class="pagination-counter-container">
+              <span>1-5</span>
+              de
+              <span>15</span>
+            </div>
+
+            <div class="pagination-btns-container">
+              <button><i class="fa-solid fa-arrow-left"></i></button>
+              <button><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>

@@ -26,6 +26,8 @@ usersRouter.post(
   usersController.register
 );
 
+usersRouter.get('/crud', usersController.crud);
+
 usersRouter.get('/:id', usersController.myProfile);
 
 usersRouter.get('/:id/edit', usersController.myProfileEdit);
