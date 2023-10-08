@@ -19,7 +19,7 @@ const productsController = {
   },
   deleteForm: (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProduct(id); // trae de todos los productos, el producto segun su ubicacion en el array
+    const product = productServices.getProduct(id);
     res.render('product-delete-form', { product });
   },
   // Submit add-form
@@ -37,7 +37,7 @@ const productsController = {
   },
   editForm: (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProduct(id); // trae de todos los productos, el producto segun su ubicacion en el array
+    const product = productServices.getProduct(id);
     res.render('product-edit-form', { product });
   },
   update: (req, res) => {

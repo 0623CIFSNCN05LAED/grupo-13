@@ -7,7 +7,7 @@ const productServices = {
   getProduct: (id) => {
     return db.products.findById(id);
   },
-  // getFormattedProduct
+
   getProductById: (id) => {
     const product = db.products.findById(id);
     return product;
