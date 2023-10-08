@@ -18,12 +18,8 @@ app.set('views', __dirname + '/views');
 
 // Route system require and use
 const mainRoutes = require('./routes/mainRoutes.js');
-const productsRoutes = require('./routes/productsRoutes.js');
-const usersRoutes = require('./routes/usersRoutes.js');
 
 app.use('/', mainRoutes);
-app.use('/products', productsRoutes);
-app.use('/users', usersRoutes);
 
 // PORT
 const PORT = process.env.PORT || 3000;
