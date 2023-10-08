@@ -1,11 +1,11 @@
-const fs = require('fs'); // filesystem
+const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
   getProducts: function () {
     const productsPath = path.join(__dirname, './products.json');
-    const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8')); // leer JSON
+    const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
     return products;
   },
   saveProducts: function (products) {
