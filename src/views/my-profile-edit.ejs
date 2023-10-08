@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/myProfile.css" />
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main class="myProfile-container">
+      <section class="topProfile">
+        <article class="profilePicture">
+          <img src="/images/profilePicture.jpeg" alt="fotoDePerfil" />
+          <div class="productDescription" />
+        </article>
+        <article class="myData">
+          <h3>
+            Tipo de perfil:<br />
+            consumidor
+          </h3>
+          <br />
+          <p><%= user.firstName %> <%= user.lastName %></p>
+          <p><%= user.email %></p>
+        </article>
+      </section>
+      <section class="bottomProfile">
+        <form
+          action="/users/<%= user.id %>/edit?_method=PUT"
+          class="formProfile"
+          method="post"
+        >
+          <div class="title">
+            <h2>Mi perfil</h2>
+          </div>
+          <article class="data">
+            <div>
+              <p class="profileOptions">Teléfono</p>
+              <input
+                class="box"
+                type="text"
+                name="contactNumber"
+                id="contactNumber"
+                value="<%= user.contactNumber %>"
+              />
+            </div>
+            <div class="dateOfBirth">
+              <p class="profileOptions">Fecha de nacimiento</p>
+              <input
+                class="box"
+                type="text"
+                name="birthDate"
+                value="<%= user.birthDate %>"
+                min="1900-01-01"
+                max="2005-08-19"
+              />
+            </div>
+            <div>
+              <p class="profileOptions">Domicilio de entrega</p>
+              <input
+                class="box"
+                name="address"
+                id="address"
+                type="text"
+                value="<%= user.address %>"
+              />
+            </div>
+          </article>
+          <button class="button" type="submit">Editar</button>
+        </form>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
