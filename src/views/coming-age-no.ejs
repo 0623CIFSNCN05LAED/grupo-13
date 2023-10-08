@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/coming-age.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <script>
+        alert('Tenés que ser mayor de edad para poder ingresar');
+      </script>
+      <section class="logo-container">
+        <img src="/images/logo.png" alt="Logo E-beer" />
+      </section>
+
+      <section class="age-container">
+        <div class="age-title">
+          <h2>¿Eres mayor de edad?</h2>
+        </div>
+
+        <div class="age-btns">
+          <a href="/home"><button>Si</button></a>
+          <a href="/">
+            <button
+              alert="onclick('Tenés que ser mayor de edad para poder ingresar')"
+            >
+              No
+            </button></a
+          >
+        </div>
+
+        <div class="age-terms">
+          <p>
+            Al confirmar tu edad estarás aceptando los Términos y Condiciones y
+            la Política de Privacidad.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

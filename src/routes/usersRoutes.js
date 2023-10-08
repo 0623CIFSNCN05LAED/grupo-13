@@ -27,6 +27,7 @@ usersRouter.post(
 );
 
 usersRouter.get('/crud', usersController.crud);
+usersRouter.get('/myProfileAdmin', usersController.myProfileAdmin);
 
 usersRouter.get('/:id/delete', usersController.deleteForm);
 usersRouter.delete('/:id/delete', usersController.destroy);
@@ -35,6 +36,5 @@ usersRouter.get('/:id', usersController.myProfile);
 
 usersRouter.get('/:id/edit', usersController.myProfileEdit);
 usersRouter.put('/:id/edit', usersController.update);
-usersRouter.get('/myProfileAdmin', usersController.myProfileAdmin);
 
 module.exports = usersRouter;
