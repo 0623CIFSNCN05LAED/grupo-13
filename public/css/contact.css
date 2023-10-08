@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.contact-container a {
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .contact-title {
   display: flex;
   flex-direction: column;
