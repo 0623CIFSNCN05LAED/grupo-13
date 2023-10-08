@@ -34,7 +34,6 @@ module.exports = {
     const products = this.getProducts();
     const productToEdit = products.find((product) => product.id == id);
     Object.assign(productToEdit, product);
-    console.log('productToEdit', productToEdit);
     this.saveProducts(products);
     return product;
   },
@@ -42,7 +41,6 @@ module.exports = {
     console.log(`Deleting product with id ${id}`);
     const products = this.getProducts();
     const nonDeletedProducts = products.filter((product) => product.id != id);
-    console.log(nonDeletedProducts);
     this.saveProducts(nonDeletedProducts);
   },
 };
