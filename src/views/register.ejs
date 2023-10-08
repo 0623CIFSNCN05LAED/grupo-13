@@ -25,7 +25,12 @@
           </div>
         </section>
 
-        <form class="registerForm" action="/users/register" method="POST" enctype="multipart/form-data">
+        <form
+          class="registerForm"
+          action="/users/register"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <p class="datosPersonalesR">Datos personales</p>
           <label for="firstName"></label>
           <input
@@ -78,7 +83,13 @@
           />
 
           <label for="userPicture">Selecciona una foto de perfil</label>
-          <input type="file" id="userPicture" name="userPicture" accept=".jpg"/>
+          <input
+            type="file"
+            id="userPicture"
+            name="userPicture"
+            accept=".jpg"
+            required
+          />
           <!-- <label class="news">
             <input class="news" type="checkbox" name="opcion" value="news" />
             Quiero recibir ofertas destacadas por e-mail
