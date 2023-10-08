@@ -8,5 +8,6 @@ mainRouter.get('/home', mainController.index);
 mainRouter.get('/contact', mainController.contact);
 mainRouter.get('/about-us', mainController.aboutUs);
 mainRouter.get('/tyc', mainController.tyc);
+mainRouter.get('/coming-age-no', mainController.comingAgeNo);
 
 module.exports = mainRouter;
