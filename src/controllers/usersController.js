@@ -28,7 +28,7 @@ const usersController = {
     res.redirect('register');
   },
   myProfile: (req, res) => {
-    return res.render('myProfile');
+    return res.render('my-profile');
   },
   crud: (req, res) => {
     const users = userServices.getAllUsers();
@@ -37,7 +37,7 @@ const usersController = {
   myProfileEdit: (req, res) => {
     const id = req.params.id;
     const user = userServices.getUser(id);
-    res.render('myProfileEdit', { user });
+    res.render('my-profile-edit', { user });
   },
 
   update: (req, res) => {
@@ -54,7 +54,7 @@ const usersController = {
   },
 
   myProfileAdmin: (req, res) => {
-    return res.render('myProfileAdmin');
+    return res.render('my-profile-admin');
   },
 };
 
