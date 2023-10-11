@@ -3,24 +3,30 @@
     "id": 1,
     "firstName": "Sofía",
     "lastName": "Garcia",
-    "email": "sstango0@amazon.com",
+    "email": [
+      "stango0@amazon.com",
+      ""
+    ],
     "password": "fH7GQ2,@q&+g6sVC",
     "accessType": "tech",
     "image": "image1.jpg",
     "contactNumber": "+86-130-376-1912",
-    "birthDate": "20/08/1956",
+    "birthDate": "1900-01-01",
     "address": "123 Main Street"
   },
   {
     "id": 2,
     "firstName": "Clemente",
     "lastName": "Rodriguez",
-    "email": "tguinan1@illinois.edu",
+    "email": [
+      "tguinan1@illinois.edu",
+      ""
+    ],
     "password": "yH2l`>8F+\"i)`",
     "accessType": "admin",
     "image": "image2.jpg",
     "contactNumber": "+86-522-695-6036",
-    "birthDate": "18/01/1994",
+    "birthDate": "1900-01-01",
     "address": "456 Elm Avenue"
   },
   {
@@ -142,18 +148,6 @@
     "contactNumber": "+46-733-400-3095",
     "birthDate": "04/05/1941",
     "address": "902 Plum Road"
-  },
-  {
-    "id": 13,
-    "firstName": "Martiniano",
-    "lastName": "Lopez",
-    "email": "mwainc@ehow.com",
-    "password": "nL6UV)EA(5?11gIt",
-    "accessType": "tech",
-    "image": "image13.jpg",
-    "contactNumber": "+86-660-681-0685",
-    "birthDate": "08/07/1930",
-    "address": "143 Apple Street"
   },
   {
     "id": 14,

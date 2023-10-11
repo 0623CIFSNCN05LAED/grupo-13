@@ -1,0 +1,120 @@
+main {
+  width: 90%;
+  margin: 50px auto;
+}
+.info-profile-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 15px 0 15px;
+  background-color: #f0f0f0;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.profile-picture {
+  padding: 15px 10px 10px 10px;
+}
+.profile-picture img {
+  width: 100%;
+  border-radius: 10px;
+}
+.info-profile-container-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 10px;
+}
+.bottomProfile {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px 0 15px;
+  background-color: #f0f0f0;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.title {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 12px;
+}
+
+.input-container input {
+  margin-top: 5px;
+}
+
+.input-container label {
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons-container button {
+  margin-bottom: 15px;
+}
+
+.btn-edit {
+  display: block;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+.other-container {
+  padding: 0 15px 0 15px;
+  background-color: #f0f0f0;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .topProfile {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .profile-picture img {
+    width: 350px;
+  }
+
+  .info-profile-container-desc {
+    display: flex;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1023px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .info-profile-container {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  .profile-picture {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+}

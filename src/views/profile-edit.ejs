@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/my-profile.css" />
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <section class="info-profile-container">
+        <article class="profile-picture">
+          <img src="/images/users/<%= user.image %>" alt="fotoDePerfil" />
+        </article>
+
+        <article class="info-profile-container-desc">
+          <h3>Tipo de perfil:</h3>
+          <br />
+          <p><%= user.firstName %> <%= user.lastName %></p>
+        </article>
+      </section>
+
+      <section class="bottomProfile">
+        <article class="title">
+          <h2>Mi perfil</h2>
+        </article>
+
+        <form
+          action="/users/<%= user.id %>/edit?_method=PUT"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <article class="input-container">
+            <label for="email">Email</label>
+            <input
+              name="email"
+              type="email"
+              class="inputs"
+              value="<%= user.email %>"
+            />
+          </article>
+          <article class="input-container">
+            <label for="email">Imagen</label>
+            <input
+              name="email"
+              type="file"
+              class="inputs"
+              value="<%= user.image %>"
+            />
+          </article>
+          <article class="input-container">
+            <label for="contactNumber">Teléfono</label>
+            <input
+              name="contactNumber"
+              type="tel"
+              class="inputs"
+              value="<%= user.contactNumber %>"
+            />
+          </article>
+          <article class="input-container">
+            <label for="address">Domicilio de entrega</label>
+            <input
+              name="address"
+              class="inputs"
+              type="text"
+              value="<%= user.address %>"
+            />
+          </article>
+
+          <button class="btn-yellow btn-edit">Editar</button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
