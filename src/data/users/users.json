@@ -3,10 +3,7 @@
     "id": 1,
     "firstName": "Sofía",
     "lastName": "Garcia",
-    "email": [
-      "stango0@amazon.com",
-      ""
-    ],
+    "email": "stango0@amazon.com",
     "password": "fH7GQ2,@q&+g6sVC",
     "accessType": "tech",
     "image": "image1.jpg",
@@ -18,10 +15,7 @@
     "id": 2,
     "firstName": "Clemente",
     "lastName": "Rodriguez",
-    "email": [
-      "tguinan1@illinois.edu",
-      ""
-    ],
+    "email": "tguinan1@illinois.edu",
     "password": "yH2l`>8F+\"i)`",
     "accessType": "admin",
     "image": "image2.jpg",
