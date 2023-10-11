@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/my-profile.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <section class="info-profile-container">
+        <article class="profile-picture">
+          <img src="/images/users/<%= user.image %>" alt="fotoDePerfil" />
+        </article>
+      </section>
+
+      <section class="bottomProfile">
+        <article class="title">
+          <h2>Mi perfil</h2>
+        </article>
+
+        <form action="/" method="post">
+          <article class="input-container">
+            <label for="firstName">Nombre</label>
+            <input
+              name="firstName"
+              type="text"
+              class="inputs"
+              value="<%= user.firstName %>"
+              readonly
+            />
+          </article>
+          <article class="input-container">
+            <label for="lastName">Apellido</label>
+            <input
+              name="lastName"
+              type="text"
+              class="inputs"
+              value="<%= user.lastName %>"
+              readonly
+            />
+          </article>
+          <article class="input-container">
+            <label for="email">Email</label>
+            <input
+              name="email"
+              type="email"
+              class="inputs"
+              value="<%= user.email %>"
+              readonly
+            />
+          </article>
+          <article class="input-container">
+            <label for="contactNumber">Teléfono</label>
+            <input
+              name="contactNumber"
+              type="tel"
+              class="inputs"
+              value="<%= user.contactNumber %>"
+              readonly
+            />
+          </article>
+          <article class="input-container">
+            <label for="address">Domicilio de entrega</label>
+            <input
+              name="address"
+              class="inputs"
+              type="text"
+              value="<%= user.address %>"
+              readonly
+            />
+          </article>
+          <article class="input-container">
+            <label for="birthDate">Fecha de nacimiento</label>
+            <input
+              class="inputs"
+              type="date"
+              name="birthDate"
+              value="<%= user.birthDate %>"
+              min="1900-01-01"
+              max="2005-08-19"
+              readonly
+            />
+          </article>
+        </form>
+      </section>
+
+      <article class="other-container">
+        <div class="title">
+          <h2>Opciones</h2>
+        </div>
+        <div class="buttons-container">
+          <a href="/users/<%= user.id %>/edit/" class="btn-yellow btn-edit"
+            >Editar Perfil</a
+          >
+          <button class="btn-yellow">
+            <a href="">Historial de compras</a>
+          </button>
+          <button class="btn-yellow">
+            <a href="">Mis tarjetas</a>
+          </button>
+        </div>
+      </article>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
