@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <%- include('./partials/head.ejs') %>
 
     <link rel="stylesheet" href="/css/product-crud.css" />
     <link rel="stylesheet" href="/css/partials/normalize.css" />
     <link rel="stylesheet" href="/css/partials/styles.css" />
     <title>Edit My Profile</title>
-    
-</head>
-<body>
+  </head>
+  <body>
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <h2>Administración de usuarios</h2>
+      <h2>Administración de usuarios</h2>
 
-        <section>
+      <section>
         <div class="head-table-container">
           <section class="pl-filters">
             <article class="searchbar">
               <form action="/" method="POST">
-                <input
-                  type="text"
-                  name="search"
-                  placeholder="Buscar usuario"
-                />
+                <input type="text" name="search" placeholder="Buscar usuario" />
 
                 <button type="submit">
                   <i class="fa-solid fa-magnifying-glass"></i>
@@ -34,18 +29,23 @@
 
             <article class="pl-container-selects">
               <form action="/marca" method="POST" class="pl-form-brand">
-                <select>
-                </select>
+                <select></select>
               </form>
 
-                            <form action="/medida" method="POST" class="pl-form-size">
+              <form action="/medida" method="POST" class="pl-form-size">
                 <select>
                   <option></option>
-
                 </select>
               </form>
             </article>
           </section>
+
+          <article class="btn-add-container">
+            <button class="btn-add">
+              <a href="/users/register" style="color: black">Agregar</a>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </article>
         </div>
 
         <section class="">
@@ -53,15 +53,15 @@
             <table>
               <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>E-mail</th>
-                    <th>Tipo de acceso</th>
-                    <th>Foto de perfil</th>
-                    <th>Teléfono</th>
-                    <th>Fecha de nacimiento</th>
-                    <th>Dirección</th>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>E-mail</th>
+                  <th>Tipo de acceso</th>
+                  <th>Foto de perfil</th>
+                  <th>Teléfono</th>
+                  <th>Fecha de nacimiento</th>
+                  <th>Dirección</th>
                 </tr>
               </thead>
               <% users.slice(0, 40).forEach(user => { %> <%-
@@ -93,3 +93,5 @@
         </section>
       </section>
     </main>
+  </body>
+</html>

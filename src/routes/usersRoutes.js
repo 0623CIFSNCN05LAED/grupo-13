@@ -32,11 +32,9 @@ usersRouter.get('/:id/delete', usersController.deleteForm);
 usersRouter.delete('/:id/delete', usersController.destroy);
 
 usersRouter.get('/:id/edit', usersController.myProfileEdit);
-usersRouter.put(
-  '/:id/edit',
-  upload.single('userPicture'),
-  usersController.update
-);
+// usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
+// usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
+usersRouter.put('/:id', upload.single('image'), usersController.update);
 
 usersRouter.get('/:id', usersController.myProfile);
 

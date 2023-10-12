@@ -26,7 +26,7 @@
         </article>
 
         <form
-          action="/users/<%= user.id %>/edit?_method=PUT"
+          action="/users/<%= user.id %>/?_method=PUT"
           method="post"
           enctype="multipart/form-data"
         >
@@ -40,12 +40,24 @@
             />
           </article>
           <article class="input-container">
+            <label for="email">Contraseña</label>
+            <input
+              name="password"
+              type="password"
+              class="inputs"
+              placeholder="Contraseña"
+              value="<%= user.email %>"
+            />
+          </article>
+          <article class="input-container">
             <label for="email">Imagen</label>
             <input
-              name="email"
+              name="image"
+              id="image"
+              accept=".jpg"
               type="file"
               class="inputs"
-              value="<%= user.image %>"
+              required
             />
           </article>
           <article class="input-container">
