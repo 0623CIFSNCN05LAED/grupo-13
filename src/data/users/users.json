@@ -3,28 +3,23 @@
     "id": 1,
     "firstName": "Sofía",
     "lastName": "Garcia",
-    "email": [
-      "stango0@amazon.com",
-      ""
-    ],
-    "password": "fH7GQ2,@q&+g6sVC",
+    "email": "stango0@amazon.com.it",
+    "password": "stango0@amazon.com.it",
     "accessType": "tech",
-    "image": "image1.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+86-130-376-1912",
     "birthDate": "1900-01-01",
-    "address": "123 Main Street"
+    "address": "123 Main Street",
+    "imageName": "image1.jpg"
   },
   {
     "id": 2,
     "firstName": "Clemente",
     "lastName": "Rodriguez",
-    "email": [
-      "tguinan1@illinois.edu",
-      ""
-    ],
+    "email": ["tguinan1@illinois.edu", ""],
     "password": "yH2l`>8F+\"i)`",
     "accessType": "admin",
-    "image": "image2.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+86-522-695-6036",
     "birthDate": "1900-01-01",
     "address": "456 Elm Avenue"
@@ -36,7 +31,7 @@
     "email": "ayare2@istockphoto.com",
     "password": "pC18r?Z5=zcWt3v",
     "accessType": "supervisor",
-    "image": "image3.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+995-960-557-3977",
     "birthDate": "17/10/1967",
     "address": "789 Oak Lane"
@@ -48,7 +43,7 @@
     "email": "blattimer3@wiley.com",
     "password": "mU5/uvX<F3",
     "accessType": "tech",
-    "image": "image4.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+1-610-545-7237",
     "birthDate": "20/06/1947",
     "address": "321 Maple Drive"
@@ -60,7 +55,7 @@
     "email": "bwadworth4@blogtalkradio.com",
     "password": "hJ0br%SSg4",
     "accessType": "admin",
-    "image": "image5.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+62-773-260-8397",
     "birthDate": "08/09/1999",
     "address": "654 Pine Court"
@@ -72,7 +67,7 @@
     "email": "sjanuary5@webmd.com",
     "password": "wQ6zzNK95ry",
     "accessType": "supervisor",
-    "image": "image6.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+86-352-939-4445",
     "birthDate": "25/03/1941",
     "address": "987 Cedar Road"
@@ -84,7 +79,7 @@
     "email": "lgraffham6@economist.com",
     "password": "qT9n,\"(aSA?",
     "accessType": "supervisor",
-    "image": "image7.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+86-186-192-3565",
     "birthDate": "03/10/1977",
     "address": "135 Walnut Street"
@@ -96,7 +91,7 @@
     "email": "odeveraux7@wisc.edu",
     "password": "zW7rCp1ae2.6tgi0",
     "accessType": "admin",
-    "image": "image8.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+1-630-116-8388",
     "birthDate": "04/01/1932",
     "address": "864 Birch Avenue"
@@ -108,7 +103,7 @@
     "email": "stydd8@facebook.com",
     "password": "nY3,/KMy'3y.",
     "accessType": "tech",
-    "image": "image9.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+7-306-250-5474",
     "birthDate": "26/11/1926",
     "address": "579 Spruce Lane"
@@ -120,7 +115,7 @@
     "email": "llibbey9@sphinn.com",
     "password": "eP4)OFT\\+",
     "accessType": "supervisor",
-    "image": "image10.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+62-806-354-9288",
     "birthDate": "01/10/2002",
     "address": "246 Cherry Drive"
@@ -132,7 +127,7 @@
     "email": "ohastelowa@bravesites.com",
     "password": "bK5c'__QKJI",
     "accessType": "supervisor",
-    "image": "image11.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+351-648-500-6801",
     "birthDate": "12/02/1960",
     "address": "680 Peach Court"
@@ -144,7 +139,7 @@
     "email": "chounsomeb@usnews.com",
     "password": "jH3u@@9PJ",
     "accessType": "user",
-    "image": "image12.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+46-733-400-3095",
     "birthDate": "04/05/1941",
     "address": "902 Plum Road"
@@ -156,7 +151,7 @@
     "email": "mtrankd@prweb.com",
     "password": "xF8H\\.bCj0E)}RT~",
     "accessType": "admin",
-    "image": "image14.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+48-668-280-1592",
     "birthDate": "26/02/1986",
     "address": "765 Orange Avenue"
@@ -168,7 +163,7 @@
     "email": "bkestone@altervista.org",
     "password": "bL3z4u1K3l",
     "accessType": "supervisor",
-    "image": "image15.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+81-997-219-0232",
     "birthDate": "12/05/1960",
     "address": "398 Lemon Lane"
@@ -180,7 +175,7 @@
     "email": "hakamf@tinypic.com",
     "password": "iE7HG~m)ky+",
     "accessType": "tech",
-    "image": "image16.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+48-464-873-7680",
     "birthDate": "09/11/1996",
     "address": "531 Lime Drive"
@@ -192,7 +187,7 @@
     "email": "mgiffordg@shutterfly.com",
     "password": "kC8u,JW{hs>_",
     "accessType": "admin",
-    "image": "image17.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+46-628-434-8692",
     "birthDate": "16/01/1998",
     "address": "274 Grape Court"
@@ -204,7 +199,7 @@
     "email": "dedelh@phoca.cz",
     "password": "bU0dz!1g!h72",
     "accessType": "supervisor",
-    "image": "image18.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+63-478-781-0831",
     "birthDate": "23/11/1951",
     "address": "816 Banana Road"
@@ -216,7 +211,7 @@
     "email": "troseboroughi@chicagotribune.com",
     "password": "eD6HF{bd{",
     "accessType": "user",
-    "image": "image19.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+62-471-530-0791",
     "birthDate": "11/04/1957",
     "address": "459 Strawberry Street"
@@ -228,7 +223,7 @@
     "email": "ckelloughj@time.com",
     "password": "pT6\\7r}@ME6",
     "accessType": "tech",
-    "image": "image20.jpg",
+    "image": "default-image.jpg",
     "contactNumber": "+81-387-761-5147",
     "birthDate": "14/01/1987",
     "address": "693 Blueberry Avenue"

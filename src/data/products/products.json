@@ -6,7 +6,7 @@
     "image": "default-image.png",
     "category": "Porter",
     "size": "350 cc",
-    "price": 2237
+    "price": "2237"
   },
   {
     "id": 2,
@@ -178,5 +178,14 @@
     "category": "IPA",
     "size": "350 cc",
     "price": "593"
+  },
+  {
+    "id": "897d7a28-8d8b-45fd-8433-d0b73b0ba446",
+    "name": "Producto",
+    "description": "123",
+    "category": "132",
+    "size": "123",
+    "price": "123",
+    "image": "productPicture-1697076566821.jpg"
   }
 ]
