@@ -33,7 +33,7 @@
     "accessType": "supervisor",
     "image": "default-image.jpg",
     "contactNumber": "+995-960-557-3977",
-    "birthDate": "17/10/1967",
+    "birthDate": "17-10-1967",
     "address": "789 Oak Lane"
   },
   {
@@ -45,7 +45,7 @@
     "accessType": "tech",
     "image": "default-image.jpg",
     "contactNumber": "+1-610-545-7237",
-    "birthDate": "20/06/1947",
+    "birthDate": "20-06-1947",
     "address": "321 Maple Drive"
   },
   {
@@ -57,7 +57,7 @@
     "accessType": "admin",
     "image": "default-image.jpg",
     "contactNumber": "+62-773-260-8397",
-    "birthDate": "08/09/1999",
+    "birthDate": "08-09-1999",
     "address": "654 Pine Court"
   },
   {
@@ -69,7 +69,7 @@
     "accessType": "supervisor",
     "image": "default-image.jpg",
     "contactNumber": "+86-352-939-4445",
-    "birthDate": "25/03/1941",
+    "birthDate": "25-03-1941",
     "address": "987 Cedar Road"
   },
   {
@@ -81,7 +81,7 @@
     "accessType": "supervisor",
     "image": "default-image.jpg",
     "contactNumber": "+86-186-192-3565",
-    "birthDate": "03/10/1977",
+    "birthDate": "03-10-1977",
     "address": "135 Walnut Street"
   },
   {
@@ -93,7 +93,7 @@
     "accessType": "admin",
     "image": "default-image.jpg",
     "contactNumber": "+1-630-116-8388",
-    "birthDate": "04/01/1932",
+    "birthDate": "04-01-1932",
     "address": "864 Birch Avenue"
   },
   {
@@ -105,7 +105,7 @@
     "accessType": "tech",
     "image": "default-image.jpg",
     "contactNumber": "+7-306-250-5474",
-    "birthDate": "26/11/1926",
+    "birthDate": "26-11-1926",
     "address": "579 Spruce Lane"
   },
   {
@@ -117,7 +117,7 @@
     "accessType": "supervisor",
     "image": "default-image.jpg",
     "contactNumber": "+62-806-354-9288",
-    "birthDate": "01/10/2002",
+    "birthDate": "01-10-2002",
     "address": "246 Cherry Drive"
   },
   {
@@ -129,7 +129,7 @@
     "accessType": "supervisor",
     "image": "default-image.jpg",
     "contactNumber": "+351-648-500-6801",
-    "birthDate": "12/02/1960",
+    "birthDate": "12-02-1960",
     "address": "680 Peach Court"
   },
   {
@@ -141,8 +141,20 @@
     "accessType": "user",
     "image": "default-image.jpg",
     "contactNumber": "+46-733-400-3095",
-    "birthDate": "04/05/1941",
+    "birthDate": "04-05-1941",
     "address": "902 Plum Road"
+  },
+  {
+    "id": 13,
+    "firstName": "Martiniano",
+    "lastName": "Lopez",
+    "email": "mwainc@ehow.com",
+    "password": "nL6UV)EA(5?11gIt",
+    "accessType": "tech",
+    "image": "image13.jpg",
+    "contactNumber": "+86-660-681-0685",
+    "birthDate": "08-07-1930",
+    "address": "143 Apple Street"
   },
   {
     "id": 14,
@@ -153,7 +165,7 @@
     "accessType": "admin",
     "image": "default-image.jpg",
     "contactNumber": "+48-668-280-1592",
-    "birthDate": "26/02/1986",
+    "birthDate": "26-02-1986",
     "address": "765 Orange Avenue"
   },
   {
@@ -165,7 +177,7 @@
     "accessType": "supervisor",
     "image": "default-image.jpg",
     "contactNumber": "+81-997-219-0232",
-    "birthDate": "12/05/1960",
+    "birthDate": "12-05-1960",
     "address": "398 Lemon Lane"
   },
   {
@@ -177,7 +189,7 @@
     "accessType": "tech",
     "image": "default-image.jpg",
     "contactNumber": "+48-464-873-7680",
-    "birthDate": "09/11/1996",
+    "birthDate": "09-11-1996",
     "address": "531 Lime Drive"
   },
   {
@@ -189,7 +201,7 @@
     "accessType": "admin",
     "image": "default-image.jpg",
     "contactNumber": "+46-628-434-8692",
-    "birthDate": "16/01/1998",
+    "birthDate": "16-01-1998",
     "address": "274 Grape Court"
   },
   {
@@ -201,7 +213,7 @@
     "accessType": "supervisor",
     "image": "default-image.jpg",
     "contactNumber": "+63-478-781-0831",
-    "birthDate": "23/11/1951",
+    "birthDate": "23-11-1951",
     "address": "816 Banana Road"
   },
   {
@@ -213,7 +225,7 @@
     "accessType": "user",
     "image": "default-image.jpg",
     "contactNumber": "+62-471-530-0791",
-    "birthDate": "11/04/1957",
+    "birthDate": "11-04-1957",
     "address": "459 Strawberry Street"
   },
   {
@@ -225,7 +237,7 @@
     "accessType": "tech",
     "image": "default-image.jpg",
     "contactNumber": "+81-387-761-5147",
-    "birthDate": "14/01/1987",
+    "birthDate": "14-01-1987",
     "address": "693 Blueberry Avenue"
   }
 ]
