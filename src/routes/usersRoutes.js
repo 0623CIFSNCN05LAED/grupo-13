@@ -1,22 +1,7 @@
 const express = require('express');
 const usersRouter = express.Router();
-const multer = require('multer');
-const path = require('path');
 const usersController = require('../controllers/usersController');
-
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, '../../public/images/users'),
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + '-' + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-
-const upload = multer({
-  storage: storage,
-});
+const upload = require('../middlewares/users-multer');
 
 usersRouter.get('/login', usersController.login);
 usersRouter.get('/register', usersController.registerForm);
