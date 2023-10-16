@@ -1,4 +1,6 @@
 const userServices = require('../services/userServices');
+const bcrypt = require('bcryptjs');
+
 
 const usersController = {
   login: (req, res) => {
@@ -17,7 +19,7 @@ const usersController = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password, 10),
       accessType: req.body.accessType,
       contactNumber: Number(req.body.contactNumber),
       birthDate: req.body.birthDate,
