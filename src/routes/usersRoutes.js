@@ -2,8 +2,12 @@ const express = require('express');
 const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 const upload = require('../middlewares/users-multer');
+const validations = require('../validations/login-validations');
+const validateForm = require('../middlewares/validate-form');
 
-usersRouter.get('/login', usersController.login);
+usersRouter.get('/login', usersController.loginForm);
+usersRouter.post('/login', validations, validateForm, usersController.login);
+
 usersRouter.get('/register', usersController.registerForm);
 usersRouter.post(
   '/register',
