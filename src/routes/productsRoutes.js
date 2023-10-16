@@ -1,22 +1,7 @@
 const express = require('express');
 const productsRouter = express.Router();
-const multer = require('multer');
-const path = require('path');
 const productsController = require('../controllers/productsController');
-
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, '../../public/images/products'),
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + '-' + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-
-const upload = multer({
-  storage: storage,
-});
+const upload = require('../middlewares/products-multer');
 
 /* PRODUCT LIST */
 productsRouter.get('/', productsController.index);

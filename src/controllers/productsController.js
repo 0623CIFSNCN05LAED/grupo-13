@@ -38,6 +38,11 @@ const productsController = {
   editForm: (req, res) => {
     const id = req.params.id;
     const product = productServices.getProduct(id);
+    const image = req.file
+      ? req.file.filename
+      : productServices.getProduct(id).image;
+    product.image = image;
+    productServices.updateProduct(id, product);
     res.render('product-edit-form', { product });
   },
   update: (req, res) => {
