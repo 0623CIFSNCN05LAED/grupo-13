@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/form-styles.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <form
+        class="form"
+        action="/users/<%= user.id %>/?_method=PUT"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <h2 class="title">Edición de usuarios</h2>
+        <div class="searchNav">
+          <input
+            type="text"
+            placeholder="Buscar usuarios"
+            maxlength="120"
+            autocapitalize="off"
+            spellcheck="false"
+            autocomplete="off"
+            value="<%= user.id %>"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input
+          class="input"
+          type="text"
+          name="firstName"
+          placeholder="Nombre"
+          value="<%= user.firstName %>"
+        />
+        <input
+          class="input"
+          type="text"
+          name="lastName"
+          placeholder="Apellido"
+          value="<%= user.lastName %>"
+        />
+        <input
+          class="input"
+          type="text"
+          name="email"
+          placeholder="Mail"
+          value="<%= user.email %>"
+        />
+        <input
+          class="input"
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          value="<%= user.password %>"
+        />
+
+        <input
+          class="input"
+          type="text"
+          name="contactNumber"
+          placeholder="Número de teléfono"
+          value="<%= user.contactNumber %>"
+        />
+
+        <input
+          class="input"
+          type="text"
+          name="address"
+          placeholder="Domicilio"
+          value="<%= user.address %>"
+        />
+
+        <input
+          class="input"
+          type="date"
+          name="birthDate"
+          placeholder="Fecha de nacimiento"
+          value="<%= user.birthDate %>"
+        />
+
+        <div class="picture">
+          <label for="image">Selecciona una imagen del usuario</label>
+          <input type="file" id="image" name="image" accept=".jpg" />
+        </div>
+
+        <div class="buttons-container">
+          <button class="button" type="submit">Editar</button>
+        </div>
+      </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

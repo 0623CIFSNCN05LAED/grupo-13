@@ -6,7 +6,7 @@
     "image": "default-image.png",
     "category": "Porter",
     "size": "350 cc",
-    "price": 2237
+    "price": "2237"
   },
   {
     "id": 2,
@@ -178,14 +178,5 @@
     "category": "IPA",
     "size": "350 cc",
     "price": "593"
-  },
-  {
-    "id": "0a364fbd-c4d7-4199-9a92-c08c8ab59184",
-    "name": "Taylor",
-    "description": "Lala",
-    "category": "Champagne",
-    "size": "123",
-    "price": "123",
-    "image": "productPicture-1697474499472.jpg"
   }
 ]

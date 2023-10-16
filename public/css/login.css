@@ -91,9 +91,3 @@
     max-width: 100%;
   }
 }
-
-@media (min-width: 1439px) {
-  .login-container {
-    justify-content: center;
-  }
-}

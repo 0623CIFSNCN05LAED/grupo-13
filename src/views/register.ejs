@@ -8,95 +8,105 @@
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <!-- Logo -->
-      <div class="logo-register">
-        <img src="/images/logo.png" alt="logo" />
-      </div>
+        <section class="register-container">
+          <article class="register-title">
+            <h1>E-BEER</h1>
+            <p>Completá tus datos para registrarte</p>
+          </article>
+        
+          <article class="form-container">
+            <form
+              action="/users/register"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <h2 class="form-title">Datos personales</h2>
+              
+              <label for="firstName">
+                <input
+                  class="inputs"
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  placeholder="Nombre"
+                />
+              </label>
+              <label for="lastName">
+                <input
+                  class="inputs"
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  placeholder="Apellido"
+                />
+              </label>
+              <label for="email">
+                <input
+                  class="inputs"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Correo electrónico"
+                />
+              </label>
+              <label for="password">
+                <input
+                  class="inputs"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Ingresar contraseña"
+                />
+              </label>
+              <label for="contactNumber">
+                <input
+                  class="inputs"
+                  type="number"
+                  name="contactNumber"
+                  id="contactNumber"
+                  placeholder="Número de contacto"
+                />
+              </label>
+              <label for="birthDate">
+                <input
+                  class="inputs"
+                  type="date"
+                  name="birthDate"
+                  id="birthDate"
+                  placeholder="Ingresar fecha de nacimiento"
+                />
+              </label>
+              <label for="address">
+                <input
+                  class="inputs"
+                  type="text"
+                  name="address"
+                  id="address"
+                  placeholder="Ingresar domicilio"
+                />
+              </label>
 
-      <div class="form-containerR">
-        <section class="text-rightR">
-          <div>
-            <p class="e-beerR">E-BEER</p>
-          </div>
+              <label for="profilePicture" class="picture-title">
+                <p>Selecciona una foto de perfil</p>
+                <input
+                  class="picture-data"
+                  type="file"
+                  id="profilePicture"
+                  name="profilePicture"
+                  accept=".jpg"
+                  required
+                />
+              </label>  
+              <button type="submit" class="btn-yellow">Registrate</button>
 
-          <div class="registerInicioText">
-            <p class="inicioTextR">Regístrate</p>
-            <p class="inicioText2R">e inicia sesión</p>
-          </div>
-        </section>
-
-        <form
-          class="registerForm"
-          action="/users/register"
-          method="POST"
-          enctype="multipart/form-data"
-        >
-          <p class="datosPersonalesR">Datos personales</p>
-          <label for="firstName"></label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="Nombre"
-          />
-          <label for="lastName"></label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            placeholder="Apellido"
-          />
-          <label for="email"></label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Correo electrónico"
-          />
-          <label for="password"></label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Ingresar contraseña"
-          />
-          <label for="contactNumber"></label>
-          <input
-            type="number"
-            name="contactNumber"
-            id="contactNumber"
-            placeholder="Número de contacto"
-          />
-          <label for="birthDate"></label>
-          <input
-            type="date"
-            name="birthDate"
-            id="birthDate"
-            placeholder="Ingresar fecha de nacimiento"
-          />
-          <label for="address"></label>
-          <input
-            type="text"
-            name="address"
-            id="address"
-            placeholder="Ingresar domicilio"
-          />
-
-          <label for="userPicture">Selecciona una foto de perfil</label>
-          <input
-            type="file"
-            id="userPicture"
-            name="userPicture"
-            accept=".jpg"
-            required
-          />
-
-          <button type="submit">Registrate</button>
-          <p class="registerLogin">
-            <a href="/users/login">¿Ya tenés cuenta? Ingresa</a>
-          </p>
-        </form>
-      </div>
+              <section class="links-container">
+                <a href="/users/login">¿Ya tenés cuenta? 
+                  <span>Ingresa</span>
+                </a>
+              </section>
+            </form>
+        </article>
+      </section>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>
