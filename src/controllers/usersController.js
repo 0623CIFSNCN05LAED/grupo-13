@@ -1,8 +1,13 @@
 const userServices = require('../services/userServices');
 
 const usersController = {
-  login: (req, res) => {
+  loginForm: (req, res) => {
     return res.render('login');
+  },
+  login: (req, res) => {
+    const data = req.body;
+    console.log(data);
+    res.redirect('/home');
   },
   registerForm: (req, res) => {
     res.render('register');
