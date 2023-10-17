@@ -3,8 +3,14 @@ const bcrypt = require('bcryptjs');
 
 const usersController = {
   loginForm: (req, res) => {
-    const data = req.session.userData;
-    return res.render('login');
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+    req.session.oldData = null;
+    req.session.errors = null;
+    res.render('login', {
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
   },
   login: (req, res) => {
     const data = req.body;

@@ -9,6 +9,7 @@ const mainController = {
     const data = req.session.userData;
     res.render('index', {
       email: data.email,
+      password: data.password,
     });
   },
   contact: (req, res) => {
