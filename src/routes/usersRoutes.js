@@ -2,17 +2,26 @@ const express = require('express');
 const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 const upload = require('../middlewares/users-multer');
-const validations = require('../validations/login-validations');
-const validateForm = require('../middlewares/validate-form');
+const loginValidations = require('../validations/login-validations');
+const registerValidations = require('../validations/register-validations');
+const loginValidateForm = require('../middlewares/login-validate-form');
+const registerValidateForm = require('../middlewares/register-validate-form');
 const userGuard = require('../middlewares/user-guard');
 
 usersRouter.get('/login', usersController.loginForm);
-usersRouter.post('/login', validations, validateForm, usersController.login);
+usersRouter.post(
+  '/login',
+  loginValidations,
+  loginValidateForm,
+  usersController.login
+);
 
 usersRouter.get('/register', usersController.registerForm);
 usersRouter.post(
   '/register',
-  upload.single('userPicture'),
+  registerValidations,
+  registerValidateForm,
+  upload.single('profilePicture'),
   usersController.register
 );
 

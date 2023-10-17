@@ -19,6 +19,11 @@ module.exports = {
     const user = this.getUsers().find((user) => user.id == id);
     return user;
   },
+  findByField: function (field, text) {
+    const users = this.getUsers();
+    const userByField = users.find((user) => user[field] == text);
+    return userByField;
+  },
   create: function (user) {
     console.log(`Creating user ${user.email}`);
     const users = this.getUsers();

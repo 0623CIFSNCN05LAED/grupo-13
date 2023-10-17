@@ -38,6 +38,7 @@ const usersController = {
       address: req.body.address,
       image: req.file ? req.file.filename : userPicture,
     };
+    userServices.getUserByField('email', req.body.email);
     userServices.createUser(user);
     res.redirect('register');
   },
