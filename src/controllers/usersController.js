@@ -5,8 +5,8 @@ const usersController = {
   loginForm: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
-    req.session.oldData = null;
     req.session.errors = null;
+    req.session.oldData = null;
     res.render('login', {
       errors: errors ? errors : null,
       oldData: oldData ? oldData : null,
@@ -29,8 +29,6 @@ const usersController = {
   },
   register: (req, res) => {
     const data = req.body;
-    console.log(data);
-    req.session.userData = data;
     const user = {
       firstName: data.firstName,
       lastName: data.lastName,
@@ -40,7 +38,7 @@ const usersController = {
       contactNumber: Number(data.contactNumber),
       birthDate: data.birthDate,
       address: data.address,
-      image: req.file ? req.file.filename : profilePicture,
+      profilePicture: req.file ? req.file.filename : 'default-img',
     };
     //userServices.getUserByField('email', req.body.email);
     userServices.createUser(user);
@@ -74,16 +72,20 @@ const usersController = {
   update: (req, res) => {
     const user = req.body;
     const id = req.params.id;
-    const image = req.file ? req.file.filename : userServices.getUser(id).image;
-    user.image = image;
+    const profilePicture = req.file
+      ? req.file.filename
+      : userServices.getUser(id).profilePicture;
+    user.profilePicture = profilePicture;
     userServices.updateUser(id, user);
     res.redirect('/home');
   },
   destroy: (req, res) => {
     const user = req.body;
     const id = req.params.id;
-    const image = req.file ? req.file.filename : userServices.getUser(id).image;
-    user.image = image;
+    const profilePicture = req.file
+      ? req.file.filename
+      : userServices.getUser(id).profilePicture;
+    user.profilePicture = profilePicture;
     userServices.deleteUser(id);
     res.redirect('/users/crud');
   },
