@@ -7,6 +7,7 @@
 
   <body>
     <%- include('./partials/header.ejs') %>
+    
     <main>
         <section class="register-container">
           <article class="register-title">
@@ -22,86 +23,112 @@
             >
               <h2 class="form-title">Datos personales</h2>
               
-              <label for="firstName">
                 <input
                   class="inputs"
                   type="text"
                   name="firstName"
                   id="firstName"
                   placeholder="Nombre"
+
                 />
-              </label>
-              <label for="lastName">
+
+              <% if (errors && errors.firstName) { %>
+                <p class="flash-errors"><%= errors.firstName.msg %></p>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="text"
                   name="lastName"
                   id="lastName"
                   placeholder="Apellido"
+                  value="<%= oldData ? oldData.lastName : "" %>"
                 />
-              </label>
-              <label for="email">
+
+              <% if (errors && errors.lastName) { %>
+                <p class="flash-errors"><%= errors.lastName.msg %></p>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="email"
                   name="email"
                   id="email"
                   placeholder="Correo electrónico"
+                  value="<%= oldData ? oldData.email : "" %>"
                 />
-              </label>
-              <label for="password">
+
+              <% if (errors && errors.email) { %>
+                <p class="flash-errors"><%= errors.email.msg %></p>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Ingresar contraseña"
+                  placeholder="Nueva contraseña"
+                  value="<%= oldData ? oldData.password : "" %>"
                 />
-              </label>
-              <label for="contactNumber">
+
+              <% if (errors && errors.password) { %>
+                <p class="flash-errors"><%= errors.password.msg %></p>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="number"
                   name="contactNumber"
                   id="contactNumber"
-                  placeholder="Número de contacto"
+                  placeholder="Número de teléfono"
+                  value="<%= oldData ? oldData.contactNumber : "" %>"
                 />
-              </label>
-              <label for="birthDate">
+
+              <% if (errors && errors.contactNumber) { %>
+               <p class="flash-errors"><%= errors.contactNumber.msg %></p>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="date"
                   name="birthDate"
                   id="birthDate"
                   placeholder="Ingresar fecha de nacimiento"
+                  value="<%= oldData ? oldData.birthDate : "" %>"
                 />
-              </label>
-              <label for="address">
+
+              <% if (errors && errors.birthDate) { %>
+                <p class="flash-errors"><%= errors.birthDate.msg %></p>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="text"
                   name="address"
                   id="address"
-                  placeholder="Ingresar domicilio"
+                  placeholder="Domicilio completo"
+                  value="<%= oldData ? oldData.address : "" %>"
                 />
-              </label>
 
-              <label for="profilePicture" class="picture-title">
-                <p>Selecciona una foto de perfil</p>
+              <% if (errors && errors.address) { %>
+               <p class="flash-errors"><%= errors.address.msg %></p>             
+              <% } %>
+
+              <section  class="picture-title">
+              <label for="profilePicture"> <p>Seleccioná una foto de perfil</p></label> 
                 <input
                   class="picture-data"
                   type="file"
-                  id="profilePicture"
                   name="profilePicture"
+                  id="profilePicture"
                   accept=".jpg"
-                  required
                 />
-              </label>  
+              </section>
               <button type="submit" class="btn-yellow">Registrate</button>
 
               <section class="links-container">
                 <a href="/users/login">¿Ya tenés cuenta? 
-                  <span>Ingresa</span>
+                  <span>Ingresá</span>
                 </a>
               </section>
             </form>

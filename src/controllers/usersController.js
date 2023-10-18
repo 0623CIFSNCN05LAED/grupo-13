@@ -15,32 +15,41 @@ const usersController = {
   login: (req, res) => {
     const data = req.body;
     req.session.userData = data;
-    console.log(data);
     res.redirect('/home');
   },
   registerForm: (req, res) => {
-    res.render('register');
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+    req.session.oldData = null;
+    req.session.oldData = null;
+    res.render('register', {
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
+  },
+  register: (req, res) => {
+    const data = req.body;
+    console.log(data);
+    req.session.userData = data;
+    const user = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: bcrypt.hashSync(data.password, 10),
+      accessType: data.accessType,
+      contactNumber: Number(data.contactNumber),
+      birthDate: data.birthDate,
+      address: data.address,
+      image: req.file ? req.file.filename : profilePicture,
+    };
+    //userServices.getUserByField('email', req.body.email);
+    userServices.createUser(user);
+    res.redirect('login');
   },
   deleteForm: (req, res) => {
     const id = req.params.id;
     const user = userServices.getUser(id);
     res.render('users-delete-form', { user });
-  },
-  register: (req, res) => {
-    const user = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
-      accessType: req.body.accessType,
-      contactNumber: Number(req.body.contactNumber),
-      birthDate: req.body.birthDate,
-      address: req.body.address,
-      image: req.file ? req.file.filename : userPicture,
-    };
-    userServices.getUserByField('email', req.body.email);
-    userServices.createUser(user);
-    res.redirect('register');
   },
   myProfile: (req, res) => {
     const id = req.params.id;

@@ -1,11 +1,18 @@
+// Require's
 const express = require('express');
 const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 const upload = require('../middlewares/users-multer');
-const loginValidations = require('../validations/login-validations');
-const registerValidations = require('../validations/register-validations');
-const loginValidateForm = require('../middlewares/login-validate-form');
-const registerValidateForm = require('../middlewares/register-validate-form');
+
+// Login validations
+const loginValidations = require('../validations/login');
+const loginValidateForm = require('../middlewares/validate-login-form');
+
+// Register validations
+const registerValidations = require('../validations/register');
+const registerValidateForm = require('../middlewares/validate-register-form');
+
+// Guard
 const userGuard = require('../middlewares/user-guard');
 
 usersRouter.get('/login', usersController.loginForm);
