@@ -1,13 +1,14 @@
 const userServices = require('../services/userServices');
 const bcrypt = require('bcryptjs');
 
-
 const usersController = {
   loginForm: (req, res) => {
+    const data = req.session.userData;
     return res.render('login');
   },
   login: (req, res) => {
     const data = req.body;
+    req.session.userData = data;
     console.log(data);
     res.redirect('/home');
   },
@@ -62,7 +63,6 @@ const usersController = {
     userServices.updateUser(id, user);
     res.redirect('/home');
   },
-
   destroy: (req, res) => {
     const user = req.body;
     const id = req.params.id;

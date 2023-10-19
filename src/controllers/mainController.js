@@ -6,7 +6,10 @@ const mainController = {
     return res.render('coming-age-no');
   },
   index: (req, res) => {
-    return res.render('index');
+    const data = req.session.userData;
+    res.render('index', {
+      email: data.email,
+    });
   },
   contact: (req, res) => {
     return res.render('contact');
