@@ -29,11 +29,11 @@
                   name="firstName"
                   id="firstName"
                   placeholder="Nombre"
-
+                  value="<%= oldData ? oldData.firstName : "" %>"
                 />
 
-              <% if (errors && errors.firstName) { %>
-                <p class="flash-errors"><%= errors.firstName.msg %></p>             
+              <% if (locals.errors && errors.firstName) { %>
+                <div class="flash-errors"><%= errors.firstName.msg %></div>             
               <% } %>
 
                 <input
@@ -45,8 +45,8 @@
                   value="<%= oldData ? oldData.lastName : "" %>"
                 />
 
-              <% if (errors && errors.lastName) { %>
-                <p class="flash-errors"><%= errors.lastName.msg %></p>             
+              <% if (locals.errors && errors.lastName) { %>
+                <div class="flash-errors"><%= errors.lastName.msg %></div>             
               <% } %>
 
                 <input
@@ -58,8 +58,8 @@
                   value="<%= oldData ? oldData.email : "" %>"
                 />
 
-              <% if (errors && errors.email) { %>
-                <p class="flash-errors"><%= errors.email.msg %></p>             
+              <% if (locals.errors && errors.email) { %>
+                <div class="flash-errors"><%= errors.email.msg %></div>             
               <% } %>
 
                 <input
@@ -68,11 +68,10 @@
                   name="password"
                   id="password"
                   placeholder="Nueva contraseña"
-                  value="<%= oldData ? oldData.password : "" %>"
                 />
 
-              <% if (errors && errors.password) { %>
-                <p class="flash-errors"><%= errors.password.msg %></p>             
+              <% if (locals.errors && errors.password) { %>
+                <div class="flash-errors"><%= errors.password.msg %></div>             
               <% } %>
 
                 <input
@@ -84,8 +83,8 @@
                   value="<%= oldData ? oldData.contactNumber : "" %>"
                 />
 
-              <% if (errors && errors.contactNumber) { %>
-               <p class="flash-errors"><%= errors.contactNumber.msg %></p>             
+              <% if (locals.errors && errors.contactNumber) { %>
+               <div class="flash-errors"><%= errors.contactNumber.msg %></div>             
               <% } %>
 
                 <input
@@ -97,8 +96,8 @@
                   value="<%= oldData ? oldData.birthDate : "" %>"
                 />
 
-              <% if (errors && errors.birthDate) { %>
-                <p class="flash-errors"><%= errors.birthDate.msg %></p>             
+              <% if (locals.errors && errors.birthDate) { %>
+                <div class="flash-errors"><%= errors.birthDate.msg %></div>             
               <% } %>
 
                 <input
@@ -110,8 +109,8 @@
                   value="<%= oldData ? oldData.address : "" %>"
                 />
 
-              <% if (errors && errors.address) { %>
-               <p class="flash-errors"><%= errors.address.msg %></p>             
+              <% if (locals.errors && errors.address) { %>
+               <div class="flash-errors"><%= errors.address.msg %></div>             
               <% } %>
 
               <section  class="picture-title">
@@ -121,10 +120,11 @@
                   type="file"
                   name="profilePicture"
                   id="profilePicture"
-                  accept=".jpg"
-                  required
                 />
               </section>
+              <% if (locals.errors && errors.profilePicture) { %>
+               <div class="flash-errors"><%= errors.profilePicture.msg %></div>             
+              <% } %>
               <button type="submit" class="btn-yellow">Registrate</button>
 
               <section class="links-container">

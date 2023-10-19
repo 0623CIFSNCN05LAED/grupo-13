@@ -1,5 +1,6 @@
 const userServices = require('../services/userServices');
 const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 const usersController = {
   loginForm: (req, res) => {
@@ -28,6 +29,15 @@ const usersController = {
     });
   },
   register: (req, res) => {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render('register', {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
     const data = req.body;
     const user = {
       firstName: data.firstName,
@@ -38,7 +48,7 @@ const usersController = {
       contactNumber: Number(data.contactNumber),
       birthDate: data.birthDate,
       address: data.address,
-      profilePicture: req.file ? req.file.filename : 'default-img',
+      profilePicture: req.file ? req.file.filename : profilePicture,
     };
     //userServices.getUserByField('email', req.body.email);
     userServices.createUser(user);
