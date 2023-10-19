@@ -7,6 +7,7 @@
 
   <body>
     <%- include('./partials/header.ejs') %>
+    
     <main>
         <section class="register-container">
           <article class="register-title">
@@ -22,86 +23,113 @@
             >
               <h2 class="form-title">Datos personales</h2>
               
-              <label for="firstName">
                 <input
                   class="inputs"
                   type="text"
                   name="firstName"
                   id="firstName"
                   placeholder="Nombre"
+                  value="<%= oldData ? oldData.firstName : "" %>"
                 />
-              </label>
-              <label for="lastName">
+
+              <% if (locals.errors && errors.firstName) { %>
+                <div class="flash-errors"><%= errors.firstName.msg %></div>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="text"
                   name="lastName"
                   id="lastName"
                   placeholder="Apellido"
+                  value="<%= oldData ? oldData.lastName : "" %>"
                 />
-              </label>
-              <label for="email">
+
+              <% if (locals.errors && errors.lastName) { %>
+                <div class="flash-errors"><%= errors.lastName.msg %></div>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="email"
                   name="email"
                   id="email"
                   placeholder="Correo electrónico"
+                  value="<%= oldData ? oldData.email : "" %>"
                 />
-              </label>
-              <label for="password">
+
+              <% if (locals.errors && errors.email) { %>
+                <div class="flash-errors"><%= errors.email.msg %></div>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Ingresar contraseña"
+                  placeholder="Nueva contraseña"
                 />
-              </label>
-              <label for="contactNumber">
+
+              <% if (locals.errors && errors.password) { %>
+                <div class="flash-errors"><%= errors.password.msg %></div>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="number"
                   name="contactNumber"
                   id="contactNumber"
-                  placeholder="Número de contacto"
+                  placeholder="Número de teléfono"
+                  value="<%= oldData ? oldData.contactNumber : "" %>"
                 />
-              </label>
-              <label for="birthDate">
+
+              <% if (locals.errors && errors.contactNumber) { %>
+               <div class="flash-errors"><%= errors.contactNumber.msg %></div>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="date"
                   name="birthDate"
                   id="birthDate"
                   placeholder="Ingresar fecha de nacimiento"
+                  value="<%= oldData ? oldData.birthDate : "" %>"
                 />
-              </label>
-              <label for="address">
+
+              <% if (locals.errors && errors.birthDate) { %>
+                <div class="flash-errors"><%= errors.birthDate.msg %></div>             
+              <% } %>
+
                 <input
                   class="inputs"
                   type="text"
                   name="address"
                   id="address"
-                  placeholder="Ingresar domicilio"
+                  placeholder="Domicilio completo"
+                  value="<%= oldData ? oldData.address : "" %>"
                 />
-              </label>
 
-              <label for="profilePicture" class="picture-title">
-                <p>Selecciona una foto de perfil</p>
+              <% if (locals.errors && errors.address) { %>
+               <div class="flash-errors"><%= errors.address.msg %></div>             
+              <% } %>
+
+              <section  class="picture-title">
+              <label for="profilePicture"> <p>Seleccioná una foto de perfil</p></label> 
                 <input
                   class="picture-data"
                   type="file"
-                  id="profilePicture"
                   name="profilePicture"
-                  accept=".jpg"
-                  required
+                  id="profilePicture"
                 />
-              </label>  
+              </section>
+              <% if (locals.errors && errors.profilePicture) { %>
+               <div class="flash-errors"><%= errors.profilePicture.msg %></div>             
+              <% } %>
               <button type="submit" class="btn-yellow">Registrate</button>
 
               <section class="links-container">
                 <a href="/users/login">¿Ya tenés cuenta? 
-                  <span>Ingresa</span>
+                  <span>Ingresá</span>
                 </a>
               </section>
             </form>

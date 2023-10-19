@@ -9,18 +9,19 @@ module.exports = [
     .bail()
     .isEmail()
     .withMessage('Ingresá un correo electrónico válido'),
-  body('password').notEmpty().withMessage('Ingresá tu contraseña'),
+  body('password')
+    .notEmpty()
+    .withMessage('Ingresá tu contraseña')
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage('La contraseña debe tener al menos 8 caracteres'),
   body('contactNumber')
     .notEmpty()
     .withMessage('Ingresá tu número de teléfono')
-    .bail(),
-  body('birthDate')
-    .notEmpty()
-    .withMessage('Ingresá tu fecha de nacimiento')
-    .bail(),
-  body('address').notEmpty().withMessage('Ingresá tu dirección').bail(),
-  body('profilePicture')
-    .notEmpty()
-    .withMessage('Ingresá tu imagen de perfil')
-    .bail(),
+    .bail()
+    .isInt()
+    .withMessage(
+      'Ingresá un número de teléfono válido (sin guiones, ni espacios)'
+    ),
+  body('address').notEmpty().withMessage('Ingresá tu dirección'),
 ];

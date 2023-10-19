@@ -8,7 +8,8 @@ const mainController = {
   index: (req, res) => {
     const data = req.session.userData;
     res.render('index', {
-      email: data.email,
+      //email: data.email,
+      //password: data.password,
     });
   },
   contact: (req, res) => {

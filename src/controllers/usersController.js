@@ -1,39 +1,63 @@
 const userServices = require('../services/userServices');
 const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 const usersController = {
   loginForm: (req, res) => {
-    const data = req.session.userData;
-    return res.render('login');
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+    req.session.errors = null;
+    req.session.oldData = null;
+    res.render('login', {
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
   },
   login: (req, res) => {
     const data = req.body;
     req.session.userData = data;
-    console.log(data);
     res.redirect('/home');
   },
   registerForm: (req, res) => {
-    res.render('register');
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+    req.session.oldData = null;
+    req.session.oldData = null;
+    res.render('register', {
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
+  },
+  register: (req, res) => {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render('register', {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
+    const data = req.body;
+    const user = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: bcrypt.hashSync(data.password, 10),
+      accessType: data.accessType,
+      contactNumber: Number(data.contactNumber),
+      birthDate: data.birthDate,
+      address: data.address,
+      profilePicture: req.file ? req.file.filename : profilePicture,
+    };
+    //userServices.getUserByField('email', req.body.email);
+    userServices.createUser(user);
+    res.redirect('login');
   },
   deleteForm: (req, res) => {
     const id = req.params.id;
     const user = userServices.getUser(id);
     res.render('users-delete-form', { user });
-  },
-  register: (req, res) => {
-    const user = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
-      accessType: req.body.accessType,
-      contactNumber: Number(req.body.contactNumber),
-      birthDate: req.body.birthDate,
-      address: req.body.address,
-      image: req.file ? req.file.filename : userPicture,
-    };
-    userServices.createUser(user);
-    res.redirect('register');
   },
   myProfile: (req, res) => {
     const id = req.params.id;
@@ -58,16 +82,20 @@ const usersController = {
   update: (req, res) => {
     const user = req.body;
     const id = req.params.id;
-    const image = req.file ? req.file.filename : userServices.getUser(id).image;
-    user.image = image;
+    const profilePicture = req.file
+      ? req.file.filename
+      : userServices.getUser(id).profilePicture;
+    user.profilePicture = profilePicture;
     userServices.updateUser(id, user);
     res.redirect('/home');
   },
   destroy: (req, res) => {
     const user = req.body;
     const id = req.params.id;
-    const image = req.file ? req.file.filename : userServices.getUser(id).image;
-    user.image = image;
+    const profilePicture = req.file
+      ? req.file.filename
+      : userServices.getUser(id).profilePicture;
+    user.profilePicture = profilePicture;
     userServices.deleteUser(id);
     res.redirect('/users/crud');
   },

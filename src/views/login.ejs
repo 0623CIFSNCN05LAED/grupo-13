@@ -24,9 +24,13 @@
                 name="email"
                 id="email"
                 placeholder="Ingresar correo electrónico"
+                value="<%= oldData ? oldData.email : "" %>"
               />
             </label>
 
+            <% if (errors && errors.email) { %>
+              <p class="flash-errors"><%= errors.email.msg %></p>             
+            <% } %>
             <label for="password">
               <input
                 class="inputs"
@@ -34,9 +38,12 @@
                 name="password"
                 id="password"
                 placeholder="Ingresar contraseña"
+                value="<%= oldData ? oldData.password : "" %>"
               />
             </label>
-
+            <% if (errors && errors.password) { %>
+              <p class="flash-errors"><%= errors.password.msg %></p>             
+            <% } %>            
             <button class="btn-yellow" type="submit">Iniciar sesión</button>
 
             <section class="links-container">
