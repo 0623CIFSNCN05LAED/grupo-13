@@ -16,11 +16,11 @@ module.exports = {
     return this.getUsers();
   },
   findById: function (id) {
-    const user = this.getUsers().find((user) => user.id == id);
+    const user = this.findAll().find((user) => user.id == id);
     return user;
   },
   findByField: function (field, text) {
-    const users = this.getUsers();
+    const users = this.findAll();
     const userByField = users.find((user) => user[field] == text);
     return userByField;
   },
