@@ -14,9 +14,23 @@ const usersController = {
     });
   },
   login: (req, res) => {
-    const data = req.body;
-    req.session.userData = data;
-    res.redirect('/home');
+    const userToLogin= userServices.getUserByField('email', req.body.email);
+    
+
+    if(userToLogin){
+      return res.send('Ok puedes ingresar');
+    }
+
+    return res.render('login',{
+      errors:{
+        email:{
+          msg:'Correo electrónico inválido',
+        },
+      }
+    })
+
+
+   
   },
   registerForm: (req, res) => {
     const errors = req.session.errors;
