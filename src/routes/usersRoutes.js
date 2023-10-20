@@ -67,6 +67,7 @@ const registerValidations = [
         );
       }
     }
+    return true;
   }),
 ];
 

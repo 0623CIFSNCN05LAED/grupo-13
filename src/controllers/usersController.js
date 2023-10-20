@@ -50,7 +50,19 @@ const usersController = {
       address: data.address,
       profilePicture: req.file ? req.file.filename : profilePicture,
     };
-    //userServices.getUserByField('email', req.body.email);
+    const userInDB = userServices.getUserByField('email', req.body.email);
+
+    if (userInDB) {
+      return res.render('register', {
+        errors: {
+          email: {
+            msg: 'Este correo electrónico ya ha sido registrado',
+          },
+        },
+        oldData: req.body,
+      });
+    }
+
     userServices.createUser(user);
     res.redirect('login');
   },
