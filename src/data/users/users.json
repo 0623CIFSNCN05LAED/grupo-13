@@ -9,5 +9,27 @@
     "birthDate": "2000-05-10",
     "address": "Figueroa Alcorta ",
     "profilePicture": "profilePicture-1697764540683.jpg"
+  },
+  {
+    "id": "a4088f18-4ebd-4517-9a1f-5c5ef2aad4e5",
+    "firstName": "Clemente",
+    "lastName": "Gaggino",
+    "email": "clems_480@hotmail.com",
+    "password": "$2a$10$fpVRIJRET.EgebozNCGG6OoWXNIib6B3URLMBUrmom/XK3Dt0rToy",
+    "contactNumber": 3434231802,
+    "birthDate": "1994-11-19",
+    "address": "Buenos aires 480",
+    "profilePicture": "profilePicture-1697765141937.jpg"
+  },
+  {
+    "id": "4d206ce2-d09f-42d9-8966-ea476fbf9dcc",
+    "firstName": "Martiniano",
+    "lastName": "Bianchi",
+    "email": "marti@gmail.com",
+    "password": "$2a$10$362v6H7gm6o.xfRGF78JpeKbA6owTU/aaT/VJMuiBr8vnOYqX7d9G",
+    "contactNumber": 3434255890,
+    "birthDate": "1994-11-19",
+    "address": "Austral 2152",
+    "profilePicture": "profilePicture-1697771153565.jpg"
   }
 ]

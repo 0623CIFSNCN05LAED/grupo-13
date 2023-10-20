@@ -5,6 +5,9 @@ const usersController = require('../controllers/usersController');
 const upload = require('../middlewares/users-multer');
 const { body } = require('express-validator');
 const path = require('path');
+const userGuard = require('../middlewares/user-guard');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // Validations
 // const loginValidations = require('../validations/login');
@@ -71,13 +74,10 @@ const registerValidations = [
   }),
 ];
 
-// Guard
-const userGuard = require('../middlewares/user-guard');
-
-usersRouter.get('/login', usersController.loginForm);
+usersRouter.get('/login', guestMiddleware, usersController.loginForm);
 usersRouter.post('/login', loginValidations, usersController.login);
 
-usersRouter.get('/register', usersController.registerForm);
+usersRouter.get('/register', guestMiddleware, usersController.registerForm);
 usersRouter.post(
   '/register',
   upload.single('profilePicture'),
@@ -100,6 +100,6 @@ usersRouter.put(
   usersController.update
 );
 
-usersRouter.get('/:id', userGuard, usersController.myProfile);
+usersRouter.get('/myprofile', userGuard, usersController.myProfile);
 
 module.exports = usersRouter;
