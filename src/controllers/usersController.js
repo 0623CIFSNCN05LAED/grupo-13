@@ -1,5 +1,5 @@
 const userServices = require('../services/userServices');
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const usersController = {
@@ -14,24 +14,34 @@ const usersController = {
     });
   },
   login: (req, res) => {
-    const userToLogin= userServices.getUserByField('email', req.body.email);
-    
+    const userToLogin = userServices.getUserByField('email', req.body.email);
 
-    if(userToLogin){
-      return res.send('Ok puedes ingresar');
+    if (userToLogin) {
+      const passwordValidation = bcryptjs.compareSync(
+        req.body.password,
+        userToLogin.password
+      );
+      if (passwordValidation) {
+        return res.redirect('/home');
+      }
+      return res.render('login', {
+        errors: {
+          password: {
+            msg: 'El usuario y/o contraseña ingresados son inválidos',
+          },
+        },
+      });
     }
 
-    return res.render('login',{
-      errors:{
-        email:{
-          msg:'Correo electrónico inválido',
+    return res.render('login', {
+      errors: {
+        email: {
+          msg: 'El correo electrónico ingresado es inválido',
         },
-      }
-    })
-
-
-   
+      },
+    });
   },
+
   registerForm: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
@@ -57,7 +67,7 @@ const usersController = {
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
-      password: bcrypt.hashSync(data.password, 10),
+      password: bcryptjs.hashSync(data.password, 10),
       accessType: data.accessType,
       contactNumber: Number(data.contactNumber),
       birthDate: data.birthDate,
