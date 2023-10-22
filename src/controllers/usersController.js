@@ -22,7 +22,9 @@ const usersController = {
         userToLogin.password
       );
       if (passwordValidation) {
-        return res.redirect('/home');
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin;
+        res.redirect('/users/myprofile');
       }
       return res.render('login', {
         errors: {
@@ -96,7 +98,7 @@ const usersController = {
     res.render('users-delete-form', { user });
   },
   myProfile: (req, res) => {
-    const id = req.params.id;
+    const id = req.session.userLogged.id;
     const user = userServices.getUser(id);
 
     return res.render('profile', { user });
