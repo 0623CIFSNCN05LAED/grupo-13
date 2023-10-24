@@ -29,7 +29,7 @@
         </article>
 
         <form
-          action="/users/<%= user.id %>/?_method=PUT"
+          action="/users/myProfile/edit/?_method=PUT"
           method="post"
           enctype="multipart/form-data"
         >
@@ -39,16 +39,6 @@
               name="email"
               type="email"
               class="inputs"
-              value="<%= user.email %>"
-            />
-          </article>
-          <article class="input-container">
-            <label for="email">Contraseña</label>
-            <input
-              name="password"
-              type="password"
-              class="inputs"
-              placeholder="Contraseña"
               value="<%= user.email %>"
             />
           </article>
@@ -82,7 +72,7 @@
             />
           </article>
 
-          <button class="btn-yellow btn-edit">Editar</button>
+          <button class="btn-yellow btn-edit">Actualizar Mis Datos</button>
         </form>
       </section>
     </main>

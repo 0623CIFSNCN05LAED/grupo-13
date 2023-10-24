@@ -25,7 +25,6 @@ module.exports = {
     return userByField;
   },
   create: function (user) {
-    console.log(`Creating user ${user.email}`);
     const users = this.getUsers();
     const newUser = {
       id: uuidv4(),
@@ -35,7 +34,6 @@ module.exports = {
     this.saveUsers(users);
   },
   update: function (id, user) {
-    console.log(`Updating user ${user.email}`);
     const users = this.getUsers();
     const userToEdit = users.find((user) => user.id == id);
     Object.assign(userToEdit, user);
@@ -43,7 +41,6 @@ module.exports = {
     return user;
   },
   delete: function (id) {
-    console.log(`Deleting user ${id}`);
     const users = this.getUsers();
     const nonDeletedUsers = users.filter((user) => user.id != id);
     this.saveUsers(nonDeletedUsers);
