@@ -67,4 +67,6 @@ usersRouter.put(
 
 usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
 
+usersRouter.get('/logout', usersController.logout);
+
 module.exports = usersRouter;
