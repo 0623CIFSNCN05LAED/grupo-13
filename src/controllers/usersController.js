@@ -153,6 +153,10 @@ const usersController = {
     userServices.deleteUser(id);
     res.redirect('/users/crud');
   },
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect('/home');
+  },
 };
 
 module.exports = usersController;
