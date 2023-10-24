@@ -20,11 +20,15 @@
             ><i class="fa-solid fa-cart-shopping"></i> <span>Carrito</span></a
           >
         </li>
-        <li>
-          <a href="/users/login"
-            ><i class="fa-solid fa-user"></i> <span>Acceder</span></a
-          >
-        </li>
+        <% if (locals.isLogged) { %>
+          <li>
+            <a href="/users/myProfile"> <i class="fa-solid fa-user"></i> <span> <%= locals.userLogged.firstName %> </span></a>
+          </li>  
+        <% } else { %>
+          <li>
+            <a href="/users/login"><i class="fa-solid fa-user"></i> <span>Acceder</span></a>
+          </li>
+        <% } %>
       </ul>
 
       <div class="burguer-menu">

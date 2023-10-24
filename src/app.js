@@ -8,6 +8,8 @@ const session = require('express-session');
 const app = express();
 
 // Middlewares
+const userLogged = require('./middlewares/userLogged');
+
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -19,6 +21,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(userLogged);
 
 // Template engines
 app.set('view engine', 'ejs');
