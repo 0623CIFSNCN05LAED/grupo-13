@@ -24,11 +24,11 @@
                 name="email"
                 id="email"
                 placeholder="Ingresar correo electrónico"
-              
+                value="<%= locals.oldData ? oldData.email : "" %>"
               />
             </label>
 
-            <% if (errors && errors.email) { %>
+            <% if (locals.errors && errors.email) { %>
               <p class="flash-errors"><%= errors.email.msg %></p>             
             <% } %>
             <label for="password">
@@ -40,7 +40,7 @@
                 placeholder="Ingresar contraseña"
               />
             </label>
-            <% if (errors && errors.password) { %>
+            <% if (locals.errors && errors.password) { %>
               <p class="flash-errors"><%= errors.password.msg %></p>             
             <% } %>            
             <button class="btn-yellow" type="submit">Iniciar sesión</button>

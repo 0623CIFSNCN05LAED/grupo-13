@@ -2,104 +2,52 @@
 const express = require('express');
 const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
+
+// Middlewares
 const upload = require('../middlewares/users-multer');
-const { body } = require('express-validator');
-const path = require('path');
-const userGuard = require('../middlewares/user-guard');
-const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 // Validations
-// const loginValidations = require('../validations/login');
-// const registerValidations = require('../validations/register');
-// const validateForms = require('../middlewares/validate-forms');
+const loginValidations = require('../validations/login');
+const loginValidateForm = require('../middlewares/validate-login-form');
 
-const loginValidations = [
-  body('email')
-    .notEmpty()
-    .withMessage('Ingresá un correo electrónico válido')
-    .bail()
-    .isEmail()
-    .withMessage('Ingresá un correo electrónico válido'),
-  body('password')
-    .notEmpty()
-    .withMessage('Ingresá tu contraseña')
-    .bail()
-    .isLength({ min: 8 })
-    .withMessage('La contraseña debe tener al menos 8 caracteres'),
-];
+const registerValidations = require('../validations/register');
+const registerValidateForm = require('../middlewares/validate-register-form');
 
-const registerValidations = [
-  body('firstName').notEmpty().withMessage('Ingresá tu nombre'),
-  body('lastName').notEmpty().withMessage('Ingresá tu apellido'),
-  body('email')
-    .notEmpty()
-    .withMessage('Ingresá tu correo electrónico')
-    .bail()
-    .isEmail()
-    .withMessage('Ingresá un correo electrónico válido'),
-  body('password')
-    .notEmpty()
-    .withMessage('Ingresá tu contraseña')
-    .bail()
-    .isLength({ min: 8 })
-    .withMessage('La contraseña debe tener al menos 8 caracteres'),
-  body('contactNumber')
-    .notEmpty()
-    .withMessage('Ingresá tu número de teléfono')
-    .bail()
-    .isInt()
-    .withMessage(
-      'Ingresá un número de teléfono válido (sin guiones, ni espacios)'
-    ),
-  body('birthDate').notEmpty().withMessage('Ingresá tu fecha de nacimiento'),
-  body('address').notEmpty().withMessage('Ingresá tu dirección'),
-  body('profilePicture').custom((value, { req }) => {
-    let file = req.file;
-    let acceptedExtensions = ['.jpg', '.png', '.gif'];
-
-    if (!file) {
-      throw new Error('Subí una foto de perfil');
-    } else {
-      let fileExtension = path.extname(file.originalname);
-      if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-            ', '
-          )}`
-        );
-      }
-    }
-    return true;
-  }),
-];
-
+//Routes
 usersRouter.get('/login', guestMiddleware, usersController.loginForm);
-usersRouter.post('/login', loginValidations, usersController.login);
+usersRouter.post(
+  '/login',
+  loginValidations,
+  loginValidateForm,
+  usersController.login
+);
 
 usersRouter.get('/register', guestMiddleware, usersController.registerForm);
 usersRouter.post(
   '/register',
   upload.single('profilePicture'),
   registerValidations,
+  registerValidateForm,
   usersController.register
 );
 
-usersRouter.get('/crud', userGuard, usersController.crud);
+usersRouter.get('/crud', authMiddleware, usersController.crud);
 
-usersRouter.get('/:id/delete', userGuard, usersController.deleteForm);
-usersRouter.delete('/:id/delete', userGuard, usersController.destroy);
+usersRouter.get('/:id/delete', authMiddleware, usersController.deleteForm);
+usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
 
-usersRouter.get('/:id/edit', userGuard, usersController.myProfileEdit);
+usersRouter.get('/:id/edit', authMiddleware, usersController.myProfileEdit);
 // usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
 // usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
 usersRouter.put(
   '/:id',
   upload.single('image'),
-  userGuard,
+  authMiddleware,
   usersController.update
 );
 
-usersRouter.get('/myprofile', userGuard, usersController.myProfile);
+usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
 
 module.exports = usersRouter;

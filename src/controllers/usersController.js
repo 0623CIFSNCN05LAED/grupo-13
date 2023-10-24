@@ -4,27 +4,20 @@ const { validationResult } = require('express-validator');
 
 const usersController = {
   loginForm: (req, res) => {
-    const errors = req.session.errors;
-    const oldData = req.session.oldData;
-    req.session.errors = null;
-    req.session.oldData = null;
-    res.render('login', {
-      errors: errors ? errors : null,
-      oldData: oldData ? oldData : null,
-    });
+    res.render('login');
   },
   login: (req, res) => {
     const userToLogin = userServices.getUserByField('email', req.body.email);
 
     if (userToLogin) {
-      const passwordValidation = bcryptjs.compareSync(
+      const validPassword = bcryptjs.compareSync(
         req.body.password,
         userToLogin.password
       );
-      if (passwordValidation) {
+      if (validPassword) {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
-        res.redirect('/users/myprofile');
+        return res.redirect('/users/myprofile');
       }
       return res.render('login', {
         errors: {
@@ -92,15 +85,9 @@ const usersController = {
     userServices.createUser(user);
     res.redirect('login');
   },
-  deleteForm: (req, res) => {
-    const id = req.params.id;
-    const user = userServices.getUser(id);
-    res.render('users-delete-form', { user });
-  },
   myProfile: (req, res) => {
     const id = req.session.userLogged.id;
     const user = userServices.getUser(id);
-
     return res.render('profile', { user });
   },
   crud: (req, res) => {
@@ -126,6 +113,11 @@ const usersController = {
     user.profilePicture = profilePicture;
     userServices.updateUser(id, user);
     res.redirect('/home');
+  },
+  deleteForm: (req, res) => {
+    const id = req.params.id;
+    const user = userServices.getUser(id);
+    res.render('users-delete-form', { user });
   },
   destroy: (req, res) => {
     const user = req.body;
