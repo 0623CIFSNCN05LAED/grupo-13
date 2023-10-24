@@ -47,11 +47,8 @@
       </section>
 
       <section class="cards-container">
-        <%- include('./partials/card.ejs') %> <%- include('./partials/card.ejs')
-        %> <%- include('./partials/card.ejs') %> <%-
-        include('./partials/card.ejs') %> <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %> <%- include('./partials/card.ejs')
-        %> <%- include('./partials/card.ejs') %>
+        <% products.slice(0, 8).forEach(product => { %> <%-
+        include('./partials/card.ejs', {product}) %> <% }) %>
       </section>
     </main>
 
