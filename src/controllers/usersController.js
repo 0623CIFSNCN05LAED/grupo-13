@@ -17,6 +17,10 @@ const usersController = {
       if (validPassword) {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
+
+        if(req.body.rememberMe){
+          res.cookie('email', req.body.email,{maxAge: 1000*60*2});
+        }
         return res.redirect('/users/myprofile');
       }
       return res.render('login', {
@@ -154,6 +158,7 @@ const usersController = {
     res.redirect('/users/crud');
   },
   logout: (req, res) => {
+    res.clearCookie('email');
     req.session.destroy();
     return res.redirect('/home');
   },

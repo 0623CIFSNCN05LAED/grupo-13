@@ -54,6 +54,12 @@
   color: #fafafa;
 }
 
+.remember-me{
+  display: flex;
+  align-self: center;
+
+}
+
 @media (min-width: 768px) {
   .login-container {
     max-width: 60vw;
