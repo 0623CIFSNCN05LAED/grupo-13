@@ -110,11 +110,11 @@ main {
     display: flex;
     flex-direction: column;
     width: 45%;
+    justify-content: center;
   }
 
   .profile-picture {
     display: flex;
     justify-content: center;
-    padding-top: 30px;
   }
 }
