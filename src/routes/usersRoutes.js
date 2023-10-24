@@ -38,14 +38,31 @@ usersRouter.get('/crud', authMiddleware, usersController.crud);
 usersRouter.get('/:id/delete', authMiddleware, usersController.deleteForm);
 usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
 
-usersRouter.get('/:id/edit', authMiddleware, usersController.myProfileEdit);
+usersRouter.get(
+  '/myProfile/edit',
+  authMiddleware,
+  usersController.myProfileEdit
+);
 // usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
 // usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
 usersRouter.put(
-  '/:id',
+  '/myProfile/edit',
   upload.single('image'),
   authMiddleware,
   usersController.update
+);
+usersRouter.get(
+  '/myPassword/edit',
+  authMiddleware,
+  usersController.myPasswordEdit
+);
+// usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
+// usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
+usersRouter.put(
+  '/myPassword/edit',
+  upload.single('image'),
+  authMiddleware,
+  usersController.updatePassword
 );
 
 usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);

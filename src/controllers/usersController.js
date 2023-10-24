@@ -95,9 +95,14 @@ const usersController = {
     res.render('users-crud', { users });
   },
   myProfileEdit: (req, res) => {
-    const id = req.params.id;
+    const id = req.session.userLogged.id;
     const user = userServices.getUser(id);
     res.render('profile-edit', { user });
+  },
+  myPasswordEdit: (req, res) => {
+    const id = req.session.userLogged.id;
+    const user = userServices.getUser(id);
+    res.render('profile-edit-password', { user });
   },
   // myProfileEdit: (req, res) => {
   //   const id = req.params.id;
@@ -105,8 +110,27 @@ const usersController = {
   //   res.render('prueba', { user });
   // }, futuro editor admin
   update: (req, res) => {
-    const user = req.body;
-    const id = req.params.id;
+    const data = req.body;
+    const user = {
+      email: data.email,
+      password: bcryptjs.hashSync(data.password, 10),
+      contactNumber: Number(data.contactNumber),
+      address: data.address,
+    };
+    const id = req.session.userLogged.id;
+    const profilePicture = req.file
+      ? req.file.filename
+      : userServices.getUser(id).profilePicture;
+    user.profilePicture = profilePicture;
+    userServices.updateUser(id, user);
+    res.redirect('/home');
+  },
+  updatePassword: (req, res) => {
+    const data = req.body;
+    const user = {
+      password: bcryptjs.hashSync(data.password, 10),
+    };
+    const id = req.session.userLogged.id;
     const profilePicture = req.file
       ? req.file.filename
       : userServices.getUser(id).profilePicture;

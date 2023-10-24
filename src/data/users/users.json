@@ -4,22 +4,22 @@
     "firstName": "Florencia",
     "lastName": "Martin",
     "email": "flor@gmail.com",
-    "password": "$2a$10$1hywHboDpbj89MH3ahRyquTFBhqEwbUs/CCPKyxQXPJjzjgwaT1Va",
+    "password": "$2a$10$4KGU/1XXNuSqJLeIynn4W.04Y0Dbe2SqrR3xRNC9m0527la66O6HC",
     "contactNumber": 22359,
     "birthDate": "2000-05-10",
     "address": "Figueroa Alcorta ",
-    "profilePicture": "profilePicture-1697764540683.jpg"
+    "profilePicture": "image-1698114687636.jpg"
   },
   {
     "id": "a4088f18-4ebd-4517-9a1f-5c5ef2aad4e5",
     "firstName": "Clemente",
     "lastName": "Gaggino",
     "email": "clems_480@hotmail.com",
-    "password": "$2a$10$fpVRIJRET.EgebozNCGG6OoWXNIib6B3URLMBUrmom/XK3Dt0rToy",
+    "password": "$2a$10$8283ho.wZB8RIU3pX72z7uIqDVR.rk7XRILXYXNj78JCfu.xKo4re",
     "contactNumber": 3434231802,
     "birthDate": "1994-11-19",
     "address": "Buenos aires 480",
-    "profilePicture": "profilePicture-1697765141937.jpg"
+    "profilePicture": "image-1698115049843.jpg"
   },
   {
     "id": "4d206ce2-d09f-42d9-8966-ea476fbf9dcc",
