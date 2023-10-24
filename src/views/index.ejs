@@ -32,9 +32,8 @@
         </div>
 
         <div class="cards-container">
-          <%- include('./partials/card.ejs') %> <%-
-          include('./partials/card.ejs') %> <%- include('./partials/card.ejs')
-          %> <%- include('./partials/card.ejs') %>
+          <% products.slice(0, 4).forEach(product => { %> <%-
+          include('./partials/card.ejs', {product}) %> <% }) %>
         </div>
       </section>
     </main>

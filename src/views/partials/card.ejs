@@ -1,10 +1,12 @@
 <article class="card">
   <div class="card-image">
-    <img src="" alt="" />
+    <a href="/products/<%= product.id %>">
+      <img src="/images/products/<%= product.image %>" alt="" />
+    </a>
   </div>
   <div class="card-description">
-    <h3>Quilmes x6 1L</h3>
-    <p>$10.000</p>
+    <h3><%= product.name %></h3>
+    <p>$ <%= product.price %></p>
     <button>Añadir al carrito</button>
   </div>
 </article>
