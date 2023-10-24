@@ -100,24 +100,6 @@
   },
   {
     "id": 12,
-    "name": "Budweiser",
-    "description": "Rich and malty with a smooth finish",
-    "image": "default-image.png",
-    "category": "Sour",
-    "size": "1000 cc",
-    "price": 1511
-  },
-  {
-    "id": 13,
-    "name": "Heineken",
-    "description": "Hoppy and aromatic with a piney undertone",
-    "image": "default-image.png",
-    "category": "Brown Ale",
-    "size": "1000 cc",
-    "price": 2347
-  },
-  {
-    "id": 14,
     "name": "Pilsen",
     "description": "Light-bodied with a subtle sweetness",
     "image": "default-image.png",
@@ -126,57 +108,12 @@
     "price": 2081
   },
   {
-    "id": 15,
+    "id": 13,
     "name": "Patagonia",
     "description": "Bold and robust with notes of coffee and chocolate",
     "image": "default-image.png",
     "category": "Porter",
     "size": "350 cc",
     "price": 1207
-  },
-  {
-    "id": 16,
-    "name": "Corona",
-    "description": "Crisp and refreshing with hints of citrus",
-    "image": "default-image.png",
-    "category": "Pale Ale",
-    "size": "350 cc",
-    "price": 1607
-  },
-  {
-    "id": 17,
-    "name": "Stella Artois",
-    "description": "Rich and malty with a smooth finish",
-    "image": "default-image.png",
-    "category": "Pilsner",
-    "size": "500 cc",
-    "price": 709
-  },
-  {
-    "id": 18,
-    "name": "Quilmes",
-    "description": "Hoppy and aromatic with a piney undertone",
-    "image": "default-image.png",
-    "category": "Porter",
-    "size": "500 cc",
-    "price": 523
-  },
-  {
-    "id": 19,
-    "name": "Miller",
-    "description": "Light-bodied with a subtle sweetness",
-    "image": "default-image.png",
-    "category": "Brown Ale",
-    "size": "500 cc",
-    "price": 1273
-  },
-  {
-    "id": 20,
-    "name": "Brahama",
-    "description": "Bold and robust with notes of coffee and chocolate",
-    "image": "default-image.png",
-    "category": "IPA",
-    "size": "350 cc",
-    "price": "593"
   }
 ]

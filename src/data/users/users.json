@@ -31,5 +31,16 @@
     "birthDate": "1994-11-19",
     "address": "Austral 2152",
     "profilePicture": "profilePicture-1697771153565.jpg"
+  },
+  {
+    "id": "19a4bb8d-8369-4f3a-9eb7-f58b06cba94c",
+    "firstName": "Sofía",
+    "lastName": "Swift",
+    "email": "taylor@swift.com",
+    "password": "$2a$10$9g1Gzgcu4EGF5.AwdFPyLufu9ZSAY9a/xKNX/QP60e4bmaBCX06hW",
+    "contactNumber": 75395164,
+    "birthDate": "1989-12-13",
+    "address": "Cornelia Street 1989",
+    "profilePicture": "profilePicture-1698104790804.jpg"
   }
 ]
