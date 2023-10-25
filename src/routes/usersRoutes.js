@@ -15,6 +15,8 @@ const loginValidateForm = require('../middlewares/validate-login-form');
 
 const registerValidations = require('../validations/register');
 const registerValidateForm = require('../middlewares/validate-register-form');
+const createUserValidations = require('../validations/createUser');
+const createUserValidateForm = require('../middlewares/validate-create-user-form');
 
 //Routes
 usersRouter.get('/login', guestMiddleware, usersController.loginForm);
@@ -41,9 +43,8 @@ usersRouter.get(
 );
 usersRouter.post(
   '/create-new-user',
-  upload.single('profilePicture'),
-  registerValidations,
-  registerValidateForm,
+  createUserValidations,
+  createUserValidateForm,
   usersController.createNewUser
 );
 
