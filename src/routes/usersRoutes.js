@@ -7,6 +7,7 @@ const usersController = require('../controllers/usersController');
 const upload = require('../middlewares/users-multer');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Validations
 const loginValidations = require('../validations/login');
@@ -33,7 +34,20 @@ usersRouter.post(
   usersController.register
 );
 
-usersRouter.get('/crud', authMiddleware, usersController.crud);
+usersRouter.get(
+  '/create-new-user',
+  adminMiddleware,
+  usersController.createNewUserForm
+);
+usersRouter.post(
+  '/create-new-user',
+  upload.single('profilePicture'),
+  registerValidations,
+  registerValidateForm,
+  usersController.createNewUser
+);
+
+usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
 
 usersRouter.get('/:id/delete', authMiddleware, usersController.deleteForm);
 usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);

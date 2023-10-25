@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/form-styles.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <form
+        class="form"
+        action="/users/create-new-user"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <h2 class="title">Creación de usuarios</h2>
+
+        <input class="input" type="text" id="firstName" name="firstName"
+        placeholder="Nombre" value="<%= oldData ? oldData.firstName : "" %>" />
+        <input class="input" type="text" id="lastName" name="lastName"
+        placeholder="Apellido" value="<%= oldData ? oldData.lastName : "" %>" />
+        <input class="input" type="email" id="email" name="email"
+        placeholder="Correo electrónico" value="<%= oldData ? oldData.email : ""
+        %>" />
+
+        <input
+          class="input"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Contraseña"
+        />
+
+        <input class="input" type="number" name="contactNumber"
+        id="contactNumber" placeholder="Número de teléfono" value="<%= oldData ?
+        oldData.contactNumber : "" %>" /> <input class="input" type="date"
+        name="birthDate" id="birthDate" placeholder="Ingresar fecha de
+        nacimiento" value="<%= oldData ? oldData.birthDate : "" %>" /> <input
+        class="input" type="text" name="address" id="address"
+        placeholder="Domicilio completo" value="<%= oldData ? oldData.address :
+        "" %>" />
+
+        <select class="input" name="accessType" id="accessType">
+          <option value="elegirOpción">elige una opción</option>
+          <option value="admin">Administrador</option>
+          <option value="user">Usuario</option>
+        </select>
+
+        <div class="picture">
+          <label for="profilePicture">
+            <p>Seleccioná una foto de perfil</p></label
+          >
+          <input
+            class="picture-data"
+            type="file"
+            name="profilePicture"
+            id="profilePicture"
+          />
+        </div>
+
+        <% if (locals.errors && errors.profilePicture) { %>
+        <div class="flash-errors"><%= errors.profilePicture.msg %></div>
+        <% } %>
+
+        <div class="buttons-container">
+          <button type="submit" class="button">Crear usuario</button>
+        </div>
+      </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
