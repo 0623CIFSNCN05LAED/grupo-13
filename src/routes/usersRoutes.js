@@ -25,6 +25,7 @@ usersRouter.post(
   usersController.login
 );
 
+//Register
 usersRouter.get('/register', guestMiddleware, usersController.registerForm);
 usersRouter.post(
   '/register',
@@ -34,6 +35,7 @@ usersRouter.post(
   usersController.register
 );
 
+//Create new user
 usersRouter.get(
   '/create-new-user',
   adminMiddleware,
@@ -47,11 +49,14 @@ usersRouter.post(
   usersController.createNewUser
 );
 
+//Users CRUD
 usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
 
+//Delete User
 usersRouter.get('/:id/delete', authMiddleware, usersController.deleteForm);
 usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
 
+//Edit profile
 usersRouter.get(
   '/myProfile/edit',
   authMiddleware,
@@ -65,6 +70,17 @@ usersRouter.put(
   authMiddleware,
   usersController.update
 );
+
+//Edit profile CRUD
+usersRouter.get('/:id/edit', authMiddleware, usersController.editProfileCrud);
+usersRouter.put(
+  '/:id/edit',
+  upload.single('image'),
+  authMiddleware,
+  usersController.update
+);
+
+//Edit password
 usersRouter.get(
   '/myPassword/edit',
   authMiddleware,
@@ -79,8 +95,10 @@ usersRouter.put(
   usersController.updatePassword
 );
 
+//MyProfile
 usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
 
+//Edit profile
 usersRouter.get('/logout', usersController.logout);
 
 module.exports = usersRouter;
