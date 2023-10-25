@@ -28,6 +28,7 @@ module.exports = {
     const users = this.getUsers();
     const newUser = {
       id: uuidv4(),
+      accessType: user.email.includes('@ebeer.com') ? 'admin' : 'user',
       ...user,
     };
     users.push(newUser);

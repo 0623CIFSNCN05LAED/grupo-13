@@ -40,22 +40,21 @@ const usersController = {
       },
     });
   },
-
-  registerForm: (req, res) => {
+  createNewUserForm: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
     req.session.oldData = null;
     req.session.oldData = null;
-    res.render('register', {
+    res.render('profile-create-new', {
       errors: errors ? errors : null,
       oldData: oldData ? oldData : null,
     });
   },
-  register: (req, res) => {
+  createNewUser: (req, res) => {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render('register', {
+      return res.render('profile-create-new', {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
@@ -76,6 +75,53 @@ const usersController = {
     const userInDB = userServices.getUserByField('email', req.body.email);
 
     if (userInDB) {
+      return res.render('profile-create-new', {
+        errors: {
+          email: {
+            msg: 'Este correo electrónico ya ha sido registrado',
+          },
+        },
+        oldData: req.body,
+      });
+    }
+
+    userServices.createUser(user);
+    res.redirect('crud');
+  },
+  registerForm: (req, res) => {
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+    req.session.oldData = null;
+    req.session.oldData = null;
+    res.render('register', {
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
+  },
+  register: (req, res) => {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render('profile-create-new', {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
+    const data = req.body;
+    const user = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: bcryptjs.hashSync(data.password, 10),
+      contactNumber: Number(data.contactNumber),
+      birthDate: data.birthDate,
+      address: data.address,
+      profilePicture: req.file ? req.file.filename : profilePicture,
+    };
+    const userInDB = userServices.getUserByField('email', req.body.email);
+
+    if (userInDB) {
       return res.render('register', {
         errors: {
           email: {
@@ -87,7 +133,7 @@ const usersController = {
     }
 
     userServices.createUser(user);
-    res.redirect('login');
+    res.redirect('crud');
   },
   myProfile: (req, res) => {
     const id = req.session.userLogged.id;

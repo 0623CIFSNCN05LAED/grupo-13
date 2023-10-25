@@ -8,6 +8,7 @@
     "contactNumber": 22359,
     "birthDate": "2000-05-10",
     "address": "Figueroa Alcorta ",
+    "accessType": "admin",
     "profilePicture": "image-1698114687636.jpg"
   },
   {
@@ -19,6 +20,7 @@
     "contactNumber": 3434231802,
     "birthDate": "1994-11-19",
     "address": "Buenos aires 480",
+    "accessType": "user",
     "profilePicture": "image-1698115049843.jpg"
   },
   {
@@ -30,6 +32,7 @@
     "contactNumber": 3434255890,
     "birthDate": "1994-11-19",
     "address": "Austral 2152",
+    "accessType": "admin",
     "profilePicture": "profilePicture-1697771153565.jpg"
   },
   {
@@ -41,6 +44,43 @@
     "contactNumber": 75395164,
     "birthDate": "1989-12-13",
     "address": "Cornelia Street 1989",
+    "accessType": "admin",
     "profilePicture": "profilePicture-1698104790804.jpg"
+  },
+  {
+    "id": "fb1f01f1-5613-4b2a-9c90-a5078c50d6d4",
+    "firstName": "Juliana",
+    "lastName": "Moncada",
+    "email": "juli@gmail.com",
+    "password": "$2a$10$8ePR5/1sHI8X5ZpVWDfZ2.yCEI6.og7SGzTwDxxcMyAyVWGW79EJO",
+    "accessType": "admin",
+    "contactNumber": 12345678,
+    "birthDate": "1994-11-19",
+    "address": "Colombia",
+    "profilePicture": "profilePicture-1698188441446.jpg"
+  },
+  {
+    "id": "007b0a40-d8c8-4263-b8ab-9e7dfc13fee3",
+    "accessType": "admin",
+    "firstName": "Aylen",
+    "lastName": "Martinez",
+    "email": "aylen@ebeer.com",
+    "password": "$2a$10$CjBHNNM3kIg32MdPinazue0mnEMu7lhYbOr0f6l9dbnAWv97N4Ouq",
+    "contactNumber": 12345678,
+    "birthDate": "1994-11-19",
+    "address": "Austral",
+    "profilePicture": "profilePicture-1698190762702.jpg"
+  },
+  {
+    "id": "0dafee6e-ca19-4113-9ae7-9d31943f853a",
+    "accessType": "user",
+    "firstName": "asdasd@gmail.com",
+    "lastName": "asdasd@gmail.com",
+    "email": "asdasd@gmail.com",
+    "password": "$2a$10$LcaxXdS9rW9swi5GL6OXcOVmROpqB42O0l0oC2273Jzk/9uo1W72S",
+    "contactNumber": 1,
+    "birthDate": "2023-10-24",
+    "address": "asdasd@gmail.com",
+    "profilePicture": "profilePicture-1698190888310.jpg"
   }
 ]
