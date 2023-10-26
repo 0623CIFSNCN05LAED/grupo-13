@@ -72,11 +72,17 @@ usersRouter.put(
 );
 
 //Edit profile CRUD
-usersRouter.get('/:id/edit', authMiddleware, usersController.editProfileCrud);
+usersRouter.get(
+  '/:id/edit',
+  authMiddleware,
+  adminMiddleware,
+  usersController.editProfileCrud
+);
 usersRouter.put(
   '/:id/edit',
   upload.single('image'),
   authMiddleware,
+  adminMiddleware,
   usersController.update
 );
 
