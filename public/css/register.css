@@ -69,6 +69,9 @@
   color: var(--yellow);
   transition: all 0.2s ease-in-out;
 }
+.flash-errors {
+  color: #fafafa;
+}
 
 @media (min-width: 768px) {
   .register-container {

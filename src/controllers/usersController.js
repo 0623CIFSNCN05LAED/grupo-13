@@ -18,8 +18,8 @@ const usersController = {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
 
-        if(req.body.rememberMe){
-          res.cookie('email', req.body.email,{maxAge: 1000*60*2});
+        if (req.body.rememberMe) {
+          res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 2 });
         }
         return res.redirect('/users/myprofile');
       }
@@ -140,14 +140,19 @@ const usersController = {
     const user = userServices.getUser(id);
     return res.render('profile', { user });
   },
-  crud: (req, res) => {
-    const users = userServices.getAllUsers();
-    res.render('users-crud', { users });
-  },
   myProfileEdit: (req, res) => {
     const id = req.session.userLogged.id;
     const user = userServices.getUser(id);
     res.render('profile-edit', { user });
+  },
+  editProfileCrud: (req, res) => {
+    const id = req.params.id;
+    const user = userServices.getUser(id);
+    res.render('profile-edit', { user });
+  },
+  crud: (req, res) => {
+    const users = userServices.getAllUsers();
+    res.render('users-crud', { users });
   },
   myPasswordEdit: (req, res) => {
     const id = req.session.userLogged.id;

@@ -172,7 +172,7 @@ header {
   .nav-user-buttons li {
     border: 3px solid white !important;
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 5px 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
