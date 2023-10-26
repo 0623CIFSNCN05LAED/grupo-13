@@ -1,21 +1,13 @@
 const { validationResult } = require('express-validator');
 
 module.exports = (req, res, next) => {
-  const resultValidation = validationResult(req);
+  const errors = validationResult(req);
 
-  if (resultValidation.errors.length > 0) {
-    //let userEmail = null;
-    //const userLogged = req.session.userLogged;
-
-    //if (userLogged) {
-    //  userEmail = userLogged.email;
-    //}
-
-    return res.render('profile-create-new', {
-      errors: resultValidation.mapped(),
-      oldData: req.body,
-      // userEmail,
-    });
+  if (!errors.isEmpty()) {
+    req.session.errors = errors.mapped();
+    req.session.oldData = req.body;
+    res.redirect('profile-create-new');
+  } else {
   }
   next();
 };

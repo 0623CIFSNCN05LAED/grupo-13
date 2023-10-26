@@ -18,43 +18,43 @@
 
         <input class="input" type="text" id="firstName" name="firstName" placeholder="Nombre" value="<%= oldData ? oldData.firstName : "" %>" />
 
-        <% if (locals.errors && errors.firstName) { %>
+        <% if (errors && errors.firstName) { %>
         <div class="flash-errors"><%= errors.firstName.msg %></div>
         <% } %> 
         
         <input class="input" type="text" id="lastName" name="lastName" placeholder="Apellido" value="<%= oldData ? oldData.lastName : "" %>" />
 
-        <% if (locals.errors && errors.lastName)         { %>
+        <% if (errors && errors.lastName)         { %>
         <div class="flash-errors"><%= errors.lastName.msg %></div>
         <% } %> 
         
         <input class="input" type="email" id="email" name="email" placeholder="Correo electrónico" value="<%= oldData ? oldData.email : "" %>" /> 
         
-        <% if (locals.errors && errors.email) { %> 
+        <% if (errors && errors.email) { %> 
           <div class="flash-errors"><%= errors.email.msg %></div>
         <% } %>
 
         <input class="input" type="password" id="password" name="password" placeholder="Contraseña" />
 
-        <% if (locals.errors && errors.password) { %>
+        <% if (errors && errors.password) { %>
         <div class="flash-errors"><%= errors.password.msg %></div>
         <% } %> 
         
         <input class="input" type="number" name="contactNumber" id="contactNumber" placeholder="Número de teléfono" value="<%= oldData ? oldData.contactNumber : "" %>" /> 
         
-        <% if (locals.errors && errors.contactNumber) { %>
+        <% if (errors && errors.contactNumber) { %>
         <div class="flash-errors"><%= errors.contactNumber.msg %></div>
         <% } %> 
         
         <input class="input" type="date" name="birthDate" id="birthDate" placeholder="Ingresar fecha de nacimiento" value="<%= oldData ? oldData.birthDate : "" %>" /> 
         
-        <% if (locals.errors && errors.birthDate) { %> 
+        <% if (errors && errors.birthDate) { %> 
           <div class="flash-errors"><%= errors.birthDate.msg %></div>
         <% } %> 
         
         <input class="input" type="text" name="address" id="address" placeholder="Domicilio completo" value="<%= oldData ? oldData.address : "" %>" /> 
         
-        <% if (locals.errors && errors.address) { %>
+        <% if (errors && errors.address) { %>
         <div class="flash-errors"><%= errors.address.msg %></div>
         <% } %>
 
