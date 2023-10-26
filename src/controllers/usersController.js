@@ -66,7 +66,6 @@ const usersController = {
       lastName: data.lastName,
       email: data.email,
       password: bcryptjs.hashSync(data.password, 10),
-      accessType: data.accessType,
       contactNumber: Number(data.contactNumber),
       birthDate: data.birthDate,
       address: data.address,
@@ -85,7 +84,7 @@ const usersController = {
       });
     }
 
-    userServices.createUser(user);
+    userServices.createUserAdmin(user);
     res.redirect('crud');
   },
   registerForm: (req, res) => {

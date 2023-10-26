@@ -39,7 +39,6 @@ module.exports = {
     const newUser = {
       id: uuidv4(),
       accessType: user.email.includes('@ebeer.com') ? 'admin' : 'user',
-      profilePicture: 'default-image.jpg',
       ...user,
     };
     users.push(newUser);
