@@ -48,14 +48,12 @@
             <table>
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>E-mail</th>
-                  <th>Tipo de acceso</th>
+                  <th>Acceso</th>
                 </tr>
               </thead>
               <% users.slice(0, 40).forEach(user => { %>
               <tr>
-                <td><%= user.id %></td>
                 <td><%= user.email %></td>
                 <td><%= user.accessType %></td>
                 <td>

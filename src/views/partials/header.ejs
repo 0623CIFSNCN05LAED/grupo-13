@@ -1,12 +1,21 @@
 <header>
   <div class="header-container">
+    <% if (locals.ageAnswer == "yes") { %>
     <div class="nav-icon">
       <a href="/home">
         <img src="/images/logo.png" alt="imagen logo" />
       </a>
     </div>
+    <% } else { %>
+      <div class="nav-icon">
+        <a href="/">
+          <img src="/images/logo.png" alt="imagen logo" />
+        </a>
+      </div>
+    <% } %>
 
     <nav class="nav-container">
+      <% if (locals.ageAnswer == "yes") { %>
       <ul>
         <li><a href="/home">Inicio</a></li>
         <li><a href="/products">Productos</a></li>
@@ -42,6 +51,9 @@
         <% } else { %>
         <% } %>
       </ul>
+
+      <% } else { %>
+      <% } %>
 
       <div class="burguer-menu">
         <i class="fa-solid fa-bars fa-2xl"></i>
