@@ -70,7 +70,7 @@ const usersController = {
       contactNumber: Number(data.contactNumber),
       birthDate: data.birthDate,
       address: data.address,
-      profilePicture: req.file ? req.file.filename : profilePicture,
+      profilePicture: req.file ? req.file.filename : 'default-image.jpg',
     };
     const userInDB = userServices.getUserByField('email', req.body.email);
 

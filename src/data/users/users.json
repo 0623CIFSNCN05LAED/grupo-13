@@ -82,5 +82,16 @@
     "birthDate": "2023-10-24",
     "address": "asdasd@gmail.com",
     "profilePicture": "profilePicture-1698190888310.jpg"
+  },
+  {
+    "id": "36839ba4-ba82-4b98-bd5d-c5f55d81092e",
+    "firstName": "Juliana",
+    "lastName": "Ebeer",
+    "email": "juliana@ebeer.com",
+    "password": "$2a$10$feWFg2Tyu2j9rD3X01MH6e5DJ4LXWzvoH3GB1jOuYoL80Tct5H.DS",
+    "contactNumber": 123456789,
+    "birthDate": "1989-12-13",
+    "address": "Ebeer 123",
+    "profilePicture": "default-image.jpg"
   }
 ]

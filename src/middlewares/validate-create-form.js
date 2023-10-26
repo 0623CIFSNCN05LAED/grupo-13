@@ -6,8 +6,8 @@ module.exports = (req, res, next) => {
   if (!errors.isEmpty()) {
     req.session.errors = errors.mapped();
     req.session.oldData = req.body;
-    res.redirect('profile-create-new');
+    res.redirect('/users/create-user');
   } else {
+    next();
   }
-  next();
 };
