@@ -3,13 +3,14 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
-const cookies= require('cookie-parser');
+const cookies = require('cookie-parser');
 
 // Express
 const app = express();
 
 // Middlewares
 const userLogged = require('./middlewares/userLogged');
+const ageAnswer = require('./middlewares/ageAnswerMiddleware');
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +24,7 @@ app.use(
   })
 );
 app.use(cookies());
+app.use(ageAnswer);
 app.use(userLogged);
 
 // Template engines

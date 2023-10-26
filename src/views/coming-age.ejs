@@ -18,10 +18,18 @@
           <h2>¿Eres mayor de edad?</h2>
         </div>
 
-        <div class="age-btns">
-          <a href="/home"><button>Si</button></a>
-          <a href="/coming-age-no"><button>No</button> </a>
-        </div>
+        <form action="/" method="POST">
+          <label for="ageAnswer">
+            <div class="age-btns">
+              <select name="ageAnswer" id="age">
+                <option value="no">Elige una opción</option>
+                <option value="yes">Sí</option>
+                <option value="no">No</option>
+              </select>
+              <button type="submit">Enviar</button>
+            </div>
+          </label>
+        </form>
 
         <div class="age-terms">
           <p>
