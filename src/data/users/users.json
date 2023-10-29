@@ -36,18 +36,6 @@
     "profilePicture": "profilePicture-1697771153565.jpg"
   },
   {
-    "id": "19a4bb8d-8369-4f3a-9eb7-f58b06cba94c",
-    "firstName": "Sofía",
-    "lastName": "Swift",
-    "email": "taylor@swift.com",
-    "password": "$2a$10$9g1Gzgcu4EGF5.AwdFPyLufu9ZSAY9a/xKNX/QP60e4bmaBCX06hW",
-    "contactNumber": 75395164,
-    "birthDate": "1989-12-13",
-    "address": "Cornelia Street 1989",
-    "accessType": "admin",
-    "profilePicture": "profilePicture-1698104790804.jpg"
-  },
-  {
     "id": "fb1f01f1-5613-4b2a-9c90-a5078c50d6d4",
     "firstName": "Juliana",
     "lastName": "Moncada",
@@ -82,5 +70,29 @@
     "birthDate": "2023-10-24",
     "address": "asdasd@gmail.com",
     "profilePicture": "profilePicture-1698190888310.jpg"
+  },
+  {
+    "id": "2dae8544-7a9c-4db2-82d1-2b3011bc4cf5",
+    "accessType": "admin",
+    "firstName": "Sofía",
+    "lastName": "Swift",
+    "email": "sofia@ebeer.com",
+    "password": "$2a$10$LSgZZDWCgHR0bdaK5mHRIukTx0JHm9GfqdprMa9Sdc9.ePwBzuSHa",
+    "contactNumber": 123465789,
+    "birthDate": "1989-12-13",
+    "address": "Ebeer 1989",
+    "profilePicture": "default-image.jpg"
+  },
+  {
+    "id": "ba13e2b2-f2d2-47c8-bece-bda9de786469",
+    "accessType": "admin",
+    "firstName": "Virginia",
+    "lastName": "Ebeer",
+    "email": "virginia@ebeer.com",
+    "password": "$2a$10$ZxwxvtfvrgLnq.TGAhDYJeNTqz/6DzSS2agshzShU808Jg23BbW.m",
+    "contactNumber": 123456789,
+    "birthDate": "1989-12-13",
+    "address": "Ebeer 321",
+    "profilePicture": "default-image.jpg"
   }
 ]

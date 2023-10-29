@@ -18,6 +18,9 @@ const userServices = {
   createUser: (user) => {
     db.users.create(user);
   },
+  createUserAdmin: (user) => {
+    db.users.createAdmin(user);
+  },
   updateUser: (id, user) => {
     db.users.update(id, user);
   },

@@ -1,22 +1,29 @@
-// Require's
+/* Require's */
 const express = require('express');
 const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 
-// Middlewares
+/* Middlewares */
 const upload = require('../middlewares/users-multer');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 
-// Validations
+// Login validations
 const loginValidations = require('../validations/login');
 const loginValidateForm = require('../middlewares/validate-login-form');
 
+// Register validations
 const registerValidations = require('../validations/register');
 const registerValidateForm = require('../middlewares/validate-register-form');
 
-//Routes
+// Admin create validations
+const createValidations = require('../validations/create');
+const createValidateForm = require('../middlewares/validate-create-form');
+
+/*Routes */
+
+// Login
 usersRouter.get('/login', guestMiddleware, usersController.loginForm);
 usersRouter.post(
   '/login',
@@ -36,21 +43,16 @@ usersRouter.post(
 );
 
 //Create new user
-usersRouter.get(
-  '/create-new-user',
-  adminMiddleware,
-  usersController.createNewUserForm
-);
+usersRouter.get('/create-user', usersController.createNewUserForm);
 usersRouter.post(
-  '/create-new-user',
-  upload.single('profilePicture'),
-  registerValidations,
-  registerValidateForm,
+  '/create-user',
+  createValidations,
+  createValidateForm,
   usersController.createNewUser
 );
 
 //Users CRUD
-usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
+usersRouter.get('/crud', authMiddleware, usersController.crud);
 
 //Delete User
 usersRouter.get('/:id/delete', authMiddleware, usersController.deleteForm);

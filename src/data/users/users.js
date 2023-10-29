@@ -34,6 +34,16 @@ module.exports = {
     users.push(newUser);
     this.saveUsers(users);
   },
+  createAdmin: function (user) {
+    const users = this.getUsers();
+    const newUser = {
+      id: uuidv4(),
+      accessType: user.email.includes('@ebeer.com') ? 'admin' : 'user',
+      ...user,
+    };
+    users.push(newUser);
+    this.saveUsers(users);
+  },
   update: function (id, user) {
     const users = this.getUsers();
     const userToEdit = users.find((user) => user.id == id);
