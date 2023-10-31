@@ -9,7 +9,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 /* PRODUCT LIST */
 productsRouter.get('/', productsController.index);
-productsRouter.post('/', cartMiddleware, productsController.addProduct);
+productsRouter.post('/:id', cartMiddleware, productsController.addProduct);
 
 /* CRUD */
 productsRouter.get('/crud', authMiddleware, productsController.productCrud);

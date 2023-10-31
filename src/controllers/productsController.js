@@ -7,21 +7,20 @@ const productsController = {
     res.render('products', { products });
   },
   addProduct: (req, res) => {
-    req.session.cartFilled = req.body.cartFilled;
+    if (!req.session.cart == []) {
+      const id = req.params.id;
+      const product = productServices.getProductById(id);
+      req.session.cartFilled = req.body.cartFilled;
+      req.session.cart.push(product);
+    } else {
+      req.session.cart = [];
+      const id = req.params.id;
+      const product = productServices.getProductById(id);
+      req.session.cartFilled = req.body.cartFilled;
+      req.session.cart.push(product);
+    }
 
     if (req.session.cartFilled == 'agregoUnProducto') {
-      req.session.cart = [];
-      const product = {
-        id: 1,
-        name: 'Tres Cordilleras',
-        description: 'Crisp and refreshing with hints of citrus',
-        image: 'default-image.png',
-        category: 'Porter',
-        size: '350 cc',
-        price: '2237',
-      };
-      req.session.cart.push(product);
-
       return res.redirect('/products/cart');
     } else {
       return res.redirect('/products');
