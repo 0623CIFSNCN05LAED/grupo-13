@@ -2,12 +2,14 @@ const express = require('express');
 const productsRouter = express.Router();
 const productsController = require('../controllers/productsController');
 const upload = require('../middlewares/products-multer');
+const cartMiddleware = require('../middlewares/cartMiddleware');
 
 // Middlewares
 const authMiddleware = require('../middlewares/authMiddleware');
 
 /* PRODUCT LIST */
 productsRouter.get('/', productsController.index);
+productsRouter.post('/', cartMiddleware, productsController.addProduct);
 
 /* CRUD */
 productsRouter.get('/crud', authMiddleware, productsController.productCrud);
@@ -21,7 +23,7 @@ productsRouter.post(
 );
 
 /* PRODUCT CART */
-productsRouter.get('/cart', productsController.productCart);
+productsRouter.get('/cart', cartMiddleware, productsController.productCart);
 productsRouter.get('/cart-filled', productsController.productCartFilled);
 
 /* PRODUCT DELETE FORM */

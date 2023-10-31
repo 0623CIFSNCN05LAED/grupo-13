@@ -7,6 +7,8 @@
   <div class="card-description">
     <h3><%= product.name %></h3>
     <p>$ <%= product.price %></p>
-    <button>Añadir al carrito</button>
+    <form action="/products" method="POST">
+      <button name="cartFilled" value='agregoUnProducto'>Añadir al carrito</button>
+    </form>
   </div>
 </article>

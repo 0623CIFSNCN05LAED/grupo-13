@@ -7,25 +7,82 @@
 
   <body>
     <%- include('./partials/header.ejs') %>
-    <main class="cart-container">
-      <section class="emptyCart">
-        <h2>Ups, ¡Esta vacío!</h2>
-
-        <article class="emptyCartMessage">
-          <div>
-            <h3>No tenés ningún producto en tu carrito.</h3>
-          </div>
-        </article>
-      </section>
-
-      <section class="backToHome">
-        <article class="btn-yellow">
-          <div>
-            <a href="/home">Volver</a>
-          </div>
-        </article>
-      </section>
-    </main>
+        <% if (locals.cartFilled == "agregoUnProducto") { %>
+          <main class="mainCart">
+            <section class="productsContainer">
+              <section class="productsList">
+                <h2>Productos</h2>
+              <% locals.cart.forEach(product => { %>
+                <article class="productCard">
+                  <div class="productImageTitle">
+                    <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" >
+                    <div class="productDescription">
+                      <h3><%= product.name %></h3>
+                    </div>
+                  </div>
+                  <div class="productManage">
+                    <div class="productQuantity">
+                      <a href="" class="addMore">+</a>
+                      <p class="quantityNumber">1</p>
+                      <a href="" class="takeMore">-</a>
+                    </div>
+                    <div class="productPrice">
+                      <p class="value">$<%= product.price %></p>
+                    </div>
+                    <div class="productDelete">
+                      <a href="">Eliminar</a>
+                    </div>
+                  </div>
+                </article>
+                <% }) %>
+              </section>
+      
+              <div class="purchase">
+                <h2>Su orden</h2>
+                <article class="summary">
+                  <div class="productsValue">
+                    <p>Producto/s</p>
+                    <p>$1.900</p>
+                  </div>
+                  <div class="deliveryValue">
+                    <p>Envío</p>
+                    <p>$1.900</p>
+                  </div>
+                  <div class="totalValue">
+                    <p class="total">TOTAL:</p>
+                    <p class="totalNumber">$3.800</p>
+                  </div>
+      
+                  <article class="btn-yellow">
+                    <div>
+                      <a href="">COMPRAR</a>
+                    </div>
+                  </article>
+                </article>
+              </div>
+            </section>
+          </main>
+        <% } else { %>
+          <main class="cart-container">
+            <section class="emptyCart">
+              <h2>Ups, ¡Esta vacío!</h2>
+      
+              <article class="emptyCartMessage">
+                <div>
+                  <h3>No tenés ningún producto en tu carrito.</h3>
+                </div>
+              </article>
+            </section>
+            
+            <section class="backToHome">
+              <article class="btn-yellow">
+                <div>
+                  <a href="/home">Volver</a>
+                </div>
+              </article>
+            </section>
+          </main>
+        <% } %>
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>
