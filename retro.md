@@ -119,3 +119,36 @@ Aquí detallamos lo expuesto en el jam:
 
    - Disminuir el uso de VS code live share (para evitar errores).
    - No avisar la ausencia a una reunión
+
+# Retrospectiva SPRINT Nº5:
+
+Jamboard, Starfish retrospective (página 4): https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?ts=64e9256f&f=3&pli=1
+
+Aquí detallamos lo expuesto en el jam:
+
+1. Comenzar a hacer:
+
+   - Reuniones por issues particulares con los miembros que se encuentren disponibles
+   - Enfatizar los objetivos y logros alcanzados
+   - Programar reunion pre-entrega para verificar detalles finales
+
+2. Hacer más:
+
+   - Lograr un mejor esquema de división de tareas
+   - Mantener actualizado el tablero Trello con las tareas asignadas a cada integrante
+   - Reforzar las metodologías Scrum en las reuniones weekly/daily en caso de ser necesario
+
+3. Continuar haciendo:
+
+- Crear ramas para cada user story asignada
+- Reuniones weekly para verrificar el progreso: martes 19:30 hs (ARG) y 17:30 hs (COL)
+- Continuar compartiendo las buenas prácticas, información útil y documentación mediante los hilos de discord para fomentar el aprendizaje
+
+4. Hacer menos:
+
+   - Mantener activas ramas que no se utilizan o que hayan sido mergeadas
+
+5. Dejar de hacer:
+
+   - Hacer merge de cambios a la rama main, sin revisar que funcione correctamente
+   - No avisar la ausencia a una reunión
