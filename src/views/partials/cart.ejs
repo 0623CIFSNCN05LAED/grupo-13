@@ -1,4 +1,3 @@
-<% locals.cart.forEach(product => { %>
     <article class="productCard">
       <div class="productImageTitle">
         <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" >
@@ -9,15 +8,14 @@
       <div class="productManage">
         <div class="productQuantity">
           <a href="" class="addMore">+</a>
-          <p class="quantityNumber">1</p>
+          <p class="quantityNumber"><%= product.quantity %></p>
           <a href="" class="takeMore">-</a>
         </div>
         <div class="productPrice">
-          <p class="value">$<%= product.price %></p>
+          <p class="value">$<%= product.price * product.quantity %></p>
         </div>
         <div class="productDelete">
           <a href="">Eliminar</a>
         </div>
       </div>
     </article>
-<% }) %>

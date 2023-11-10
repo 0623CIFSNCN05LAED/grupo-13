@@ -86,6 +86,7 @@
 }
 .productDescription {
   margin-left: 15px;
+  width: 150px;
 }
 .productDescription h3 {
   text-align: left;

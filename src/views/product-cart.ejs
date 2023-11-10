@@ -7,12 +7,12 @@
 
   <body>
     <%- include('./partials/header.ejs') %>
-        <% if (locals.cartFilled == "agregoUnProducto") { %>
+        <% if (locals.cart.length > 0) { %>
           <main class="mainCart">
             <section class="productsContainer">
               <section class="productsList">
                 <h2>Productos</h2>
-                <% locals.cart.slice(0, 10).forEach(product => { %> <%-
+                <% locals.cart.forEach(product => { %> <%-
                   include('./partials/cart.ejs', {product}) %> <% }) %>
               </section>
       
@@ -21,7 +21,9 @@
                 <article class="summary">
                   <div class="productsValue">
                     <p>Producto/s</p>
-                    <p>$1.900</p>
+                    <p>$<%= locals.cart.reduce((acumulador, product) => {
+                      return acumulador + (product.price * product.quantity)
+                    }, 0) %></p>
                   </div>
                   <div class="deliveryValue">
                     <p>Envío</p>
@@ -29,7 +31,9 @@
                   </div>
                   <div class="totalValue">
                     <p class="total">TOTAL:</p>
-                    <p class="totalNumber">$3.800</p>
+                    <p class="totalNumber"> $<%= locals.cart.reduce((acumulador, product) => {
+                      return acumulador + (product.price * product.quantity)
+                    }, 0) %></p>
                   </div>
       
                   <article class="btn-yellow">

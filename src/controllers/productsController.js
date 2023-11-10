@@ -7,24 +7,22 @@ const productsController = {
     res.render('products', { products });
   },
   addProduct: (req, res) => {
-    if (!req.session.cart == []) {
-      const id = req.params.id;
-      const product = productServices.getProductById(id);
-      req.session.cartFilled = req.body.cartFilled;
-      req.session.cart.push(product);
+    const id = req.params.id;
+
+    if (req.session.cart.find((product) => product.id == id)) {
+      req.session.cart = req.session.cart.map((product) => {
+        if (product.id == id) {
+          product.quantity += 1;
+        }
+        return product;
+      });
     } else {
-      req.session.cart = [];
-      const id = req.params.id;
       const product = productServices.getProductById(id);
-      req.session.cartFilled = req.body.cartFilled;
+      product.quantity = 1;
       req.session.cart.push(product);
     }
 
-    if (req.session.cartFilled == 'agregoUnProducto') {
-      return res.redirect('/products/cart');
-    } else {
-      return res.redirect('/products');
-    }
+    return res.redirect('/products/cart');
   },
   // Product detail
   detail: (req, res) => {
