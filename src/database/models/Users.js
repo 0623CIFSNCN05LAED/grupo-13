@@ -1,40 +1,40 @@
-module.exports = (sequelize, dataTypes) => {
-  const alias = 'Users';
+module.exports = (sequelize, DataTypes) => {
+  const alias = 'users';
   const cols = {
     id: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
       primaryKey: true,
     },
     firstName: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
     },
     lastName: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
     },
     email: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
     },
     password: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
     },
-    contacNumber: {
-      type: dataTypes.INTENGER,
+    contactNumber: {
+      type: DataTypes.INTEGER,
     },
     birthDate: {
-      type: dataTypes.DATE,
+      type: DataTypes.DATE,
     },
     address: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
     },
     profilePicture: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
     },
     accessType: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
     },
   };
   const config = {
-    tableName: 'Users',
+    tableName: 'users',
     timestamps: false,
   };
 

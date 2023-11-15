@@ -3,15 +3,16 @@ const productServices = require('../services/productServices');
 const productsController = {
   // Index de las rutas /products
   index: (req, res) => {
-    const products = productServices.getAllProducts();
-    res.render('products', { products });
+    productServices.getAllProducts().then((products) => {
+      res.render('products', { products });
+    });
   },
   // Product detail
   detail: (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProductById(id);
-
-    res.render('product-detail', { product });
+    productServices.getProduct(id).then((product) => {
+      res.render('product-detail', { product });
+    });
   },
   // /create
   addForm: (req, res) => {

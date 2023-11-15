@@ -76,10 +76,13 @@ DROP TABLE IF EXISTS `Products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Products` (
   `id` varchar(80) NOT NULL,
+  `name` varchar(80) NOT NULL,
   `name_id` varchar(80) NOT NULL,
   `description` varchar(300) NOT NULL,
   `image` varchar(100) DEFAULT NULL,
+  `category` varchar(80) NOT NULL,
   `category_id` varchar(80) NOT NULL,
+  `size` varchar(80) NOT NULL,
   `size_id` varchar(80) NOT NULL,
   `price` int(11) NOT NULL,
   PRIMARY KEY (`id`),
