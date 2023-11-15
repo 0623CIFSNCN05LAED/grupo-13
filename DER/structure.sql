@@ -1,6 +1,6 @@
--- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for osx10.10 (x86_64)
+-- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for Win64 (AMD64)
 --
--- Host: localhost    Database: grupo-13
+-- Host: localhost    Database: grupo13
 -- ------------------------------------------------------
 -- Server version	10.4.28-MariaDB
 
@@ -22,116 +22,68 @@ USE grupo13;
 --
 
 --
--- Table structure for table `Category`
+-- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `Category`;
+DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Category` (
+CREATE TABLE `products` (
   `id` varchar(80) NOT NULL,
-  `category` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Category`
---
-
-LOCK TABLES `Category` WRITE;
-/*!40000 ALTER TABLE `Category` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Category` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Name`
---
-
-DROP TABLE IF EXISTS `Name`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Name` (
-  `id` varchar(80) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Name`
---
-
-LOCK TABLES `Name` WRITE;
-/*!40000 ALTER TABLE `Name` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Name` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Products`
---
-
-DROP TABLE IF EXISTS `Products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Products` (
-  `id` varchar(80) NOT NULL,
-  `name_id` varchar(80) NOT NULL,
-  `description` varchar(300) NOT NULL,
+  `name` varchar(80) NOT NULL,
+  `description` varchar(200) NOT NULL,
   `image` varchar(100) DEFAULT NULL,
-  `category_id` varchar(80) NOT NULL,
-  `size_id` varchar(80) NOT NULL,
+  `category` varchar(80) NOT NULL,
+  `size` varchar(80) NOT NULL,
   `price` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `Products_FK` FOREIGN KEY (`id`) REFERENCES `Name` (`id`),
-  CONSTRAINT `Products_FK_1` FOREIGN KEY (`id`) REFERENCES `size` (`id`),
-  CONSTRAINT `Products_FK_2` FOREIGN KEY (`id`) REFERENCES `Category` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Products`
+-- Dumping data for table `products`
 --
 
-LOCK TABLES `Products` WRITE;
-/*!40000 ALTER TABLE `Products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Products` ENABLE KEYS */;
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES ('1','Tres Cordilleras','Crisp and refreshing with hints of citrus','default-image.png','Porter','350 cc',2237),('10','Brahama','Bold and robust with notes of coffee and chocolate','default-image.png','Porter','500 cc',1775),('11','Tres Cordilleras','Crisp and refreshing with hints of citrus','default-image.png','Pilsner','500 cc',1854),('12','Pilsen','Light-bodied with a subtle sweetness','default-image.png','IPA','500 cc',2081),('13','Patagonia','Bold and robust with notes of coffee and chocolate','default-image.png','Porter','350 cc',1207),('2','Budweiser','Rich and malty with a smooth finish','default-image.png','Brown Ale','1500 cc',1489),('3','Heineken','Hoppy and aromatic with a piney undertone','default-image.png','Porter','1500 cc',1446),('4','Pilsen','Light-bodied with a subtle sweetness','default-image.png','Porter','350 cc',2573),('5','Patagonia','Bold and robust with notes of coffee and chocolate','default-image.png','Stout','350 cc',2267),('6','Corona','Crisp and refreshing with hints of citrus','default-image.png','IPA','1000 cc',631),('7','Stella Artois','Rich and malty with a smooth finish','default-image.png','Lager','1000 cc',2151),('8','Quilmes','Hoppy and aromatic with a piney undertone','default-image.png','Lager','1500 cc',603),('9','Miller','Light-bodied with a subtle sweetness','default-image.png','Brown Ale','1000 cc',598);
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `User_product`
+-- Table structure for table `user_product`
 --
 
-DROP TABLE IF EXISTS `User_product`;
+DROP TABLE IF EXISTS `user_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `User_product` (
+CREATE TABLE `user_product` (
   `id` varchar(80) NOT NULL,
   `products_id` varchar(80) NOT NULL,
   `users_id` varchar(80) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `User_product_FK` FOREIGN KEY (`id`) REFERENCES `Users` (`id`),
-  CONSTRAINT `User_product_FK_1` FOREIGN KEY (`id`) REFERENCES `Products` (`id`)
+  CONSTRAINT `User_product_FK` FOREIGN KEY (`id`) REFERENCES `users` (`id`),
+  CONSTRAINT `User_product_FK_1` FOREIGN KEY (`id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `User_product`
+-- Dumping data for table `user_product`
 --
 
-LOCK TABLES `User_product` WRITE;
-/*!40000 ALTER TABLE `User_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `User_product` ENABLE KEYS */;
+LOCK TABLES `user_product` WRITE;
+/*!40000 ALTER TABLE `user_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Users`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `Users`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Users` (
+CREATE TABLE `users` (
   `id` varchar(80) NOT NULL,
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
@@ -148,37 +100,25 @@ CREATE TABLE `Users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Users`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `Users` WRITE;
-/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `size`
+-- Dumping routines for database 'grupo13'
 --
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-DROP TABLE IF EXISTS `size`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `size` (
-  `id` varchar(80) NOT NULL,
-  `size` varchar(80) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
---
--- Dumping data for table `size`
---
-
-LOCK TABLES `size` WRITE;
-/*!40000 ALTER TABLE `size` DISABLE KEYS */;
-/*!40000 ALTER TABLE `size` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping routines for database 'grupo-13'
---
+-- Dump completed on 2023-11-14 23:03:39

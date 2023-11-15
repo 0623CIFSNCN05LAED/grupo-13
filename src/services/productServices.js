@@ -1,15 +1,17 @@
-const db = require('../data/db');
+// const db = require('../data/db');
+const { Products } = require('../database/models');
+const Sequelize = require('sequelize');
+const { v4: uuidv4 } = require('uuid');
 
 const productServices = {
   getAllProducts: () => {
-    return db.products.findAll();
+    return Products.findAll();
   },
   getProduct: (id) => {
-    return db.products.findById(id);
+    return Products.findByPk(id);
   },
-
   getProductById: (id) => {
-    const product = db.products.findById(id);
+    const product = Products.findByPk(id);
     return product;
   },
   createProduct: (product) => {

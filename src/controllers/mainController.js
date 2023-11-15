@@ -17,9 +17,9 @@ const mainController = {
     return res.render('coming-age');
   },
   index: (req, res) => {
-    const products = productServices.getAllProducts();
-
-    res.render('index', { products });
+    productServices.getAllProducts().then((products) => {
+      res.render('index', { products });
+    });
   },
   contact: (req, res) => {
     return res.render('contact');
