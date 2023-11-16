@@ -85,15 +85,15 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` varchar(80) NOT NULL,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `contactNumber` int(11) NOT NULL,
-  `birthDate` date NOT NULL COMMENT 'Debe ser mayor de edad',
+  `contact_number` int(11) NOT NULL,
+  `birth_date` date NOT NULL COMMENT 'Debe ser mayor de edad',
   `address` varchar(100) NOT NULL,
-  `profilePicture` varchar(100) DEFAULT NULL COMMENT 'En default recordar poner la ruta de la imagen por defecto',
-  `accessType` varchar(20) NOT NULL,
+  `profile_picture` varchar(100) DEFAULT NULL COMMENT 'En default recordar poner la ruta de la imagen por defecto',
+  `role_id` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Users_UN` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Tabla de usuarios';
