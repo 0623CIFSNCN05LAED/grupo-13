@@ -30,11 +30,11 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` varchar(80) NOT NULL,
-  `name` varchar(80) NOT NULL,
+  `brand_id` varchar(80) NOT NULL,
   `description` varchar(200) NOT NULL,
   `image` varchar(100) DEFAULT NULL,
-  `category` varchar(80) NOT NULL,
-  `size` varchar(80) NOT NULL,
+  `category_id` varchar(80) NOT NULL,
+  `size_id` varchar(80) NOT NULL,
   `price` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
