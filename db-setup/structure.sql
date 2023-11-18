@@ -1,4 +1,4 @@
--- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for osx10.10 (x86_64)
+-- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: grupo13
 -- ------------------------------------------------------
@@ -15,11 +15,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
 DROP DATABASE IF EXISTS grupo13;
 CREATE DATABASE grupo13;
 USE grupo13;
---
 
 --
 -- Table structure for table `brand`
@@ -78,12 +76,13 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `brand_id` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` int(11) NOT NULL,
   `description` varchar(200) NOT NULL,
   `image` varchar(100) DEFAULT NULL,
+  `brand_id` varchar(100) NOT NULL,
   `category_id` varchar(100) NOT NULL,
   `size_id` varchar(100) NOT NULL,
-  `price` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `products_FK` (`size_id`),
   KEY `products_FK_1` (`brand_id`),
@@ -100,7 +99,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'1','Crisp and refreshing with hints of citrus','default-image.png','3','1',2237),(2,'2','Rich and malty with a smooth finish','default-image.png','2','2',1489),(3,'3','Hoppy and aromatic with a piney undertone','default-image.png','3','2',1446),(4,'4','Light-bodied with a subtle sweetness','default-image.png','3','1',2573),(5,'5','Bold and robust with notes of coffee and chocolate','default-image.png','6','1',2267),(6,'6','Crisp and refreshing with hints of citrus','default-image.png','4','3',631),(7,'7','Rich and malty with a smooth finish','default-image.png','5','3',2151),(8,'8','Hoppy and aromatic with a piney undertone','default-image.png','5','2',603),(9,'9','Light-bodied with a subtle sweetness','default-image.png','2','3',598),(10,'10','Bold and robust with notes of coffee and chocolate','default-image.png','3','4',1775),(11,'1','Crisp and refreshing with hints of citrus','default-image.png','5','4',1854),(12,'4','Light-bodied with a subtle sweetness','default-image.png','4','4',2081),(13,'5','Bold and robust with notes of coffee and chocolate','default-image.png','3','1',1207);
+INSERT INTO `products` VALUES (1,'',2237,'Crisp and refreshing with hints of citrus','default-image.png','1','3','1'),(2,'',1489,'Rich and malty with a smooth finish','default-image.png','2','2','2'),(3,'',1446,'Hoppy and aromatic with a piney undertone','default-image.png','3','3','2'),(4,'',2573,'Light-bodied with a subtle sweetness','default-image.png','4','3','1'),(5,'',2267,'Bold and robust with notes of coffee and chocolate','default-image.png','5','6','1'),(6,'',631,'Crisp and refreshing with hints of citrus','default-image.png','6','4','3'),(7,'',2151,'Rich and malty with a smooth finish','default-image.png','7','5','3'),(8,'',603,'Hoppy and aromatic with a piney undertone','default-image.png','8','5','2'),(9,'',598,'Light-bodied with a subtle sweetness','default-image.png','9','2','3'),(10,'',1775,'Bold and robust with notes of coffee and chocolate','default-image.png','10','3','4'),(11,'',1854,'Crisp and refreshing with hints of citrus','default-image.png','1','5','4'),(12,'',2081,'Light-bodied with a subtle sweetness','default-image.png','4','4','4'),(13,'',1207,'Bold and robust with notes of coffee and chocolate','default-image.png','5','3','1');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,3 +189,14 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'grupo13'
 --
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-11-18 20:03:56
