@@ -1,29 +1,21 @@
 const productServices = require('../services/productServices');
 
 const productsController = {
-  // Index de las rutas /products
   index: (req, res) => {
     productServices.getAllProducts().then((products) => {
       res.render('products', { products });
     });
   },
-  // Product detail
   detail: (req, res) => {
     const id = req.params.id;
     productServices.getProduct(id).then((product) => {
       res.render('product-detail', { product });
     });
   },
-  // /create
+  // create
   addForm: (req, res) => {
     res.render('product-add-form');
   },
-  deleteForm: (req, res) => {
-    const id = req.params.id;
-    const product = productServices.getProduct(id);
-    res.render('product-delete-form', { product });
-  },
-  // Submit add-form
   store: (req, res) => {
     const product = {
       name: req.body.name,
@@ -33,8 +25,9 @@ const productsController = {
       price: Number(req.body.price),
       image: req.file ? req.file.filename : productPicture,
     };
-    productServices.createProduct(product);
-    res.redirect('crud');
+    productServices.createProduct(product).then(() => {
+      res.redirect('crud');
+    });
   },
   editForm: (req, res) => {
     const id = req.params.id;
@@ -51,6 +44,11 @@ const productsController = {
     const id = req.params.id;
     productServices.updateProduct(id, product);
     res.redirect('/products/crud');
+  },
+  deleteForm: (req, res) => {
+    const id = req.params.id;
+    const product = productServices.getProduct(id);
+    res.render('product-delete-form', { product });
   },
   destroy: (req, res) => {
     const id = req.params.id;

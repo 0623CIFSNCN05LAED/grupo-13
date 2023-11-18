@@ -1,4 +1,3 @@
-// const db = require('../data/db');
 const { Products } = require('../database/models');
 
 const productServices = {
