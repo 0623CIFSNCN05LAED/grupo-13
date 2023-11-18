@@ -1,27 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
-    'Products',
+    'Brand',
     {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
       },
       name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      image: DataTypes.STRING,
-      category: DataTypes.STRING,
-      size: DataTypes.STRING,
-      price: DataTypes.INTEGER,
     },
     {
-      tableName: 'products',
+      tableName: 'brand',
       timestamps: false,
     }
   );
 
   Model.associate = (models) => {
-    Model.belongsTo(models.Brand, {
-      as: 'brand',
+    Model.hasMany(models.Product, {
+      as: 'products',
       foreignKey: 'brand_id',
     });
   };
