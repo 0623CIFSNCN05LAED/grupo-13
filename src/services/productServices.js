@@ -1,7 +1,5 @@
 // const db = require('../data/db');
 const { Products } = require('../database/models');
-const Sequelize = require('sequelize');
-const { v4: uuidv4 } = require('uuid');
 
 const productServices = {
   getAllProducts: () => {
@@ -10,18 +8,14 @@ const productServices = {
   getProduct: (id) => {
     return Products.findByPk(id);
   },
-  getProductById: (id) => {
-    const product = Products.findByPk(id);
-    return product;
-  },
   createProduct: (product) => {
-    db.products.create(product);
+    return Products.create(product);
   },
   updateProduct: (id, product) => {
-    db.products.update(id, product);
+    return Products.update(id, product);
   },
   deleteProduct: (id) => {
-    db.products.delete(id);
+    return Products.destroy(id);
   },
 };
 
