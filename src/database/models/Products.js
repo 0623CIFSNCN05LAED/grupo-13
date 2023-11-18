@@ -18,5 +18,27 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+
+  Model.associate = (models) => {
+    Model.belongsTo(models.Brand, {
+      as: 'brand',
+      foreignKey: 'brand_id',
+    });
+  };
+
+  Model.associate = (models) => {
+    Model.belongsTo(models.Size, {
+      as: 'size',
+      foreignKey: 'size_id',
+    });
+  };
+
+  Model.associate = (models) => {
+    Model.belongsTo(models.Category, {
+      as: 'category',
+      foreignKey: 'category_id',
+    });
+  };
+
   return Model;
 };
