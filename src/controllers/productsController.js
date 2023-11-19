@@ -1,41 +1,30 @@
 const productServices = require('../services/productServices');
+const categoryServices = require('../services/categoryServices');
+const brandServices = require('../services/brandServices');
+const sizeServices = require('../services/sizeServices');
 
 const productsController = {
-  // Index de las rutas /products
   index: (req, res) => {
     productServices.getAllProducts().then((products) => {
       res.render('products', { products });
     });
   },
-  // Product detail
   detail: (req, res) => {
     const id = req.params.id;
     productServices.getProduct(id).then((product) => {
       res.render('product-detail', { product });
     });
   },
-  // /create
+  // create
   addForm: (req, res) => {
     res.render('product-add-form');
   },
-  deleteForm: (req, res) => {
-    const id = req.params.id;
-    const product = productServices.getProduct(id);
-    res.render('product-delete-form', { product });
-  },
-  // Submit add-form
   store: (req, res) => {
-    const product = {
-      name: req.body.name,
-      description: req.body.description,
-      category: req.body.category,
-      size: req.body.size,
-      price: Number(req.body.price),
-      image: req.file ? req.file.filename : productPicture,
-    };
-    productServices.createProduct(product);
-    res.redirect('crud');
+    productServices.createProduct(req.body, req.file).then((product) => {
+      res.redirect('/products/' + product.id);
+    });
   },
+  // edit
   editForm: (req, res) => {
     const id = req.params.id;
     const product = productServices.getProduct(id);
@@ -51,6 +40,12 @@ const productsController = {
     const id = req.params.id;
     productServices.updateProduct(id, product);
     res.redirect('/products/crud');
+  },
+  // delete
+  deleteForm: (req, res) => {
+    const id = req.params.id;
+    const product = productServices.getProduct(id);
+    res.render('product-delete-form', { product });
   },
   destroy: (req, res) => {
     const id = req.params.id;
