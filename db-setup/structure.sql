@@ -1,13 +1,13 @@
--- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: grupo13
 -- ------------------------------------------------------
--- Server version	10.4.28-MariaDB
+-- Server version	5.5.5-10.4.28-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -15,17 +15,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DROP DATABASE IF EXISTS grupo13;
-CREATE DATABASE grupo13;
-USE grupo13;
-
 --
 -- Table structure for table `brand`
 --
 
 DROP TABLE IF EXISTS `brand`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `brand` (
   `id` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -39,7 +35,6 @@ CREATE TABLE `brand` (
 
 LOCK TABLES `brand` WRITE;
 /*!40000 ALTER TABLE `brand` DISABLE KEYS */;
-INSERT INTO `brand` VALUES ('1','Tres Cordilleras'),('10','Brahama'),('11','Tres Cordilleras'),('12','Pilsen'),('13','Patagonia'),('2','Budweiser'),('3','Heineken'),('4','Pilsen'),('5','Patagonia'),('6','Corona'),('7','Stella Artois'),('8','Quilmes'),('9','Miller');
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,7 +44,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category` (
   `id` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -63,7 +58,6 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES ('1','Porter'),('2','Brown Ale'),('3','Lager'),('4','IPA'),('5','Pilsner'),('6','Stout');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,16 +67,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
+  `id` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `price` int(11) NOT NULL,
   `description` varchar(200) NOT NULL,
-  `image` varchar(100) DEFAULT NULL,
   `brand_id` varchar(100) NOT NULL,
   `category_id` varchar(100) NOT NULL,
   `size_id` varchar(100) NOT NULL,
+  `image` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `products_FK` (`size_id`),
   KEY `products_FK_1` (`brand_id`),
@@ -99,7 +93,6 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'',2237,'Crisp and refreshing with hints of citrus','default-image.png','1','3','1'),(2,'',1489,'Rich and malty with a smooth finish','default-image.png','2','2','2'),(3,'',1446,'Hoppy and aromatic with a piney undertone','default-image.png','3','3','2'),(4,'',2573,'Light-bodied with a subtle sweetness','default-image.png','4','3','1'),(5,'',2267,'Bold and robust with notes of coffee and chocolate','default-image.png','5','6','1'),(6,'',631,'Crisp and refreshing with hints of citrus','default-image.png','6','4','3'),(7,'',2151,'Rich and malty with a smooth finish','default-image.png','7','5','3'),(8,'',603,'Hoppy and aromatic with a piney undertone','default-image.png','8','5','2'),(9,'',598,'Light-bodied with a subtle sweetness','default-image.png','9','2','3'),(10,'',1775,'Bold and robust with notes of coffee and chocolate','default-image.png','10','3','4'),(11,'',1854,'Crisp and refreshing with hints of citrus','default-image.png','1','5','4'),(12,'',2081,'Light-bodied with a subtle sweetness','default-image.png','4','4','4'),(13,'',1207,'Bold and robust with notes of coffee and chocolate','default-image.png','5','3','1');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +102,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `role` (
   `id` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -123,7 +116,6 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES ('1','admin'),('2','user');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +125,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `size`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `size` (
   `id` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -147,7 +139,6 @@ CREATE TABLE `size` (
 
 LOCK TABLES `size` WRITE;
 /*!40000 ALTER TABLE `size` DISABLE KEYS */;
-INSERT INTO `size` VALUES ('1','350 cc'),('2','1500 cc'),('3','1000 cc'),('4','500 cc');
 /*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +148,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` varchar(80) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -182,7 +173,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('007b0a40-d8c8-4263-b8ab-9e7dfc13fee3','Aylen','Martinez','aylen@ebeer.com','$2a$10$CjBHNNM3kIg32MdPinazue0mnEMu7lhYbOr0f6l9dbnAWv97N4Ouq',123,'1994-11-19','Austral','profile_picture-1698190762702.jpg','1');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-18 20:03:56
+-- Dump completed on 2023-11-18 22:06:13
