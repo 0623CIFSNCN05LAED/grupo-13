@@ -26,8 +26,22 @@ module.exports = {
       image: file ? file.filename : 'default-image.png',
     });
   },
-  updateProduct: (id, product) => {
-    return Products.update(id, product);
+  updateProduct: (id, body, file) => {
+    return Products.update(
+      {
+        id: uuidv4(),
+        name: body.name,
+        price: Number(body.price),
+        description: body.description,
+        brand_id: body.brand_id,
+        category_id: body.category_id,
+        size_id: body.size_id,
+        image: file ? file.filename : 'default-image.png',
+      },
+      {
+        where: { id: id },
+      }
+    );
   },
   deleteProduct: (id) => {
     return Products.destroy(id);
