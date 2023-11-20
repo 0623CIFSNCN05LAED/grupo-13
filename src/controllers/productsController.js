@@ -9,9 +9,9 @@ const productsController = {
       res.render('products', { products });
     });
   },
-  detail: (req, res) => {
+  detail: async (req, res) => {
     const id = req.params.id;
-    productServices.getProduct(id).then((product) => {
+    await productServices.getProduct(id).then((product) => {
       res.render('product-detail', { product });
     });
   },
@@ -25,14 +25,12 @@ const productsController = {
     });
   },
   // edit
-  editForm: (req, res) => {
+  editForm: async (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProduct(id);
-    const image = req.file
-      ? req.file.filename
-      : productServices.getProduct(id).image;
+    const product = await productServices.getProduct(id);
+    const image = req.file ? req.file.filename : product.image;
     product.image = image;
-    productServices.updateProduct(id, product);
+    // productServices.updateProduct(id, product, image);
     res.render('product-edit-form', { product });
   },
   update: (req, res) => {

@@ -6,7 +6,19 @@ module.exports = {
     return Products.findAll();
   },
   getProduct: (id) => {
-    return Products.findByPk(id);
+    return Products.findByPk(id).then((product, file) => {
+      console.log('trayendo producto,' + product.name, product);
+      return {
+        id: product.id,
+        name: product.name,
+        price: Number(product.price),
+        description: product.description,
+        brand_id: product.brand_id,
+        category_id: product.category_id,
+        size_id: product.size_id,
+        image: product.image ? product.image : 'default-image.png',
+      };
+    });
   },
   // TODO:: Preguntar a Aylen
   // getProductsByCategoryId: () => {
@@ -14,7 +26,6 @@ module.exports = {
   // },
   createProduct: (body, file) => {
     console.log('Creando producto');
-    console.log(file);
     return Products.create({
       id: uuidv4(),
       name: body.name,
@@ -27,6 +38,7 @@ module.exports = {
     });
   },
   updateProduct: (id, body, file) => {
+    console.log('Updating product');
     return Products.update(
       {
         id: uuidv4(),

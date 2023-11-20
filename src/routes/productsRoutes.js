@@ -16,7 +16,7 @@ productsRouter.get('/crud', authMiddleware, productsController.productCrud);
 productsRouter.get('/create', authMiddleware, productsController.addForm);
 productsRouter.post(
   '/create',
-  upload.single('productPicture'),
+  upload.single('image'),
   productsController.store
 );
 
@@ -40,7 +40,7 @@ productsRouter.get('/:id/edit', authMiddleware, productsController.editForm);
 
 productsRouter.put(
   '/:id/edit',
-  upload.single('productPicture'),
+  upload.single('image'),
   productsController.update
 );
 

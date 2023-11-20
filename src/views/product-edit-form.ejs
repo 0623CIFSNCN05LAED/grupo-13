@@ -14,70 +14,68 @@
         method="POST"
         enctype="multipart/form-data"
       >
-        <h2 class="title">Edición de productos</h2>
-        <div class="searchNav">
+        <h2 class="title">Editar producto</h2>
           <input
+            class="input"
             type="text"
-            placeholder="Buscar productos, marcas y más…"
-            maxlength="120"
+            placeholder="ID del producto"
+            maxlength="200"
             autocapitalize="off"
             spellcheck="false"
             autocomplete="off"
             value="<%= product.id %>"
           />
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <input
-          class="input"
-          type="text"
-          name="name"
-          placeholder="Nombre del producto"
-          value="<%= product.name %>"
-        />
-        <input
-          class="input"
-          type="number"
-          name="price"
-          placeholder="Precio"
-          value="<%= product.price %>"
-        />
-        <input
-          class="input"
-          type="text"
-          name="description"
-          placeholder="Descripción"
-          value="<%= product.description %>"
-        />
-        <input
-          class="input"
-          type="number"
-          name="brand_id"
-          placeholder="Id de Marca"
-          value="<%= product.brand_id %>"
-        />
-        <input
-          class="input"
-          type="number"
-          name="category_id"
-          placeholder="Id de Categoría"
-          value="<%= product.category_id %>"
-        />
+          <input
+            class="input"
+            type="text"
+            name="name"
+            placeholder="Nombre del producto"
+            value="<%= product.name %>"
+          />
+          <input
+            class="input"
+            type="number"
+            name="price"
+            placeholder="Precio"
+            value="<%= product.price %>"
+          />
+          <input
+            class="input"
+            type="text"
+            name="description"
+            placeholder="Descripción"
+            value="<%= product.description %>"
+          />
+          <input
+            class="input"
+            type="number"
+            name="brand_id"
+            placeholder="ID de la marca"
+            value="<%= product.brand_id %>"
+          />
+          <input
+            class="input"
+            type="number"
+            name="category_id"
+            placeholder="ID de la categoría"
+            value="<%= product.category_id %>"
+          />
 
         <input
           class="input"
           type="number"
           name="size_id"
-          placeholder="Id de Medida"
+          placeholder="ID de la medida"
           value="<%= product.size_id %>"
         />
 
         <div class="picture">
-          <label for="productPicture">Selecciona una imagen del producto</label>
+          <label for="image">Seleccioná una nueva imágen</label>
           <input
             type="file"
-            id="productPicture"
-            name="productPicture"
-            accept=".jpg"
+            id="image"
+            name="image"
+            accept=".jpg, .png, .jpeg"
           />
         </div>
 
