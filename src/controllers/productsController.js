@@ -30,7 +30,6 @@ const productsController = {
     const product = await productServices.getProduct(id);
     const image = req.file ? req.file.filename : product.image;
     product.image = image;
-    // productServices.updateProduct(id, product, image);
     res.render('product-edit-form', { product });
   },
   update: (req, res) => {

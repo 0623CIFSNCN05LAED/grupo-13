@@ -12,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'size',
       timestamps: false,
     }
-  )
+  );
 
   Model.associate = (models) => {
     Model.hasMany(models.Products, {
-      as: 'products',
+      as: 'size_products',
       foreignKey: 'size_id',
-    })
-  }
+    });
+  };
 
-  return Model
-}
+  return Model;
+};

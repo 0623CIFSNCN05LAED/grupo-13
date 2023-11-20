@@ -14,17 +14,8 @@
         method="POST"
         enctype="multipart/form-data"
       >
-        <h2 class="title">Editar producto</h2>
-          <input
-            class="input"
-            type="text"
-            placeholder="ID del producto"
-            maxlength="200"
-            autocapitalize="off"
-            spellcheck="false"
-            autocomplete="off"
-            value="<%= product.id %>"
-          />
+        <h2 class="title">Editar producto <p><%= product.id %></p></h2>
+
           <input
             class="input"
             type="text"
@@ -68,7 +59,7 @@
           placeholder="ID de la medida"
           value="<%= product.size_id %>"
         />
-
+        <div>Imagen actual: <%= product.image %></div>
         <div class="picture">
           <label for="image">Seleccioná una nueva imágen</label>
           <input
@@ -76,6 +67,7 @@
             id="image"
             name="image"
             accept=".jpg, .png, .jpeg"
+            value="<%= product.image %>"
           />
         </div>
 

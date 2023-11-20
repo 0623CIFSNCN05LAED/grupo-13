@@ -6,8 +6,14 @@ module.exports = {
     return Products.findAll();
   },
   getProduct: (id) => {
-    return Products.findByPk(id).then((product, file) => {
-      console.log('trayendo producto,' + product.name, product);
+    return Products.findByPk(id);
+  },
+  getProductDetail: (id) => {
+    return Products.findByPk(id).then((product) => {
+      console.log(
+        'trayendo producto,' + product.name,
+        'imagen: ' + product.image
+      );
       return {
         id: product.id,
         name: product.name,
@@ -20,6 +26,7 @@ module.exports = {
       };
     });
   },
+
   // TODO:: Preguntar a Aylen
   // getProductsByCategoryId: () => {
   //   return Products.findOne({ where: { category_id: 'Porter' } })
@@ -41,14 +48,14 @@ module.exports = {
     console.log('Updating product');
     return Products.update(
       {
-        id: uuidv4(),
+        id: id,
         name: body.name,
         price: Number(body.price),
         description: body.description,
         brand_id: body.brand_id,
         category_id: body.category_id,
         size_id: body.size_id,
-        image: file ? file.filename : 'default-image.png',
+        image: file ? file.filename : body.image,
       },
       {
         where: { id: id },
