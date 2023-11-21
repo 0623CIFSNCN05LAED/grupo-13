@@ -55,7 +55,7 @@
               <% users.slice(0, 40).forEach(user => { %>
               <tr>
                 <td><%= user.email %></td>
-                <td><%= user.accessType %></td>
+                <td><%= user.role_id %></td>
                 <td>
                   <a href="/users/<%= user.id %>/edit">
                     <button class="btn-edit">

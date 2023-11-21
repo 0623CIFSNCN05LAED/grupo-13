@@ -29,11 +29,13 @@ const userServices = {
       birth_date: body.birth_date,
       address: body.address,
       profile_picture: file ? file.filename : 'default-image.png',
-      role_id: body.role_id,
+      role_id: body.email.includes('@ebeer.com') ? 1 : 2,
     });
   },
   createUserAdmin: (user) => {
-    const users = Users.findAll();
+    if (!user.role_id) {
+      user.role_id = 'user';
+    }
     const newUser = {
       id: uuidv4(),
       role_id: user.email.includes('@ebeer.com') ? 'admin' : 'user',

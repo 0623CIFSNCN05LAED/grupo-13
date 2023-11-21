@@ -15,16 +15,16 @@
       >
         <h2 class="title">Creación de usuarios</h2>
 
-        <input class="input" type="text" id="firstName" name="firstName" placeholder="Nombre" value="<%= oldData ? oldData.firstName : "" %>" />
+        <input class="input" type="text" id="first_name" name="first_name" placeholder="Nombre" value="<%= oldData ? oldData.first_name : "" %>" />
 
-        <% if (locals.errors && errors.firstName) { %>
-        <div class="flash-errors"><%= errors.firstName.msg %></div>
+        <% if (locals.errors && errors.first_name) { %>
+        <div class="flash-errors"><%= errors.first_name.msg %></div>
         <% } %> 
         
-        <input class="input" type="text" id="lastName" name="lastName" placeholder="Apellido" value="<%= oldData ? oldData.lastName : "" %>" />
+        <input class="input" type="text" id="last_name" name="last_name" placeholder="Apellido" value="<%= oldData ? oldData.last_name : "" %>" />
 
-        <% if (locals.errors && errors.lastName)         { %>
-        <div class="flash-errors"><%= errors.lastName.msg %></div>
+        <% if (locals.errors && errors.last_name)         { %>
+        <div class="flash-errors"><%= errors.last_name.msg %></div>
         <% } %> 
         
         <input class="input" type="email" id="email" name="email" placeholder="Correo electrónico" value="<%= oldData ? oldData.email : "" %>" /> 
@@ -39,16 +39,16 @@
         <div class="flash-errors"><%= errors.password.msg %></div>
         <% } %> 
         
-        <input class="input" type="number" name="contactNumber" id="contactNumber" placeholder="Número de teléfono" value="<%= oldData ? oldData.contactNumber : "" %>" /> 
+        <input class="input" type="number" name="contact_number" id="contact_number" placeholder="Número de teléfono" value="<%= oldData ? oldData.contact_number : "" %>" /> 
         
-        <% if (locals.errors && errors.contactNumber) { %>
-        <div class="flash-errors"><%= errors.contactNumber.msg %></div>
+        <% if (locals.errors && errors.contact_number) { %>
+        <div class="flash-errors"><%= errors.contact_number.msg %></div>
         <% } %> 
         
-        <input class="input" type="date" name="birthDate" id="birthDate" placeholder="Ingresar fecha de nacimiento" value="<%= oldData ? oldData.birthDate : "" %>" /> 
+        <input class="input" type="date" name="birth_date" id="birth_date" placeholder="Ingresar fecha de nacimiento" value="<%= oldData ? oldData.birth_date : "" %>" /> 
         
-        <% if (locals.errors && errors.birthDate) { %> 
-          <div class="flash-errors"><%= errors.birthDate.msg %></div>
+        <% if (locals.errors && errors.birth_date) { %> 
+          <div class="flash-errors"><%= errors.birth_date.msg %></div>
         <% } %> 
         
         <input class="input" type="text" name="address" id="address" placeholder="Domicilio completo" value="<%= oldData ? oldData.address : "" %>" /> 

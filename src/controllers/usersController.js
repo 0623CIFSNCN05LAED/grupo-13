@@ -70,6 +70,7 @@ const usersController = {
       birth_date: data.birth_date,
       address: data.address,
       profile_picture: file ? file.filename : 'default-image.png',
+      role_id: data.email.includes('@ebeer.com') ? 'admin' : 'user',
     };
 
     console.log(user);
@@ -89,7 +90,7 @@ const usersController = {
       });
     }
 
-    userServices.createUserAdmin(user);
+    // userServices.createUserAdmin(user);
     res.redirect('crud');
   },
   registerForm: (req, res) => {
@@ -103,14 +104,14 @@ const usersController = {
     });
   },
   register: (req, res) => {
-    const resultValidation = validationResult(req);
+    // const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
-      return res.render('profile-create-new', {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
+    // if (resultValidation.errors.length > 0) {
+    //   return res.render('profile-create-new', {
+    //     errors: resultValidation.mapped(),
+    //     oldData: req.body,
+    //   });
+    // }
 
     const data = req.body;
     const user = {
@@ -125,16 +126,16 @@ const usersController = {
     };
     const userInDB = userServices.getUserByEmail(req.body.email);
 
-    if (userInDB) {
-      return res.render('register', {
-        errors: {
-          email: {
-            msg: 'Este correo electrónico ya ha sido registrado',
-          },
-        },
-        oldData: req.body,
-      });
-    }
+    // if (userInDB) {
+    //   return res.render('register', {
+    //     errors: {
+    //       email: {
+    //         msg: 'Este correo electrónico ya ha sido registrado',
+    //       },
+    //     },
+    //     oldData: req.body,
+    //   });
+    // }
 
     userServices.createUser(user);
     res.redirect('crud');
