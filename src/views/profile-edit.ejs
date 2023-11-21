@@ -11,7 +11,7 @@
       <section class="info-profile-container">
         <article class="profile-picture">
           <img
-            src="/images/users/<%= user.profilePicture %>"
+            src="/images/users/<%= user.profile_picture %>"
             alt="fotoDePerfil"
           />
         </article>
@@ -19,7 +19,7 @@
         <article class="info-profile-container-desc">
           <h3>Tipo de perfil:</h3>
           <br />
-          <p><%= user.firstName %> <%= user.lastName %></p>
+          <p><%= user.first_name %> <%= user.last_name %></p>
         </article>
       </section>
 
@@ -43,10 +43,10 @@
             />
           </article>
           <article class="input-container">
-            <label for="email">Imagen</label>
+            <label for="profile_picture">Imagen</label>
             <input
-              name="image"
-              id="image"
+              name="profile_picture"
+              id="profile_picture"
               accept=".jpg"
               type="file"
               class="inputs"
@@ -54,12 +54,12 @@
             />
           </article>
           <article class="input-container">
-            <label for="contactNumber">Teléfono</label>
+            <label for="contact_number">Teléfono</label>
             <input
-              name="contactNumber"
+              name="contact_number"
               type="tel"
               class="inputs"
-              value="<%= user.contactNumber %>"
+              value="<%= user.contact_number %>"
             />
           </article>
           <article class="input-container">

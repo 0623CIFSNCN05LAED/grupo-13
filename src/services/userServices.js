@@ -1,31 +1,75 @@
-const db = require('../data/db');
+const { Users } = require('../database/models');
+const { v4: uuidv4 } = require('uuid');
+const Sequelize = require('sequelize');
 
 const userServices = {
   getAllUsers: () => {
-    return db.users.findAll();
+    return Users.findAll();
   },
-  getUser: (id) => {
-    return db.users.findById(id);
+  getUser: async (id) => {
+    return await Users.findByPk(id);
   },
-  getUserById: (id) => {
-    const user = db.users.findById(id);
+  getUserByEmail: async (query) => {
+    const user = await Users.findOne({
+      where: {
+        email: query,
+      },
+    });
     return user;
   },
-  getUserByField: (field, text) => {
-    const user = db.users.findByField(field, text);
-    return user;
-  },
-  createUser: (user) => {
-    db.users.create(user);
+  createUser: (body, file) => {
+    console.log('Creando usuario');
+    return Users.create({
+      id: uuidv4(),
+      first_name: body.first_name,
+      last_name: body.last_name,
+      email: body.email,
+      password: body.password,
+      contact_number: Number(body.contact_number),
+      birth_date: body.birth_date,
+      address: body.address,
+      profile_picture: file ? file.filename : 'default-image.png',
+      role_id: body.email.includes('@ebeer.com') ? 1 : 2,
+    });
   },
   createUserAdmin: (user) => {
-    db.users.createAdmin(user);
+    if (!user.role_id) {
+      user.role_id = 'user';
+    }
+    const newUser = {
+      id: uuidv4(),
+      role_id: user.email.includes('@ebeer.com') ? 'admin' : 'user',
+      ...user,
+    };
+    return Users.create({
+      newUser,
+    });
   },
-  updateUser: (id, user) => {
-    db.users.update(id, user);
+  updateUser: async (id, body, file) => {
+    console.log('Updating user');
+    const user = await Users.findByPk(id);
+    const profile_picture = file ? file.filename : user.profile_picture;
+    return Users.update(
+      {
+        id: id,
+        first_name: body.first_name,
+        last_name: body.last_name,
+        email: body.email,
+        password: body.password,
+        contact_number: Number(body.contact_number),
+        birth_date: body.birth_date,
+        address: body.address,
+        profile_picture: profile_picture,
+      },
+      {
+        where: { id: id },
+      }
+    );
   },
   deleteUser: (id) => {
-    db.users.delete(id);
+    return Users.destroy({
+      where: { id: id },
+    });
   },
 };
 

@@ -94,5 +94,17 @@
     "birth_date": "1989-12-13",
     "address": "Ebeer 321",
     "profile_picture": "default-image.jpg"
+  },
+  {
+    "id": "0ad42842-b8ce-449b-9dd4-565571f2f724",
+    "accessType": "admin",
+    "firstName": "Grupo",
+    "lastName": "13",
+    "email": "grupo13@ebeer.com",
+    "password": "$2a$10$xSAEKWdv45SmIy3T8VD6z.EQjYOwjfKvCTZSprRLVQoYu6UpTj6fK",
+    "contactNumber": 123,
+    "birthDate": "1994-11-19",
+    "address": "DH",
+    "profilePicture": "profilePicture-1700527666512.jpg"
   }
 ]

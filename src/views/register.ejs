@@ -26,27 +26,27 @@
                 <input
                   class="inputs"
                   type="text"
-                  name="firstName"
-                  id="firstName"
+                  name="first_name"
+                  id="first_name"
                   placeholder="Nombre"
-                  value="<%= oldData ? oldData.firstName : "" %>"
+                  value="<%= oldData ? oldData.first_name : "" %>"
                 />
 
-              <% if (locals.errors && errors.firstName) { %>
-                <div class="flash-errors"><%= errors.firstName.msg %></div>             
+              <% if (locals.errors && errors.first_name) { %>
+                <div class="flash-errors"><%= errors.first_name.msg %></div>             
               <% } %>
 
                 <input
                   class="inputs"
                   type="text"
-                  name="lastName"
-                  id="lastName"
+                  name="last_name"
+                  id="last_name"
                   placeholder="Apellido"
-                  value="<%= oldData ? oldData.lastName : "" %>"
+                  value="<%= oldData ? oldData.last_name : "" %>"
                 />
 
-              <% if (locals.errors && errors.lastName) { %>
-                <div class="flash-errors"><%= errors.lastName.msg %></div>             
+              <% if (locals.errors && errors.last_name) { %>
+                <div class="flash-errors"><%= errors.last_name.msg %></div>             
               <% } %>
 
                 <input
@@ -77,27 +77,27 @@
                 <input
                   class="inputs"
                   type="number"
-                  name="contactNumber"
-                  id="contactNumber"
+                  name="contact_number"
+                  id="contact_number"
                   placeholder="Número de teléfono"
-                  value="<%= oldData ? oldData.contactNumber : "" %>"
+                  value="<%= oldData ? oldData.contact_number : "" %>"
                 />
 
-              <% if (locals.errors && errors.contactNumber) { %>
-               <div class="flash-errors"><%= errors.contactNumber.msg %></div>             
+              <% if (locals.errors && errors.contact_number) { %>
+               <div class="flash-errors"><%= errors.contact_number.msg %></div>             
               <% } %>
 
                 <input
                   class="inputs"
                   type="date"
-                  name="birthDate"
-                  id="birthDate"
+                  name="birth_date"
+                  id="birth_date"
                   placeholder="Ingresar fecha de nacimiento"
-                  value="<%= oldData ? oldData.birthDate : "" %>"
+                  value="<%= oldData ? oldData.birth_date : "" %>"
                 />
 
-              <% if (locals.errors && errors.birthDate) { %>
-                <div class="flash-errors"><%= errors.birthDate.msg %></div>             
+              <% if (locals.errors && errors.birth_date) { %>
+                <div class="flash-errors"><%= errors.birth_date.msg %></div>             
               <% } %>
 
                 <input
@@ -114,16 +114,16 @@
               <% } %>
 
               <section  class="picture-title">
-              <label for="profilePicture"> <p>Seleccioná una foto de perfil</p></label> 
+              <label for="profile_picture"> <p>Seleccioná una foto de perfil</p></label> 
                 <input
                   class="picture-data"
                   type="file"
-                  name="profilePicture"
-                  id="profilePicture"
+                  name="profile_picture"
+                  id="profile_picture"
                 />
               </section>
-              <% if (locals.errors && errors.profilePicture) { %>
-               <div class="flash-errors"><%= errors.profilePicture.msg %></div>             
+              <% if (locals.errors && errors.profile_picture) { %>
+               <div class="flash-errors"><%= errors.profile_picture.msg %></div>             
               <% } %>
               <button type="submit" class="btn-yellow">Registrate</button>
 

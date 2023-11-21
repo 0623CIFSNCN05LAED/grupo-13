@@ -6,10 +6,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         primaryKey: true,
       },
-      firstName: {
+      first_name: {
         type: DataTypes.STRING,
       },
-      lastName: {
+      last_name: {
         type: DataTypes.STRING,
       },
       email: {
@@ -18,20 +18,20 @@ module.exports = (sequelize, DataTypes) => {
       password: {
         type: DataTypes.STRING,
       },
-      contactNumber: {
+      contact_number: {
         type: DataTypes.INTEGER,
       },
-      birthDate: {
+      birth_date: {
         type: DataTypes.DATE,
       },
       address: {
         type: DataTypes.STRING,
       },
-      profilePicture: {
+      profile_picture: {
         type: DataTypes.STRING,
       },
-      accessType: {
-        type: DataTypes.STRING,
+      role_id: {
+        type: DataTypes.INTEGER,
       },
     },
     {

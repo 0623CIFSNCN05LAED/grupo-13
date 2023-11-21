@@ -36,7 +36,7 @@ usersRouter.post(
 usersRouter.get('/register', guestMiddleware, usersController.registerForm);
 usersRouter.post(
   '/register',
-  upload.single('profilePicture'),
+  upload.single('profile_picture'),
   registerValidations,
   registerValidateForm,
   usersController.register
