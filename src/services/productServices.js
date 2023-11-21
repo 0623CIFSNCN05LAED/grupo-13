@@ -5,15 +5,11 @@ module.exports = {
   getAllProducts: () => {
     return Products.findAll();
   },
-  getProduct: (id) => {
-    return Products.findByPk(id);
+  getProduct: async (id) => {
+    return await Products.findByPk(id);
   },
   getProductDetail: (id) => {
     return Products.findByPk(id).then((product) => {
-      console.log(
-        'trayendo producto,' + product.name,
-        'imagen: ' + product.image
-      );
       return {
         id: product.id,
         name: product.name,
@@ -44,8 +40,10 @@ module.exports = {
       image: file ? file.filename : 'default-image.png',
     });
   },
-  updateProduct: (id, body, file) => {
+  updateProduct: async (id, body, file) => {
     console.log('Updating product');
+    const product = await Products.findByPk(id);
+    const image = file ? file.filename : product.image;
     return Products.update(
       {
         id: id,
@@ -55,7 +53,7 @@ module.exports = {
         brand_id: body.brand_id,
         category_id: body.category_id,
         size_id: body.size_id,
-        image: file ? file.filename : body.image,
+        image: image,
       },
       {
         where: { id: id },
@@ -63,6 +61,8 @@ module.exports = {
     );
   },
   deleteProduct: (id) => {
-    return Products.destroy(id);
+    return Products.destroy({
+      where: { id: id },
+    });
   },
 };

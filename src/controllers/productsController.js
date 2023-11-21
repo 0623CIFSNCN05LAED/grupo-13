@@ -11,7 +11,7 @@ const productsController = {
   },
   detail: async (req, res) => {
     const id = req.params.id;
-    await productServices.getProduct(id).then((product) => {
+    await productServices.getProductDetail(id).then((product) => {
       res.render('product-detail', { product });
     });
   },
@@ -32,34 +32,34 @@ const productsController = {
     product.image = image;
     res.render('product-edit-form', { product });
   },
-  update: (req, res) => {
-    productServices.updateProduct(req.params.id, req.body).then((product) => {
-      res.redirect('/products/' + req.params.id);
-    });
+  update: async (req, res) => {
+    const id = req.params.id;
+    await productServices.updateProduct(id, req.body, req.file);
+    res.redirect('/products/' + req.params.id);
   },
   // delete
   deleteForm: (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProduct(id);
-    res.render('product-delete-form', { product });
+    productServices.getProduct(id).then((product) => {
+      res.render('product-delete-form', { product });
+    });
   },
   destroy: (req, res) => {
     const id = req.params.id;
-    productServices.deleteProduct(id);
-    res.redirect('/products/crud');
+    productServices.deleteProduct(id).then(() => {
+      res.redirect('/products/crud');
+    });
   },
   productCrud: (req, res) => {
-    const products = productServices.getAllProducts();
-    res.render('product-crud', { products });
+    productServices.getAllProducts().then((products) => {
+      res.render('product-crud', { products });
+    });
   },
   productCart: (req, res) => {
     res.render('product-cart');
   },
   productCartFilled: (req, res) => {
     res.render('product-cart-filled');
-  },
-  productForm: (req, res) => {
-    res.render('product-form');
   },
 };
 

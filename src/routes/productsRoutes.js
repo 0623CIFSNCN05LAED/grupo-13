@@ -36,7 +36,7 @@ productsRouter.delete('/:id/delete', productsController.destroy);
 productsRouter.get('/:id', productsController.detail);
 
 /* PRODUCT EDIT FORM */
-productsRouter.get('/:id/edit', authMiddleware, productsController.editForm);
+productsRouter.get('/:id/edit', productsController.editForm);
 
 productsRouter.put(
   '/:id/edit',
