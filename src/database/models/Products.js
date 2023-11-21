@@ -18,28 +18,28 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'products',
       timestamps: false,
     }
-  )
+  );
 
   Model.associate = (models) => {
     Model.belongsTo(models.Brand, {
-      as: 'brand',
+      as: 'p_brand',
       foreignKey: 'brand_id',
-    })
-  }
+    });
+  };
 
   Model.associate = (models) => {
     Model.belongsTo(models.Size, {
-      as: 'size',
+      as: 'p_size',
       foreignKey: 'size_id',
-    })
-  }
+    });
+  };
 
   Model.associate = (models) => {
     Model.belongsTo(models.Category, {
-      as: 'category',
+      as: 'p_category',
       foreignKey: 'category_id',
-    })
-  }
+    });
+  };
 
-  return Model
-}
+  return Model;
+};

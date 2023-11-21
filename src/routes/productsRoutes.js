@@ -16,7 +16,7 @@ productsRouter.get('/crud', authMiddleware, productsController.productCrud);
 productsRouter.get('/create', authMiddleware, productsController.addForm);
 productsRouter.post(
   '/create',
-  upload.single('productPicture'),
+  upload.single('image'),
   productsController.store
 );
 
@@ -36,11 +36,11 @@ productsRouter.delete('/:id/delete', productsController.destroy);
 productsRouter.get('/:id', productsController.detail);
 
 /* PRODUCT EDIT FORM */
-productsRouter.get('/:id/edit', authMiddleware, productsController.editForm);
+productsRouter.get('/:id/edit', productsController.editForm);
 
 productsRouter.put(
   '/:id/edit',
-  upload.single('productPicture'),
+  upload.single('image'),
   productsController.update
 );
 

@@ -39,7 +39,6 @@ CREATE TABLE `brand` (
 
 LOCK TABLES `brand` WRITE;
 /*!40000 ALTER TABLE `brand` DISABLE KEYS */;
-INSERT INTO `brand` VALUES (1,'Tres Cordilleras'),(2,'Brahama'),(3,'Pilsen'),(4,'Patagonia'),(5,'Budweiser'),(6,'Heineken'),(7,'Pilsen'),(8,'Corona'),(9,'Stella Artois'),(10,'Quilmes');
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +62,6 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Porter'),(2,'Brown Ale'),(3,'Lager'),(4,'IPA'),(5,'Pilsner'),(6,'Stout');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,13 +73,13 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
+  `id` varchar(200) NOT NULL,
   `name` varchar(100) NOT NULL,
   `price` int(11) NOT NULL,
   `description` varchar(200) NOT NULL,
   `brand_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `size_id` varchar(100) NOT NULL,
+  `size_id` int(11) NOT NULL,
   `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `products_brand_fk` (`brand_id`),
@@ -110,7 +108,7 @@ DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role` (
-  `id` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -133,7 +131,7 @@ DROP TABLE IF EXISTS `size`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `size` (
-  `id` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -145,7 +143,6 @@ CREATE TABLE `size` (
 
 LOCK TABLES `size` WRITE;
 /*!40000 ALTER TABLE `size` DISABLE KEYS */;
-INSERT INTO `size` VALUES ('1','350 cc'),('2','500 cc'),('3','1000 cc'),('4','1500 cc');
 /*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,16 +154,16 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` varchar(80) NOT NULL,
+  `id` varchar(200) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
   `contact_number` int(11) NOT NULL,
   `birth_date` date NOT NULL COMMENT 'Debe ser mayor de edad',
-  `address` varchar(100) NOT NULL,
+  `address` varchar(200) NOT NULL,
   `profile_picture` varchar(100) DEFAULT NULL COMMENT 'En default recordar poner la ruta de la imagen por defecto',
-  `role_id` varchar(100) NOT NULL,
+  `role_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Users_UN` (`email`),
   KEY `users_role_fk` (`role_id`),
@@ -196,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-19 12:46:41
+-- Dump completed on 2023-11-20 13:37:28

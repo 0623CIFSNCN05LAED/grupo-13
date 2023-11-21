@@ -35,26 +35,11 @@
         />
         <input
           class="input"
-          type="text"
-          name="category"
-          placeholder="Categoría"
-          value="<%= product.category %>"
-        />
-        <input
-          class="input"
-          type="text"
-          name="size"
-          placeholder="Medida"
-          value="<%= product.size %>"
-        />
-        <input
-          class="input"
           type="number"
           name="price"
           placeholder="Precio"
           value="<%= product.price %>"
         />
-
         <input
           class="input"
           type="text"
@@ -62,7 +47,27 @@
           placeholder="Descripción"
           value="<%= product.description %>"
         />
-
+        <input
+          class="input"
+          type="text"
+          name="brand_id"
+          placeholder="ID de la marca"
+          value="<%= product.brand_id %>"
+        />             
+        <input
+          class="input"
+          type="text"
+          name="category"
+          placeholder="ID de la categoría"
+          value="<%= product.category_id %>"
+        />
+        <input
+          class="input"
+          type="number"
+          name="size_id"
+          placeholder="ID de la medida"
+          value="<%= product.size_id %>"
+        />
         <div class="buttons-container">
           <button class="delete-button" type="submit">Borrar</button>
         </div>

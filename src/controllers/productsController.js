@@ -9,9 +9,9 @@ const productsController = {
       res.render('products', { products });
     });
   },
-  detail: (req, res) => {
+  detail: async (req, res) => {
     const id = req.params.id;
-    productServices.getProduct(id).then((product) => {
+    await productServices.getProductDetail(id).then((product) => {
       res.render('product-detail', { product });
     });
   },
@@ -25,45 +25,41 @@ const productsController = {
     });
   },
   // edit
-  editForm: (req, res) => {
+  editForm: async (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProduct(id);
-    const image = req.file
-      ? req.file.filename
-      : productServices.getProduct(id).image;
+    const product = await productServices.getProduct(id);
+    const image = req.file ? req.file.filename : product.image;
     product.image = image;
-    productServices.updateProduct(id, product);
     res.render('product-edit-form', { product });
   },
-  update: (req, res) => {
-    const product = req.body;
+  update: async (req, res) => {
     const id = req.params.id;
-    productServices.updateProduct(id, product);
-    res.redirect('/products/crud');
+    await productServices.updateProduct(id, req.body, req.file);
+    res.redirect('/products/' + req.params.id);
   },
   // delete
   deleteForm: (req, res) => {
     const id = req.params.id;
-    const product = productServices.getProduct(id);
-    res.render('product-delete-form', { product });
+    productServices.getProduct(id).then((product) => {
+      res.render('product-delete-form', { product });
+    });
   },
   destroy: (req, res) => {
     const id = req.params.id;
-    productServices.deleteProduct(id);
-    res.redirect('/products/crud');
+    productServices.deleteProduct(id).then(() => {
+      res.redirect('/products/crud');
+    });
   },
   productCrud: (req, res) => {
-    const products = productServices.getAllProducts();
-    res.render('product-crud', { products });
+    productServices.getAllProducts().then((products) => {
+      res.render('product-crud', { products });
+    });
   },
   productCart: (req, res) => {
     res.render('product-cart');
   },
   productCartFilled: (req, res) => {
     res.render('product-cart-filled');
-  },
-  productForm: (req, res) => {
-    res.render('product-form');
   },
 };
 
