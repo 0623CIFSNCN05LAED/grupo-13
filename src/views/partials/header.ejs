@@ -31,20 +31,20 @@
         </li>
         <% if (locals.isLogged) { %>
           <li>
-            <a href="/users/myProfile"> <i class="fa-solid fa-user"></i> <span> <%= locals.userLogged.firstName %> </span></a>
+            <a href="/users/myProfile"> <i class="fa-solid fa-user"></i> <span> <%= locals.userLogged.first_name %> </span></a>
           </li>  
         <% } else { %>
           <li>
             <a href="/users/login"><i class="fa-solid fa-user"></i> <span>Acceder</span></a>
           </li>
         <% } %>
-        <% if (locals.isLogged && locals.userLogged.accessType == "admin") { %>
+        <% if (locals.isLogged && locals.userLogged.role_id == "admin") { %>
           <li>
             <a href="/users/crud"> <i class="fa-solid fa-screwdriver-wrench"></i> <span>Users</span></a>
           </li>  
         <% } else { %>
         <% } %>
-        <% if (locals.isLogged && locals.userLogged.accessType == "admin") { %>
+        <% if (locals.isLogged && locals.userLogged.role_id == "admin") { %>
           <li>
             <a href="/products/crud"> <i class="fa-solid fa-toolbox"></i> <span>Products</span></a>
           </li>  

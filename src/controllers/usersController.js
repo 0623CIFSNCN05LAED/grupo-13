@@ -7,7 +7,7 @@ const usersController = {
     res.render('login');
   },
   login: (req, res) => {
-    const userToLogin = userServices.getUserByField('email', req.body.email);
+    const userToLogin = userServices.getUserByEmail(req.body.email);
 
     if (userToLogin) {
       const validPassword = bcryptjs.compareSync(
@@ -62,16 +62,21 @@ const usersController = {
 
     const data = req.body;
     const user = {
-      firstName: data.firstName,
-      lastName: data.lastName,
+      first_name: data.first_name,
+      last_name: data.last_name,
       email: data.email,
       password: bcryptjs.hashSync(data.password, 10),
-      contactNumber: Number(data.contactNumber),
-      birthDate: data.birthDate,
+      contact_number: Number(data.contact_number),
+      birth_date: data.birth_date,
       address: data.address,
-      profilePicture: req.file ? req.file.filename : 'default-image.jpg',
+      profile_picture: file ? file.filename : 'default-image.png',
     };
-    const userInDB = userServices.getUserByField('email', req.body.email);
+
+    console.log(user);
+
+    const userInDB = userServices.getUserByEmail(user.email);
+
+    console.log('user', userInDB);
 
     if (userInDB) {
       return res.render('profile-create-new', {
@@ -109,16 +114,16 @@ const usersController = {
 
     const data = req.body;
     const user = {
-      firstName: data.firstName,
-      lastName: data.lastName,
+      first_name: data.first_name,
+      last_name: data.last_name,
       email: data.email,
       password: bcryptjs.hashSync(data.password, 10),
-      contactNumber: Number(data.contactNumber),
-      birthDate: data.birthDate,
+      contact_number: Number(data.contact_number),
+      birth_date: data.birth_date,
       address: data.address,
-      profilePicture: req.file ? req.file.filename : profilePicture,
+      profile_picture: req.file ? req.file.filename : 'default-image.png',
     };
-    const userInDB = userServices.getUserByField('email', req.body.email);
+    const userInDB = userServices.getUserByEmail(req.body.email);
 
     if (userInDB) {
       return res.render('register', {
@@ -134,24 +139,25 @@ const usersController = {
     userServices.createUser(user);
     res.redirect('crud');
   },
-  myProfile: (req, res) => {
+  myProfile: async (req, res) => {
     const id = req.session.userLogged.id;
-    const user = userServices.getUser(id);
+    const user = await userServices.getUser(id);
     return res.render('profile', { user });
   },
-  myProfileEdit: (req, res) => {
+  myProfileEdit: async (req, res) => {
     const id = req.session.userLogged.id;
-    const user = userServices.getUser(id);
+    const user = await userServices.getUser(id);
     res.render('profile-edit', { user });
   },
-  editProfileCrud: (req, res) => {
+  editProfileCrud: async (req, res) => {
     const id = req.params.id;
-    const user = userServices.getUser(id);
+    const user = await userServices.getUser(id);
     res.render('profile-edit', { user });
   },
   crud: (req, res) => {
-    const users = userServices.getAllUsers();
-    res.render('users-crud', { users });
+    userServices.getAllUsers().then((users) => {
+      res.render('user-crud', { users });
+    });
   },
   myPasswordEdit: (req, res) => {
     const id = req.session.userLogged.id;
@@ -168,14 +174,14 @@ const usersController = {
     const user = {
       email: data.email,
       password: bcryptjs.hashSync(data.password, 10),
-      contactNumber: Number(data.contactNumber),
+      contact_number: Number(data.contactNumber),
       address: data.address,
     };
     const id = req.session.userLogged.id;
-    const profilePicture = req.file
+    const profile_picture = req.file
       ? req.file.filename
-      : userServices.getUser(id).profilePicture;
-    user.profilePicture = profilePicture;
+      : userServices.getUser(id).profile_picture;
+    user.profile_picture = profile_picture;
     userServices.updateUser(id, user);
     res.redirect('/home');
   },
@@ -185,25 +191,26 @@ const usersController = {
       password: bcryptjs.hashSync(data.password, 10),
     };
     const id = req.session.userLogged.id;
-    const profilePicture = req.file
+    const profile_picture = req.file
       ? req.file.filename
-      : userServices.getUser(id).profilePicture;
-    user.profilePicture = profilePicture;
+      : userServices.getUser(id).profile_picture;
+    user.profile_picture = profile_picture;
     userServices.updateUser(id, user);
     res.redirect('/home');
   },
   deleteForm: (req, res) => {
     const id = req.params.id;
-    const user = userServices.getUser(id);
-    res.render('users-delete-form', { user });
+    userServices.deleteUser(id).then(() => {
+      res.render('users-delete-form', { user });
+    });
   },
   destroy: (req, res) => {
     const user = req.body;
     const id = req.params.id;
-    const profilePicture = req.file
+    const profile_picture = req.file
       ? req.file.filename
-      : userServices.getUser(id).profilePicture;
-    user.profilePicture = profilePicture;
+      : userServices.getUser(id).profile_picture;
+    user.profile_picture = profile_picture;
     userServices.deleteUser(id);
     res.redirect('/users/crud');
   },

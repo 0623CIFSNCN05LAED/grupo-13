@@ -12,7 +12,7 @@
       <section class="info-profile-container">
         <article class="profile-picture">
           <img
-            src="/images/users/<%= user.profilePicture %>"
+            src="/images/users/<%= user.profile_picture %>"
             alt="fotoDePerfil"
           />
         </article>
@@ -25,22 +25,22 @@
 
         <form action="/" method="post">
           <article class="input-container">
-            <label for="firstName">Nombre</label>
+            <label for="first_name">Nombre</label>
             <input
-              name="firstName"
+              name="first_name"
               type="text"
               class="inputs"
-              value="<%= user.firstName %>"
+              value="<%= user.first_name %>"
               readonly
             />
           </article>
           <article class="input-container">
-            <label for="lastName">Apellido</label>
+            <label for="last_name">Apellido</label>
             <input
-              name="lastName"
+              name="last_name"
               type="text"
               class="inputs"
-              value="<%= user.lastName %>"
+              value="<%= user.last_name %>"
               readonly
             />
           </article>
@@ -55,12 +55,12 @@
             />
           </article>
           <article class="input-container">
-            <label for="contactNumber">Teléfono</label>
+            <label for="contact_number">Teléfono</label>
             <input
-              name="contactNumber"
+              name="contact_number"
               type="tel"
               class="inputs"
-              value="<%= user.contactNumber %>"
+              value="<%= user.contact_number %>"
               readonly
             />
           </article>
@@ -75,12 +75,12 @@
             />
           </article>
           <article class="input-container">
-            <label for="birthDate">Fecha de nacimiento</label>
+            <label for="birth_date">Fecha de nacimiento</label>
             <input
               class="inputs"
               type="date"
-              name="birthDate"
-              value="<%= user.birthDate %>"
+              name="birth_date"
+              value="<%= user.birth_date %>"
               min="1900-01-01"
               max="2005-08-19"
               readonly

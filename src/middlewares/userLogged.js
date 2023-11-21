@@ -1,16 +1,15 @@
-const userServices = require("../services/userServices");
+const userServices = require('../services/userServices');
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
   res.locals.isLogged = false;
 
-  const emailInCookie = req.cookies.email;
-  const userFromCookie=userServices.getUserByField(
-    'email',
-    emailInCookie
-  );
+  const emailInCookie = req.cookies.email || '';
+  const userFromCookie = await userServices.getUserByEmail(emailInCookie);
 
-  if(userFromCookie){
-    req.session.userLogged= userFromCookie;
+  console.log(userFromCookie);
+
+  if (userFromCookie) {
+    req.session.userLogged = userFromCookie;
   }
 
   if (req.session && req.session.userLogged) {

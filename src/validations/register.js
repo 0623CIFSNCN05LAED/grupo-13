@@ -2,8 +2,8 @@ const { body } = require('express-validator');
 const path = require('path');
 
 module.exports = [
-  body('firstName').notEmpty().withMessage('Ingresá tu nombre'),
-  body('lastName').notEmpty().withMessage('Ingresá tu apellido'),
+  body('first_name').notEmpty().withMessage('Ingresá tu nombre'),
+  body('last_name').notEmpty().withMessage('Ingresá tu apellido'),
   body('email')
     .notEmpty()
     .withMessage('Ingresá tu correo electrónico')
@@ -16,7 +16,7 @@ module.exports = [
     .bail()
     .isLength({ min: 8 })
     .withMessage('La contraseña debe tener al menos 8 caracteres'),
-  body('contactNumber')
+  body('contact_number')
     .notEmpty()
     .withMessage('Ingresá tu número de teléfono')
     .bail()
@@ -24,24 +24,24 @@ module.exports = [
     .withMessage(
       'Ingresá un número de teléfono válido (sin guiones, ni espacios)'
     ),
-  body('birthDate').notEmpty().withMessage('Ingresá tu fecha de nacimiento'),
+  body('birth_date').notEmpty().withMessage('Ingresá tu fecha de nacimiento'),
   body('address').notEmpty().withMessage('Ingresá tu dirección'),
-  body('profilePicture').custom((value, { req }) => {
-    let file = req.file;
-    let acceptedExtensions = ['.jpg', '.png', '.gif'];
+  // body('profile_picture').custom((value, { req }) => {
+  //   let file = req.file;
+  //   let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
-    if (!file) {
-      throw new Error('Subí una foto de perfil');
-    } else {
-      let fileExtension = path.extname(file.originalname);
-      if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-            ', '
-          )}`
-        );
-      }
-    }
-    return true;
-  }),
+  //   if (!file) {
+  //     throw new Error('Subí una foto de perfil');
+  //   } else {
+  //     let fileExtension = path.extname(file.originalname);
+  //     if (!acceptedExtensions.includes(fileExtension)) {
+  //       throw new Error(
+  //         `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
+  //           ', '
+  //         )}`
+  //       );
+  //     }
+  //   }
+  //   return true;
+  // }),
 ];
