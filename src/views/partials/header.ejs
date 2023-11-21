@@ -38,13 +38,13 @@
             <a href="/users/login"><i class="fa-solid fa-user"></i> <span>Acceder</span></a>
           </li>
         <% } %>
-        <% if (locals.isLogged && locals.userLogged.role_id == "admin") { %>
+        <% if (locals.isLogged && locals.userLogged.role_id == 1) { %>
           <li>
             <a href="/users/crud"> <i class="fa-solid fa-screwdriver-wrench"></i> <span>Users</span></a>
           </li>  
         <% } else { %>
         <% } %>
-        <% if (locals.isLogged && locals.userLogged.role_id == "admin") { %>
+        <% if (locals.isLogged && locals.userLogged.role_id == 1) { %>
           <li>
             <a href="/products/crud"> <i class="fa-solid fa-toolbox"></i> <span>Products</span></a>
           </li>  

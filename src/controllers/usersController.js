@@ -6,8 +6,10 @@ const usersController = {
   loginForm: (req, res) => {
     res.render('login');
   },
-  login: (req, res) => {
-    const userToLogin = userServices.getUserByEmail(req.body.email);
+  login: async (req, res) => {
+    const userToLogin = await userServices.getUserByEmail(req.body.email);
+
+    console.log(userToLogin);
 
     if (userToLogin) {
       const validPassword = bcryptjs.compareSync(
@@ -70,7 +72,7 @@ const usersController = {
       birth_date: data.birth_date,
       address: data.address,
       profile_picture: file ? file.filename : 'default-image.png',
-      role_id: data.email.includes('@ebeer.com') ? 'admin' : 'user',
+      role_id: data.email.includes('@ebeer.com') ? 1 : 2,
     };
 
     console.log(user);
@@ -90,7 +92,7 @@ const usersController = {
       });
     }
 
-    // userServices.createUserAdmin(user);
+    userServices.createUser(user);
     res.redirect('crud');
   },
   registerForm: (req, res) => {
@@ -104,14 +106,14 @@ const usersController = {
     });
   },
   register: (req, res) => {
-    // const resultValidation = validationResult(req);
+    const resultValidation = validationResult(req);
 
-    // if (resultValidation.errors.length > 0) {
-    //   return res.render('profile-create-new', {
-    //     errors: resultValidation.mapped(),
-    //     oldData: req.body,
-    //   });
-    // }
+    if (resultValidation.errors.length > 0) {
+      return res.render('profile-create-new', {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
 
     const data = req.body;
     const user = {
@@ -124,18 +126,19 @@ const usersController = {
       address: data.address,
       profile_picture: req.file ? req.file.filename : 'default-image.png',
     };
+
     const userInDB = userServices.getUserByEmail(req.body.email);
 
-    // if (userInDB) {
-    //   return res.render('register', {
-    //     errors: {
-    //       email: {
-    //         msg: 'Este correo electrónico ya ha sido registrado',
-    //       },
-    //     },
-    //     oldData: req.body,
-    //   });
-    // }
+    if (userInDB) {
+      return res.render('register', {
+        errors: {
+          email: {
+            msg: 'Este correo electrónico ya ha sido registrado',
+          },
+        },
+        oldData: req.body,
+      });
+    }
 
     userServices.createUser(user);
     res.redirect('crud');
@@ -157,7 +160,7 @@ const usersController = {
   },
   crud: (req, res) => {
     userServices.getAllUsers().then((users) => {
-      res.render('user-crud', { users });
+      res.render('users-crud', { users });
     });
   },
   myPasswordEdit: (req, res) => {

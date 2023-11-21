@@ -26,22 +26,24 @@ module.exports = [
     ),
   body('birth_date').notEmpty().withMessage('Ingresá tu fecha de nacimiento'),
   body('address').notEmpty().withMessage('Ingresá tu dirección'),
-  // body('profile_picture').custom((value, { req }) => {
-  //   let file = req.file;
-  //   let acceptedExtensions = ['.jpg', '.png', '.gif'];
+  body('profile_picture').custom((value, { req }) => {
+    let file = req.file;
+    let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
-  //   if (!file) {
-  //     throw new Error('Subí una foto de perfil');
-  //   } else {
-  //     let fileExtension = path.extname(file.originalname);
-  //     if (!acceptedExtensions.includes(fileExtension)) {
-  //       throw new Error(
-  //         `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-  //           ', '
-  //         )}`
-  //       );
-  //     }
-  //   }
-  //   return true;
-  // }),
+    if (!file) {
+      throw new Error('Subí una foto de perfil');
+    } else {
+      let fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)) {
+        throw new Error(
+          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
+            ', '
+          )}`
+        );
+      }
+    }
+    return true;
+  }),
 ];
+
+//se suben archivos que no son jpg, te da error pero lo sube igual no es un error de la validacion pero es algo extra. PISTA: fs y remove file. pista dos: controlador o middleware
