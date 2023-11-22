@@ -1,21 +1,21 @@
-const { validationResult } = require('express-validator');
+const { validationResult } = require('express-validator')
 
 module.exports = (req, res, next) => {
-  const resultValidation = validationResult(req);
+  const resultValidation = validationResult(req)
 
   if (resultValidation.errors.length > 0) {
-    let userEmail = null;
-    const userLogged = req.session.userLogged;
+    let userEmail = null
+    const userLogged = req.session.userLogged
 
     if (userLogged) {
-      userEmail = userLogged.email;
+      userEmail = userLogged.email
     }
 
     return res.render('register', {
       errors: resultValidation.mapped(),
       oldData: req.body,
       userEmail,
-    });
+    })
   }
-  next();
-};
+  next()
+}
