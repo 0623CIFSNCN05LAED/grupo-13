@@ -93,8 +93,10 @@
               name="role_id"
               class="inputs"
               type="text"
-              value="Administrador"
-          <% } %>
+              value="<% if (user.role_id == 1) { %>
+                <%='Administrador'%>
+               <% } %>"
+           <% } %>
             />
           </article>
   
