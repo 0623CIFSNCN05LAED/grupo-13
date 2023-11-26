@@ -86,6 +86,18 @@
               readonly
             />
           </article>
+          <% if (locals.isLogged && locals.userLogged.role_id == 1) { %>
+          <article class="input-container">
+            <label for="role_id">Tipo de usuario:</label>
+            <input
+              name="role_id"
+              class="inputs"
+              type="text"
+              value="Administrador"
+          <% } %>
+            />
+          </article>
+  
         </form>
       </section>
 
