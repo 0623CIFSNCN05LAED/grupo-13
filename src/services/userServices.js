@@ -34,7 +34,7 @@ const userServices = {
   updateUser: async (id, body, file) => {
     const user = await Users.findByPk(id);
 
-    return Users.update(
+    return await Users.update(
       {
         email: body.email,
         profile_picture: file ? file.filename : user.profile_picture,
