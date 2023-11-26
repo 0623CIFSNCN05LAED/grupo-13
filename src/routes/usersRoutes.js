@@ -55,7 +55,7 @@ usersRouter.post(
 );
 
 //Users CRUD
-usersRouter.get('/crud', authMiddleware, usersController.crud);
+usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
 
 //Delete User
 usersRouter.get('/:id/delete', authMiddleware, usersController.deleteForm);
