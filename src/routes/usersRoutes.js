@@ -4,22 +4,22 @@ const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 
 /* Middlewares */
-const upload = require('../middlewares/users-multer');
+const upload = require('../middlewares/multer-users');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Login validations
-const loginValidations = require('../validations/login');
-const loginValidateForm = require('../middlewares/validate-login-form');
+const loginValidations = require('../validations/usersLogin');
+const loginValidateForm = require('../middlewares/validate-users-login');
 
 // Register validations
-const registerValidations = require('../validations/register');
-const registerValidateForm = require('../middlewares/validate-register-form');
+const registerValidations = require('../validations/usersRegister');
+const registerValidateForm = require('../middlewares/validate-users-register');
 
 // Admin create validations
-const createValidations = require('../validations/create');
-const createValidateForm = require('../middlewares/validate-create-form');
+const createValidations = require('../validations/usersCreate');
+const createValidateForm = require('../middlewares/validate-users-create');
 const createValidateEmail = require('../middlewares/validate-email');
 
 /*Routes */

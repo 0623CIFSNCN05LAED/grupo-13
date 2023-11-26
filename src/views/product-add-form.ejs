@@ -22,7 +22,12 @@
           id="name"
           name="name"
           placeholder="Nombre del producto"
+          value="<%= oldData ? oldData.name : "" %>"
         />
+
+        <% if (locals.errors && errors.name) { %>
+          <div class="flash-errors"><%= errors.name.msg %></div>           
+          <% } %>        
 
         <input
           class="input"
@@ -30,9 +35,18 @@
           id="price"
           name="price"
           placeholder="Precio"
+          value="<%= oldData ? oldData.price : "" %>"
         />
 
-        <textarea name="description" placeholder="Descripción"></textarea>
+        <% if (locals.errors && errors.price) { %>
+          <div class="flash-errors"><%= errors.price.msg %></div>           
+          <% } %>  
+
+        <textarea name="description" id="description" placeholder="Descripción del producto" value="<%= oldData ? oldData.description : "" %>"></textarea>
+
+        <% if (locals.errors && errors.description) { %>
+          <div class="flash-errors"><%= errors.description.msg %></div>           
+          <% } %>  
 
         <select name="brand_id" id="brand_id">
           <option>Marca</option>
@@ -48,6 +62,10 @@
           <option value="10">Quilmes</option>
         </select>
 
+        <% if (locals.errors && errors.brand_id) { %>
+          <div class="flash-errors"><%= errors.brand_id.msg %></div>           
+          <% } %>  
+
         <select name="category_id" id="category_id">
           <option>Categoria</option>
           <option value="1">Porter</option>
@@ -58,6 +76,10 @@
           <option value="6">Stout</option>
         </select>
 
+        <% if (locals.errors && errors.category_id) { %>
+          <div class="flash-errors"><%= errors.category_id.msg %></div>           
+          <% } %>  
+
         <select name="size_id" id="size_id">
           <option>Medida</option>
           <option value="1">350 cc</option>
@@ -66,16 +88,24 @@
           <option value="4">1500 cc</option>
         </select>
 
+        <% if (locals.errors && errors.size_id) { %>
+          <div class="flash-errors"><%= errors.size_id.msg %></div>           
+          <% } %>  
+
         <div class="picture">
-          <label for="image">Selecciona una imagen del producto</label>
+          <label for="image">Seleccioná una imagen del producto</label>
           <input
             type="file"
             id="image"
             name="image"
             accept=".jpg"
-            required
           />
         </div>
+        <% if (locals.errors && errors.image) { %>
+          <div class="flash-errors">
+            <%= errors.image.msg %>
+          </div>             
+        <% } %>
 
         <div class="buttons-container">
           <button class="button">Agregar</button>

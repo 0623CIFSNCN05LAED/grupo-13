@@ -16,49 +16,84 @@
       >
         <h2 class="title">Editar producto <p><%= product.id %></p></h2>
 
-          <input
-            class="input"
-            type="text"
-            name="name"
-            placeholder="Nombre del producto"
-            value="<%= product.name %>"
-          />
-          <input
-            class="input"
-            type="number"
-            name="price"
-            placeholder="Precio"
-            value="<%= product.price %>"
-          />
-          <input
-            class="input"
-            type="text"
-            name="description"
-            placeholder="Descripción"
-            value="<%= product.description %>"
-          />
-          <input
-            class="input"
-            type="number"
-            name="brand_id"
-            placeholder="ID de la marca"
-            value="<%= product.brand_id %>"
-          />
-          <input
-            class="input"
-            type="number"
-            name="category_id"
-            placeholder="ID de la categoría"
-            value="<%= product.category_id %>"
-          />
+
+        <input
+          class="input"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nombre del producto"
+          value="<%= product.name %>"
+        />
+
+
+        <% if (locals.errors && errors.name) { %>
+          <div class="flash-errors"><%= errors.name.msg %></div>           
+          <% } %>    
 
         <input
           class="input"
           type="number"
-          name="size_id"
-          placeholder="ID de la medida"
-          value="<%= product.size_id %>"
+          id="price"
+          name="price"
+          placeholder="Precio"
+          value="<%= product.price %>"
         />
+
+        <% if (locals.errors && errors.price) { %>
+          <div class="flash-errors"><%= errors.price.msg %></div>           
+          <% } %>  
+
+        <input name="description" id="description" type="text" class="input" placeholder="Descripción del producto" value="<%= product.description %>"/>
+
+        <% if (locals.errors && errors.description) { %>
+          <div class="flash-errors"><%= errors.description.msg %></div>           
+          <% } %>  
+
+        <select name="brand_id" id="brand_id">
+          <option>Marca</option>
+          <option value="1">Tres Cordilleras</option>
+          <option value="2">Brahama</option>
+          <option value="3">Pilsen</option>
+          <option value="4">Patagonia</option>
+          <option value="5">Budweiser</option>
+          <option value="6">Heineken</option>
+          <option value="7">Pilsen</option>
+          <option value="8">Corona</option>
+          <option value="9">Stella Artois</option>
+          <option value="10">Quilmes</option>
+        </select>
+
+        <% if (locals.errors && errors.brand_id) { %>
+          <div class="flash-errors"><%= errors.brand_id.msg %></div>           
+          <% } %>  
+
+        <select name="category_id" id="category_id">
+          <option>Categoria</option>
+          <option value="1">Porter</option>
+          <option value="2">Brown Ale</option>
+          <option value="3">Lager</option>
+          <option value="4">Ipa</option>
+          <option value="5">Pilsner</option>
+          <option value="6">Stout</option>
+        </select>
+
+        <% if (locals.errors && errors.category_id) { %>
+          <div class="flash-errors"><%= errors.category_id.msg %></div>           
+          <% } %>  
+
+        <select name="size_id" id="size_id">
+          <option>Medida</option>
+          <option value="1">350 cc</option>
+          <option value="2">500 cc</option>
+          <option value="3">1000 cc</option>
+          <option value="4">1500 cc</option>
+        </select>
+
+        <% if (locals.errors && errors.size_id) { %>
+          <div class="flash-errors"><%= errors.size_id.msg %></div>           
+          <% } %>  
+
         <div class="picture">
           <label for="image">Seleccioná una nueva imágen</label>
           <input
@@ -66,9 +101,13 @@
             id="image"
             name="image"
             accept=".jpg, .png, .jpeg"
-            value="<%= product.image %>"
           />
         </div>
+        <% if (locals.errors && errors.image) { %>
+          <div class="flash-errors">
+            <%= errors.image.msg %>
+          </div>             
+        <% } %>
 
         <div class="buttons-container">
           <button class="button" type="submit">Editar</button>
