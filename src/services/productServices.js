@@ -1,12 +1,12 @@
-const { Products } = require('../database/models')
-const { v4: uuidv4 } = require('uuid')
+const { Products } = require('../database/models');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
   getAllProducts: () => {
-    return Products.findAll()
+    return Products.findAll();
   },
   getProduct: async (id) => {
-    return await Products.findByPk(id)
+    return await Products.findByPk(id);
   },
   getProductDetail: (id) => {
     return Products.findByPk(id).then((product) => {
@@ -19,8 +19,8 @@ module.exports = {
         category_id: product.category_id,
         size_id: product.size_id,
         image: product.image ? product.image : 'default-image.png',
-      }
-    })
+      };
+    });
   },
 
   // TODO: Preguntar a Aylen
@@ -28,7 +28,7 @@ module.exports = {
   //   return Products.findOne({ where: { category_id: 'Porter' } })
   // },
   createProduct: (body, file) => {
-    console.log('Creando producto')
+    console.log('Creando producto');
     return Products.create({
       id: uuidv4(),
       name: body.name,
@@ -38,13 +38,13 @@ module.exports = {
       category_id: body.category_id,
       size_id: body.size_id,
       image: file ? file.filename : 'default-image.png',
-    })
+    });
   },
   updateProduct: async (id, body, file) => {
-    console.log('Updating product')
-    const product = await Products.findByPk(id)
-    const image = file ? file.filename : product.image
-    return Products.update(
+    console.log('Updating product');
+
+    const product = await Products.findByPk(id);
+    return await Products.update(
       {
         id: id,
         name: body.name,
@@ -53,16 +53,16 @@ module.exports = {
         brand_id: body.brand_id,
         category_id: body.category_id,
         size_id: body.size_id,
-        image: image,
+        image: file ? file.filename : product.image,
       },
       {
         where: { id: id },
       }
-    )
+    );
   },
   deleteProduct: (id) => {
     return Products.destroy({
       where: { id: id },
-    })
+    });
   },
-}
+};

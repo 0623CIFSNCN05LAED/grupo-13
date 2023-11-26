@@ -99,7 +99,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES ('6c0e09c6-e5bf-4ed7-bacc-b831f4fb5053','Prueba Pilsen 3',1989,'asdasd',7,5,4,'default-image.png'),('9c53f741-7e05-4760-a335-8919a1243ee1','1234',1,'prueba',1,1,1,'image-1700526115622.jpg'),('e1c37147-c72e-421e-9ac3-748eecf82cf4','1324',189,'asfasd',4,1,3,'image-1700526488600.png');
+INSERT INTO `products` VALUES ('490fdf25-d813-4a77-8767-f25287723b04','Cerveza',123,'asfdasdasfdas5d12a68sd0asddsadasdasdasd',1,1,1,'default-image.png');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,6 +123,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'admin'),(2,'user');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,6 +182,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('13cb7da7-79cc-4905-8b7d-9afbb7d906c5','asd','asd','asd@ebeer.com','$2a$10$A0IM6CF1yiRYlNg7IJLh2uWFqncbQ94Hzx2.QyzMGWn4ZvmUZGB9e',12345678,'1994-11-19','asd','default-image.png',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-20 21:50:11
+-- Dump completed on 2023-11-26  1:48:25

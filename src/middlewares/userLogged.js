@@ -6,8 +6,6 @@ module.exports = async (req, res, next) => {
   const emailInCookie = req.cookies.email || '';
   const userFromCookie = await userServices.getUserByEmail(emailInCookie);
 
-  console.log(userFromCookie);
-
   if (userFromCookie) {
     req.session.userLogged = userFromCookie;
   }

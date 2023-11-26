@@ -127,7 +127,7 @@ const usersController = {
     const id = req.params.id;
     const user = await userServices.getUser(id);
 
-    res.render('profile-edit', { user }); // TODO: Crear vista propia
+    res.render('profile-edit', { user });
   },
   update: async (req, res) => {
     const id = req.params.id;
