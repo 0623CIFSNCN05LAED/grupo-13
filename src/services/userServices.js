@@ -1,21 +1,21 @@
-const { Users } = require('../database/models')
-const { v4: uuidv4 } = require('uuid')
-const bcryptjs = require('bcryptjs')
+const { Users } = require('../database/models');
+const { v4: uuidv4 } = require('uuid');
+const bcryptjs = require('bcryptjs');
 
 const userServices = {
   getAllUsers: () => {
-    return Users.findAll()
+    return Users.findAll();
   },
   getUser: async (id) => {
-    return await Users.findByPk(id)
+    return await Users.findByPk(id);
   },
   getUserByEmail: async (query) => {
     const user = await Users.findOne({
       where: {
         email: query,
       },
-    })
-    return user
+    });
+    return user;
   },
   createUser: (body, file) => {
     return Users.create({
@@ -27,12 +27,12 @@ const userServices = {
       contact_number: Number(body.contact_number),
       birth_date: body.birth_date,
       address: body.address,
-      profile_picture: file == 'null' ? file.filename : 'default-image.png',
+      profile_picture: file ? file.filename : 'default-image.png',
       role_id: body.email.includes('@ebeer.com') ? 1 : 2,
-    })
+    });
   },
   updateUser: async (id, body, file) => {
-    const user = await Users.findByPk(id)
+    const user = await Users.findByPk(id);
 
     return Users.update(
       {
@@ -44,13 +44,13 @@ const userServices = {
       {
         where: { id: id },
       }
-    )
+    );
   },
   deleteUser: (id) => {
     return Users.destroy({
       where: { id: id },
-    })
+    });
   },
-}
+};
 
-module.exports = userServices
+module.exports = userServices;
