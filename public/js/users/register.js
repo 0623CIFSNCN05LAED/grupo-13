@@ -1,45 +1,43 @@
 const emailSymbols = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const acceptedExtensions = ['JPG', 'JPEG', 'PNG', 'GIF'];
-const passVal =
-  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-var phoneno = /^\d{11}$/;
+const phoneno = /^\d+$/;
 
 const validations = [
   {
-    field: 'fist_name',
+    field: 'first_name',
     check: (input) => input.value.length >= 2,
-    message: 'Ingresar al menos dos caracteres',
+    message: 'Ingresá al menos dos caracteres',
   },
   {
     field: 'last_name',
     check: (input) => input.value.length >= 2,
-    message: 'Ingresar al menos dos caracteres',
+    message: 'Ingresá al menos dos caracteres',
   },
   {
     field: 'email',
     check: (input) => emailSymbols.test(input.value),
-    message: 'Ingresar un correo electrónico válido',
+    message: 'Ingresá un correo electrónico válido',
   },
   {
     field: 'password',
-    check: (input) => passVal(input.value),
-    message:
-      'Ingresar al menos ocho caracteres con al menos una mayúscula, minúscula, número y caractér especial',
+    check: (input) => input.value.length >= 8,
+    message: 'La contraseña debe tener al menos 8 caracteres',
   },
   {
     field: 'contact_number',
-    check: (input) => phoneno(input.value),
-    message: 'Ingresar un número de teléfono válido con al menos 11 caracteres',
+    check: (input) => phoneno.test(input.value),
+    message: 'Ingresá un número de teléfono válido (sin guiones, ni espacios)',
   },
   {
     field: 'birth_date',
-    check: (input) => validator.isDate(input.value),
-    message: 'Ingresar una fecha válida',
+    check: (input) =>
+      new Date(input.value) !== 'Invalid Date' && !isNaN(new Date(input.value)),
+    message: 'Ingresá tu fecha de nacimiento',
   },
   {
     field: 'address',
-    check: (input) => input.value.length >= 2,
-    message: 'Ingresar al menos dos caracteres',
+    check: (input) => input.value.length > 0,
+    message: 'Ingresá tu dirección',
   },
   {
     field: 'profile_picture',
@@ -56,7 +54,6 @@ validations.forEach((validation) => {
   const inputErrorMsg = document.getElementById(inputId + 'Error');
 
   function validate() {
-    console.log('input.value', input.value);
     inputValidation(validation, input, inputErrorMsg);
   }
 
@@ -86,16 +83,12 @@ form.addEventListener('submit', (event) => {
 
 function validateProfilePicture(input) {
   const fileExtension = input.value.toUpperCase().split('.').pop();
-  if (!acceptedExtensions.includes(fileExtension)) {
-    return `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-      ', '
-    )}`;
-  }
+  return acceptedExtensions.includes(fileExtension);
 }
 
 function inputValidation(validation, input, inputErrorMsg) {
   if (!input.value) {
-    inputErrorMsg.innerText = 'El campo no debe estar vacío';
+    inputErrorMsg.innerText = 'Este campo es obligatorio';
     inputErrorMsg.classList.add('display');
     return false;
   }

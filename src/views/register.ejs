@@ -24,108 +24,115 @@
             >
               <h2 class="form-title">Datos personales</h2>
               
-                <input
-                  class="inputs"
-                  type="text"
-                  name="first_name"
-                  id="first_name"
-                  placeholder="Nombre"
-                  value="<%= oldData ? oldData.first_name : "" %>"
-                />
-
-              <% if (locals.errors && errors.first_name) { %>
+              <input
+              class="inputs"
+              type="text"
+              name="first_name"
+              id="first_name"
+              placeholder="Nombre"
+              value="<%= oldData ? oldData.first_name : "" %>"
+            />
+            <div id="first_nameError" class="flash-errors"></div>
+            <% if (locals.errors && errors.first_name) { %>
                 <div class="flash-errors"><%= errors.first_name.msg %></div>             
               <% } %>
-
-                <input
-                  class="inputs"
-                  type="text"
-                  name="last_name"
-                  id="last_name"
-                  placeholder="Apellido"
-                  value="<%= oldData ? oldData.last_name : "" %>"
-                />
-
-              <% if (locals.errors && errors.last_name) { %>
+            
+            
+            
+            <input
+              class="inputs"
+              type="text"
+              name="last_name"
+              id="last_name"
+              placeholder="Apellido"
+              value="<%= oldData ? oldData.last_name : "" %>"
+            />
+            <div id="last_nameError" class="flash-errors"></div>
+            <% if (locals.errors && errors.last_name) { %>
                 <div class="flash-errors"><%= errors.last_name.msg %></div>             
               <% } %>
-
-                <input
-                  class="inputs"
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Correo electrónico"
-                  value="<%= oldData ? oldData.email : "" %>"
-                />
-
-              <% if (locals.errors && errors.email) { %>
+            
+            
+            <input
+              class="inputs"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Correo electrónico"
+              value="<%= oldData ? oldData.email : "" %>"
+            />
+            <div id="emailError" class="flash-errors"></div>
+            <% if (locals.errors && errors.email) { %>
                 <div class="flash-errors"><%= errors.email.msg %></div>             
               <% } %>
-
-                <input
-                  class="inputs"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Nueva contraseña"
-                />
-
-              <% if (locals.errors && errors.password) { %>
+            
+            
+            <input
+              class="inputs"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Nueva contraseña"
+            />
+            <div id="passwordError" class="flash-errors"></div>
+            <% if (locals.errors && errors.password) { %>
                 <div class="flash-errors"><%= errors.password.msg %></div>             
               <% } %>
-
-                <input
-                  class="inputs"
-                  type="number"
-                  name="contact_number"
-                  id="contact_number"
-                  placeholder="Número de teléfono"
-                  value="<%= oldData ? oldData.contact_number : "" %>"
-                />
-
-              <% if (locals.errors && errors.contact_number) { %>
+            
+            
+            <input
+              class="inputs"
+              type="number"
+              name="contact_number"
+              id="contact_number"
+              placeholder="Número de teléfono"
+              value="<%= oldData ? oldData.contact_number : "" %>"
+            />
+            <div id="contact_numberError" class="flash-errors"></div>
+            <% if (locals.errors && errors.contact_number) { %>
                <div class="flash-errors"><%= errors.contact_number.msg %></div>             
               <% } %>
-
-                <input
-                  class="inputs"
-                  type="date"
-                  name="birth_date"
-                  id="birth_date"
-                  placeholder="Ingresar fecha de nacimiento"
-                  value="<%= oldData ? oldData.birth_date : "" %>"
-                />
-
-              <% if (locals.errors && errors.birth_date) { %>
+            
+            
+            <input
+              class="inputs"
+              type="date"
+              name="birth_date"
+              id="birth_date"
+              placeholder="Ingresar fecha de nacimiento"
+              value="<%= oldData ? oldData.birth_date : "" %>"
+            />
+            <div id="birth_dateError" class="flash-errors"></div>
+            <% if (locals.errors && errors.birth_date) { %>
                 <div class="flash-errors"><%= errors.birth_date.msg %></div>             
               <% } %>
-
-                <input
-                  class="inputs"
-                  type="text"
-                  name="address"
-                  id="address"
-                  placeholder="Domicilio completo"
-                  value="<%= oldData ? oldData.address : "" %>"
-                />
-
-              <% if (locals.errors && errors.address) { %>
+            
+            
+            <input
+              class="inputs"
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Domicilio completo"
+              value="<%= oldData ? oldData.address : "" %>"
+            />
+            <div id="addressError" class="flash-errors"></div>
+            <% if (locals.errors && errors.address) { %>
                <div class="flash-errors"><%= errors.address.msg %></div>             
               <% } %>
-
-              <section  class="picture-title">
-              <label for="profile_picture"> <p>Seleccioná una foto de perfil</p></label> 
-                <input
-                  class="picture-data"
-                  type="file"
-                  name="profile_picture"
-                  id="profile_picture"
-                />
-              </section>
-              <% if (locals.errors && errors.profile_picture) { %>
+            
+            
+            <input
+              class="picture-data"
+              type="file"
+              name="profile_picture"
+              id="profile_picture"
+            />
+            <div id="profile_pictureError" class="flash-errors"></div>
+            <% if (locals.errors && errors.profile_picture) { %>
                <div class="flash-errors"><%= errors.profile_picture.msg %></div>             
               <% } %>
+
               <button type="submit" class="btn-yellow">Registrate</button>
 
               <section class="links-container">

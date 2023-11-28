@@ -16,11 +16,12 @@ const loginValidateForm = require('../middlewares/validate-users-login');
 // Register validations
 const registerValidations = require('../validations/usersRegister');
 const registerValidateForm = require('../middlewares/validate-users-register');
+const registerValidateEmail = require('../middlewares/validate-users-register-email');
 
 // Admin create validations
 const createValidations = require('../validations/usersCreate');
 const createValidateForm = require('../middlewares/validate-users-create');
-const createValidateEmail = require('../middlewares/validate-email');
+const createValidateEmail = require('../middlewares/validate-users-create-email');
 
 /*Routes */
 
@@ -40,7 +41,7 @@ usersRouter.post(
   upload.single('profile_picture'),
   registerValidations,
   registerValidateForm,
-  createValidateEmail,
+  registerValidateEmail,
   usersController.register
 );
 
