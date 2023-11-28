@@ -6,8 +6,8 @@ const userServices = {
   getAllUsers: () => {
     return Users.findAll();
   },
-  getAllGenresAndCount: ({ pageSize, offset }) => {
-    return Genres.findAndCountAll({
+  getAllUsersAndCount: ({ pageSize, offset }) => {
+    return Users.findAndCountAll({
       limit: pageSize,
       offset: offset,
     });

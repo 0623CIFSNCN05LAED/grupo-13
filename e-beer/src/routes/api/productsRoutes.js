@@ -1,4 +1,10 @@
 const express = require('express');
-const api = express.Router();
+const apiProducts = express.Router();
 
-module.exports = apiProductsRouter;
+const apiProductsController = require('../../controllers/api/productsController');
+
+apiProducts.get('/', apiProductsController.list);
+apiProducts.get('/:id', apiProductsController.detail);
+apiProducts.get('/:id/image', apiProductsController.image);
+
+module.exports = apiProducts;
