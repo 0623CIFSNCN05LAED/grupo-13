@@ -1,4 +1,4 @@
--- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for osx10.10 (x86_64)
 --
 -- Host: localhost    Database: grupo_13
 -- ------------------------------------------------------
@@ -99,7 +99,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES ('490fdf25-d813-4a77-8767-f25287723b04','Cerveza',123,'asfdasdasfdas5d12a68sd0asddsadasdasdasd',1,1,1,'default-image.png');
+INSERT INTO `products` VALUES ('6c0e09c6-e5bf-4ed7-bacc-b831f4fb5053','Prueba Pilsen 3',1989,'asdasd',7,5,4,'default-image.png'),('9c53f741-7e05-4760-a335-8919a1243ee1','1234',1,'prueba',1,1,1,'image-1700526115622.jpg'),('bb046aa5-c400-49b0-b8b3-82fd6c0490d8','123',123,'123',1,1,1,'image-1700528388391.jpg'),('e1c37147-c72e-421e-9ac3-748eecf82cf4','1324',189,'asfasd',4,1,3,'image-1700526488600.png');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,21 +182,10 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('13cb7da7-79cc-4905-8b7d-9afbb7d906c5','asd','asd','asd@ebeer.com','$2a$10$A0IM6CF1yiRYlNg7IJLh2uWFqncbQ94Hzx2.QyzMGWn4ZvmUZGB9e',12345678,'1994-11-19','asd','default-image.png',1);
+INSERT INTO `users` VALUES ('13cb7da7-79cc-4905-8b7d-9afbb7d906c5','asd','asd','asd@ebeer.com','$2a$10$A0IM6CF1yiRYlNg7IJLh2uWFqncbQ94Hzx2.QyzMGWn4ZvmUZGB9e',1234567,'1994-11-19','asd','default-image.jpg',1),('24e650ef-58ac-4e92-b22f-e5760c6bc382','asd','asd','asdasd@ebeer.com','$2a$10$.ZdS5rHu1Rq7Uoq4BeLtsOWs.9Pm3mkT1KruYvBKGuUpS.NIgIZqa',213412414,'1994-11-19','asd','default-image.jpg',1),('aad2bce0-3b72-460f-895d-5d5bf86f7573','asdasdasd','asdasdasd','asdasdasd@ebeer.com','$2a$10$nbyKOKeoKIHvZDshrfn.2.N.GELB0BLfFW8gSBg.6st0DYB.EVWsS',12345678,'1994-11-19','asd','default-image.jpg',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'grupo_13'
 --
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-11-26  1:48:25
