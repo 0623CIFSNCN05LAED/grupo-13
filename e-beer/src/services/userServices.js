@@ -6,6 +6,12 @@ const userServices = {
   getAllUsers: () => {
     return Users.findAll();
   },
+  getAllGenresAndCount: ({ pageSize, offset }) => {
+    return Genres.findAndCountAll({
+      limit: pageSize,
+      offset: offset,
+    });
+  },
   getUser: async (id) => {
     return await Users.findByPk(id);
   },

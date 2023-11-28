@@ -2,6 +2,8 @@
 const express = require('express');
 const mainRouter = express.Router();
 const ageAuth = require('../middlewares/ageAuthMiddleware');
+const apiRouter = require('./api/mainRoutes');
+apiRouter.use('/api', apiRouter);
 
 // Controller require
 const mainController = require('../controllers/mainController');
@@ -25,5 +27,7 @@ mainRouter.use('/products', ageAuth, productsRoutes);
 // Users routes
 const usersRoutes = require('./usersRoutes.js');
 mainRouter.use('/users', ageAuth, usersRoutes);
+
+// API routes
 
 module.exports = mainRouter;
