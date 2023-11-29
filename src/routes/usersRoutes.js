@@ -27,6 +27,8 @@ const createValidateEmail = require('../middlewares/validate-users-create-email'
 const editValidations = require('../validations/usersEdit');
 const editValidateForm = require('../middlewares/validate-users-edit');
 const editValidateEmail = require('../middlewares/validate-users-edit-email');
+const passValidateForm = require('../middlewares/validate-users-pass');
+const curdValidateForm = require('../middlewares/validate-users-crud');
 
 /*Routes */
 
@@ -71,9 +73,6 @@ usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
 usersRouter.get(
   '/myProfile/edit',
   authMiddleware,
-  editValidations,
-  editValidateForm,
-  editValidateEmail,
   usersController.myProfileEdit
 );
 // usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
@@ -82,6 +81,9 @@ usersRouter.put(
   '/myProfile/edit',
   upload.single('profile_picture'),
   authMiddleware,
+  editValidations,
+  editValidateForm,
+  editValidateEmail,
   usersController.myProfileUpdate
 );
 
@@ -90,6 +92,14 @@ usersRouter.get(
   '/myPassword/edit',
   authMiddleware,
   usersController.myPasswordEdit
+);
+usersRouter.put(
+  '/myPassword/edit',
+  upload.single('image'),
+  authMiddleware,
+  editValidations,
+  passValidateForm,
+  usersController.updatePassword
 );
 
 //Edit profile CRUD
@@ -104,17 +114,14 @@ usersRouter.put(
   upload.single('profile_picture'),
   authMiddleware,
   adminMiddleware,
+  registerValidations,
+  curdValidateForm,
+  registerValidateEmail,
   usersController.update
 );
 
 // usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
 // usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
-usersRouter.put(
-  '/myPassword/edit',
-  upload.single('image'),
-  authMiddleware,
-  usersController.updatePassword
-);
 
 //MyProfile
 usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
