@@ -27,7 +27,7 @@ const userServices = {
       contact_number: Number(body.contact_number),
       birth_date: body.birth_date,
       address: body.address,
-      profile_picture: file ? file.filename : 'default-image.png',
+      profile_picture: file ? file.filename : 'default-image.jpg',
       role_id: body.email.includes('@ebeer.com') ? 1 : 2,
     });
   },

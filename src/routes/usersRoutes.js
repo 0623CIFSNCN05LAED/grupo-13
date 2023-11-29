@@ -53,7 +53,11 @@ usersRouter.post(
 );
 
 //Create new user
-usersRouter.get('/create-user', usersController.createNewUserForm);
+usersRouter.get(
+  '/create-user',
+  adminMiddleware,
+  usersController.createNewUserForm
+);
 usersRouter.post(
   '/create-user',
   createValidations,
@@ -66,7 +70,12 @@ usersRouter.post(
 usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
 
 //Delete User
-usersRouter.get('/:id/delete', authMiddleware, usersController.deleteForm);
+usersRouter.get(
+  '/:id/delete',
+  authMiddleware,
+  adminMiddleware,
+  usersController.deleteForm
+);
 usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
 
 //Edit profile

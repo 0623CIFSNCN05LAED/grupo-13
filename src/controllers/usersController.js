@@ -158,7 +158,7 @@ const usersController = {
   },
   update: async (req, res) => {
     const id = req.params.id;
-    await userServices.updateUser(id, req.body, req.file);
+    await userServices.createUser(id, req.body, req.file);
 
     res.redirect('/users/crud');
   },
