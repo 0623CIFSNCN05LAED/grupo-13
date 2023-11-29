@@ -11,6 +11,7 @@
     <main>
       <form
         class="form"
+        id="form"
         action="/products/create"
         method="POST"
         enctype="multipart/form-data"
@@ -55,8 +56,9 @@
           <div class="flash-errors"><%= errors.description.msg %></div>           
           <% } %>  
 
+
+          <label for="brand_id">Marca</label>
         <select name="brand_id" id="brand_id">
-          <option>Marca</option>
           <option value="1">Tres Cordilleras</option>
           <option value="2">Brahama</option>
           <option value="3">Pilsen</option>
@@ -75,8 +77,8 @@
           <div class="flash-errors"><%= errors.brand_id.msg %></div>           
           <% } %>  
 
+          <label for="category_id">Categoría</label>
         <select name="category_id" id="category_id">
-          <option>Categoria</option>
           <option value="1">Porter</option>
           <option value="2">Brown Ale</option>
           <option value="3">Lager</option>
@@ -91,8 +93,9 @@
           <div class="flash-errors"><%= errors.category_id.msg %></div>           
           <% } %>  
 
+        
+          <label for="size_id">Tamaño</label>
         <select name="size_id" id="size_id">
-          <option>Medida</option>
           <option value="1">350 cc</option>
           <option value="2">500 cc</option>
           <option value="3">1000 cc</option>

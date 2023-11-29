@@ -1,3 +1,5 @@
+const acceptedExtensions = ['JPG', 'JPEG', 'PNG', 'GIF'];
+
 const validations = [
   {
     field: 'name',
@@ -13,21 +15,6 @@ const validations = [
     field: 'description',
     check: (input) => input.value.length >= 5,
     message: 'Ingresá al menos 5 caracteres',
-  },
-  {
-    field: 'brand_id',
-    check: (input) => input.value !== 'Marca',
-    message: 'Seleccioná el ID de la marca',
-  },
-  {
-    field: 'category_id',
-    check: (input) => input.value !== 'Categoría',
-    message: 'Seleccioná el ID de la categoría',
-  },
-  {
-    field: 'size_id',
-    check: (input) => input.value !== 'Tamaño',
-    message: 'Seleccioná el ID del tamaño',
   },
   {
     field: 'image',
