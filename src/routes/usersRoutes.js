@@ -23,6 +23,11 @@ const createValidations = require('../validations/usersCreate');
 const createValidateForm = require('../middlewares/validate-users-create');
 const createValidateEmail = require('../middlewares/validate-users-create-email');
 
+// Edit Validations
+const editValidations = require('../validations/usersEdit');
+const editValidateForm = require('../middlewares/validate-users-edit');
+const editValidateEmail = require('../middlewares/validate-users-edit-email');
+
 /*Routes */
 
 // Login
@@ -66,6 +71,9 @@ usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
 usersRouter.get(
   '/myProfile/edit',
   authMiddleware,
+  editValidations,
+  editValidateForm,
+  editValidateEmail,
   usersController.myProfileEdit
 );
 // usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
