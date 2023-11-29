@@ -1,4 +1,4 @@
--- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for osx10.10 (x86_64)
 --
 -- Host: localhost    Database: grupo_13
 -- ------------------------------------------------------
@@ -99,7 +99,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES ('490fdf25-d813-4a77-8767-f25287723b04','Cerveza',123,'asfdasdasfdas5d12a68sd0asddsadasdasdasd',1,1,1,'default-image.png');
+INSERT INTO `products` VALUES ('6c0e09c6-e5bf-4ed7-bacc-b831f4fb5053','Corona',3999,'Acá va una descripción',7,5,4,'default-image.png'),('9c53f741-7e05-4760-a335-8919a1243ee1','Pilsen',1920,'Acá va una descripción',1,1,1,'default-image.png'),('bb046aa5-c400-49b0-b8b3-82fd6c0490d8','Tres corderos',2400,'Acá va una descripción',1,1,1,'default-image.png'),('e1c37147-c72e-421e-9ac3-748eecf82cf4','Swift',1989,'Acá va una descripción',4,1,3,'default-image.png');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,21 +182,10 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('13cb7da7-79cc-4905-8b7d-9afbb7d906c5','asd','asd','asd@ebeer.com','$2a$10$A0IM6CF1yiRYlNg7IJLh2uWFqncbQ94Hzx2.QyzMGWn4ZvmUZGB9e',12345678,'1994-11-19','asd','default-image.png',1);
+INSERT INTO `users` VALUES ('078f66d1-4973-40f4-b70f-c9325d46b280','Virginia','Ebeer','virgi@ebeer.com','$2a$10$nRKgdGGtdocpE1w42LG/d.e1WanmV8UT1TywBPcJ7DCBMA.8LCZ9O',12345678,'1989-01-01','Caba','default-image.jpg',1),('13cb7da7-79cc-4905-8b7d-9afbb7d906c5','Clemente','Ebeer','clemente@ebeer.com','$2a$10$A0IM6CF1yiRYlNg7IJLh2uWFqncbQ94Hzx2.QyzMGWn4ZvmUZGB9e',12345678,'1994-11-19','Argentina','default-image.jpg',1),('45a4deea-80b2-4dc9-9c50-e75fcbfc4a39','Florencia','Ebeer','flor@ebeer.com','$2a$10$X4hTGbsevLOgBxy.Jf17MOyLfxOzKAfINrYV3VSLUg8hp9FxrsSL6',12345678,'1989-01-01','Mardel','default-image.jpg',1),('5d2e8117-1811-4029-815d-3b96faaa4bfe','Juliana','Ebeer','juli@ebeer.com','$2a$10$DHfbMVMkSy/YebGQ8FVCE.OZr9sKUzNH061.eJGVWvSETTUbxU7ie',12345678,'1989-01-01','Colombia','default-image.jpg',1),('67689dc8-015a-4f2f-93ff-ec8e224526b9','Sofia','Ebeer','sofi@ebeer.com','$2a$10$WI4YfLkNexDNZLwmc8cPcu9qRDgWoMN.UwiqoiOdGnsL1wUH5vzye',1989,'1989-12-13','Taylor\'s Version','default-image.jpg',1),('d4c719e9-aa3e-4fa6-b386-811bd6d9cba3','Usuario','Prueba','usuario@pass12345678.com','$2a$10$w44bIIGHgCwNXimdBK7ipeHHPgUX6DVHhCBOLzoLOvMAwKfosAHxG',12345678,'1989-01-01','Taylor\'s Version','default-image.jpg',2),('d84c245b-ccb6-4258-a22d-156b7b7958e3','Martiniano','Ebeer','marti@ebeer.com','$2a$10$YPdWKGTn1a5i.UJhcBGkn.z1EVTx.j9e4JsOcf4O6WSo0ATgUOcCy',12345678,'1901-05-25','Monumental','default-image.jpg',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'grupo_13'
 --
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-11-26  1:48:25
