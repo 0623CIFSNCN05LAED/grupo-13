@@ -3,6 +3,7 @@
   <head>
     <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/form-styles.css" />
+    <script src="/js/products/createProduct.js" defer></script>
   </head>
 
   <body>
@@ -25,6 +26,8 @@
           value="<%= oldData ? oldData.name : "" %>"
         />
 
+        <div id="nameError" class="flash-errors"></div>
+
         <% if (locals.errors && errors.name) { %>
           <div class="flash-errors"><%= errors.name.msg %></div>           
           <% } %>        
@@ -38,11 +41,15 @@
           value="<%= oldData ? oldData.price : "" %>"
         />
 
+        <div id="priceError" class="flash-errors"></div>
+
         <% if (locals.errors && errors.price) { %>
           <div class="flash-errors"><%= errors.price.msg %></div>           
           <% } %>  
 
         <textarea name="description" id="description" placeholder="Descripción del producto" value="<%= oldData ? oldData.description : "" %>"></textarea>
+
+        <div id="descriptionError" class="flash-errors"></div>
 
         <% if (locals.errors && errors.description) { %>
           <div class="flash-errors"><%= errors.description.msg %></div>           
@@ -62,6 +69,8 @@
           <option value="10">Quilmes</option>
         </select>
 
+        <div id="brand_idError" class="flash-errors"></div>
+
         <% if (locals.errors && errors.brand_id) { %>
           <div class="flash-errors"><%= errors.brand_id.msg %></div>           
           <% } %>  
@@ -76,6 +85,8 @@
           <option value="6">Stout</option>
         </select>
 
+        <div id="category_idError" class="flash-errors"></div>
+
         <% if (locals.errors && errors.category_id) { %>
           <div class="flash-errors"><%= errors.category_id.msg %></div>           
           <% } %>  
@@ -87,6 +98,8 @@
           <option value="3">1000 cc</option>
           <option value="4">1500 cc</option>
         </select>
+
+        <div id="size_idError" class="flash-errors"></div>
 
         <% if (locals.errors && errors.size_id) { %>
           <div class="flash-errors"><%= errors.size_id.msg %></div>           
@@ -101,6 +114,9 @@
             accept=".jpg"
           />
         </div>
+
+        <div id="imageError" class="flash-errors"></div>
+
         <% if (locals.errors && errors.image) { %>
           <div class="flash-errors">
             <%= errors.image.msg %>
