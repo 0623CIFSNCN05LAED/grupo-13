@@ -89,7 +89,17 @@ const usersController = {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
-    res.render('profile-edit', { user });
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+
+    req.session.oldData = null;
+    req.session.oldData = null;
+
+    res.render('profile-edit', {
+      user: user,
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
   },
   myProfileUpdate: async (req, res) => {
     const id = req.session.userLogged.id;
@@ -100,7 +110,14 @@ const usersController = {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
-    res.render('profile-edit-password', { user });
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+
+    res.render('profile-edit-password', {
+      user: user,
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
   },
   updatePassword: (req, res) => {
     const data = req.body;
@@ -115,7 +132,7 @@ const usersController = {
     user.profile_picture = profile_picture;
     userServices.updateUser(id, user);
 
-    res.redirect('/home');
+    res.redirect('/users/myProfile');
   },
   // Crud
   crud: async (req, res) => {
@@ -127,13 +144,23 @@ const usersController = {
     const id = req.params.id;
     const user = await userServices.getUser(id);
 
-    res.render('profile-edit', { user });
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+
+    req.session.oldData = null;
+    req.session.oldData = null;
+
+    res.render('profile-edit-admin', {
+      user: user,
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
   },
   update: async (req, res) => {
     const id = req.params.id;
     await userServices.updateUser(id, req.body, req.file);
 
-    res.redirect('/home');
+    res.redirect('/users/crud');
   },
   // Eliminar Usuario
   deleteForm: async (req, res) => {

@@ -4,14 +4,35 @@ const phoneno = /^\d+$/;
 
 const validations = [
   {
+    field: 'first_name',
+    check: (input) => input.value.length >= 2,
+    message: 'Ingresá al menos dos caracteres',
+  },
+  {
+    field: 'last_name',
+    check: (input) => input.value.length >= 2,
+    message: 'Ingresá al menos dos caracteres',
+  },
+  {
     field: 'email',
     check: (input) => emailSymbols.test(input.value),
     message: 'Ingresá un correo electrónico válido',
   },
   {
+    field: 'password',
+    check: (input) => input.value.length >= 8,
+    message: 'La contraseña debe tener al menos 8 caracteres',
+  },
+  {
     field: 'contact_number',
     check: (input) => phoneno.test(input.value),
     message: 'Ingresá un número de teléfono válido (sin guiones, ni espacios)',
+  },
+  {
+    field: 'birth_date',
+    check: (input) =>
+      new Date(input.value) !== 'Invalid Date' && !isNaN(new Date(input.value)),
+    message: 'Ingresá tu fecha de nacimiento',
   },
   {
     field: 'address',

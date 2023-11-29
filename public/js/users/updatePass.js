@@ -4,26 +4,9 @@ const phoneno = /^\d+$/;
 
 const validations = [
   {
-    field: 'email',
-    check: (input) => emailSymbols.test(input.value),
-    message: 'Ingresá un correo electrónico válido',
-  },
-  {
-    field: 'contact_number',
-    check: (input) => phoneno.test(input.value),
-    message: 'Ingresá un número de teléfono válido (sin guiones, ni espacios)',
-  },
-  {
-    field: 'address',
-    check: (input) => input.value.length > 0,
-    message: 'Ingresá tu dirección',
-  },
-  {
-    field: 'profile_picture',
-    check: (input) => validateProfilePicture(input),
-    message: `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-      ', '
-    )}`,
+    field: 'password',
+    check: (input) => input.value.length >= 8,
+    message: 'La contraseña debe tener al menos 8 caracteres',
   },
 ];
 
