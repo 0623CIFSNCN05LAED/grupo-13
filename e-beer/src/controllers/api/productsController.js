@@ -15,7 +15,7 @@ module.exports = {
         name: product.name,
         description: product.description,
         categories: product.categories,
-        detail: `/api/products/${product.id}`,
+        detail: `${req.originalUrl}/${product.id}`,
       })),
     };
     res.json(response);
@@ -26,7 +26,7 @@ module.exports = {
     const response = {
       ...product,
       categories: product.categories,
-      image: `http://localhost:3000/api/products/${product.id}/image`,
+      image: req.originalUrl + '/' + product.id + '/image',
     };
     res.json(response);
   },

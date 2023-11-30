@@ -8,19 +8,22 @@ module.exports = {
   list: async (req, res) => {
     const page = Number(req.query.page) || 1;
     const offset = (page - 1) * pageSize;
-    console.log('offset', offset);
     const { count, rows } = await userServices.getAllUsersAndCount({
       pageSize,
       offset,
     });
+
+    const users = rows.map((user) => ({
+      id: user.id,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      detail: req.originalUrl + '/' + user.id,
+    }));
+
     res.json({
-      meta: {
-        status: 200,
-        total: count,
-        url: req.originalUrl,
-        nextPage: `${req.originalUrl.split('?')[0]}?page=${page + 1}`,
-      },
-      data: rows,
+      count,
+      users,
     });
   },
   detail: async (req, res) => {
@@ -32,7 +35,7 @@ module.exports = {
       last_name: user.last_name,
       email: user.email,
       profile_picture: user.profile_picture,
-      image: `http://localhost:3000/api/users/${user.id}/image`,
+      image: req.originalUrl + '/' + user.id + '/' + image,
     };
 
     res.json({
