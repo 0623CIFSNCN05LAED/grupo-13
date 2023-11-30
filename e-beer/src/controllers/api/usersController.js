@@ -35,7 +35,7 @@ module.exports = {
       last_name: user.last_name,
       email: user.email,
       profile_picture: user.profile_picture,
-      image: req.originalUrl + '/' + user.id + '/' + image,
+      image: req.originalUrl + '/image',
     };
 
     res.json({

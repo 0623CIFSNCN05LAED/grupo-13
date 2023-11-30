@@ -26,7 +26,7 @@ module.exports = {
     const response = {
       ...product,
       categories: product.categories,
-      image: req.originalUrl + '/' + product.id + '/image',
+      image: req.originalUrl + '/image',
     };
     res.json(response);
   },
