@@ -174,7 +174,7 @@ Aquí detallamos lo expuesto en el jam:
 
 3. Continuar haciendo:
 
-   - Crear ramas para cada user story asignada
+   - Crear ramas por tarea asignada
    - Reuniones weekly para verrificar el progreso: martes 19:30 hs (ARG) y 17:30 hs (COL)
    - Continuar compartiendo las buenas prácticas, información útil y documentación mediante los hilos de discord para fomentar el aprendizaje
    - Mantener actualizado el tablero Trello
@@ -187,13 +187,13 @@ Aquí detallamos lo expuesto en el jam:
 
 5. Dejar de hacer:
 
-   - Hacer merge de cambios a la rama main, sin revisar que funcione correctamente
+   - Hacer merge sin revisar errores
    - Dejar de actualizar el archivo weekly (siendo que nos juntamos semanalmente)
    - Procastinación: dejar de posponer tareas importantes o adoptar estrategias para evitar la procastinación
 
 # Retrospectiva SPRINT Nº7:
 
-Jamboard, Starfish retrospective (página 7):
+Jamboard, Starfish retrospective (página 7):https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?f=5
 
 Aquí detallamos lo expuesto en el jam:
 
@@ -211,9 +211,12 @@ Aquí detallamos lo expuesto en el jam:
 
 3. Continuar haciendo:
 
-- Crear ramas para cada user story asignada
+- Crear ramas por tarea asignada
 - Reuniones weekly para verrificar el progreso: martes 19:30 hs (ARG) y 17:30 hs (COL)
 - Continuar compartiendo las buenas prácticas, información útil y documentación mediante los hilos de discord para fomentar el aprendizaje
+- Mantener actualizado el tablero Trello
+- Apoyo entre compañeros: continuar con el apoyo y empatía entre los integrantes del grupo
+- Colaboración: seguir celebrando la colaboración efectiva y la disposición para ayudarnos mutuament
 
 4. Hacer menos:
 
@@ -221,5 +224,5 @@ Aquí detallamos lo expuesto en el jam:
 
 5. Dejar de hacer:
 
-   - Hacer merge de cambios a la rama main, sin revisar que funcione correctamente
-   - No avisar la ausencia a una reunión
+   - Hacer merge sin revisar errores
+   - No actualizar el archivo weekly (siendo que nos juntamos semanalmente)
