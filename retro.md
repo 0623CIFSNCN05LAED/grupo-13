@@ -147,6 +147,77 @@ Aquí detallamos lo expuesto en el jam:
 4. Hacer menos:
 
    - Mantener activas ramas que no se utilizan o que hayan sido mergeadas
+   - No actualizar tareas del Trello
+
+5. Dejar de hacer:
+
+   - Hacer merge de cambios a la rama main, sin revisar que funcione correctamente
+   - No avisar la ausencia a una reunión
+
+   # Retrospectiva SPRINT Nº6:
+
+Jamboard, Starfish retrospective (página 6):https://jamboard.google.com/d/16nulfg28rxqv63MBfnURDKJNyqSXcLiz5JNpXtmSCbQ/viewer?f=4
+
+Aquí detallamos lo expuesto en el jam:
+
+1. Comenzar a hacer:
+
+   - Reuniones por issues particulares
+   - Experimentación con nuevas herramientas: explorar y adoptar nuevas herramientas que puedan mejorar la productividad o la colaboración del equipo
+   - Establecer objetivos SMART: comenzar a trazar objetivos específicos, medibles, alcanzables, relevantes y con fechas límites.
+
+2. Hacer más:
+
+   - División de tareas
+   - Ir al día con los temas del sprint
+   - Feedback constructivo: solicitar más feedback entre los miembros del equipo para superarnos día a día
+
+3. Continuar haciendo:
+
+   - Crear ramas para cada user story asignada
+   - Reuniones weekly para verrificar el progreso: martes 19:30 hs (ARG) y 17:30 hs (COL)
+   - Continuar compartiendo las buenas prácticas, información útil y documentación mediante los hilos de discord para fomentar el aprendizaje
+   - Mantener actualizado el tablero Trello
+   - Apoyo entre compañeros: continuar con el apoyo y empatía entre los integrantes del grupo
+   - Colaboración: seguir celebrando la colaboración efectiva y la disposición para ayudarnos mutuamente
+
+4. Hacer menos:
+
+   - Mantener activas ramas que no se utilizan o que hayan sido mergeadas
+
+5. Dejar de hacer:
+
+   - Hacer merge de cambios a la rama main, sin revisar que funcione correctamente
+   - Dejar de actualizar el archivo weekly (siendo que nos juntamos semanalmente)
+   - Procastinación: dejar de posponer tareas importantes o adoptar estrategias para evitar la procastinación
+
+# Retrospectiva SPRINT Nº7:
+
+Jamboard, Starfish retrospective (página 7):
+
+Aquí detallamos lo expuesto en el jam:
+
+1. Comenzar a hacer:
+
+- Experimentación con nuevas herramientas: explorar y adoptar nuevas herramientas que puedan mejorar la productividad o la colaboración del equipo
+- Establecer objetivos SMART: comenzar a trazar objetivos específicos, medibles, alcanzables, relevantes y con fechas límites.
+
+2. Hacer más:
+
+   - División de tareas
+   - Ir al día con los temas del sprint
+   - Feedback constructivo: solicitar más feedback entre los miembros del equipo para superarnos día a día
+   - Consultar más a los profesores de ser necesario
+
+3. Continuar haciendo:
+
+- Crear ramas para cada user story asignada
+- Reuniones weekly para verrificar el progreso: martes 19:30 hs (ARG) y 17:30 hs (COL)
+- Continuar compartiendo las buenas prácticas, información útil y documentación mediante los hilos de discord para fomentar el aprendizaje
+
+4. Hacer menos:
+
+   - Mantener activas ramas que no se utilizan o que hayan sido mergeadas
 
 5. Dejar de hacer:
 
