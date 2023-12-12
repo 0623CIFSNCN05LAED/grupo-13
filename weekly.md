@@ -55,3 +55,11 @@ los impedimentos encontrados y las soluciones propuestas indicando los integrant
 3. Se cuestiona el formato actual de las páginas para creación y edición de productos, y se decide crear una nueva pagina previa que redireccione al usuario según la tarea que quiera realizar (cargar un nuevo producto, o bien editar uno existente).
 4. Unificamos estilos en las nuevas páginas creadas.
 5. Se propone una nueva reunión pre-entrega para el miércoles 06/09.
+
+# Lunes 11/12:
+
+1. Se avanza con la línea de tiempo para la retro "con yapa" del sprint 7.
+2. Realizamos un repaso general del proyecto para identificar bugs / mejoras.
+3. Listamos tareas pendientes / bugs a solucionar.
+4. Dividimos tareas para ir completando el desarrollo del proyecto.
+5. Definimos fechas de reuniones y de entregas.
