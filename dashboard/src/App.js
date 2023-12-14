@@ -1,12 +1,14 @@
-import './App.css';
-import ProductsDashboard from './components/ProductsDashboard';
+import './App.css'
+import Header from './components/Header'
+import ProductsDashboard from './components/ProductsDashboard'
 
-function App(props) {
+function App() {
   return (
-    <div className='App'>
+    <div className="App">
+      <Header />
       <ProductsDashboard />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
