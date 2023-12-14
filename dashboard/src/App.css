@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Variables Globales */
+:root {
+  /* Colors */
+  --yellow: #ffb432;
+  --black: #1e1e1e;
+  --green: #2e9709;
+  --red: #b70d0d;
+  --light-grey: #fafafa;
+  --dark-grey: rgba(0, 0, 0, 0.8);
+
+  /* Texts */
+  --text-sm: 14px; /* Textos */
+  --text-md: 16px; /* Precios */
+  --text-lg: 18px; /* Subtitulos */
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px; /* Titulos */
+
+  /* Layout */
+  --container-lg: 1170px;
+}
