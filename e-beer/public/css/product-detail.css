@@ -1,0 +1,193 @@
+.product-container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.searchbar {
+  width: 80%;
+  margin: 40px auto 0 auto;
+}
+
+.card-container {
+  margin: 50px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.img-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.img-container img {
+  width: 100%;
+}
+
+.card-description-container {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+}
+
+.card-title {
+  display: flex;
+  align-items: baseline;
+}
+.card-title h2 {
+  flex-grow: 0.1;
+  font-size: var(--text-3xl);
+}
+.card-title span {
+  max-width: 50ch;
+  text-wrap: balance;
+  flex-grow: 0.9;
+  color: var(--green);
+  font-weight: 500;
+  font-size: var(--text-lg);
+}
+
+.card-description {
+  margin: 10px 0;
+  line-height: 24px;
+  font-size: var(--text);
+}
+
+.count-btn {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  margin-top: 20px;
+  padding-bottom: 6px;
+  background-color: var(--light-grey);
+}
+.count-btn span {
+  font-size: 24px;
+  font-weight: 700;
+}
+.count-btn button {
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: unset;
+}
+
+.card-description-container button {
+  margin-top: 10px;
+}
+
+@media (min-width: 678px) {
+  .searchbar {
+    width: 60%;
+  }
+  .card-container {
+    width: 60%;
+    margin: 30px auto;
+  }
+}
+
+@media (min-width: 1023px) {
+  .product-container {
+    margin: 50px auto;
+    min-height: 40vh;
+  }
+
+  .searchbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 90%;
+    margin: 50px 0 0 0;
+  }
+
+  .card-container {
+    display: flex;
+    width: 80%;
+  }
+
+  .card-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .card-description-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-description-container button {
+    margin: 0;
+  }
+
+  .card-description {
+    margin-top: 40px;
+  }
+
+  .btns-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .count-btn {
+    align-items: center;
+    width: 120px;
+    margin: 0;
+    height: 100%;
+    padding-top: 5px;
+  }
+  .count-btn span {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .count-btn button {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .btn-yellow {
+    width: 50%;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1439px) {
+  .card-title h2 {
+    font-size: 48px;
+  }
+  .card-title span {
+    margin-top: 10px;
+    font-size: var(--text-2xl);
+  }
+
+  .card-description p {
+    font-size: 18px;
+  }
+
+  .btns-container {
+    margin-top: 20px;
+  }
+
+  .count-btn {
+    width: 150px;
+  }
+  .count-btn button {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 2559px) {
+  .card-title {
+    margin-top: 20px;
+  }
+  .img-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .img-container img {
+    width: 100%;
+  }
+}
