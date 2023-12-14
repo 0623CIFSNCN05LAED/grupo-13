@@ -11,35 +11,29 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.STRING,
       brand_id: DataTypes.STRING,
       category_id: DataTypes.STRING,
-      size_id: DataTypes.STRING,
+      size_id: DataTypes.INTEGER,
       image: DataTypes.STRING,
     },
     {
       tableName: 'products',
       timestamps: false,
     }
-  );
+  )
 
   Model.associate = (models) => {
     Model.belongsTo(models.Brand, {
       as: 'p_brand',
       foreignKey: 'brand_id',
-    });
-  };
+    }),
+      Model.belongsTo(models.Size, {
+        as: 'p_size',
+        foreignKey: 'size_id',
+      }),
+      Model.belongsTo(models.Category, {
+        as: 'p_category',
+        foreignKey: 'category_id',
+      })
+  }
 
-  Model.associate = (models) => {
-    Model.belongsTo(models.Size, {
-      as: 'p_size',
-      foreignKey: 'size_id',
-    });
-  };
-
-  Model.associate = (models) => {
-    Model.belongsTo(models.Category, {
-      as: 'p_category',
-      foreignKey: 'category_id',
-    });
-  };
-
-  return Model;
-};
+  return Model
+}

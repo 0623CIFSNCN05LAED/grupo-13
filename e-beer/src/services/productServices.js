@@ -1,12 +1,14 @@
-const { Products } = require('../database/models');
-const { v4: uuidv4 } = require('uuid');
+const { Products } = require('../database/models')
+const { v4: uuidv4 } = require('uuid')
 
 module.exports = {
   getAllProducts: () => {
-    return Products.findAll();
+    return Products.findAll({
+      include: [{ association: 'p_category' }, { association: 'p_size' }],
+    })
   },
   getProduct: async (id) => {
-    return await Products.findByPk(id);
+    return await Products.findByPk(id)
   },
   getProductDetail: (id) => {
     return Products.findByPk(id).then((product) => {
@@ -19,8 +21,8 @@ module.exports = {
         category_id: product.category_id,
         size_id: product.size_id,
         image: product.image ? product.image : 'default-image.png',
-      };
-    });
+      }
+    })
   },
 
   // TODO: Preguntar a Aylen
@@ -28,7 +30,7 @@ module.exports = {
   //   return Products.findOne({ where: { category_id: 'Porter' } })
   // },
   createProduct: (body, file) => {
-    console.log('Creando producto');
+    console.log('Creando producto')
     return Products.create({
       id: uuidv4(),
       name: body.name,
@@ -38,12 +40,12 @@ module.exports = {
       category_id: body.category_id,
       size_id: body.size_id,
       image: file ? file.filename : 'default-image.png',
-    });
+    })
   },
   updateProduct: async (id, body, file) => {
-    console.log('Updating product');
+    console.log('Updating product')
 
-    const product = await Products.findByPk(id);
+    const product = await Products.findByPk(id)
     return await Products.update(
       {
         id: id,
@@ -58,11 +60,11 @@ module.exports = {
       {
         where: { id: id },
       }
-    );
+    )
   },
   deleteProduct: (id) => {
     return Products.destroy({
       where: { id: id },
-    });
+    })
   },
-};
+}
