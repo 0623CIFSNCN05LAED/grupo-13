@@ -15,6 +15,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+DROP DATABASE IF EXISTS grupo_13;
+CREATE DATABASE grupo_13;
+USE grupo_13;
+
 --
 -- Table structure for table `brand`
 --
@@ -143,7 +147,7 @@ CREATE TABLE `size` (
 
 LOCK TABLES `size` WRITE;
 /*!40000 ALTER TABLE `size` DISABLE KEYS */;
-INSERT INTO `size` VALUES (1,'350 cc'),(2,'500 cc'),(3,'1000 cc');
+INSERT INTO `size` VALUES (1,'330 cc'),(2,'473 cc'),(3,'1000 cc');
 /*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 
