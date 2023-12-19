@@ -99,6 +99,14 @@ header {
     margin-bottom: 0px;
     border: 1px solid;
   }
+  .nav-icon img {
+    width: 100px;
+    margin-left: 20px;
+  }
+  .burguer-menu {
+    color: white;
+    margin-right: 20px;
+  }
 }
 
 /* Tablet */
