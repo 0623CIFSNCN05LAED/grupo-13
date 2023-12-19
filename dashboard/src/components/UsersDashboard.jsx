@@ -24,7 +24,7 @@ export default function ProductsDashboard() {
       </header>
 
       <main>
-        <h2>Administración de productos</h2>
+        <h2>Administración de usuarios</h2>
 
         <section className="table-container">
           <div className="head-table-container">
