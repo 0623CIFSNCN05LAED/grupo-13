@@ -1,23 +1,24 @@
-import '../css/header.css'
-// import logo from '../../public/logo.png'
+import { Link } from 'react-router-dom'
 
-export default function Header() {
+import '../css/navbar.css'
+
+export default function Navbar() {
   return (
     <header>
       <div class="header-container">
         <div class="nav-icon">
-          <a href="/home">
+          <Link to="/home">
             <img src="/images/logo.png" alt="imagen logo" />
-          </a>
+          </Link>
         </div>
 
         <nav class="nav-container">
           <ul>
             <li>
-              <a href="/products">Productos</a>
+              <Link to="/products">Productos</Link>
             </li>
             <li>
-              <a href="/users">Usuarios</a>
+              <Link to="/users">Usuarios</Link>
             </li>
           </ul>
         </nav>
