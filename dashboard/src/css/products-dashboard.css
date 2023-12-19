@@ -2,8 +2,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin: 0 auto;
 }
 
 h2 {
@@ -13,36 +12,29 @@ h2 {
 
 .head-table-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.pl-filters {
-  display: flex;
-  flex-direction: column;
-}
-
-.searchbar {
-  margin-bottom: 15px;
-}
 .searchbar input {
-  font-size: 18px;
-}
-
-.pl-container-search input {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  height: 30px;
+  padding: 10px;
 }
 
 .pl-container-selects {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  gap: 20px;
 }
+
 .pl-container-selects select {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  height: 30px;
+  padding: 0 10px 0 10px;
+  width: 100px;
 }
 
 .table-container {
@@ -55,15 +47,19 @@ table {
   border-radius: 10px 10px 0 0;
   text-align: center;
   margin-top: 15px;
+  padding: 10px;
+  border-collapse: collapse;
 }
 
 th {
-  padding: 5px;
+  padding: 10px 20px 10px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 td {
   border: none;
   padding-bottom: 20px;
+  padding: 10px 20px 10px 20px;
 }
 
 button {
@@ -92,6 +88,7 @@ i {
   border-radius: 0 0 10px 10px;
   padding-right: 20px;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .rows-per-page-container select {
@@ -112,38 +109,8 @@ i {
   opacity: 0.8;
 }
 
-@media (min-width: 768px) {
-  table {
-    padding: 15px;
-  }
-}
-
 @media (min-width: 1024px) {
-  .head-table-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .table-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .pl-filters {
-    display: flex;
-    flex-direction: row;
-  }
-  .pl-container-selects form {
-    margin: 0px 20px;
-  }
-  .pl-container-selects button {
-    margin: 0px 20px;
-  }
-  .searchbar {
-    margin-bottom: 0px;
-  }
   .pagination-container {
     margin-bottom: 30px;
-    width: 496px;
   }
 }
