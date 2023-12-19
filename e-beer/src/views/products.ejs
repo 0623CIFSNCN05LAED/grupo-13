@@ -28,9 +28,15 @@
           <form action="/marca" method="POST" class="pl-form-brand">
             <select>
               <option>Marca</option>
-              <option value="">Stella Artois</option>
-              <option value="">Corona</option>
+              <option value="">Tres Cordilleras</option>
+              <option value="">Brahama</option>
+              <option value="">Grolsch</option>
               <option value="">Patagonia</option>
+              <option value="">Budweiser</option>
+              <option value="">Heineken</option>
+              <option value="">Warsteiner</option>
+              <option value="">Corona</option>
+              <option value="">Stella Artois</option>
               <option value="">Quilmes</option>
             </select>
           </form>
@@ -47,7 +53,7 @@
       </section>
 
       <section class="cards-container">
-        <% products.slice(0, 8).forEach(product => { %> <%-
+        <% products.forEach(product => { %> <%-
         include('./partials/card.ejs', {product}) %> <% }) %>
       </section>
     </main>

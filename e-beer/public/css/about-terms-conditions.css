@@ -5,7 +5,7 @@
   align-items: center;
   min-height: 50vh;
 }
-.about-us-text {
+.text {
   width: 70%;
   text-align: center;
   margin: 80px 0;
@@ -18,20 +18,30 @@
   font-weight: 500;
   margin: 20px 0px 20px 0px;
 }
-.about-us-text p {
+.text p {
   margin: 20px 0px 20px 0px;
 }
 
-.about-us-paragraph {
+.text-container-title {
+  text-wrap: balance;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.text-container {
   text-wrap: balance;
   font-size: 18px;
   max-width: 75ch;
   margin: 0 auto;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-  .about-us-text {
+  .text {
     width: 70%;
   }
 }

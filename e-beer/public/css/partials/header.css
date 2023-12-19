@@ -23,6 +23,11 @@ header {
   align-items: flex-end;
   width: 100%;
 }
+
+.nav-menu.active {
+  display: flex;
+}
+
 .nav-container ul {
   display: none;
   position: absolute;
@@ -33,9 +38,7 @@ header {
   justify-content: center;
   align-items: center;
 }
-.nav-container ul:nth-child(1) {
-  padding-top: 50px;
-}
+
 .nav-container ul:nth-child(2) {
   top: 510px;
 }
