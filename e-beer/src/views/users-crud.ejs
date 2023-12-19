@@ -25,16 +25,13 @@
 
             <article class="pl-container-selects">
               <form action="/marca" method="POST" class="pl-form-brand">
-                <select>
-                  <option>PRUEBA</option>
+                <select id="roleFilter">
+                  <option value="" disabled selected>ROL</option>
+                  <option value="1">Admin</option>
+                  <option value="2">User</option>
                 </select>
               </form>
 
-              <form action="/medida" method="POST" class="pl-form-size">
-                <select>
-                  <option>PRUEBA</option>
-                </select>
-              </form>
               <button class="btn-add">
                 <a href="/users/create-user">Agregar</a>
                 <i class="fa-solid fa-plus"></i>
@@ -52,7 +49,7 @@
                   <th>Acceso</th>
                 </tr>
               </thead>
-              <% users.slice(0, 40).forEach(user => { %>
+              <% users.forEach(user => { %>
               <tr>
                 <td><%= user.email %></td>
                 <td><%= user.role_id %></td>
