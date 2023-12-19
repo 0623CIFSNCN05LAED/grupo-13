@@ -1,0 +1,149 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+h2 {
+  margin: 50px 0;
+  font-size: var(--text-3xl);
+}
+
+.head-table-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pl-filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchbar {
+  margin-bottom: 15px;
+}
+.searchbar input {
+  font-size: 18px;
+}
+
+.pl-container-search input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.pl-container-selects {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pl-container-selects select {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 1024px;
+}
+
+table {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  margin-top: 15px;
+}
+
+th {
+  padding: 5px;
+}
+
+td {
+  border: none;
+  padding-bottom: 20px;
+}
+
+button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.btn-view {
+  background-color: cadetblue;
+}
+
+i {
+  font-size: var(--text-md);
+  color: white;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  font-size: var(--text-sm);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10px 10px;
+  padding-right: 20px;
+  margin-bottom: 15px;
+}
+
+.rows-per-page-container select {
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-btns-container button:nth-child(1) {
+  margin-right: 25px;
+}
+.pagination-btns-container button {
+  border: none;
+  background-color: unset;
+}
+.pagination-btns-container button i {
+  color: var(--black);
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  table {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .head-table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pl-filters {
+    display: flex;
+    flex-direction: row;
+  }
+  .pl-container-selects form {
+    margin: 0px 20px;
+  }
+  .pl-container-selects button {
+    margin: 0px 20px;
+  }
+  .searchbar {
+    margin-bottom: 0px;
+  }
+  .pagination-container {
+    margin-bottom: 30px;
+    width: 496px;
+  }
+}

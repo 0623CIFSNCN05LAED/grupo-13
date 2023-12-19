@@ -1,0 +1,37 @@
+/* Main */
+.about-us-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+.about-us-text {
+  width: 70%;
+  text-align: center;
+  margin: 80px 0;
+}
+.about-us-img {
+  margin-bottom: 50px;
+}
+.about-us-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 20px 0px 20px 0px;
+}
+.about-us-text p {
+  margin: 20px 0px 20px 0px;
+}
+
+.about-us-paragraph {
+  text-wrap: balance;
+  font-size: 18px;
+  max-width: 75ch;
+  margin: 0 auto;
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .about-us-text {
+    width: 70%;
+  }
+}
