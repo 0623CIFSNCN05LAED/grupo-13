@@ -5,7 +5,7 @@ const main = document.querySelector('main');
 const footer = document.querySelector('footer');
 
 burgerMenuIcon.addEventListener('click', () => {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1024) {
     if (navMenu.style.display === 'none') {
       navMenu.style.display = 'flex';
       userMenu.style.display = 'flex';
@@ -21,7 +21,7 @@ burgerMenuIcon.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 1024) {
     navMenu.style.display = '';
     userMenu.style.display = '';
     main.style.display = '';
