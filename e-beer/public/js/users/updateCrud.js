@@ -24,7 +24,7 @@ const validations = [
     field: 'password',
     check: (input) => passVal(input.value),
     message:
-      'Ingresar al menos ocho caracteres con al menos una mayúscula, minúscula, número y caractér especial',
+      'Ingresar un mínimo de ocho caracteres que contengan al menos una mayúscula, una minúscula, un número y un caractér especial',
   },
   {
     field: 'contact_number',
@@ -56,7 +56,6 @@ validations.forEach((validation) => {
   const inputErrorMsg = document.getElementById(inputId + 'Error');
 
   function validate() {
-    console.log('input.value', input.value);
     inputValidation(validation, input, inputErrorMsg);
   }
 
