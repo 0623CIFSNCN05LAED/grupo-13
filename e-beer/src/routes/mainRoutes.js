@@ -2,6 +2,7 @@
 const express = require('express');
 const mainRouter = express.Router();
 const ageAuth = require('../middlewares/ageAuthMiddleware');
+const ageInCookie = require('../middlewares/ageInCookie');
 
 // Controller require
 const mainController = require('../controllers/mainController');
@@ -9,7 +10,7 @@ const mainController = require('../controllers/mainController');
 // Main routes
 
 //comingAge
-mainRouter.get('/', mainController.comingAgeForm);
+mainRouter.get('/', ageInCookie, mainController.comingAgeForm);
 mainRouter.post('/', mainController.comingAge);
 
 mainRouter.get('/home', ageAuth, mainController.index);
