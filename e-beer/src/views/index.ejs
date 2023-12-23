@@ -38,22 +38,6 @@
       </section>
     </main>
 
-    <script>
-      let index = 0;
-      const imagenes = document.querySelectorAll('.carrousel-container img');
-      const tiempoIntervalo = 3000; 
-  
-      function cambiarImagen() {
-          for (let i = 0; i < imagenes.length; i++) {
-              imagenes[i].style.display = 'none';
-          }
-          index = (index + 1) % imagenes.length;
-          imagenes[index].style.display = 'block';
-      }
-  
-      setInterval(cambiarImagen, tiempoIntervalo);
-  </script>
-
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>

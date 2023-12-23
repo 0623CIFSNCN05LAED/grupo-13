@@ -64,11 +64,19 @@
     width: 55%;
     align-items: center;
   }
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
   .pl-container-selects {
     justify-content: center;
     gap: 30px;
     margin-bottom: 30px;
   }
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
   .cards-container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -81,10 +89,18 @@
     align-items: center;
     justify-content: space-between;
   }
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
   .pl-container-search {
     width: 270px;
     order: 2;
   }
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
   .pl-container-selects {
     order: 1;
     margin: 0;
@@ -94,6 +110,10 @@
   .pl-container-selects select {
     width: 120px;
   }
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
   .cards-container {
     grid-template-columns: repeat(4, 1fr);
   }
