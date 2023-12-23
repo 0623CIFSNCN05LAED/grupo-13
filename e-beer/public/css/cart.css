@@ -1,0 +1,339 @@
+/* Carrito */
+
+/*Carrito vacío*/
+.cart-container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px 0 15px;
+  background-color: #f0f0f0;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+}
+.emptyCart h2 {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  padding: 15px;
+  font-size: var(--text-3xl);
+}
+
+.emptyCartMessage {
+  margin: 80% 20px 80% 20px;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--text-2xl);
+}
+.emptyCartMessage h3 {
+  color: #000000;
+  font-weight: 500;
+}
+
+.backToHome {
+  width: 100%;
+  text-align: center;
+}
+
+/*Carrito lleno*/
+
+.mainCart {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.productsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px 0 15px;
+  background-color: #f0f0f0;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+}
+.productsList h2 {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: var(--text-3xl);
+}
+.productsList img {
+  width: 50%;
+  border-radius: 10px;
+}
+.productCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productImageTitle {
+  display: flex;
+  flex-direction: row;
+}
+.productDescription {
+  margin-left: 15px;
+  
+}
+.productDescription h3 {
+  text-align: left;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  width: 100%;
+  font-size: var(--text-lg);
+}
+.productManage {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+.productQuantity {
+  display: flex;
+  border-radius: 20px;
+  padding: 5px;
+  width: 33%;
+  text-align: center;
+  background-color: var(--light-grey);
+  cursor: pointer;
+  justify-content: space-evenly;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  font-size: var(--text-md);
+}
+.productQuantity a {
+  font-weight: 500;
+  color: black;
+}
+
+.productPrice {
+  padding: 5px;
+  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  padding: 5px;
+  width: 33%;
+  background-color: var(--light-grey);
+  font-weight: 500;
+  justify-content: space-evenly;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  font-size: var(--text-md);
+}
+.value {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.productDelete {
+  border-radius: 20px;
+  padding: 5px;
+  width: 33%;
+  background-color: #A30707;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  font-size: var(--text-md);
+}
+.productDelete a {
+  color: white;
+  font-weight: 500;
+}
+
+.purchase {
+  display: flex;
+  flex-direction: column;
+}
+.purchase h2 {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: var(--text-3xl);
+}
+.productsValue {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+.deliveryValue {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+.totalValue {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: var(--text-lg);
+}
+
+.btn-yellow {
+  transition: none;
+  margin-bottom: 20px;
+}
+.btn-yellow:hover {
+  transform: none
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+
+  /*Carrito vacío*/
+
+  .emptyCartMessage {
+    margin: 20% 0px 20% 0px;
+    padding-right: 38%;
+    padding-left: 38%;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+  }
+  .emptyCart {
+    padding: 0 15px 0 15px;
+    margin: 10px 0 10px;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+  }
+  .emptyCartMessage {
+    margin: 30% 0px 30% 0px;
+    padding-right: 38%;
+    padding-left: 38%;
+  }
+
+
+  /*Carrito lleno*/
+  
+  .productsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .productsList {
+    width: 70%;
+    padding: 0px 20px 0px 20px;
+  }
+  .productsList h2 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  .productsList img {
+    width: 40%;
+  }
+  .productManage {
+    width: 80%;
+  }
+
+  .purchase {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-left: 1px solid black;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+  }
+  .purchase h2 {
+    display: flex;
+    border-top: none;
+    text-align: center;
+  }
+  .btn-yellow {
+    transition: none;
+    margin-bottom: 20px;
+  }
+  .btn-yellow:hover {
+    transform: none
+  }
+}
+
+/* Desktop */
+@media (min-width: 1023px) {
+  /* Main */
+  .cart-container {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .emptyCart {
+    width: 80%;
+  }
+
+  /*Carrito vacío*/
+
+  .backToHome {
+    margin: 50px auto;
+    width: 30%;
+  }
+
+  /*Carrito lleno*/
+
+  .addMore {
+    transition: all 0.2s ease-in-out;
+  }
+  .addMore:hover {
+    transform: scale(200%);
+    cursor: pointer;
+  }
+
+  .takeMore {
+    transition: all 0.2s ease-in-out;
+  }
+  .takeMore:hover {
+    transform: scale(200%);
+    cursor: pointer;
+  }
+
+  .productDelete {
+    transition: all 0.2s ease-in-out;
+  }
+  .productDelete:hover {
+    transform: scale(105%);
+    cursor: pointer;
+  }
+
+  .btn-yellow {
+    transition: all 0.2s ease-in-out;
+  }
+  .btn-yellow:hover {
+    transform: scale(105%);
+  }
+
+}
