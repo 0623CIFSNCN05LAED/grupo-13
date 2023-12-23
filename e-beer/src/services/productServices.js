@@ -3,7 +3,9 @@ const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
   getAllProducts: () => {
-    return Products.findAll();
+    return Products.findAll({
+      include: [{ association: 'p_category' }, { association: 'p_size' }],
+    });
   },
   getProduct: async (id) => {
     return await Products.findByPk(id);
@@ -22,11 +24,6 @@ module.exports = {
       };
     });
   },
-
-  // TODO: Preguntar a Aylen
-  // getProductsByCategoryId: () => {
-  //   return Products.findOne({ where: { category_id: 'Porter' } })
-  // },
   createProduct: (body, file) => {
     console.log('Creando producto');
     return Products.create({

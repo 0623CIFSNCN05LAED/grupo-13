@@ -27,4 +27,8 @@ mainRouter.use('/products', ageAuth, productsRoutes);
 const usersRoutes = require('./usersRoutes.js');
 mainRouter.use('/users', ageAuth, usersRoutes);
 
+// API routes
+
+mainRouter.use('/api', apiRouter);
+
 module.exports = mainRouter;
