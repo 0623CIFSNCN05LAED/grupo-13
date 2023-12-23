@@ -8,6 +8,15 @@ const cookies = require('cookie-parser');
 // Express
 const app = express();
 
+const cors = require('cors');
+app.use(
+  cors(
+    (corsOptions = {
+      origin: '*',
+    })
+  )
+);
+
 // Middlewares
 const userLogged = require('./middlewares/userLogged');
 const ageAnswer = require('./middlewares/ageAnswerMiddleware');
