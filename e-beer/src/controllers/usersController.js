@@ -127,11 +127,6 @@ const usersController = {
       password: bcryptjs.hashSync(data.password, 10),
     };
     const id = req.session.userLogged.id;
-    const profile_picture = req.file
-      ? req.file.filename
-      : userServices.getUser(id).profile_picture;
-
-    user.profile_picture = profile_picture;
     userServices.updateUser(id, user);
 
     res.redirect('/users/myProfile');

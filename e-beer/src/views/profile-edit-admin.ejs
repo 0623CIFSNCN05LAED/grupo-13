@@ -15,19 +15,9 @@
         method="POST"
         enctype="multipart/form-data"
       >
-        <h2 class="title">Edición de usuarios</h2>
-        <div class="searchNav">
-          <input
-            type="text"
-            placeholder="Buscar usuarios"
-            maxlength="120"
-            autocapitalize="off"
-            spellcheck="false"
-            autocomplete="off"
-            value="<%= user.id %>"
-          />
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+        <h2 class="title">Editar usuario</h2>
+        <p>ID: <%= user.id %></p>
+        
         <input
           class="input"
           type="text"

@@ -15,8 +15,8 @@ const validations = [
   },
   {
     field: 'address',
-    check: (input) => input.value.length > 0,
-    message: 'Ingresá tu dirección',
+    check: (input) => input.value.length > 2,
+    message: 'Ingresá al menos 2 caracteres',
   },
   {
     field: 'profile_picture',

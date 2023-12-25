@@ -1,4 +1,3 @@
-/* Require's */
 const express = require('express');
 const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
@@ -52,7 +51,7 @@ usersRouter.post(
   usersController.register
 );
 
-//Create new user
+//Admin create
 usersRouter.get(
   '/create-user',
   adminMiddleware,
@@ -69,7 +68,7 @@ usersRouter.post(
 //Users CRUD
 usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
 
-//Delete User
+//Delete user
 usersRouter.get(
   '/:id/delete',
   authMiddleware,
@@ -84,8 +83,6 @@ usersRouter.get(
   authMiddleware,
   usersController.myProfileEdit
 );
-// usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
-// usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
 usersRouter.put(
   '/myProfile/edit',
   upload.single('profile_picture'),
@@ -104,7 +101,6 @@ usersRouter.get(
 );
 usersRouter.put(
   '/myPassword/edit',
-  upload.single('image'),
   authMiddleware,
   editValidations,
   passValidateForm,
@@ -128,9 +124,6 @@ usersRouter.put(
   registerValidateEmail,
   usersController.update
 );
-
-// usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
-// usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
 
 //MyProfile
 usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);

@@ -2,44 +2,44 @@ const emailSymbols = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const acceptedExtensions = ['JPG', 'JPEG', 'PNG', 'GIF'];
 const passVal =
   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-var phoneno = /^\d{11}$/;
+var phoneno = /^\d{3}$/;
 
 const validations = [
   {
-    field: 'fist_name',
+    field: 'first_name',
     check: (input) => input.value.length >= 2,
-    message: 'Ingresar al menos dos caracteres',
+    message: 'Ingresá al menos 2 caracteres',
   },
   {
     field: 'last_name',
     check: (input) => input.value.length >= 2,
-    message: 'Ingresar al menos dos caracteres',
+    message: 'Ingresá al menos 2 caracteres',
   },
   {
     field: 'email',
     check: (input) => emailSymbols.test(input.value),
-    message: 'Ingresar un correo electrónico válido',
+    message: 'Ingresá un correo electrónico válido',
   },
   {
     field: 'password',
     check: (input) => passVal(input.value),
     message:
-      'Ingresar al menos ocho caracteres con al menos una mayúscula, minúscula, número y caractér especial',
+      'Ingresá como mínimo 8 caracteres incluyendo una mayúscula, una minúscula, un número y un caracter especial',
   },
   {
     field: 'contact_number',
     check: (input) => phoneno(input.value),
-    message: 'Ingresar un número de teléfono válido con al menos 11 caracteres',
+    message: 'Ingresá un número de teléfono válido (sin guiones, ni espacios)',
   },
   {
     field: 'birth_date',
     check: (input) => validator.isDate(input.value),
-    message: 'Ingresar una fecha válida',
+    message: 'Ingresá una fecha válida',
   },
   {
     field: 'address',
     check: (input) => input.value.length >= 2,
-    message: 'Ingresar al menos dos caracteres',
+    message: 'Ingresá al menos 2 caracteres',
   },
   {
     field: 'profile_picture',

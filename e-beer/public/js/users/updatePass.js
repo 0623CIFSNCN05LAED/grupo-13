@@ -1,12 +1,12 @@
-const emailSymbols = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-const acceptedExtensions = ['JPG', 'JPEG', 'PNG', 'GIF'];
-const phoneno = /^\d+$/;
+const passVal =
+  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 
 const validations = [
   {
     field: 'password',
-    check: (input) => input.value.length >= 8,
-    message: 'La contraseña debe tener al menos 8 caracteres',
+    check: (input) => passVal.test(input.value),
+    message:
+      'Ingresá como mínimo 8 caracteres incluyendo una mayúscula, una minúscula, un número y un caracter especial',
   },
 ];
 
@@ -42,11 +42,6 @@ form.addEventListener('submit', (event) => {
     form.submit();
   }
 });
-
-function validateProfilePicture(input) {
-  const fileExtension = input.value.toUpperCase().split('.').pop();
-  return acceptedExtensions.includes(fileExtension);
-}
 
 function inputValidation(validation, input, inputErrorMsg) {
   if (!input.value) {

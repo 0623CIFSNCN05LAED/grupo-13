@@ -19,7 +19,7 @@ module.exports = [
   body('address').notEmpty().withMessage('Ingresá tu dirección'),
   body('profile_picture').custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    let acceptedExtensions = ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.gif'];
 
     if (!file) {
       throw new Error('Subí una foto de perfil');

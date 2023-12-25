@@ -5,6 +5,5 @@ module.exports = (req, res, next) => {
     res.locals.ageAnswer = true;
     res.locals.ageAnswer = req.session.ageAnswer;
   }
-
   next();
 };

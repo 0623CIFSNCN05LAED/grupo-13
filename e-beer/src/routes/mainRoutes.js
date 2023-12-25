@@ -3,6 +3,7 @@ const express = require('express');
 const mainRouter = express.Router();
 const ageAuth = require('../middlewares/ageAuthMiddleware');
 const ageInCookie = require('../middlewares/ageInCookie');
+const apiRouter = require('./api/mainRoutes');
 
 // Controller require
 const mainController = require('../controllers/mainController');

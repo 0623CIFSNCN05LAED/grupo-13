@@ -12,7 +12,6 @@ const productsController = {
       res.render('product-detail', { product });
     });
   },
-  // CREATE
   addForm: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
@@ -30,7 +29,6 @@ const productsController = {
       res.redirect('/products/' + product.id);
     });
   },
-  // EDIT
   editForm: async (req, res) => {
     const id = req.params.id;
     const product = await productServices.getProduct(id);
@@ -41,7 +39,6 @@ const productsController = {
     await productServices.updateProduct(id, req.body, req.file);
     res.redirect('/products');
   },
-  // delete
   deleteForm: (req, res) => {
     const id = req.params.id;
     productServices.getProduct(id).then((product) => {
