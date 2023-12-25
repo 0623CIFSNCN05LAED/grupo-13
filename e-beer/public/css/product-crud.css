@@ -73,6 +73,29 @@ button {
   cursor: pointer;
 }
 
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: rgba(28, 145, 28, 0.705);
+  color: white;
+}
+.btn-add a {
+  color: white;
+}
+
+.btn-edit {
+  background-color: rgba(82, 82, 82, 0.7);
+}
+
+.btn-delete {
+  background-color: rgba(206, 9, 9, 0.7);
+}
+
 .btn-view {
   background-color: cadetblue;
 }

@@ -13,7 +13,7 @@
         <article class="profile-picture">
           <img
             src="/images/users/<%= userLogged.profile_picture %>"
-            alt="fotoDePerfil"
+            alt="foto de perfil"
           />
         </article>
 
@@ -41,7 +41,7 @@
               id="email"
               type="email"
               class="inputs"
-              value="<%= oldData ? oldData.email : "" %>"
+              value="<%= user.email %>"
           />
           <div id="emailError" class="flash-errors"></div>
           <% if (locals.errors && errors.email) { %>
@@ -71,7 +71,7 @@
               id="contact_number"
               type="tel"
               class="inputs"
-              value="<%= oldData ? oldData.contact_number : "" %>"
+              value="<%= user.contact_number %>"
             />
 
             <div id="contact_numberError" class="flash-errors"></div>
@@ -87,7 +87,7 @@
               id="address"
               class="inputs"
               type="text"
-              value="<%= oldData ? oldData.address : "" %>"
+              value="<%= user.address %>"
             />
           <div id="addressError" class="flash-errors"></div>
           <% if (locals.errors && errors.address) { %>

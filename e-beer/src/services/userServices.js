@@ -43,6 +43,21 @@ const userServices = {
       role_id: body.email.includes('@ebeer.com') ? 1 : 2,
     });
   },
+  updateProfile: async (id, body, file) => {
+    const user = await Users.findByPk(id);
+
+    return await Users.update(
+      {
+        email: body.email,
+        profile_picture: file ? file.filename : user.profile_picture,
+        contact_number: Number(body.contact_number),
+        address: body.address,
+      },
+      {
+        where: { id: id },
+      }
+    );
+  },
   updateUser: async (id, body, file) => {
     const user = await Users.findByPk(id);
 

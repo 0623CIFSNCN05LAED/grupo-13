@@ -80,34 +80,26 @@ const usersController = {
 
     res.redirect('login');
   },
-  // myProfile
+  // Profile
   myProfile: async (req, res) => {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
     return res.render('profile', { user });
   },
+  // Profile edit
   myProfileEdit: async (req, res) => {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
-    const errors = req.session.errors;
-    const oldData = req.session.oldData;
-
-    req.session.oldData = null;
-    req.session.oldData = null;
-
-    res.render('profile-edit', {
-      user: user,
-      errors: errors ? errors : null,
-      oldData: oldData ? oldData : null,
-    });
+    res.render('profile-edit', { user: user });
   },
   myProfileUpdate: async (req, res) => {
     const id = req.session.userLogged.id;
-    await userServices.updateUser(id, req.body, req.file);
+    await userServices.updateProfile(id, req.body, req.file);
     res.redirect('/users/myProfile');
   },
+  // Password edit
   myPasswordEdit: async (req, res) => {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
@@ -131,7 +123,7 @@ const usersController = {
 
     res.redirect('/users/myProfile');
   },
-  // Crud
+  // CRUD
   crud: async (req, res) => {
     const users = await userServices.getAllUsers();
 
@@ -159,7 +151,6 @@ const usersController = {
 
     res.redirect('/users/crud');
   },
-  // Eliminar Usuario
   deleteForm: async (req, res) => {
     const id = req.params.id;
     const user = await userServices.getUser(id);
@@ -178,7 +169,6 @@ const usersController = {
 
     res.redirect('/users/crud');
   },
-  // Cerrar Sesión
   logout: (req, res) => {
     res.clearCookie('email');
     req.session.destroy();

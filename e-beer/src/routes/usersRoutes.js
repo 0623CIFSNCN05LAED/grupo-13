@@ -51,31 +51,11 @@ usersRouter.post(
   usersController.register
 );
 
-//Admin create
-usersRouter.get(
-  '/create-user',
-  adminMiddleware,
-  usersController.createNewUserForm
-);
-usersRouter.post(
-  '/create-user',
-  createValidations,
-  createValidateForm,
-  createValidateEmail,
-  usersController.createNewUser
-);
+//Logout
+usersRouter.get('/logout', usersController.logout);
 
-//Users CRUD
-usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
-
-//Delete user
-usersRouter.get(
-  '/:id/delete',
-  authMiddleware,
-  adminMiddleware,
-  usersController.deleteForm
-);
-usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
+//My profile
+usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
 
 //Edit profile
 usersRouter.get(
@@ -107,7 +87,33 @@ usersRouter.put(
   usersController.updatePassword
 );
 
-//Edit profile CRUD
+//Users CRUD
+usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
+
+//Admin create
+usersRouter.get(
+  '/create-user',
+  adminMiddleware,
+  usersController.createNewUserForm
+);
+usersRouter.post(
+  '/create-user',
+  createValidations,
+  createValidateForm,
+  createValidateEmail,
+  usersController.createNewUser
+);
+
+//Admin delete
+usersRouter.get(
+  '/:id/delete',
+  authMiddleware,
+  adminMiddleware,
+  usersController.deleteForm
+);
+usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
+
+//Admin edit
 usersRouter.get(
   '/:id/edit',
   authMiddleware,
@@ -124,11 +130,5 @@ usersRouter.put(
   registerValidateEmail,
   usersController.update
 );
-
-//MyProfile
-usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
-
-//Edit profile
-usersRouter.get('/logout', usersController.logout);
 
 module.exports = usersRouter;

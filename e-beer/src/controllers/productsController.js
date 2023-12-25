@@ -8,9 +8,14 @@ const productsController = {
   },
   detail: async (req, res) => {
     const id = req.params.id;
-    await productServices.getProductDetail(id).then((product) => {
-      res.render('product-detail', { product });
-    });
+    await productServices
+      .getProductDetail(id)
+      .then((product) => {
+        res.render('product-detail', { product });
+      })
+      .catch(function (e) {
+        res.status(404).redirect('/products');
+      });
   },
   addForm: (req, res) => {
     const errors = req.session.errors;

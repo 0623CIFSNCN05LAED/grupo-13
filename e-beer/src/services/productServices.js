@@ -38,12 +38,11 @@ module.exports = {
     });
   },
   updateProduct: async (id, body, file) => {
-    console.log('Updating product');
-
     const product = await Products.findByPk(id);
+
     return await Products.update(
       {
-        id: id,
+        id: product.id,
         name: body.name,
         price: Number(body.price),
         description: body.description,
