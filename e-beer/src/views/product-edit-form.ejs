@@ -52,27 +52,28 @@
           <div class="flash-errors"><%= errors.description.msg %></div>           
           <% } %>  
 
-        <select name="brand_id" id="brand_id">
-          <option>Marca</option>
-          <option value="1">Tres Cordilleras</option>
-          <option value="2">Brahama</option>
-          <option value="3">Grolsch</option>
-          <option value="4">Patagonia</option>
-          <option value="5">Budweiser</option>
-          <option value="6">Heineken</option>
-          <option value="7">Warsteiner</option>
-          <option value="8">Corona</option>
-          <option value="9">Stella Artois</option>
-          <option value="10">Quilmes</option>
-        </select>
+        
+        <label for="brand_id">Marca</label>
+          <select name="brand_id" id="brand_id">
+            <option value="1">Tres Cordilleras</option>
+            <option value="2">Brahama</option>
+            <option value="3">Grolsch</option>
+            <option value="4">Patagonia</option>
+            <option value="5">Budweiser</option>
+            <option value="6">Heineken</option>
+            <option value="7">Warsteiner</option>
+            <option value="8">Corona</option>
+            <option value="9">Stella Artois</option>
+            <option value="10">Quilmes</option>
+          </select>
 
         <div id="brand_idError" class="flash-errors"></div>
         <% if (locals.errors && errors.brand_id) { %>
           <div class="flash-errors"><%= errors.brand_id.msg %></div>           
           <% } %>  
 
+        <label for="category_id">Categoría</label>
         <select name="category_id" id="category_id">
-          <option>Categoria</option>
           <option value="1">Porter</option>
           <option value="2">Brown Ale</option>
           <option value="3">Lager</option>
@@ -86,9 +87,9 @@
         <% if (locals.errors && errors.category_id) { %>
           <div class="flash-errors"><%= errors.category_id.msg %></div>           
           <% } %>  
-
+        
+        <label for="size_id">Medida</label>
         <select name="size_id" id="size_id">
-          <option>Medida</option>
           <option value="1">330 cc</option>
           <option value="2">473 cc</option>
           <option value="3">1000 cc</option>

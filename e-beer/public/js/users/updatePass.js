@@ -6,7 +6,7 @@ const validations = [
     field: 'password',
     check: (input) => passVal.test(input.value),
     message:
-      'Ingresá como mínimo 8 caracteres incluyendo una mayúscula, una minúscula, un número y un caracter especial',
+      'Ingresá 8 caracteres incluyendo mayúscula, minúscula, número y caracter especial',
   },
 ];
 
@@ -18,7 +18,6 @@ validations.forEach((validation) => {
   function validate() {
     inputValidation(validation, input, inputErrorMsg);
   }
-
   input.addEventListener('blur', validate);
   input.addEventListener('input', validate);
 });

@@ -39,7 +39,6 @@ module.exports = {
   },
   updateProduct: async (id, body, file) => {
     const product = await Products.findByPk(id);
-
     return await Products.update(
       {
         id: product.id,

@@ -44,25 +44,7 @@ const usersController = {
       },
     });
   },
-  // Crear Usuario
-  createNewUserForm: (req, res) => {
-    const errors = req.session.errors;
-    const oldData = req.session.oldData;
-
-    req.session.oldData = null;
-    req.session.oldData = null;
-
-    res.render('profile-create-new', {
-      errors: errors ? errors : null,
-      oldData: oldData ? oldData : null,
-    });
-  },
-  createNewUser: async (req, res) => {
-    await userServices.createUser(req.body, req.file);
-
-    res.redirect('crud');
-  },
-  // Registrar Usuario
+  // Register
   registerForm: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
@@ -87,8 +69,7 @@ const usersController = {
 
     return res.render('profile', { user });
   },
-  // Profile edit
-  myProfileEdit: async (req, res) => {
+  myProfileEditForm: async (req, res) => {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
@@ -100,7 +81,7 @@ const usersController = {
     res.redirect('/users/myProfile');
   },
   // Password edit
-  myPasswordEdit: async (req, res) => {
+  passwordEditForm: async (req, res) => {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
@@ -113,16 +94,30 @@ const usersController = {
       oldData: oldData ? oldData : null,
     });
   },
-  updatePassword: (req, res) => {
-    const data = req.body;
-    const user = {
-      password: bcryptjs.hashSync(data.password, 10),
-    };
+  passwordUpdate: async (req, res) => {
     const id = req.session.userLogged.id;
-    userServices.updateUser(id, user);
-
+    await userServices.updatePassword(id, req.body);
     res.redirect('/users/myProfile');
   },
+  // Create user
+  createNewUserForm: (req, res) => {
+    const errors = req.session.errors;
+    const oldData = req.session.oldData;
+
+    req.session.oldData = null;
+    req.session.oldData = null;
+
+    res.render('profile-create-new', {
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
+  },
+  createNewUser: async (req, res) => {
+    await userServices.createUser(req.body, req.file);
+
+    res.redirect('crud');
+  },
+
   // CRUD
   crud: async (req, res) => {
     const users = await userServices.getAllUsers();

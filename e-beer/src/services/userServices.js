@@ -45,9 +45,9 @@ const userServices = {
   },
   updateProfile: async (id, body, file) => {
     const user = await Users.findByPk(id);
-
     return await Users.update(
       {
+        id: user.id,
         email: body.email,
         profile_picture: file ? file.filename : user.profile_picture,
         contact_number: Number(body.contact_number),
@@ -67,6 +67,19 @@ const userServices = {
         profile_picture: file ? file.filename : user.profile_picture,
         contact_number: Number(body.contact_number),
         address: body.address,
+      },
+      {
+        where: { id: id },
+      }
+    );
+  },
+  updatePassword: async (id, body) => {
+    const user = await Users.findByPk(id);
+
+    return await Users.update(
+      {
+        id: user.id,
+        password: bcryptjs.hashSync(body.password, 10),
       },
       {
         where: { id: id },

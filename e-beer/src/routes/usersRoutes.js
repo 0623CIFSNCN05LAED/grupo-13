@@ -17,19 +17,20 @@ const registerValidations = require('../validations/usersRegister');
 const registerValidateForm = require('../middlewares/validate-users-register');
 const registerValidateEmail = require('../middlewares/validate-users-register-email');
 
-// Admin create validations
+// CRUD validations
+const crudValidateForm = require('../middlewares/validate-users-crud');
 const createValidations = require('../validations/usersCreate');
 const createValidateForm = require('../middlewares/validate-users-create');
 const createValidateEmail = require('../middlewares/validate-users-create-email');
 
-// Edit Validations
-const editValidations = require('../validations/usersEdit');
+// Profile Validations
 const editValidateForm = require('../middlewares/validate-users-edit');
+const editValidations = require('../validations/usersEdit');
 const editValidateEmail = require('../middlewares/validate-users-edit-email');
 const passValidateForm = require('../middlewares/validate-users-pass');
-const curdValidateForm = require('../middlewares/validate-users-crud');
+const passValidations = require('../validations/usersPasswordEdit');
 
-/*Routes */
+/* Routes */
 
 // Login
 usersRouter.get('/login', guestMiddleware, usersController.loginForm);
@@ -61,7 +62,7 @@ usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
 usersRouter.get(
   '/myProfile/edit',
   authMiddleware,
-  usersController.myProfileEdit
+  usersController.myProfileEditForm
 );
 usersRouter.put(
   '/myProfile/edit',
@@ -77,14 +78,14 @@ usersRouter.put(
 usersRouter.get(
   '/myPassword/edit',
   authMiddleware,
-  usersController.myPasswordEdit
+  usersController.passwordEditForm
 );
 usersRouter.put(
   '/myPassword/edit',
   authMiddleware,
-  editValidations,
+  passValidations,
   passValidateForm,
-  usersController.updatePassword
+  usersController.passwordUpdate
 );
 
 //Users CRUD
@@ -126,7 +127,7 @@ usersRouter.put(
   authMiddleware,
   adminMiddleware,
   registerValidations,
-  curdValidateForm,
+  crudValidateForm,
   registerValidateEmail,
   usersController.update
 );

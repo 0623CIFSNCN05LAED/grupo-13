@@ -18,8 +18,7 @@
         </article>
 
         <article class="info-profile-container-desc">
-          <h3>Nombre y apellido:</h3>
-          <br />
+          <h3>Nombre:</h3>
           <p><%= userLogged.first_name %> <%= userLogged.last_name %></p>
         </article>
       </section>
@@ -30,70 +29,71 @@
         </article>
 
         <form
-          action="/users/myProfile/edit/?_method=PUT"
+          class="form"
+          action="/users/myProfile/edit?_method=PUT"
           method="post"
           enctype="multipart/form-data"
         >
           <article class="input-container">
-            <label for="email">Ingresá un nuevo email</label>
+            <label for="email">E-mail</label>
             <input
+              class="inputs"  
+              type="text"
               name="email"
               id="email"
-              type="email"
-              class="inputs"
-              value="<%= user.email %>"
-          />
-          <div id="emailError" class="flash-errors"></div>
-          <% if (locals.errors && errors.email) { %>
-            <div class="flash-errors"><%= errors.email.msg %></div>             
-          <% } %>
-
+              placeholder="Ingresá un nuevo e-mail"
+            />
+            
+            <div id="emailError" class="flash-errors"></div>
+            <% if (locals.errors && errors.email) { %>
+              <div class="flash-errors"><%= errors.email.msg %></div>             
+            <% } %>
           </article>
+          
           <article class="input-container">
-            <label for="profile_picture">Actualizá tu imagen</label>
+            <label for="profile_picture">Imagen de perfil</label>
             <input
+              class="inputs"
+              type="file"
               name="profile_picture"
               id="profile_picture"
-              accept=".jpg"
-              type="file"
-              class="inputs"
-          />
-          <div id="profile_pictureError" class="flash-errors"></div>
+              accept=".jpg, .jpeg, .png"
+            />
+            <div id="profile_pictureError" class="flash-errors"></div>
             <% if (locals.errors && errors.profile_picture) { %>
                <div class="flash-errors"><%= errors.profile_picture.msg %></div>             
-              <% } %>
-
+            <% } %>
           </article>
+
           <article class="input-container">
-            <label for="contact_number">Ingresá un nuevo teléfono</label>
+            <label for="contact_number">Teléfono</label>
             <input
+              class="inputs"  
+              type="number"
               name="contact_number"
               id="contact_number"
-              type="tel"
-              class="inputs"
-              value="<%= user.contact_number %>"
+              placeholder="Ingresá un nuevo número de teléfono"
             />
 
             <div id="contact_numberError" class="flash-errors"></div>
-          <% if (locals.errors && errors.contact_number) { %>
-            <div class="flash-errors"><%= errors.contact_number.msg %></div>             
-          <% } %>
-
+            <% if (locals.errors && errors.contact_number) { %>
+              <div class="flash-errors"><%= errors.contact_number.msg %></div>             
+            <% } %>
           </article>
+
           <article class="input-container">
-            <label for="address">Ingresá un nuevo domicilio</label>
+            <label for="address">Domicilio</label>
             <input
+              class="inputs"  
+              type="text"
               name="address"
               id="address"
-              class="inputs"
-              type="text"
-              value="<%= user.address %>"
+              placeholder="Ingresá un nuevo domicilio"
             />
-          <div id="addressError" class="flash-errors"></div>
-          <% if (locals.errors && errors.address) { %>
-            <div class="flash-errors"><%= errors.address.msg %></div>             
-          <% } %>
-
+            <div id="addressError" class="flash-errors"></div>
+            <% if (locals.errors && errors.address) { %>
+              <div class="flash-errors"><%= errors.address.msg %></div>             
+            <% } %>
           </article>
 
           <button type="submit" class="btn-yellow btn-edit">Actualizar Mis Datos</button>

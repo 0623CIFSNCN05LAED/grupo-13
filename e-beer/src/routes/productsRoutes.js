@@ -1,10 +1,10 @@
 const express = require('express');
 const productsRouter = express.Router();
 const productsController = require('../controllers/productsController');
-const upload = require('../middlewares/multer-products');
 
-// Middlewares
-const authMiddleware = require('../middlewares/authMiddleware');
+/* Middlewares */
+const upload = require('../middlewares/multer-products');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Create validations
 const createValidations = require('../validations/productsCreate');
@@ -18,10 +18,10 @@ const updateValidateForm = require('../middlewares/validate-products-update');
 productsRouter.get('/', productsController.index);
 
 /* CRUD */
-productsRouter.get('/crud', authMiddleware, productsController.productCrud);
+productsRouter.get('/crud', adminMiddleware, productsController.productCrud);
 
 /* PRODUCT ADD FORM */
-productsRouter.get('/create', authMiddleware, productsController.addForm);
+productsRouter.get('/create', adminMiddleware, productsController.addForm);
 productsRouter.post(
   '/create',
   upload.single('image'),
@@ -37,7 +37,7 @@ productsRouter.get('/cart-filled', productsController.productCartFilled);
 /* PRODUCT DELETE FORM */
 productsRouter.get(
   '/:id/delete',
-  authMiddleware,
+  adminMiddleware,
   productsController.deleteForm
 );
 productsRouter.delete('/:id/delete', productsController.destroy);
@@ -46,7 +46,7 @@ productsRouter.delete('/:id/delete', productsController.destroy);
 productsRouter.get('/:id', productsController.detail);
 
 /* PRODUCT EDIT FORM */
-productsRouter.get('/:id/edit', authMiddleware, productsController.editForm);
+productsRouter.get('/:id/edit', adminMiddleware, productsController.editForm);
 
 productsRouter.put(
   '/:id/edit',
