@@ -13,5 +13,4 @@ INSERT INTO `products` VALUES ('48b88c7d-ea18-4655-ba6c-d5346a60707e','Patagonia
 
 INSERT INTO `role` VALUES (1,'admin'),(2,'user');
 
-INSERT INTO `users` 
-VALUES ('13cb7da7-79cc-4905-8b7d-9afbb7d906c5','asd','asd','asd@ebeer.com','Ebeer2023+',12345678,'1994-11-19','asd','default-image.png',1);
+INSERT INTO `users` VALUES ('5ebd3660-5948-4eea-b101-0fa2ebeb9fbd','Test','User','asd@ebeer.com','$2a$10$mJ/isBqt7gC2/E8ZfJeEZ.p3aMZKUhVHePq2/v/emzAijqQmE5LXy',123456,'1989-12-13','asd 123','profile_picture-1703543775927.jpg',1),('917427e7-df92-4a51-b663-5a5841392247','asd','asd','asdasd@ebeer.com','$2a$10$JcsH4a/N6r330uO.eGCReOGmwvgotFH8VLtakWrJDgZBmOnYBLcrG',123456,'1989-12-13','Ebeer','profile_picture-1703703658908.jpg',1);
