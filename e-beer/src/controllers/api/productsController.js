@@ -10,9 +10,10 @@ module.exports = {
     const response = {
       count,
       countByCategory,
-      products: products.map((product) => ({
+      products: products.slice(0, 10).map((product) => ({
         id: product.id,
         name: product.name,
+        brand: product.p_brand.brand,
         category: product.p_category.name,
         size: product.p_size.name,
         price: product.price,
