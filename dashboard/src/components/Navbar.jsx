@@ -5,14 +5,14 @@ import '../css/navbar.css'
 export default function Navbar() {
   return (
     <header>
-      <div class="header-container">
-        <div class="nav-icon">
-          <Link to="/home">
+      <div className="header-container">
+        <div className="nav-icon">
+          <Link to="/">
             <img src="/images/logo.png" alt="imagen logo" />
           </Link>
         </div>
 
-        <nav class="nav-container">
+        <nav className="nav-container">
           <ul>
             <li>
               <Link to="/products">Productos</Link>
