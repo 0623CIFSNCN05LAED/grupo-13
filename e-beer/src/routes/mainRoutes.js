@@ -29,6 +29,6 @@ mainRouter.use('/users', ageAuth, usersRoutes);
 
 // API routes
 
-mainRouter.use('/api', apiRouter);
+mainRouter.use('/api', mainRouter);
 
 module.exports = mainRouter;
