@@ -1,4 +1,4 @@
-import '../css/dashboards.css';
+import './dashboard.css';
 import Navbar from './Navbar';
 
 export default function ProductsDashboard() {

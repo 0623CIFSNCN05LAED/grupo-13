@@ -1,7 +1,7 @@
 header {
-  background-color: var(--black);
+  background-color: black;
+  width: 100%;
 }
-
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -56,61 +56,8 @@ header {
 .nav-user-buttons i {
   display: none;
 }
-.burguer-menu {
-  color: white;
-  margin-right: 20px;
-}
-.center {
-  text-align: center;
-}
 
-.form-div {
-  padding-left: 20%;
-  padding-right: 20%;
-}
-
-.black-bg {
-  background-color: black !important ;
-}
-
-.rounded-border {
-  border-radius: 10px;
-}
-
-#btn-restablecer {
-  background-color: #e95501;
-  color: white;
-}
-
-/*Celular*/
-@media (max-width: 768px) {
-  .form-div {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  .restablecer {
-    margin-top: -10px !important;
-    border: 1px solid;
-    margin-bottom: 20px !important;
-  }
-
-  .guardar {
-    margin-bottom: 0px;
-    border: 1px solid;
-  }
-  .nav-icon img {
-    width: 100px;
-    margin-left: 20px;
-  }
-  .burguer-menu {
-    color: white;
-    margin-right: 20px;
-  }
-}
-
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
   .nav-container {
     padding-right: 20px;
   }
@@ -119,11 +66,9 @@ header {
   }
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
   .header-container {
     width: 100%;
-    max-width: var(--container-lg);
     margin: 0 auto;
     padding: 0;
   }
@@ -136,7 +81,6 @@ header {
   .header-container img:hover {
     transform: scale(105%);
   }
-
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
@@ -170,38 +114,5 @@ header {
   }
   .nav-container a:hover {
     border-bottom: 2px solid #e99401;
-  }
-  .nav-user-buttons i {
-    display: inherit;
-  }
-  .nav-user-buttons li:nth-child(1) {
-    margin-right: 20px;
-  }
-  .nav-user-buttons li {
-    border: 3px solid white !important;
-    border-radius: 50px;
-    padding: 5px 5px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
-  .nav-user-buttons li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(105%);
-  }
-  .nav-user-buttons a {
-    color: white;
-    font-size: 16px;
-    font-weight: 300;
-    width: 20px;
-    padding: 0 10px;
-  }
-  .nav-user-buttons a:hover {
-    border-bottom: none;
-  }
-  .nav-user-buttons span {
-    padding-left: 10px;
-  }
-  .burguer-menu {
-    display: none;
   }
 }
