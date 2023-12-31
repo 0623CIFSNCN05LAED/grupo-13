@@ -36,8 +36,12 @@ module.exports = {
           brand_id: product.brand_id,
           category_id: product.category_id,
           size_id: product.size_id,
-          image: product.image,
-          detail: `${req.originalUrl}/${product.id}`,
+          image: `${req.protocol}://${req.get('host')}/api/products/${
+            product.id
+          }/image`,
+          detail: `${req.protocol}://${req.get('host')}/api/products/${
+            product.id
+          }`,
         })),
         brand: brands.map((brand) => ({
           id: brand.id,
@@ -61,7 +65,9 @@ module.exports = {
     const response = {
       ...product,
       categories: product.categories,
-      image: req.originalUrl + '/image',
+      image: `${req.protocol}://${req.get('host')}/api/products/${
+        product.id
+      }/image`,
     };
     res.json(response);
   },
