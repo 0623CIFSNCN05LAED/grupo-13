@@ -1,97 +1,87 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
-import Navbar from './Navbar'
-import Spinner from './Spinner'
+import Navbar from './Navbar';
+import Spinner from './Spinner';
 
-import '../css/dashboards.css'
-
-export default function ProductsDashboard() {
-  const [products, setProducts] = useState([])
-  const [productsCount, setProductsCount] = useState(0)
-  const [loading, setLoading] = useState(true)
+export default function UsersDashboard() {
+  const [users, setUsers] = useState([]);
+  const [usersCount, setUsersCount] = useState(0);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products/')
+    fetch('http://localhost:3000/api/users/')
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data.products)
-        setProductsCount(data.count)
-        setLoading(false)
-      })
-  }, [])
+        setUsers(data.users);
+        setUsersCount(data.count);
+      });
+  }, []);
 
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
-
       <main>
         <h2>Administración de usuarios</h2>
 
-        {loading ? (
-          <Spinner />
-        ) : (
-          <section className="table-container">
-            <div className="head-table-container">
-              <article className="searchbar">
-                <form action="/" method="POST">
+        <section>
+          <div className='head-table-container'>
+            <section className='pl-filters'>
+              <article className='searchbar'>
+                <form action='/' method='POST'>
                   <input
-                    type="text"
-                    name="search"
-                    placeholder="Buscar producto"
+                    type='text'
+                    name='search'
+                    placeholder='Buscar usuario'
                   />
                 </form>
               </article>
 
-              <article className="pl-container-selects">
-                <form action="/marca" method="POST" className="pl-form-brand">
+              <article className='pl-container-selects'>
+                <form action='/marca' method='POST' className='pl-form-brand'>
                   <select>
-                    <option>Marca</option>
-                    <option value="">Stella Artois</option>
-                    <option value="">Corona</option>
-                    <option value="">Patagonia</option>
-                    <option value="">Quilmes</option>
+                    <option>Tipo de acceso</option>
+                    <option value='1'>Admin</option>
+                    <option value='2'>User</option>
                   </select>
                 </form>
 
-                <form action="/medida" method="POST" className="pl-form-size">
-                  <select>
-                    <option>Medida</option>
-                    <option value="">1 litro</option>
-                    <option value="">473 ml</option>
-                    <option value="">330 ml</option>
-                  </select>
-                </form>
+                {/* <button className="btn-add">
+                  <a href="/users/create">Agregar</a>
+                  <i className="fa-solid fa-plus"></i>
+                </button> */}
               </article>
-            </div>
+            </section>
+          </div>
 
+          <section className='table-container'>
             <article>
               <table>
                 <thead>
                   <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Medida</th>
-                    <th>Precio</th>
-                    <th></th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Acceso</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  {products.map((product) => (
-                    <tr key={product.id}>
-                      <td>{product.id}</td>
-                      <td>{product.name}</td>
-                      <td>{product.category}</td>
-                      <td>{product.size}</td>
-                      <td>${product.price}</td>
+                  {users.map((user) => (
+                    <tr key={user.id}>
+                      <td>{user.id}</td>
+                      <td>{user.first_name}</td>
+                      <td>{user.last_name}</td>
+                      <td>{user.email}</td>
+                      <td>{user.password}</td>
+                      <td>{user.contact_number}</td>
+                      <td>{user.birth_date}</td>
+                      <td>{user.address}</td>
+                      <td>{user.profile_picture}</td>
+                      <td>{user.role_id}</td>
 
                       <td>
-                        <a href={`/products/${product.id}`}>
-                          <button className="btn-view">
-                            <i className="fa-solid fa-eye"></i>
+                        <a href={`/users/${user.id}`}>
+                          <button class='btn-view'>
+                            <i class='fa-solid fa-eye'></i>
                           </button>
                         </a>
                       </td>
@@ -101,34 +91,34 @@ export default function ProductsDashboard() {
               </table>
             </article>
 
-            <article className="pagination-container">
-              <div className="rows-per-page-container">
-                <label for="rowsPerPage">Filas por página: </label>
-                <select name="rowsPerPage" id="rowsPerPage">
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="15">15</option>
+            <article className='pagination-container'>
+              <div className='rows-per-page-container'>
+                <label for='rowsPerPage'>usuarios por página: </label>
+                <select name='rowsPerPage' id='rowsPerPage'>
+                  <option value='5'>5</option>
+                  <option value='10'>10</option>
+                  <option value='15'>15</option>
                 </select>
               </div>
 
-              <div className="pagination-counter-container">
+              <div className='pagination-counter-container'>
                 <span>1 - 5 </span>
                 de
-                <span> {productsCount}</span>
+                <span> {usersCount}</span>
               </div>
 
-              <div className="pagination-btns-container">
+              <div className='pagination-btns-container'>
                 <button>
-                  <i className="fa-solid fa-arrow-left"></i>
+                  <i className='fa-solid fa-arrow-left'></i>
                 </button>
                 <button>
-                  <i className="fa-solid fa-arrow-right"></i>
+                  <i className='fa-solid fa-arrow-right'></i>
                 </button>
               </div>
             </article>
           </section>
-        )}
+        </section>
       </main>
     </>
-  )
+  );
 }

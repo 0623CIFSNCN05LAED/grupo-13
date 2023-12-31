@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'products',
       timestamps: false,
     }
-  )
+  );
 
   Model.associate = (models) => {
     Model.belongsTo(models.Brand, {
@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
       Model.belongsTo(models.Category, {
         as: 'p_category',
         foreignKey: 'category_id',
-      })
-  }
+      });
+  };
 
-  return Model
-}
+  return Model;
+};

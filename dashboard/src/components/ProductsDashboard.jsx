@@ -1,49 +1,55 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
-import Navbar from './Navbar'
-import Spinner from './Spinner'
+import Navbar from './Navbar';
+import Spinner from './Spinner';
 
-import '../css/dashboards.css'
+import '../css/dashboards.css';
 
 export default function ProductsDashboard() {
-  const [products, setProducts] = useState([])
-  const [productsCount, setProductsCount] = useState(0)
-  const [searchTerm, setSearchTerm] = useState('')
-  const [selectedBrand, setSelectedBrand] = useState('')
-  const [uniqueBrands, setUniqueBrands] = useState(new Set())
-  const [selectedSize, setSelectedSize] = useState('')
-  const [uniqueSizes, setUniqueSizes] = useState(new Set()) // Almacena las medidas únicas
-  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([]);
+  const [productsCount, setProductsCount] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState('');
+  const [uniqueBrands, setUniqueBrands] = useState(new Set());
+  const [selectedSize, setSelectedSize] = useState('');
+  const [uniqueSizes, setUniqueSizes] = useState(new Set()); // Almacena las medidas únicas
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products/')
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data.products)
-        setProductsCount(data.count)
-        const sizes = new Set(data.products.map((product) => product.size))
-        setUniqueSizes(sizes)
-        const brands = new Set(data.products.map((product) => product.brand))
-        setUniqueBrands(brands)
-        setLoading(false)
-      })
-  }, [])
-  console.log(products)
+    const data = async () => {
+      const response = await fetch('http://localhost:3000/api/products/');
+      const result = await response.json();
+      const countProducts = result.total.count;
+      console.log(result);
+      console.log(countProducts);
+    };
+    if (data) {
+      setProducts(data.products);
+      setProductsCount(data.count);
+      const sizes = new Set(data.products.map((product) => product.size));
+      setUniqueSizes(sizes);
+      const brands = new Set(data.products.map((product) => product.brand));
+      setUniqueBrands(brands);
+      setLoading(false);
+    }
+  }, []);
+
+  console.log(products);
 
   const filteredProducts = products.filter((product) => {
     // Selects
-    const brandFilter = selectedBrand === '' || product.brand === selectedBrand
-    const sizeFilter = selectedSize === '' || product.size === selectedSize
+    const brandFilter = selectedBrand === '' || product.brand === selectedBrand;
+    const sizeFilter = selectedSize === '' || product.size === selectedSize;
     // Searchbar
     const idFilter =
       searchTerm === '' ||
-      product.id.toString().includes(searchTerm.toLowerCase())
+      product.id.toString().includes(searchTerm.toLowerCase());
     const nameFilter =
       searchTerm === '' ||
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      product.name.toLowerCase().includes(searchTerm.toLowerCase());
 
-    return brandFilter && sizeFilter && (idFilter || nameFilter)
-  })
+    return brandFilter && sizeFilter && (idFilter || nameFilter);
+  });
 
   return (
     <>
@@ -57,27 +63,27 @@ export default function ProductsDashboard() {
         {loading ? (
           <Spinner />
         ) : (
-          <section className="table-container">
-            <div className="head-table-container">
-              <article className="searchbar">
-                <form action="/" method="POST">
+          <section className='table-container'>
+            <div className='head-table-container'>
+              <article className='searchbar'>
+                <form action='/' method='POST'>
                   <input
-                    type="text"
-                    name="search"
-                    placeholder="Buscar producto"
+                    type='text'
+                    name='search'
+                    placeholder='Buscar producto'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </form>
               </article>
 
-              <article className="pl-container-selects">
-                <form className="pl-form-brand">
+              <article className='pl-container-selects'>
+                <form className='pl-form-brand'>
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
                   >
-                    <option value="">Marca</option>
+                    <option value=''>Marca</option>
                     {[...uniqueBrands].map((brand) => (
                       <option key={brand} value={brand}>
                         {brand}
@@ -86,12 +92,12 @@ export default function ProductsDashboard() {
                   </select>
                 </form>
 
-                <form className="pl-form-size">
+                <form className='pl-form-size'>
                   <select
                     value={selectedSize}
                     onChange={(e) => setSelectedSize(e.target.value)}
                   >
-                    <option value="">Medida</option>
+                    <option value=''>Medida</option>
                     {[...uniqueSizes].map((size) => (
                       <option key={size} value={size}>
                         {size} ml
@@ -126,8 +132,8 @@ export default function ProductsDashboard() {
 
                       <td>
                         <a href={`/products/${product.id}`}>
-                          <button className="btn-view">
-                            <i className="fa-solid fa-eye"></i>
+                          <button className='btn-view'>
+                            <i className='fa-solid fa-eye'></i>
                           </button>
                         </a>
                       </td>
@@ -137,28 +143,28 @@ export default function ProductsDashboard() {
               </table>
             </article>
 
-            <article className="pagination-container">
-              <div className="rows-per-page-container">
-                <label htmlFor="rowsPerPage">Filas por página: </label>
-                <select name="rowsPerPage" id="rowsPerPage">
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="15">15</option>
+            <article className='pagination-container'>
+              <div className='rows-per-page-container'>
+                <label htmlFor='rowsPerPage'>Filas por página: </label>
+                <select name='rowsPerPage' id='rowsPerPage'>
+                  <option value='5'>5</option>
+                  <option value='10'>10</option>
+                  <option value='15'>15</option>
                 </select>
               </div>
 
-              <div className="pagination-counter-container">
+              <div className='pagination-counter-container'>
                 <span>1 - 5 </span>
                 de
                 <span> {productsCount}</span>
               </div>
 
-              <div className="pagination-btns-container">
+              <div className='pagination-btns-container'>
                 <button>
-                  <i className="fa-solid fa-arrow-left"></i>
+                  <i className='fa-solid fa-arrow-left'></i>
                 </button>
                 <button>
-                  <i className="fa-solid fa-arrow-right"></i>
+                  <i className='fa-solid fa-arrow-right'></i>
                 </button>
               </div>
             </article>
@@ -166,5 +172,5 @@ export default function ProductsDashboard() {
         )}
       </main>
     </>
-  )
+  );
 }
