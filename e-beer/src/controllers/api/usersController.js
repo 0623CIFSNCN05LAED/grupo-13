@@ -1,4 +1,5 @@
 const userServices = require('../../services/userServices');
+const roleServices = require('../../services/roleServices');
 const fs = require('fs');
 const path = require('path');
 
@@ -8,23 +9,27 @@ module.exports = {
   list: async (req, res) => {
     const page = Number(req.query.page) || 1;
     const offset = (page - 1) * pageSize;
-    const { count, rows } = await userServices.getAllUsersAndCount({
-      pageSize,
-      offset,
-    });
+    const users = await userServices.getAllUsers();
+    const roles = await roleServices.getAllRoles();
 
-    const users = rows.map((user) => ({
-      id: user.id,
-      first_name: user.first_name,
-      last_name: user.last_name,
-      email: user.email,
-      detail: req.originalUrl + '/' + user.id,
-    }));
-
-    res.json({
-      count,
-      users,
-    });
+    const response = {
+      meta: {
+        status: 200,
+        url: `${req.originalUrl}`,
+      },
+      total: {
+        count: users.length,
+        countByRoles: roles.length,
+      },
+      data: users.map((user) => ({
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        detail: `${req.protocol}://${req.get('host')}/api/users/${user.id}`,
+      })),
+    };
+    res.json(response);
   },
   detail: async (req, res) => {
     const user = await userServices.getUser(req.params.id);

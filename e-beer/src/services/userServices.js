@@ -6,18 +6,12 @@ const userServices = {
   getAllUsers: () => {
     return Users.findAll();
   },
-  getAllUsersAndCount: ({ pageSize, offset }) => {
-    return Users.findAndCountAll({
-      limit: pageSize,
-      offset: offset,
-    });
-  },
-  getAllUsersAndCount: ({ pageSize, offset }) => {
-    return Users.findAndCountAll({
-      limit: pageSize,
-      offset: offset,
-    });
-  },
+  // getAllUsersAndCount: ({ pageSize, offset }) => {
+  //   return Users.findAndCountAll({
+  //     limit: pageSize,
+  //     offset: offset,
+  //   });
+  // },
   getUser: async (id) => {
     return await Users.findByPk(id);
   },
