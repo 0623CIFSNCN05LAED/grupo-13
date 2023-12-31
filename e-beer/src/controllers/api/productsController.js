@@ -1,5 +1,7 @@
 const productServices = require('../../services/productServices');
 const categoryServices = require('../../services/categoryServices');
+const sizeServices = require('../../services/sizeServices');
+const brandServices = require('../../services/brandServices');
 
 const fs = require('fs');
 const path = require('path');
@@ -11,6 +13,8 @@ module.exports = {
     const offset = (page - 1) * pageSize;
     const products = await productServices.getAllProducts({ pageSize, offset });
     const categories = await categoryServices.getAllCategories();
+    const sizes = await sizeServices.getAllSizes();
+    const brands = await brandServices.getAllBrands();
     const response = {
       meta: {
         satus: 200,
@@ -20,6 +24,8 @@ module.exports = {
       total: {
         count: products.length,
         countByCategory: categories.length,
+        countBySize: sizes.length,
+        countByBrand: brands.length,
       },
       data: {
         products: products.map((product) => ({
@@ -32,6 +38,18 @@ module.exports = {
           size_id: product.size_id,
           image: product.image,
           detail: `${req.originalUrl}/${product.id}`,
+        })),
+        brand: brands.map((brand) => ({
+          id: brand.id,
+          name: brand.name,
+        })),
+        categories: categories.map((category) => ({
+          id: category.id,
+          name: category.name,
+        })),
+        size: sizes.map((size) => ({
+          id: size.id,
+          name: size.name,
         })),
       },
     };
