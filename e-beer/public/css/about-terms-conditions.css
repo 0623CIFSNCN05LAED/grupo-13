@@ -37,11 +37,16 @@
   margin: 0 auto;
   text-align: center;
   margin-bottom: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
   .text {
     width: 70%;
+  }
+  .text-container {
+    margin: 0 auto;
   }
 }
