@@ -21,14 +21,16 @@ module.exports = {
     const totalPages = Math.ceil(count / pageSize);
     const nextPage =
       page < totalPages
-        ? `${req.originalUrl.split('?')[0]}?page=${page + 1}`
+        ? `${req.protocol}://${req.get('host')}/api/products?page=${page + 1}`
         : null;
     const previousPage =
-      page > 1 ? `${req.originalUrl.split('?')[0]}?page=${page - 1}` : null;
+      page > 1
+        ? `${req.protocol}://${req.get('host')}/api/products?page=${page - 1}`
+        : null;
     const response = {
       meta: {
         status: 200,
-        url: `${req.originalUrl}`,
+        url: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
         nextPage,
         previousPage,
       },
