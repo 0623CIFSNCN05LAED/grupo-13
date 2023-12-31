@@ -11,10 +11,12 @@ module.exports = {
     const page = Number(req.query.page) || 1;
     const pageSize = 5;
     const offset = (page - 1) * pageSize;
-    const { count, rows: products } = await productServices.getAllProducts({
-      pageSize,
-      offset,
-    });
+    const { count, rows: products } =
+      await productServices.getAllProductsAndCount({
+        pageSize,
+        offset,
+      });
+    const totalProducts = await productServices.getAllProducts();
     const categories = await categoryServices.getAllCategories();
     const sizes = await sizeServices.getAllSizes();
     const brands = await brandServices.getAllBrands();
@@ -35,7 +37,8 @@ module.exports = {
         previousPage,
       },
       total: {
-        count: products.length,
+        count: totalProducts.length,
+        countPerPage: products.length,
         countByCategory: categories.length,
         countBySize: sizes.length,
         countByBrand: brands.length,

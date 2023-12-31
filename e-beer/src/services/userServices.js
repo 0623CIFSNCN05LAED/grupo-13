@@ -3,15 +3,15 @@ const { v4: uuidv4 } = require('uuid');
 const bcryptjs = require('bcryptjs');
 
 const userServices = {
-  getAllUsers: () => {
-    return Users.findAll();
+  getAllUsers: async () => {
+    return await Users.findAll();
   },
-  // getAllUsersAndCount: ({ pageSize, offset }) => {
-  //   return Users.findAndCountAll({
-  //     limit: pageSize,
-  //     offset: offset,
-  //   });
-  // },
+  getAllUsersAndCount: ({ pageSize, offset }) => {
+    return Users.findAndCountAll({
+      limit: pageSize,
+      offset: offset,
+    });
+  },
   getUser: async (id) => {
     return await Users.findByPk(id);
   },

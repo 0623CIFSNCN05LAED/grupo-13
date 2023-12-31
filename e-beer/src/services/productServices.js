@@ -2,7 +2,10 @@ const { Products } = require('../database/models');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
-  getAllProducts: ({ pageSize, offset }) => {
+  getAllProducts: async () => {
+    return await Products.findAll();
+  },
+  getAllProductsAndCount: ({ pageSize, offset }) => {
     return Products.findAndCountAll({
       limit: pageSize,
       offset: offset,
@@ -11,12 +14,6 @@ module.exports = {
         { association: 'p_category' },
         { association: 'p_size' },
       ],
-    });
-  },
-  getAllProductsAndCount: ({ pageSize, offset }) => {
-    return Products.findAndCountAll({
-      limit: pageSize,
-      offset: offset,
     });
   },
   getProduct: async (id) => {
