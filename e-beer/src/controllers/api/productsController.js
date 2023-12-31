@@ -11,15 +11,26 @@ module.exports = {
     const page = Number(req.query.page) || 1;
     const pageSize = 5;
     const offset = (page - 1) * pageSize;
-    const products = await productServices.getAllProducts({ pageSize, offset });
+    const { count, rows: products } = await productServices.getAllProducts({
+      pageSize,
+      offset,
+    });
     const categories = await categoryServices.getAllCategories();
     const sizes = await sizeServices.getAllSizes();
     const brands = await brandServices.getAllBrands();
+    const totalPages = Math.ceil(count / pageSize);
+    const nextPage =
+      page < totalPages
+        ? `${req.originalUrl.split('?')[0]}?page=${page + 1}`
+        : null;
+    const previousPage =
+      page > 1 ? `${req.originalUrl.split('?')[0]}?page=${page - 1}` : null;
     const response = {
       meta: {
-        satus: 200,
+        status: 200,
         url: `${req.originalUrl}`,
-        nextPage: `${req.originalUrl.split('?')[0]}?page=${page + 1}`,
+        nextPage,
+        previousPage,
       },
       total: {
         count: products.length,
@@ -59,7 +70,6 @@ module.exports = {
     };
     res.json(response);
   },
-
   detail: async (req, res) => {
     const product = await productServices.getProduct(req.params.id);
     const response = {

@@ -2,8 +2,10 @@ const { Products } = require('../database/models');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
-  getAllProducts: () => {
-    return Products.findAll({
+  getAllProducts: ({ pageSize, offset }) => {
+    return Products.findAndCountAll({
+      limit: pageSize,
+      offset: offset,
       include: [
         { association: 'p_brand' },
         { association: 'p_category' },
