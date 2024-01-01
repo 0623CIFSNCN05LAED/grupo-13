@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
       userEmail = userLogged.email;
     }
 
-    return res.render('profile-edit', {
+    return res.render('my-profile-update-password', {
       errors: resultValidation.mapped(),
       oldData: req.body,
       userEmail,

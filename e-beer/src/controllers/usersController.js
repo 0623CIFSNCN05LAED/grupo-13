@@ -24,7 +24,7 @@ const usersController = {
             maxAge: 100000000000 * 60 * 2,
           });
         }
-        return res.redirect('/users/myprofile');
+        return res.redirect('/users/my-profile');
       }
 
       return res.render('login', {
@@ -67,18 +67,18 @@ const usersController = {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
-    return res.render('profile', { user });
+    return res.render('my-profile', { user });
   },
   myProfileEditForm: async (req, res) => {
     const id = req.session.userLogged.id;
     const user = await userServices.getUser(id);
 
-    res.render('profile-edit', { user: user });
+    res.render('my-profile-update', { user: user });
   },
   myProfileUpdate: async (req, res) => {
     const id = req.session.userLogged.id;
     await userServices.updateProfile(id, req.body, req.file);
-    res.redirect('/users/myProfile');
+    res.redirect('/users/my-profile');
   },
   // Password edit
   passwordEditForm: async (req, res) => {
@@ -88,7 +88,7 @@ const usersController = {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
 
-    res.render('profile-edit-password', {
+    res.render('my-profile-update-password', {
       user: user,
       errors: errors ? errors : null,
       oldData: oldData ? oldData : null,
@@ -97,32 +97,31 @@ const usersController = {
   passwordUpdate: async (req, res) => {
     const id = req.session.userLogged.id;
     await userServices.updatePassword(id, req.body);
-    res.redirect('/users/myProfile');
+    res.redirect('/users/my-profile');
   },
-  // Create user
-  createNewUserForm: (req, res) => {
+
+  // DASHBOARD
+  dashboard: async (req, res) => {
+    const users = await userServices.getAllUsers();
+
+    res.render('dashboard', { users });
+  },
+  createUserForm: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
 
     req.session.oldData = null;
     req.session.oldData = null;
 
-    res.render('profile-create-new', {
+    res.render('user-create-form', {
       errors: errors ? errors : null,
       oldData: oldData ? oldData : null,
     });
   },
-  createNewUser: async (req, res) => {
+  createUser: async (req, res) => {
     await userServices.createUser(req.body, req.file);
 
-    res.redirect('crud');
-  },
-
-  // CRUD
-  crud: async (req, res) => {
-    const users = await userServices.getAllUsers();
-
-    res.render('users-crud', { users });
+    res.redirect('dashboard');
   },
   updateForm: async (req, res) => {
     const id = req.params.id;
@@ -134,7 +133,7 @@ const usersController = {
     req.session.oldData = null;
     req.session.oldData = null;
 
-    res.render('profile-edit-admin', {
+    res.render('user-update-form', {
       user: user,
       errors: errors ? errors : null,
       oldData: oldData ? oldData : null,
@@ -144,13 +143,13 @@ const usersController = {
     const id = req.params.id;
     await userServices.updateUser(id, req.body, req.file);
 
-    res.redirect('/users/crud');
+    res.redirect('/users/dashboard');
   },
   deleteForm: async (req, res) => {
     const id = req.params.id;
     const user = await userServices.getUser(id);
 
-    res.render('users-delete-form', { user });
+    res.render('user-delete-form', { user });
   },
   destroy: (req, res) => {
     const user = req.body;
@@ -162,7 +161,7 @@ const usersController = {
     user.profile_picture = profile_picture;
     userServices.deleteUser(id);
 
-    res.redirect('/users/crud');
+    res.redirect('/users/dashboard');
   },
   logout: (req, res) => {
     res.clearCookie('email');

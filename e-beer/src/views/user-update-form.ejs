@@ -116,15 +116,6 @@
                 <div class="flash-errors"><%= errors.birth_date.msg %></div>             
             <% } %>
 
-        <div class="picture">
-          <label for="profile_picture">Selecciona una imagen del usuario</label>
-          <input type="file" id="profile_picture" name="profile_picture" accept=".jpg" />
-        </div>
-
-        <div id="profile_pictureError" class="flash-errors"></div>
-            <% if (locals.errors && errors.profile_picture) { %>
-                <div class="flash-errors"><%= errors.profile_picture.msg %></div>             
-            <% } %>
 
         <div class="buttons-container">
           <button class="button" type="submit">Editar</button>

@@ -3,7 +3,7 @@ module.exports = (req, res, next) => {
     res.redirect('/users/login');
   } else if (req.session.userLogged.role_id == 1) {
     next();
-  } else if (req.session.userLogged.role_id == 1) {
+  } else if (req.session.userLogged.role_id == 2) {
     res.redirect('/home');
   }
 };

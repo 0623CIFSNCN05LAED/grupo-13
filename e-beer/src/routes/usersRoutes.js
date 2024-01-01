@@ -3,31 +3,32 @@ const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 
 /* Middlewares */
-const upload = require('../middlewares/multer-users');
-const authMiddleware = require('../middlewares/authMiddleware');
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const adminMiddleware = require('../middlewares/adminMiddleware');
+const upload = require('../middlewares/users/multer-users');
+const authMiddleware = require('../middlewares/users/is-logged');
+const guestMiddleware = require('../middlewares/users/is-guest');
+const adminMiddleware = require('../middlewares/users/is-admin');
 
 // Login validations
 const loginValidations = require('../validations/usersLogin');
-const loginValidateForm = require('../middlewares/validate-users-login');
+const loginValidateForm = require('../middlewares/users/login');
 
 // Register validations
 const registerValidations = require('../validations/usersRegister');
-const registerValidateForm = require('../middlewares/validate-users-register');
-const registerValidateEmail = require('../middlewares/validate-users-register-email');
+const registerValidateForm = require('../middlewares/users/register');
+const registerValidateEmail = require('../middlewares/users/register-email');
 
 // CRUD validations
-const crudValidateForm = require('../middlewares/validate-users-crud');
+const crudValidateForm = require('../middlewares/users/user-create');
 const createValidations = require('../validations/usersCreate');
-const createValidateForm = require('../middlewares/validate-users-create');
-const createValidateEmail = require('../middlewares/validate-users-create-email');
+const createValidateForm = require('../middlewares/users/user-create');
+const createValidateEmail = require('../middlewares/users/validate-users-create-email');
+const updateValidations = require('../validations/validations-users-edit');
 
 // Profile Validations
-const editValidateForm = require('../middlewares/validate-users-edit');
+const editValidateForm = require('../middlewares/users/my-profile-update');
 const editValidations = require('../validations/usersEdit');
-const editValidateEmail = require('../middlewares/validate-users-edit-email');
-const passValidateForm = require('../middlewares/validate-users-pass');
+const editValidateEmail = require('../middlewares/users/my-profile-update-email');
+const passValidateForm = require('../middlewares/users/my-profile-password');
 const passValidations = require('../validations/usersPasswordEdit');
 
 /* Routes */
@@ -56,16 +57,16 @@ usersRouter.post(
 usersRouter.get('/logout', usersController.logout);
 
 //My profile
-usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
+usersRouter.get('/my-profile', authMiddleware, usersController.myProfile);
 
 //Edit profile
 usersRouter.get(
-  '/myProfile/edit',
+  '/my-profile/edit',
   authMiddleware,
   usersController.myProfileEditForm
 );
 usersRouter.put(
-  '/myProfile/edit',
+  '/my-profile/edit',
   upload.single('profile_picture'),
   authMiddleware,
   editValidations,
@@ -76,33 +77,38 @@ usersRouter.put(
 
 //Edit password
 usersRouter.get(
-  '/myPassword/edit',
+  '/my-password/edit',
   authMiddleware,
   usersController.passwordEditForm
 );
 usersRouter.put(
-  '/myPassword/edit',
+  '/my-password/edit',
   authMiddleware,
   passValidations,
   passValidateForm,
   usersController.passwordUpdate
 );
 
-//Users CRUD
-usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
+//Users DASHBOARD
+usersRouter.get(
+  '/dashboard',
+  authMiddleware,
+  adminMiddleware,
+  usersController.dashboard
+);
 
 //Create user - admin
 usersRouter.get(
   '/create-user',
   adminMiddleware,
-  usersController.createNewUserForm
+  usersController.createUserForm
 );
 usersRouter.post(
   '/create-user',
   createValidations,
   createValidateForm,
   createValidateEmail,
-  usersController.createNewUser
+  usersController.createUser
 );
 
 //Delete user - admin
@@ -123,12 +129,10 @@ usersRouter.get(
 );
 usersRouter.put(
   '/:id/edit',
-  upload.single('profile_picture'),
   authMiddleware,
+  updateValidations,
   adminMiddleware,
-  registerValidations,
   crudValidateForm,
-  registerValidateEmail,
   usersController.update
 );
 

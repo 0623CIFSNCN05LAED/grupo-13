@@ -22,13 +22,13 @@ const validations = [
   },
   {
     field: 'password',
-    check: (input) => passVal(input.value),
+    check: (input) => passVal.test(input.value),
     message:
       'Ingresá como mínimo 8 caracteres incluyendo una mayúscula, una minúscula, un número y un caracter especial',
   },
   {
     field: 'contact_number',
-    check: (input) => phoneno(input.value),
+    check: (input) => phoneno.test(input.value),
     message: 'Ingresá un número de teléfono válido (sin guiones, ni espacios)',
   },
   {
@@ -40,13 +40,6 @@ const validations = [
     field: 'address',
     check: (input) => input.value.length >= 2,
     message: 'Ingresá al menos 2 caracteres',
-  },
-  {
-    field: 'profile_picture',
-    check: (input) => validateProfilePicture(input),
-    message: `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-      ', '
-    )}`,
   },
 ];
 
@@ -83,15 +76,6 @@ form.addEventListener('submit', (event) => {
     form.submit();
   }
 });
-
-function validateProfilePicture(input) {
-  const fileExtension = input.value.toUpperCase().split('.').pop();
-  if (!acceptedExtensions.includes(fileExtension)) {
-    return `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-      ', '
-    )}`;
-  }
-}
 
 function inputValidation(validation, input, inputErrorMsg) {
   if (!input.value) {
