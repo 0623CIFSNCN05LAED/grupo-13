@@ -57,10 +57,15 @@ const userServices = {
 
     return await Users.update(
       {
+        id: user.id,
+        first_name: body.first_name,
+        last_name: body.last_name,
         email: body.email,
-        profile_picture: file ? file.filename : user.profile_picture,
+        password: bcryptjs.hashSync(body.password, 10),
         contact_number: Number(body.contact_number),
         address: body.address,
+        birth_date: body.birth_date,
+        profile_picture: file ? file.filename : user.profile_picture,
       },
       {
         where: { id: id },

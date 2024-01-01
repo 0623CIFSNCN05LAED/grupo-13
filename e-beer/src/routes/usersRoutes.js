@@ -91,7 +91,7 @@ usersRouter.put(
 //Users CRUD
 usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
 
-//Admin create
+//Create user - admin
 usersRouter.get(
   '/create-user',
   adminMiddleware,
@@ -105,7 +105,7 @@ usersRouter.post(
   usersController.createNewUser
 );
 
-//Admin delete
+//Delete user - admin
 usersRouter.get(
   '/:id/delete',
   authMiddleware,
@@ -114,12 +114,12 @@ usersRouter.get(
 );
 usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
 
-//Admin edit
+//Update user - admin
 usersRouter.get(
   '/:id/edit',
   authMiddleware,
   adminMiddleware,
-  usersController.editProfileCrud
+  usersController.updateForm
 );
 usersRouter.put(
   '/:id/edit',
