@@ -85,12 +85,13 @@ form.addEventListener('submit', (event) => {
 });
 
 function validateProfilePicture(input) {
-  const fileExtension = input.value.toUpperCase().split('.').pop();
-  if (!acceptedExtensions.includes(fileExtension)) {
-    return `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-      ', '
-    )}`;
+  if (input.files.length === 0) {
+    return false;
   }
+
+  const file = input.files[0];
+  const fileExtension = file.name.split('.').pop().toUpperCase();
+  return acceptedExtensions.includes(fileExtension);
 }
 
 function inputValidation(validation, input, inputErrorMsg) {

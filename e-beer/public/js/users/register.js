@@ -82,16 +82,17 @@ form.addEventListener('submit', (event) => {
 });
 
 function validateProfilePicture(input) {
-  const fileExtension = input.value.toUpperCase().split('.').pop();
-  if (!acceptedExtensions.includes(fileExtension)) {
-    return `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-      ', '
-    )}`;
+  if (input.files.length === 0) {
+    return true;
   }
+
+  const file = input.files[0];
+  const fileExtension = file.name.split('.').pop().toUpperCase();
+  return acceptedExtensions.includes(fileExtension);
 }
 
 function inputValidation(validation, input, inputErrorMsg) {
-  if (!input.value) {
+  if (!input.value && validation.field !== 'profile_picture') {
     inputErrorMsg.innerText = 'Este campo es obligatorio';
     inputErrorMsg.classList.add('display');
     return false;

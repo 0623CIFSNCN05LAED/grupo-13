@@ -36,9 +36,7 @@ module.exports = [
     let file = req.file;
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
-    if (!file) {
-      throw new Error('Subí una foto de perfil');
-    } else {
+    if (file) {
       let fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(
