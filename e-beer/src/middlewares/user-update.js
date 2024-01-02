@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
       userEmail = userLogged.email;
     }
 
-    return res.render('user-create-form', {
+    return res.render('user-update-form', {
       errors: resultValidation.mapped(),
       oldData: req.body,
       userEmail,

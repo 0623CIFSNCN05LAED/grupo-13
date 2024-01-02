@@ -111,15 +111,6 @@ usersRouter.post(
   usersController.createUser
 );
 
-//Delete user
-usersRouter.get(
-  '/:id/delete',
-  isLoggedMiddleware,
-  isAdminMiddleware,
-  usersController.deleteForm
-);
-usersRouter.delete('/:id/delete', isLoggedMiddleware, usersController.destroy);
-
 //Update user
 usersRouter.get(
   '/:id/edit',
@@ -134,6 +125,15 @@ usersRouter.put(
   userUpdateValidateEmail,
   usersController.updateUser
 );
+
+//Delete user
+usersRouter.get(
+  '/:id/delete',
+  isLoggedMiddleware,
+  isAdminMiddleware,
+  usersController.deleteForm
+);
+usersRouter.delete('/:id/delete', isLoggedMiddleware, usersController.destroy);
 
 //Logout
 usersRouter.get('/logout', usersController.logout);

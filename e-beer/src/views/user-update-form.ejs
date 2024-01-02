@@ -15,16 +15,16 @@
         method="POST"
         enctype="multipart/form-data"
       >
-        <h2 class="title">Editar usuario</h2>
+        <h2 class="title">EDITAR USUARIO</h2>
         <p>ID: <%= user.id %></p>
         
+        <label for="first_name" class="input-label">Nombre</label>
         <input
           class="input"
           type="text"
           name="first_name"
           id="first_name"
           placeholder="Nombre"
-          value="<%= user.first_name %>"
         />
 
         <div id="first_nameError" class="flash-errors"></div>
@@ -38,7 +38,6 @@
           name="last_name"
           id="last_name"
           placeholder="Apellido"
-          value="<%= user.last_name %>"
         />
 
         <div id="last_nameError" class="flash-errors"></div>
@@ -52,7 +51,6 @@
           name="email"
           id="email"
           placeholder="Mail"
-          value="<%= user.email %>"
         />
 
         <div id="emailError" class="flash-errors"></div>
@@ -79,7 +77,6 @@
           name="contact_number"
           id="contact_number"
           placeholder="Número de teléfono"
-          value="<%= user.contact_number %>"
         />
 
         <div id="contact_numberError" class="flash-errors"></div>
@@ -93,7 +90,6 @@
           name="address"
           id="address"
           placeholder="Domicilio"
-          value="<%= user.address %>"
         />
 
         <div id="addressError" class="flash-errors"></div>
@@ -107,7 +103,6 @@
           name="birth_date"
           id="birth_date"
           placeholder="Fecha de nacimiento"
-          value="<%= user.birth_date %>"
         />
 
         <div id="birth_dateError" class="flash-errors"></div>
