@@ -2,7 +2,7 @@ const emailSymbols = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const acceptedExtensions = ['JPG', 'JPEG', 'PNG', 'GIF'];
 const passVal =
   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-var phoneno = /^\d{3}$/;
+const phoneno = /^\d+$/;
 
 const validations = [
   {

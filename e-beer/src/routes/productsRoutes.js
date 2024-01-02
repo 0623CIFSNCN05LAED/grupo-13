@@ -18,6 +18,7 @@ const updateValidateForm = require('../middlewares/validate-products-update');
 
 // Products list
 productsRouter.get('/', productsController.index);
+productsRouter.get('/search', productsController.search);
 
 // Product cart
 productsRouter.get('/cart', productsController.productCart);

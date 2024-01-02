@@ -67,6 +67,13 @@ const productsController = {
   productCartFilled: (req, res) => {
     res.render('product-cart-filled');
   },
+  search: async (req, res) => {
+    const query = req.query.search;
+    const foundProducts = await productServices.searchProducts(query);
+    if (foundProducts) {
+      res.render('products-list', { products: foundProducts });
+    }
+  },
 };
 
 module.exports = productsController;

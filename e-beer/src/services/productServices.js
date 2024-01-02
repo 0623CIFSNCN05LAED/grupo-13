@@ -1,5 +1,6 @@
 const { Products } = require('../database/models');
 const { v4: uuidv4 } = require('uuid');
+const Sequelize = require('sequelize');
 
 module.exports = {
   getAllProducts: async () => {
@@ -67,5 +68,20 @@ module.exports = {
     return Products.destroy({
       where: { id: id },
     });
+  },
+  searchProducts: async (query) => {
+    const products = await Products.findAll({
+      where: {
+        name: {
+          [Sequelize.Op.like]: '%' + query + '%',
+        },
+      },
+      include: [
+        { association: 'p_brand' },
+        { association: 'p_category' },
+        { association: 'p_size' },
+      ],
+    });
+    return products;
   },
 };
