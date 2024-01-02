@@ -55,7 +55,7 @@ const userServices = {
       }
     );
   },
-  updateUser: async (id, body, file) => {
+  updateUser: async (id, body) => {
     const user = await Users.findByPk(id);
 
     return await Users.update(
@@ -68,7 +68,6 @@ const userServices = {
         contact_number: Number(body.contact_number),
         address: body.address,
         birth_date: body.birth_date,
-        profile_picture: file ? file.filename : user.profile_picture,
       },
       {
         where: { id: id },

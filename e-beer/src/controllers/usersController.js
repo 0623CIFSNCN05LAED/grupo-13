@@ -139,9 +139,10 @@ const usersController = {
       oldData: oldData ? oldData : null,
     });
   },
-  update: async (req, res) => {
+  updateUser: async (req, res) => {
     const id = req.params.id;
-    await userServices.updateUser(id, req.body, req.file);
+    // const user = await userServices.getUser(id);
+    await userServices.updateUser(id, req.body);
 
     res.redirect('/users/dashboard');
   },

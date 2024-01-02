@@ -18,12 +18,13 @@ const registerValidateForm = require('../middlewares/register');
 const registerValidateEmail = require('../middlewares/register-email');
 
 // Dashboard validations
-const userCreateValidateEmail = require('../middlewares/user-create-email');
-const userCreateValidateForm = require('../middlewares/user-create');
 const userCreateValidations = require('../validations/usersCreate');
+const userCreateValidateForm = require('../middlewares/user-create');
+const userCreateValidateEmail = require('../middlewares/user-create-email');
 
-const userUpdateValidateFrom = require('../middlewares/user-update');
 const userUpdateValidations = require('../validations/usersUpdate');
+const userUpdateValidateFrom = require('../middlewares/user-update');
+const userUpdateValidateEmail = require('../middlewares/user-update-email');
 
 // Profile Validations
 const myProfileUpdateValidateForm = require('../middlewares/my-profile-update');
@@ -67,7 +68,6 @@ usersRouter.get(
 usersRouter.put(
   '/my-profile/edit',
   upload.single('profile_picture'),
-  isLoggedMiddleware,
   myProfileUpdateValidations,
   myProfileUpdateValidateForm,
   profileValidateEmail,
@@ -129,11 +129,10 @@ usersRouter.get(
 );
 usersRouter.put(
   '/:id/edit',
-  isLoggedMiddleware,
-  isAdminMiddleware,
-  userUpdateValidateFrom,
   userUpdateValidations,
-  usersController.update
+  userUpdateValidateFrom,
+  userUpdateValidateEmail,
+  usersController.updateUser
 );
 
 //Logout
