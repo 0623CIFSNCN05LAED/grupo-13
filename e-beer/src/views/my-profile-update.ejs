@@ -12,14 +12,14 @@
       <section class="info-profile-container">
         <article class="profile-picture">
           <img
-            src="/images/users/<%= userLogged.profile_picture %>"
+            src="/images/users/<%= user.profile_picture %>"
             alt="foto de perfil"
           />
         </article>
 
         <article class="info-profile-container-desc">
           <h3>Nombre:</h3>
-          <p><%= userLogged.first_name %> <%= userLogged.last_name %></p>
+          <p><%= user.first_name %> <%= user.last_name %></p>
         </article>
       </section>
 

@@ -3,8 +3,8 @@ const productsRouter = express.Router();
 const productsController = require('../controllers/productsController');
 
 /* Middlewares */
-const upload = require('../middlewares/products/multer-products');
-const isAdminMiddleware = require('../middlewares/users/is-admin');
+const upload = require('../middlewares/multer-products');
+const isAdminMiddleware = require('../middlewares/is-admin');
 
 // Create validations
 const createValidations = require('../validations/productsCreate');

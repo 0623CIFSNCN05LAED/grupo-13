@@ -3,10 +3,10 @@ const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 
 /* Middlewares */
-const upload = require('../middlewares/users/multer-users');
-const isLoggedMiddleware = require('../middlewares/users/is-logged');
-const isGuestMiddleware = require('../middlewares/users/is-guest');
-const isAdminMiddleware = require('../middlewares/users/is-admin');
+const upload = require('../middlewares/multer-users');
+const isLoggedMiddleware = require('../middlewares/is-logged');
+const isGuestMiddleware = require('../middlewares/is-guest');
+const isAdminMiddleware = require('../middlewares/is-admin');
 
 // Login validations
 const loginValidations = require('../validations/login');
