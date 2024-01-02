@@ -20,6 +20,9 @@ main {
 p {
   margin: 20px 0px 0px 0px;
 }
+.logo {
+  margin-top: 30px;
+}
 
 /* DESKTOP */
 @media (min-width: 1024px) {
