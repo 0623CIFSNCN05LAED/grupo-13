@@ -6,19 +6,30 @@ import Spinner from './Spinner'
 import '../css/dashboards.css'
 
 export default function ProductsDashboard() {
-  const [products, setProducts] = useState([])
-  const [productsCount, setProductsCount] = useState(0)
+  const [users, setUsers] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products/')
+    fetch('http://localhost:3000/api/users/')
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data.products)
-        setProductsCount(data.count)
+        setUsers(data.users)
         setLoading(false)
       })
+    console.log(users)
   }, [])
+
+  const filteredUsers = users.filter((user) => {
+    const idFilter =
+      searchTerm === '' || user.id.toString().includes(searchTerm.toLowerCase())
+    const nameFilter =
+      searchTerm === '' ||
+      user.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.last_name.toLowerCase().includes(searchTerm.toLowerCase())
+
+    return idFilter || nameFilter
+  })
 
   return (
     <>
@@ -35,33 +46,14 @@ export default function ProductsDashboard() {
           <section className="table-container">
             <div className="head-table-container">
               <article className="searchbar">
-                <form action="/" method="POST">
+                <form>
                   <input
                     type="text"
                     name="search"
-                    placeholder="Buscar producto"
+                    placeholder="Buscar usuario"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                </form>
-              </article>
-
-              <article className="pl-container-selects">
-                <form action="/marca" method="POST" className="pl-form-brand">
-                  <select>
-                    <option>Marca</option>
-                    <option value="">Stella Artois</option>
-                    <option value="">Corona</option>
-                    <option value="">Patagonia</option>
-                    <option value="">Quilmes</option>
-                  </select>
-                </form>
-
-                <form action="/medida" method="POST" className="pl-form-size">
-                  <select>
-                    <option>Medida</option>
-                    <option value="">1 litro</option>
-                    <option value="">473 ml</option>
-                    <option value="">330 ml</option>
-                  </select>
                 </form>
               </article>
             </div>
@@ -72,24 +64,22 @@ export default function ProductsDashboard() {
                   <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Medida</th>
-                    <th>Precio</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
                     <th></th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  {products.map((product) => (
-                    <tr key={product.id}>
-                      <td>{product.id}</td>
-                      <td>{product.name}</td>
-                      <td>{product.category}</td>
-                      <td>{product.size}</td>
-                      <td>${product.price}</td>
+                  {filteredUsers.map((user) => (
+                    <tr key={user.id}>
+                      <td>{user.id}</td>
+                      <td>{user.first_name}</td>
+                      <td>{user.last_name}</td>
+                      <td>{user.email}</td>
 
                       <td>
-                        <a href={`/products/${product.id}`}>
+                        <a href={`/users/${user.id}`}>
                           <button className="btn-view">
                             <i className="fa-solid fa-eye"></i>
                           </button>
@@ -103,7 +93,7 @@ export default function ProductsDashboard() {
 
             <article className="pagination-container">
               <div className="rows-per-page-container">
-                <label for="rowsPerPage">Filas por página: </label>
+                <label htmlFor="rowsPerPage">Filas por página: </label>
                 <select name="rowsPerPage" id="rowsPerPage">
                   <option value="5">5</option>
                   <option value="10">10</option>
@@ -114,7 +104,7 @@ export default function ProductsDashboard() {
               <div className="pagination-counter-container">
                 <span>1 - 5 </span>
                 de
-                <span> {productsCount}</span>
+                <span> 1</span>
               </div>
 
               <div className="pagination-btns-container">

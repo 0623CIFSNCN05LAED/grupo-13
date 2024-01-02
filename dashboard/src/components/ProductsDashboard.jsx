@@ -9,8 +9,6 @@ export default function ProductsDashboard() {
   const [products, setProducts] = useState([])
   const [productsCount, setProductsCount] = useState(0)
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedBrand, setSelectedBrand] = useState('')
-  const [uniqueBrands, setUniqueBrands] = useState(new Set())
   const [selectedSize, setSelectedSize] = useState('')
   const [uniqueSizes, setUniqueSizes] = useState(new Set()) // Almacena las medidas únicas
   const [loading, setLoading] = useState(true)
@@ -23,16 +21,12 @@ export default function ProductsDashboard() {
         setProductsCount(data.count)
         const sizes = new Set(data.products.map((product) => product.size))
         setUniqueSizes(sizes)
-        const brands = new Set(data.products.map((product) => product.brand))
-        setUniqueBrands(brands)
         setLoading(false)
       })
   }, [])
-  console.log(products)
 
   const filteredProducts = products.filter((product) => {
     // Selects
-    const brandFilter = selectedBrand === '' || product.brand === selectedBrand
     const sizeFilter = selectedSize === '' || product.size === selectedSize
     // Searchbar
     const idFilter =
@@ -42,7 +36,7 @@ export default function ProductsDashboard() {
       searchTerm === '' ||
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
 
-    return brandFilter && sizeFilter && (idFilter || nameFilter)
+    return sizeFilter && (idFilter || nameFilter)
   })
 
   return (
@@ -60,7 +54,7 @@ export default function ProductsDashboard() {
           <section className="table-container">
             <div className="head-table-container">
               <article className="searchbar">
-                <form action="/" method="POST">
+                <form>
                   <input
                     type="text"
                     name="search"
@@ -72,20 +66,6 @@ export default function ProductsDashboard() {
               </article>
 
               <article className="pl-container-selects">
-                <form className="pl-form-brand">
-                  <select
-                    value={selectedBrand}
-                    onChange={(e) => setSelectedBrand(e.target.value)}
-                  >
-                    <option value="">Marca</option>
-                    {[...uniqueBrands].map((brand) => (
-                      <option key={brand} value={brand}>
-                        {brand}
-                      </option>
-                    ))}
-                  </select>
-                </form>
-
                 <form className="pl-form-size">
                   <select
                     value={selectedSize}
@@ -107,7 +87,7 @@ export default function ProductsDashboard() {
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Marca</th>
+                    <th>Nombre</th>
                     <th>Categoria</th>
                     <th>Medida</th>
                     <th>Precio</th>

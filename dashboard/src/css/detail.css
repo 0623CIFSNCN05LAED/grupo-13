@@ -1,0 +1,11 @@
+.detail-container {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 8rem;
+}
+
+.detail-container p {
+  max-width: 65ch;
+  padding: 10px 0 10px 0;
+}

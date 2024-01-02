@@ -6,10 +6,8 @@ module.exports = {
   list: async (req, res) => {
     const products = await productServices.getAllProducts()
     const count = products.length
-    const countByCategory = {}
     const response = {
       count,
-      countByCategory,
       products: products.slice(0, 10).map((product) => ({
         id: product.id,
         name: product.name,
@@ -22,12 +20,10 @@ module.exports = {
     }
     res.json(response)
   },
-
   detail: async (req, res) => {
     const product = await productServices.getProduct(req.params.id)
     const response = {
       ...product,
-      categories: product.categories,
       image: req.originalUrl + '/image',
     }
     res.json(response)
