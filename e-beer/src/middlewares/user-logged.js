@@ -1,4 +1,4 @@
-const userServices = require('../../services/userServices');
+const userServices = require('../services/userServices');
 
 module.exports = async (req, res, next) => {
   res.locals.isLogged = false;

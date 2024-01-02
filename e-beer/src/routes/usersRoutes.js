@@ -10,26 +10,27 @@ const isAdminMiddleware = require('../middlewares/is-admin');
 
 // Login validations
 const loginValidations = require('../validations/login');
-const loginValidateForm = require('../middlewares/users/login');
+const loginValidateForm = require('../middlewares/login');
 
 // Register validations
 const registerValidations = require('../validations/register');
-const registerValidateForm = require('../middlewares/users/register');
-const registerValidateEmail = require('../middlewares/users/register-email');
+const registerValidateForm = require('../middlewares/register');
+const registerValidateEmail = require('../middlewares/register-email');
 
 // Dashboard validations
-const userCreateValidateEmail = require('../middlewares/users/user-create-email');
-const userCreateValidateForm = require('../middlewares/users/user-create');
+const userCreateValidateEmail = require('../middlewares/user-create-email');
+const userCreateValidateForm = require('../middlewares/user-create');
 const userCreateValidations = require('../validations/usersCreate');
 
-const userUpdateValidateFrom = require('../middlewares/users/user-update');
+const userUpdateValidateFrom = require('../middlewares/user-update');
 const userUpdateValidations = require('../validations/usersUpdate');
 
 // Profile Validations
-const editValidateEmail = require('../middlewares/users/my-profile-update-email');
-const editValidateForm = require('../middlewares/users/my-profile-update');
-const editValidations = require('../validations/myProfileUpdate');
-const passValidateForm = require('../middlewares/users/my-profile-password');
+const myProfileUpdateValidateForm = require('../middlewares/my-profile-update');
+const myProfileUpdateValidations = require('../validations/myProfileUpdate');
+const profileValidateEmail = require('../middlewares/my-profile-update-email');
+
+const passValidateForm = require('../middlewares/my-profile-password');
 const passValidations = require('../validations/myProfilePassword');
 
 /* Routes */
@@ -67,9 +68,9 @@ usersRouter.put(
   '/my-profile/edit',
   upload.single('profile_picture'),
   isLoggedMiddleware,
-  editValidations,
-  editValidateForm,
-  editValidateEmail,
+  myProfileUpdateValidations,
+  myProfileUpdateValidateForm,
+  profileValidateEmail,
   usersController.myProfileUpdate
 );
 

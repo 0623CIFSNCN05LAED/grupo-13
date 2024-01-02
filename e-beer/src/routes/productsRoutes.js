@@ -8,11 +8,11 @@ const isAdminMiddleware = require('../middlewares/is-admin');
 
 // Create validations
 const createValidations = require('../validations/productsCreate');
-const createValidateForm = require('../middlewares/products/validate-products-create');
+const createValidateForm = require('../middlewares/validate-products-create');
 
 // Update validations
 const updateValidations = require('../validations/productsUpdate');
-const updateValidateForm = require('../middlewares/products/validate-products-update');
+const updateValidateForm = require('../middlewares/validate-products-update');
 
 /* Routes */
 

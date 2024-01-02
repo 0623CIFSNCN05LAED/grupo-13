@@ -39,13 +39,16 @@ const userServices = {
   },
   updateProfile: async (id, body, file) => {
     const user = await Users.findByPk(id);
+
     return await Users.update(
       {
         id: user.id,
-        email: body.email,
+        email: body.email ? body.email : user.email,
         profile_picture: file ? file.filename : user.profile_picture,
-        contact_number: Number(body.contact_number),
-        address: body.address,
+        contact_number: body.contact_number
+          ? Number(body.contact_number)
+          : Number(user.contact_number),
+        address: body.address ? body.address : user.adress,
       },
       {
         where: { id: id },

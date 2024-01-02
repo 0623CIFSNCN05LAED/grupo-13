@@ -20,10 +20,10 @@ module.exports = [
   body('size_id').notEmpty().withMessage('Ingresá el ID de la medida'),
   body('image').custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    let acceptedExtensions = ['.JPG', '.JPEG', '.PNG', '.GIF'];
 
-    if (!file) {
-      let fileExtension = path.extname(file.originalname);
+    if (file) {
+      let fileExtension = path.extname(file.originalname).toUpperCase();
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(
           `Las extensiones de archivo permitidas son ${acceptedExtensions.join(

@@ -18,8 +18,8 @@ app.use(
 );
 
 // Middlewares
-const userLogged = require('./middlewares/users/user-logged');
-const ageAnswer = require('./middlewares/main/age-answer');
+const userLogged = require('./middlewares/user-logged');
+const ageAnswer = require('./middlewares/age-answer');
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));

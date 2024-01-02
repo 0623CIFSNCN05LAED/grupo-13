@@ -1,4 +1,4 @@
-const userServices = require('../../services/userServices');
+const userServices = require('../services/userServices');
 
 module.exports = async (req, res, next) => {
   const userInDB = await userServices.getUserByEmail(req.body.email);
