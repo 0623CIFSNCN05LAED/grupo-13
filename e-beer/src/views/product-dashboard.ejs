@@ -13,53 +13,10 @@
 
     <main>
       <h2 class="title">ADMINISTRACIÓN DE PRODUCTOS</h2>
-
-      <div class="head-table-container">
-        <section class="pl-filters">
-          <article class="searchbar">
-            <form action="/" method="POST">
-              <input
-                type="text"
-                name="search"
-                placeholder="Buscar producto"
-              />
-            </form>
-          </article>
-
-          <article class="pl-container-selects">
-            <form action="/marca" method="POST" class="pl-form-brand">
-              <select>
-                <option>Marca</option>
-                <option value="">Tres Cordilleras</option>
-                <option value="">Brahama</option>
-                <option value="">Grolsch</option>
-                <option value="">Patagonia</option>
-                <option value="">Budweiser</option>
-                <option value="">Heineken</option>
-                <option value="">Warsteiner</option>
-                <option value="">Corona</option>
-                <option value="">Stella Artois</option>
-                <option value="">Quilmes</option>
-
-
-
-              </select>
-            </form>
-
-            <form action="/medida" method="POST" class="pl-form-size">
-              <select>
-                <option>Medida</option>
-                <option value="">1 litro</option>
-                <option value="">473 ml</option>
-                <option value="">330 ml</option>
-              </select>
-            </form>
-            <button class="btn-add">
-              <a href="/products/create">Agregar</a>
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </article>
-        </section>
+      <button class="btn-add">
+        <a href="/products/create">Agregar</a>
+        <i class="fa-solid fa-plus"></i>
+      </button>
 
       <section class="table-container">
         <article>
