@@ -3,7 +3,7 @@ const productServices = require('../services/productServices');
 const productsController = {
   index: (req, res) => {
     productServices.getAllProducts().then((products) => {
-      res.render('products', { products });
+      res.render('products-list', { products });
     });
   },
   detail: async (req, res) => {
@@ -17,32 +17,32 @@ const productsController = {
         res.status(404).redirect('/products');
       });
   },
-  addForm: (req, res) => {
+  createForm: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
 
     req.session.oldData = null;
     req.session.oldData = null;
 
-    res.render('product-add-form', {
+    res.render('product-create-form', {
       errors: errors ? errors : null,
       oldData: oldData ? oldData : null,
     });
   },
   store: async (req, res) => {
-    await productServices.createProduct(req.body, req.file).then((product) => {
-      res.redirect('/products/' + product.id);
+    await productServices.createProduct(req.body, req.file).then(() => {
+      res.redirect('/products/dashboard');
     });
   },
-  editForm: async (req, res) => {
+  updateForm: async (req, res) => {
     const id = req.params.id;
     const product = await productServices.getProduct(id);
-    res.render('product-edit-form', { product });
+    res.render('product-update-form', { product });
   },
   update: async (req, res) => {
     const id = req.params.id;
     await productServices.updateProduct(id, req.body, req.file);
-    res.redirect('/products');
+    res.redirect('/products/dashboard');
   },
   deleteForm: (req, res) => {
     const id = req.params.id;
@@ -53,12 +53,12 @@ const productsController = {
   destroy: (req, res) => {
     const id = req.params.id;
     productServices.deleteProduct(id).then(() => {
-      res.redirect('/products/crud');
+      res.redirect('/products/dashboard');
     });
   },
-  productCrud: (req, res) => {
+  dashboard: (req, res) => {
     productServices.getAllProducts().then((products) => {
-      res.render('product-crud', { products });
+      res.render('product-dashboard', { products });
     });
   },
   productCart: (req, res) => {

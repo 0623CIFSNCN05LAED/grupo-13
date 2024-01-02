@@ -18,7 +18,7 @@ app.use(
 );
 
 // Middlewares
-const userLogged = require('./middlewares/users/is-logged');
+const userLogged = require('./middlewares/users/user-logged');
 const ageAnswer = require('./middlewares/main/age-answer');
 
 app.use(express.static(path.join(__dirname, '../public')));

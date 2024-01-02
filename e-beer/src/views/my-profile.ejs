@@ -86,19 +86,18 @@
               readonly
             />
           </article>
-          <% if (locals.isLogged && locals.userLogged.role_id == 1) { %>
-          <article class="input-container">
-            <label for="role_id">Tipo de usuario:</label>
-            <input
-              name="role_id"
-              class="inputs"
-              type="text"
-              value="<% if (user.role_id == 1) { %>
-                <%='Administrador'%>
-               <% } %>"
-           <% } %>
-          </article>
-  
+          
+        <% if (locals.isLogged && locals.userLogged.role_id == 1) { %>
+            <article class="input-container">
+                <label for="role_id">Tipo de usuario:</label>
+                <input
+                    name="role_id"
+                    class="inputs"
+                    type="text"
+                    value="<%= user.role_id == 1 ? 'Administrador' : '' %>"
+                />
+            </article>
+        <% } %>
         </form>
       </section>
 
@@ -107,10 +106,10 @@
           <h2>Opciones</h2>
         </div>
         <div class="buttons-container">
-          <a href="/users/myProfile/edit/" class="btn-yellow btn-edit"
+          <a href="/users/my-profile/edit/" class="btn-yellow btn-edit"
             >Actualizar Datos Personales</a
           >
-          <a href="/users/myPassword/edit/" class="btn-yellow btn-edit"
+          <a href="/users/my-password/edit/" class="btn-yellow btn-edit"
             >Modificar Contraseña</a
           >
           <button class="btn-yellow">

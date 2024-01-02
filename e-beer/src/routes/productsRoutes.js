@@ -3,25 +3,34 @@ const productsRouter = express.Router();
 const productsController = require('../controllers/productsController');
 
 /* Middlewares */
-const upload = require('../middlewares/multer-products');
-const adminMiddleware = require('../middlewares/adminMiddleware');
+const upload = require('../middlewares/products/multer-products');
+const isAdminMiddleware = require('../middlewares/users/is-admin');
 
 // Create validations
 const createValidations = require('../validations/productsCreate');
-const createValidateForm = require('../middlewares/validate-products-create');
+const createValidateForm = require('../middlewares/products/validate-products-create');
 
 // Update validations
 const updateValidations = require('../validations/productsUpdate');
-const updateValidateForm = require('../middlewares/validate-products-update');
+const updateValidateForm = require('../middlewares/products/validate-products-update');
 
-/* PRODUCT LIST */
+/* Routes */
+
+// Products list
 productsRouter.get('/', productsController.index);
 
-/* CRUD */
-productsRouter.get('/crud', adminMiddleware, productsController.productCrud);
+// Product cart
+productsRouter.get('/cart', productsController.productCart);
+productsRouter.get('/cart-filled', productsController.productCartFilled);
 
-/* PRODUCT ADD FORM */
-productsRouter.get('/create', adminMiddleware, productsController.addForm);
+// Products Dashboard
+productsRouter.get(
+  '/dashboard',
+  isAdminMiddleware,
+  productsController.dashboard
+);
+// Create product
+productsRouter.get('/create', isAdminMiddleware, productsController.createForm);
 productsRouter.post(
   '/create',
   upload.single('image'),
@@ -29,24 +38,23 @@ productsRouter.post(
   createValidateForm,
   productsController.store
 );
-
-/* PRODUCT CART */
-productsRouter.get('/cart', productsController.productCart);
-productsRouter.get('/cart-filled', productsController.productCartFilled);
-
-/* PRODUCT DELETE FORM */
+// Delete product
 productsRouter.get(
   '/:id/delete',
-  adminMiddleware,
+  isAdminMiddleware,
   productsController.deleteForm
 );
 productsRouter.delete('/:id/delete', productsController.destroy);
 
-/* PRODUCT DETAIL */
+// Product detail
 productsRouter.get('/:id', productsController.detail);
 
-/* PRODUCT EDIT FORM */
-productsRouter.get('/:id/edit', adminMiddleware, productsController.editForm);
+// Product update
+productsRouter.get(
+  '/:id/edit',
+  isAdminMiddleware,
+  productsController.updateForm
+);
 
 productsRouter.put(
   '/:id/edit',

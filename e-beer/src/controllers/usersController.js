@@ -104,7 +104,7 @@ const usersController = {
   dashboard: async (req, res) => {
     const users = await userServices.getAllUsers();
 
-    res.render('dashboard', { users });
+    res.render('users-dashboard', { users });
   },
   createUserForm: (req, res) => {
     const errors = req.session.errors;

@@ -3,8 +3,8 @@ const acceptedExtensions = ['JPG', 'JPEG', 'PNG', 'GIF'];
 const validations = [
   {
     field: 'name',
-    check: (input) => input.value.length >= 2,
-    message: 'Ingresá al menos dos caracteres',
+    check: (input) => input.value.length >= 5,
+    message: 'Ingresá al menos cinco caracteres',
   },
   {
     field: 'price',
@@ -13,8 +13,8 @@ const validations = [
   },
   {
     field: 'description',
-    check: (input) => input.value.length >= 5,
-    message: 'Ingresá al menos 5 caracteres',
+    check: (input) => input.value.length >= 20,
+    message: 'Ingresá al menos veinte caracteres',
   },
   {
     field: 'image',
@@ -59,12 +59,17 @@ form.addEventListener('submit', (event) => {
 });
 
 function validateImage(input) {
-  const fileExtension = input.value.toUpperCase().split('.').pop();
+  if (input.files.length === 0) {
+    return true;
+  }
+
+  const file = input.files[0];
+  const fileExtension = file.name.split('.').pop().toUpperCase();
   return acceptedExtensions.includes(fileExtension);
 }
 
 function inputValidation(validation, input, inputErrorMsg) {
-  if (!input.value) {
+  if (!input.value && validation.field !== 'image') {
     inputErrorMsg.innerText = 'Este campo es obligatorio';
     inputErrorMsg.classList.add('display');
     return false;

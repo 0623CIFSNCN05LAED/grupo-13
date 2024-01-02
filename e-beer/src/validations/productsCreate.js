@@ -23,8 +23,6 @@ module.exports = [
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
     if (!file) {
-      throw new Error('Subí una foto para el producto');
-    } else {
       let fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(
