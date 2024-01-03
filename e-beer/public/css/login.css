@@ -16,9 +16,6 @@
 }
 
 .form-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
 }
 .form-title h1 {
@@ -62,10 +59,10 @@
 
 @media (min-width: 768px) {
   .login-container {
-    max-width: 60vw;
+    max-width: 60%;
   }
   .form-title h1 {
-    font-size: 100px;
+    font-size: 64px;
   }
   .form-title p {
     font-size: 28px;
@@ -76,16 +73,10 @@
 }
 
 @media (min-width: 1023px) {
-  main {
-    display: flex;
-    min-height: 60vh;
-    align-items: center;
-  }
-
   .login-container {
     display: flex;
     justify-content: space-evenly;
-    max-width: 80vw;
+    max-width: 60%;
   }
 
   .form-container {
@@ -95,6 +86,7 @@
   .form-title {
     max-width: 40%;
     padding-right: 50px;
+    padding-top: 80px;
     text-align: left;
   }
   .form-title p {

@@ -10,11 +10,10 @@
 
     <main>
       <section class="login-container">
-        <article class="form-title">
+        <div class="form-title">
           <h1>E-BEER</h1>
-
           <p>Inicia sesión y accedé a nuestra tienda</p>
-        </article>
+        </div>
 
         <article class="form-container">
           <form action="/users/login" method="POST">
@@ -28,6 +27,7 @@
             <% if (locals.errors && errors.email) { %>
             <p class="flash-errors"><%= errors.email.msg %></p>
             <% } %>
+            
 
             <label for="password">
               <input
