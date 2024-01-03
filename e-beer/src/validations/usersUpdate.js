@@ -1,26 +1,14 @@
 const { body } = require('express-validator');
 
 module.exports = [
-  body('first_name')
-    .notEmpty()
-    .withMessage('Ingresá tu nombre')
-    .isLength({ min: 2 }),
-  body('last_name')
-    .notEmpty()
-    .withMessage('Ingresá tu apellido')
-    .isLength({ min: 2 }),
+  body('first_name').notEmpty().withMessage('Ingresá tu nombre'),
+  body('last_name').notEmpty().withMessage('Ingresá tu apellido'),
   body('email')
     .notEmpty()
     .withMessage('Ingresá tu correo electrónico')
     .bail()
     .isEmail()
     .withMessage('Ingresá un correo electrónico válido'),
-  body('password')
-    .notEmpty()
-    .withMessage('Ingresá tu contraseña')
-    .bail()
-    .isLength({ min: 8 })
-    .withMessage('La contraseña debe tener al menos 8 caracteres'),
   body('contact_number')
     .notEmpty()
     .withMessage('Ingresá tu número de teléfono')

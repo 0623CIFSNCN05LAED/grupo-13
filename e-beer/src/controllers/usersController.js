@@ -128,21 +128,24 @@ const usersController = {
     const user = await userServices.getUser(id);
 
     const errors = req.session.errors;
-    const oldData = req.session.oldData;
-
-    req.session.oldData = null;
-    req.session.oldData = null;
 
     res.render('user-update-form', {
       user: user,
       errors: errors ? errors : null,
-      oldData: oldData ? oldData : null,
     });
   },
   updateUser: async (req, res) => {
     const id = req.params.id;
-    // const user = await userServices.getUser(id);
-    await userServices.updateUser(id, req.body);
+    const user = {
+      id: id,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      contact_number: req.body.contact_number,
+      address: req.body.address,
+      birth_date: req.body.birth_date,
+    };
+    await userServices.updateUser(id, user);
 
     res.redirect('/users/dashboard');
   },

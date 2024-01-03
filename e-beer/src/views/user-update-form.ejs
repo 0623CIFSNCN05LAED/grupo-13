@@ -37,9 +37,6 @@
           />
 
           <div id="first_nameError" class="flash-errors"></div>
-          <% if (locals.errors && errors.first_name) { %>
-              <div class="flash-errors"><%= errors.first_name.msg %></div>             
-          <% } %>
 
           <label for="last_name">APELLIDO</label>
           <input
@@ -51,9 +48,7 @@
           />
 
           <div id="last_nameError" class="flash-errors"></div>
-          <% if (locals.errors && errors.last_name) { %>
-              <div class="flash-errors"><%= errors.last_name.msg %></div>             
-          <% } %>
+
 
           <label for="email">EMAIL</label>
           <input
@@ -65,9 +60,6 @@
           />
 
           <div id="emailError" class="flash-errors"></div>
-          <% if (locals.errors && errors.email) { %>
-            <div class="flash-errors"><%= errors.email.msg %></div>
-          <% } %>
 
           <label for="contact_number">TELÉFONO</label>
           <input
@@ -79,9 +71,6 @@
           />
 
           <div id="contact_numberError" class="flash-errors"></div>
-          <% if (locals.errors && errors.contact_number) { %>
-            <div class="flash-errors"><%= errors.contact_number.msg %></div>             
-          <% } %>
 
           <label for="address">DOMICILIO</label>
           <input
@@ -93,9 +82,7 @@
           />
 
           <div id="addressError" class="flash-errors"></div>
-          <% if (locals.errors && errors.address) { %>
-              <div class="flash-errors"><%= errors.address.msg %></div>             
-          <% } %>
+
 
           <label for="birth_date">FECHA DE NACIMIENTO</label>
           <input
@@ -107,9 +94,7 @@
           />
 
           <div id="birth_dateError" class="flash-errors"></div>
-          <% if (locals.errors && errors.birth_date) { %>
-              <div class="flash-errors"><%= errors.birth_date.msg %></div>             
-          <% } %>
+
 
           <div class="buttons-container">
             <button class="button" type="submit">Editar</button>

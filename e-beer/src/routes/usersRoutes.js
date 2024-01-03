@@ -22,10 +22,6 @@ const userCreateValidations = require('../validations/usersCreate');
 const userCreateValidateForm = require('../middlewares/user-create');
 const userCreateValidateEmail = require('../middlewares/user-create-email');
 
-const userUpdateValidations = require('../validations/usersUpdate');
-const userUpdateValidateFrom = require('../middlewares/user-update');
-const userUpdateValidateEmail = require('../middlewares/user-update-email');
-
 // Profile Validations
 const myProfileUpdateValidateForm = require('../middlewares/my-profile-update');
 const myProfileUpdateValidations = require('../validations/myProfileUpdate');
@@ -118,13 +114,7 @@ usersRouter.get(
   isAdminMiddleware,
   usersController.updateForm
 );
-usersRouter.put(
-  '/:id/edit',
-  userUpdateValidations,
-  userUpdateValidateFrom,
-  userUpdateValidateEmail,
-  usersController.updateUser
-);
+usersRouter.put('/:id/edit', usersController.updateUser);
 
 //Delete user
 usersRouter.get(

@@ -55,18 +55,15 @@ const userServices = {
       }
     );
   },
-  updateUser: async (id, body) => {
-    const user = await Users.findByPk(id);
-
+  updateUser: async (id, user) => {
     return await Users.update(
       {
-        id: user.id,
-        first_name: body.first_name,
-        last_name: body.last_name,
-        email: body.email,
-        contact_number: Number(body.contact_number),
-        address: body.address,
-        birth_date: body.birth_date,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        contact_number: Number(user.contact_number),
+        address: user.address,
+        birth_date: user.birth_date,
       },
       {
         where: { id: id },
