@@ -11,10 +11,10 @@
 
     <main>
       <section class="register-container">
-        <article class="register-title">
+        <div class="register-title">
           <h1>E-BEER</h1>
           <p>Completá tus datos para registrarte</p>
-        </article>
+        </div>
 
         <article class="form-container">
           <form
@@ -22,8 +22,8 @@
             method="POST"
             enctype="multipart/form-data"
           >
-            <h2 class="form-title">Datos personales</h2>
-
+            <h2 class="form-title">DATOS PERSONALES</h2>
+            
             <input class="inputs" type="text" name="first_name" id="first_name"
             placeholder="Nombre" value="<%= oldData ? oldData.first_name : "" %>" />
 

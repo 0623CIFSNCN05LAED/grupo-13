@@ -14,44 +14,27 @@
     <main>
       <h2 class="title">ADMINISTRACIÓN DE USUARIOS</h2>
 
-      <section class="dashboard-container">
-        <div class="head-table-container">
-          <section class="pl-filters">
-            <article class="searchbar">
-              <form action="/" method="POST">
-                <input type="text" name="search" placeholder="Buscar usuario" />
-              </form>
-            </article>
-
-            <article class="pl-container-selects">
-              <form action="/marca" method="POST" class="pl-form-brand">
-                <select id="roleFilter">
-                  <option value="" disabled selected>ROL</option>
-                  <option value="1">Admin</option>
-                  <option value="2">User</option>
-                </select>
-              </form>
-
-              <button class="btn-add">
-                <a href="/users/create-user">Agregar</a>
-                <i class="fa-solid fa-plus"></i>
-              </button>
-            </article>
-          </section>
-        </div>
-
-        <section class="table">
+      <button class="btn-add">
+        <a href="/users/create-user">Agregar</a>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      
+        <section class="table-container">
           <article>
             <table>
               <thead>
                 <tr>
                   <th>E-mail</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
                   <th>Acceso</th>
                 </tr>
               </thead>
               <% users.forEach(user => { %>
               <tr>
                 <td><%= user.email %></td>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
                 <td><%= user.role_id %></td>
                 <td>
                   <a href="/users/<%= user.id %>/edit">

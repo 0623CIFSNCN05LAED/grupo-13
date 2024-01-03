@@ -16,9 +16,6 @@
 }
 
 .register-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
 }
 .register-title h1 {
@@ -29,6 +26,7 @@
   font-size: 24px;
   max-width: 80%;
   margin: 0 auto;
+  font-weight: 300;
 }
 
 .form-title {
@@ -38,12 +36,7 @@
   font-weight: bold;
 }
 
-.picture-title {
-  color: #fafafa;
-  font-size: 18px;
-}
-
-.pciture-data {
+.picture-data {
   color: #fafafa;
   border: none;
   border-radius: 5px;
@@ -75,10 +68,10 @@
 
 @media (min-width: 768px) {
   .register-container {
-    max-width: 60vw;
+    max-width: 60%;
   }
   .register-title h1 {
-    font-size: 100px;
+    font-size: 64px;
   }
   .register-title p {
     font-size: 28px;
@@ -89,16 +82,10 @@
 }
 
 @media (min-width: 1023px) {
-  main {
-    display: flex;
-    min-height: 60vh;
-    align-items: center;
-  }
-
   .register-container {
     display: flex;
     justify-content: space-evenly;
-    max-width: 80vw;
+    max-width: 50%;
   }
 
   .form-container {
@@ -108,7 +95,7 @@
   .register-title {
     max-width: 40%;
     padding-right: 50px;
-    text-align: left;
+    padding-top: 80px;
   }
 
   .register-title p {
