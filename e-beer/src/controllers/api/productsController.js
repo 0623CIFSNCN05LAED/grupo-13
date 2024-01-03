@@ -47,11 +47,11 @@ module.exports = {
         products: products.map((product) => ({
           id: product.id,
           name: product.name,
-          price: product.price,
+          price: '$' + product.price,
           description: product.description,
-          brand_id: product.brand_id,
-          category_id: product.category_id,
-          size_id: product.size_id,
+          brand: product.p_brand.name,
+          category: product.p_category.name,
+          size: product.p_size.name,
           image: `${req.protocol}://${req.get('host')}/api/products/${
             product.id
           }/image`,
