@@ -9,52 +9,55 @@
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <form
-        class="form"
-        action="/products/<%= product.id %>/edit?_method=PUT"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <h2 class="title">Editar producto <p><%= product.id %></p></h2>
+      <section class="container">
+        <form
+          id="form"
+          action="/products/<%= product.id %>/edit?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <h2 class="title">EDITAR PRODUCTO <p><%= product.id %></p></h2>
 
-        <input
-          class="input"
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Nombre del producto"
-          value="<%= product.name %>"
-        />
+          <label for="name">NOMBRE DEL PRODUCTO</label>
+          <input
+            class="inputs"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nombre del producto"
+            value="<%= product.name %>"
+          />
 
-        <div id="nameError" class="flash-errors"></div>        
-        <% if (locals.errors && errors.name) { %>
-          <div class="flash-errors"><%= errors.name.msg %></div>           
+          <div id="nameError" class="flash-errors"></div>        
+          <% if (locals.errors && errors.name) { %>
+            <div class="flash-errors"><%= errors.name.msg %></div>           
           <% } %>    
 
-        <input
-          class="input"
-          type="number"
-          id="price"
-          name="price"
-          placeholder="Precio"
-          value="<%= product.price %>"
-        />
+          <label for="price">PRECIO</label>
+          <input
+            class="inputs"
+            type="number"
+            id="price"
+            name="price"
+            placeholder="Precio"
+            value="<%= product.price %>"
+          />
 
-        <div id="priceError" class="flash-errors"></div>
-        <% if (locals.errors && errors.price) { %>
-          <div class="flash-errors"><%= errors.price.msg %></div>           
-          <% } %>  
+          <div id="priceError" class="flash-errors"></div>
+          <% if (locals.errors && errors.price) { %>
+            <div class="flash-errors"><%= errors.price.msg %></div>           
+            <% } %>  
 
-        <input name="description" id="description" type="text" class="input" placeholder="Descripción del producto" value="<%= product.description %>"/>
+          <label for="description">DESCRIPCIÓN</label>
+          <input name="description" id="description" type="text" class="inputs" placeholder="Descripción del producto" value="<%= product.description %>"/>
 
-        <div id="descriptionError" class="flash-errors"></div>
-        <% if (locals.errors && errors.description) { %>
-          <div class="flash-errors"><%= errors.description.msg %></div>           
-          <% } %>  
+          <div id="descriptionError" class="flash-errors"></div>
+          <% if (locals.errors && errors.description) { %>
+            <div class="flash-errors"><%= errors.description.msg %></div>           
+            <% } %>  
 
-        
-        <label for="brand_id">Marca</label>
-          <select name="brand_id" id="brand_id">
+          <label for="brand_id">MARCA</label>
+          <select name="brand_id" id="brand_id" class="inputs">
             <option value="1">Tres Cordilleras</option>
             <option value="2">Brahama</option>
             <option value="3">Grolsch</option>
@@ -67,62 +70,63 @@
             <option value="10">Quilmes</option>
           </select>
 
-        <div id="brand_idError" class="flash-errors"></div>
-        <% if (locals.errors && errors.brand_id) { %>
-          <div class="flash-errors"><%= errors.brand_id.msg %></div>           
-          <% } %>  
+          <div id="brand_idError" class="flash-errors"></div>
+          <% if (locals.errors && errors.brand_id) { %>
+            <div class="flash-errors"><%= errors.brand_id.msg %></div>           
+            <% } %>  
 
-        <label for="category_id">Categoría</label>
-        <select name="category_id" id="category_id">
-          <option value="1">Porter</option>
-          <option value="2">Brown Ale</option>
-          <option value="3">Lager</option>
-          <option value="4">Ipa</option>
-          <option value="5">Pilsner</option>
-          <option value="6">Stout</option>
-        </select>
+          <label for="category_id">CATEGORÍA</label>
+          <select name="category_id" id="category_id" class="inputs">
+            <option value="1">Porter</option>
+            <option value="2">Brown Ale</option>
+            <option value="3">Lager</option>
+            <option value="4">Ipa</option>
+            <option value="5">Pilsner</option>
+            <option value="6">Stout</option>
+          </select>
 
-        <div id="category_idError" class="flash-errors"></div>
+          <div id="category_idError" class="flash-errors"></div>
 
-        <% if (locals.errors && errors.category_id) { %>
-          <div class="flash-errors"><%= errors.category_id.msg %></div>           
-          <% } %>  
-        
-        <label for="size_id">Medida</label>
-        <select name="size_id" id="size_id">
-          <option value="1">330 cc</option>
-          <option value="2">473 cc</option>
-          <option value="3">1000 cc</option>
-        </select>
+          <% if (locals.errors && errors.category_id) { %>
+            <div class="flash-errors"><%= errors.category_id.msg %></div>           
+            <% } %>  
+          
+          <label for="size_id">MEDIDA</label>
+          <select name="size_id" id="size_id" class="inputs">
+            <option value="1">330 cc</option>
+            <option value="2">473 cc</option>
+            <option value="3">1000 cc</option>
+          </select>
 
-        <div id="size_idError" class="flash-errors"></div>
+          <div id="size_idError" class="flash-errors"></div>
 
-        <% if (locals.errors && errors.size_id) { %>
-          <div class="flash-errors"><%= errors.size_id.msg %></div>           
-          <% } %>  
+          <% if (locals.errors && errors.size_id) { %>
+            <div class="flash-errors"><%= errors.size_id.msg %></div>           
+            <% } %>  
 
-        <div class="picture">
-          <label for="image">Seleccioná una nueva imágen</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept=".jpg, .png, .jpeg"
-          />
-        </div>
+          <div class="picture">
+            <label for="image">Seleccioná una nueva imágen</label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              accept=".jpg, .png, .jpeg"
+            />
+          </div>
 
-        <div id="imageError" class="flash-errors"></div>
+          <div id="imageError" class="flash-errors"></div>
 
-        <% if (locals.errors && errors.image) { %>
-          <div class="flash-errors">
-            <%= errors.image.msg %>
-          </div>             
-        <% } %>
+          <% if (locals.errors && errors.image) { %>
+            <div class="flash-errors">
+              <%= errors.image.msg %>
+            </div>             
+          <% } %>
 
-        <div class="buttons-container">
-          <button class="button" type="submit">Editar</button>
-        </div>
-      </form>
+          <div class="buttons-container">
+            <button class="button" type="submit">Editar</button>
+          </div>
+        </form>
+      </section>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>
