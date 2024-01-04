@@ -4,7 +4,7 @@ main {
 }
 .info-profile-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0 15px 0 15px;
   background-color: #f0f0f0;
   margin: 20px 0 20px 0;
@@ -82,17 +82,8 @@ main {
 
 /* Tablet */
 @media (min-width: 768px) {
-  .topProfile {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .profile-picture img {
-    width: 350px;
-  }
-
-  .info-profile-container-desc {
-    display: flex;
+  .profile-picture {
+    align-self: center;
   }
 }
 
@@ -109,8 +100,16 @@ main {
   .info-profile-container {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 30%;
     justify-content: center;
+  }
+
+  .bottomProfile {
+    width: 30%;
+  }
+
+  .other-container {
+    width: 30%;
   }
 
   .profile-picture {

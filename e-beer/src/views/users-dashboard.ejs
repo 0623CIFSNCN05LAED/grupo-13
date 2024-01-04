@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/users-dashboard.css" />
+    <link rel="stylesheet" href="/css/partials/normalize.css" />
+    <link rel="stylesheet" href="/css/partials/styles.css" />
+    <title>Edit My Profile</title>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <h2 class="title">ADMINISTRACIÓN DE USUARIOS</h2>
+
+      <button class="btn-add">
+        <a href="/users/create-user">Agregar</a>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      
+        <section class="table-container">
+          <article>
+            <table>
+              <thead>
+                <tr>
+                  <th>E-mail</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Acceso</th>
+                </tr>
+              </thead>
+              <% users.forEach(user => { %>
+              <tr>
+                <td><%= user.email %></td>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.role_id %></td>
+                <td>
+                  <a href="/users/<%= user.id %>/edit">
+                    <button class="btn-edit">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                  </a>
+                </td>
+                <td>
+                  <a href="/users/<%= user.id %>/delete">
+                    <button class="btn-delete">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </a>
+                </td>
+              </tr>
+              <% }) %>
+            </table>
+          </article>
+
+          <article class="pagination-container">
+            <div class="rows-per-page-container">
+              <label for="rowsPerPage">Filas por página: </label>
+              <select name="rowsPerPage" id="rowsPerPage">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+              </select>
+            </div>
+
+            <div class="pagination-counter-container">
+              <span>1-5</span>
+              de
+              <span>15</span>
+            </div>
+
+            <div class="pagination-btns-container">
+              <button><i class="fa-solid fa-arrow-left"></i></button>
+              <button><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

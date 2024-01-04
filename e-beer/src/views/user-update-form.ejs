@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/form-styles.css" />
+    <script src="/js/users/userUpdate.js" defer></script>
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <section class="container">
+        <form
+          id="form"
+          action="/users/<%= user.id %>/edit?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <h2 class="title">EDITAR USUARIO  </h2>
+          
+          <label for="id">ID</label>
+          <input
+            name="id"
+            class="inputs"
+            type="text"
+            value="<%= user.id %>"
+            readonly
+          />
+          
+          <label for="first_name">NOMBRE</label>
+          <input
+            class="inputs"
+            type="text"
+            name="first_name"
+            id="first_name"
+            placeholder="Nombre"
+          />
+
+          <div id="first_nameError" class="flash-errors"></div>
+
+          <label for="last_name">APELLIDO</label>
+          <input
+            class="inputs"
+            type="text"
+            name="last_name"
+            id="last_name"
+            placeholder="Apellido"
+          />
+
+          <div id="last_nameError" class="flash-errors"></div>
+
+
+          <label for="email">EMAIL</label>
+          <input
+            class="inputs"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Correo electrónico"
+          />
+
+          <div id="emailError" class="flash-errors"></div>
+
+          <label for="contact_number">TELÉFONO</label>
+          <input
+            class="inputs"
+            type="text"
+            name="contact_number"
+            id="contact_number"
+            placeholder="Número de teléfono"
+          />
+
+          <div id="contact_numberError" class="flash-errors"></div>
+
+          <label for="address">DOMICILIO</label>
+          <input
+            class="inputs"
+            type="text"
+            name="address"
+            id="address"
+            placeholder="Domicilio"
+          />
+
+          <div id="addressError" class="flash-errors"></div>
+
+
+          <label for="birth_date">FECHA DE NACIMIENTO</label>
+          <input
+            class="inputs"
+            type="date"
+            name="birth_date"
+            id="birth_date"
+            placeholder="Fecha de nacimiento"
+          />
+
+          <div id="birth_dateError" class="flash-errors"></div>
+
+
+          <div class="buttons-container">
+            <button class="button" type="submit">Editar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

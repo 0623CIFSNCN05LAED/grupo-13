@@ -1,39 +1,39 @@
-/* Require's */
 const express = require('express');
 const usersRouter = express.Router();
 const usersController = require('../controllers/usersController');
 
 /* Middlewares */
 const upload = require('../middlewares/multer-users');
-const authMiddleware = require('../middlewares/authMiddleware');
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const adminMiddleware = require('../middlewares/adminMiddleware');
+const isLoggedMiddleware = require('../middlewares/is-logged');
+const isGuestMiddleware = require('../middlewares/is-guest');
+const isAdminMiddleware = require('../middlewares/is-admin');
 
 // Login validations
-const loginValidations = require('../validations/usersLogin');
-const loginValidateForm = require('../middlewares/validate-users-login');
+const loginValidations = require('../validations/login');
+const loginValidateForm = require('../middlewares/login');
 
 // Register validations
-const registerValidations = require('../validations/usersRegister');
-const registerValidateForm = require('../middlewares/validate-users-register');
-const registerValidateEmail = require('../middlewares/validate-users-register-email');
+const registerValidations = require('../validations/register');
+const registerValidateForm = require('../middlewares/register');
+const registerValidateEmail = require('../middlewares/register-email');
 
-// Admin create validations
-const createValidations = require('../validations/usersCreate');
-const createValidateForm = require('../middlewares/validate-users-create');
-const createValidateEmail = require('../middlewares/validate-users-create-email');
+// Dashboard validations
+const userCreateValidations = require('../validations/usersCreate');
+const userCreateValidateForm = require('../middlewares/user-create');
+const userCreateValidateEmail = require('../middlewares/user-create-email');
 
-// Edit Validations
-const editValidations = require('../validations/usersEdit');
-const editValidateForm = require('../middlewares/validate-users-edit');
-const editValidateEmail = require('../middlewares/validate-users-edit-email');
-const passValidateForm = require('../middlewares/validate-users-pass');
-const curdValidateForm = require('../middlewares/validate-users-crud');
+// Profile Validations
+const myProfileUpdateValidateForm = require('../middlewares/my-profile-update');
+const myProfileUpdateValidations = require('../validations/myProfileUpdate');
+const profileValidateEmail = require('../middlewares/my-profile-update-email');
 
-/*Routes */
+const passValidateForm = require('../middlewares/my-profile-password');
+const passValidations = require('../validations/myProfilePassword');
+
+/* Routes */
 
 // Login
-usersRouter.get('/login', guestMiddleware, usersController.loginForm);
+usersRouter.get('/login', isGuestMiddleware, usersController.loginForm);
 usersRouter.post(
   '/login',
   loginValidations,
@@ -42,7 +42,7 @@ usersRouter.post(
 );
 
 //Register
-usersRouter.get('/register', guestMiddleware, usersController.registerForm);
+usersRouter.get('/register', isGuestMiddleware, usersController.registerForm);
 usersRouter.post(
   '/register',
   upload.single('profile_picture'),
@@ -52,90 +52,80 @@ usersRouter.post(
   usersController.register
 );
 
-//Create new user
-usersRouter.get(
-  '/create-user',
-  adminMiddleware,
-  usersController.createNewUserForm
-);
-usersRouter.post(
-  '/create-user',
-  createValidations,
-  createValidateForm,
-  createValidateEmail,
-  usersController.createNewUser
-);
+//My profile
+usersRouter.get('/my-profile', isLoggedMiddleware, usersController.myProfile);
 
-//Users CRUD
-usersRouter.get('/crud', authMiddleware, adminMiddleware, usersController.crud);
-
-//Delete User
+//My profile - edit
 usersRouter.get(
-  '/:id/delete',
-  authMiddleware,
-  adminMiddleware,
-  usersController.deleteForm
+  '/my-profile/edit',
+  isLoggedMiddleware,
+  usersController.myProfileEditForm
 );
-usersRouter.delete('/:id/delete', authMiddleware, usersController.destroy);
-
-//Edit profile
-usersRouter.get(
-  '/myProfile/edit',
-  authMiddleware,
-  usersController.myProfileEdit
-);
-// usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
-// usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
 usersRouter.put(
-  '/myProfile/edit',
+  '/my-profile/edit',
   upload.single('profile_picture'),
-  authMiddleware,
-  editValidations,
-  editValidateForm,
-  editValidateEmail,
+  myProfileUpdateValidations,
+  myProfileUpdateValidateForm,
+  profileValidateEmail,
   usersController.myProfileUpdate
 );
 
-//Edit password
+//My profile - password
 usersRouter.get(
-  '/myPassword/edit',
-  authMiddleware,
-  usersController.myPasswordEdit
+  '/my-password/edit',
+  isLoggedMiddleware,
+  usersController.passwordEditForm
 );
 usersRouter.put(
-  '/myPassword/edit',
-  upload.single('image'),
-  authMiddleware,
-  editValidations,
+  '/my-password/edit',
+  isLoggedMiddleware,
+  passValidations,
   passValidateForm,
-  usersController.updatePassword
+  usersController.passwordUpdate
 );
 
-//Edit profile CRUD
+//Users DASHBOARD
+usersRouter.get(
+  '/dashboard',
+  isLoggedMiddleware,
+  isAdminMiddleware,
+  usersController.dashboard
+);
+
+//Create user
+usersRouter.get(
+  '/create-user',
+  isLoggedMiddleware,
+  isAdminMiddleware,
+  usersController.createUserForm
+);
+usersRouter.post(
+  '/create-user',
+  userCreateValidations,
+  userCreateValidateForm,
+  userCreateValidateEmail,
+  usersController.createUser
+);
+
+//Update user
 usersRouter.get(
   '/:id/edit',
-  authMiddleware,
-  adminMiddleware,
-  usersController.editProfileCrud
+  isLoggedMiddleware,
+  isAdminMiddleware,
+  usersController.updateForm
 );
-usersRouter.put(
-  '/:id/edit',
-  upload.single('profile_picture'),
-  authMiddleware,
-  adminMiddleware,
-  registerValidations,
-  curdValidateForm,
-  registerValidateEmail,
-  usersController.update
+usersRouter.put('/:id/edit', usersController.updateUser);
+
+//Delete user
+usersRouter.get(
+  '/:id/delete',
+  isLoggedMiddleware,
+  isAdminMiddleware,
+  usersController.deleteForm
 );
+usersRouter.delete('/:id/delete', isLoggedMiddleware, usersController.destroy);
 
-// usersRouter.get('/:id/prueba', usersController.myProfileEdit); futuro editor admin
-// usersRouter.put('/:id', upload.single('image'), usersController.update); futuro editor admin
-
-//MyProfile
-usersRouter.get('/myprofile', authMiddleware, usersController.myProfile);
-
-//Edit profile
+//Logout
 usersRouter.get('/logout', usersController.logout);
 
 module.exports = usersRouter;

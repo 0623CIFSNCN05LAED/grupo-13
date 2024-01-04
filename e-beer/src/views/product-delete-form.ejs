@@ -8,70 +8,87 @@
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <form
-        class="form"
-        action="/products/<%= product.id %>/delete?_method=delete"
-        method="POST"
-      >
-        <h2 class="title">Eliminar productos</h2>
-        <div class="searchNav">
+      <section class="container">
+        <form
+          id="form"
+          action="/products/<%= product.id %>/delete?_method=delete"
+          method="POST"
+        >
+          <h2 class="title">ELIMINAR PRODUCTO</h2>
+
+          <label for="id">ID</label>
+            <input
+              name="id"
+              class="inputs"
+              type="text"
+              value="<%= product.id %>"
+              readonly
+            />
+
+          <label for="name">NOMBRE DEL PRODUCTO</label>
           <input
+            class="inputs"
             type="text"
-            placeholder="Buscar productos, marcas y más…"
-            maxlength="120"
-            autocapitalize="off"
-            spellcheck="false"
-            autocomplete="off"
-            value="<%= product.id %>"
+            name="name"
+            placeholder="Nombre del producto"
+            value="<%= product.name %>"
+            readonly
           />
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <input
-          class="input"
-          type="text"
-          name="name"
-          placeholder="Nombre del producto"
-          value="<%= product.name %>"
-        />
-        <input
-          class="input"
-          type="number"
-          name="price"
-          placeholder="Precio"
-          value="<%= product.price %>"
-        />
-        <input
-          class="input"
-          type="text"
-          name="description"
-          placeholder="Descripción"
-          value="<%= product.description %>"
-        />
-        <input
-          class="input"
-          type="text"
-          name="brand_id"
-          placeholder="ID de la marca"
-          value="<%= product.brand_id %>"
-        />             
-        <input
-          class="input"
-          type="text"
-          name="category"
-          placeholder="ID de la categoría"
-          value="<%= product.category_id %>"
-        />
-        <input
-          class="input"
-          type="number"
-          name="size_id"
-          placeholder="ID de la medida"
-          value="<%= product.size_id %>"
-        />
-        <div class="buttons-container">
-          <button class="delete-button" type="submit">Borrar</button>
-        </div>
-      </form>
+
+          <label for="price">PRECIO</label>
+          <input
+            class="inputs"
+            type="number"
+            name="price"
+            placeholder="Precio"
+            value="<%= product.price %>"
+            readonly
+          />
+
+          <label for="description">DESCRIPCIÓN</label>
+          <input
+            class="inputs"
+            type="text"
+            name="description"
+            placeholder="Descripción"
+            value="<%= product.description %>"
+            readonly
+          />
+
+          <label for="brand_id">ID DE MARCA</label>
+          <input
+            class="inputs"
+            type="text"
+            name="brand_id"
+            placeholder="ID de la marca"
+            value="<%= product.brand_id %>"
+            readonly
+          />       
+
+          <label for="category_id">ID DE CATEGORÍA</label>
+          <input
+            class="inputs"
+            type="text"
+            name="category"
+            placeholder="ID de la categoría"
+            value="<%= product.category_id %>"
+            readonly
+          />
+
+          <label for="size_id">ID DE TAMAÑO</label>
+          <input
+            class="inputs"
+            type="number"
+            name="size_id"
+            placeholder="ID de la medida"
+            value="<%= product.size_id %>"
+            readonly
+          />
+          <div class="buttons-container">
+            <button class="delete-button" type="submit">Borrar</button>
+          </div>
+        </form>
+      </section>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>

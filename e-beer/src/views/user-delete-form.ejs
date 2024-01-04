@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/form-styles.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <section class="container">
+        <form
+          class="form"
+          action="/users/<%= user.id %>/delete?_method=delete"
+          method="POST"
+        >
+          <h2 class="title">ELIMINAR USUARIO</h2>
+                   
+          <label for="id">ID</label>
+          <input
+            name="id"
+            class="inputs"
+            type="text"
+            value="<%= user.id %>"
+            readonly
+          />
+        
+          <label for="first_name">NOMBRE</label>
+          <input
+            class="inputs"
+            type="text"
+            name="first_name"
+            placeholder="Nombre del usuario"
+            value="<%= user.first_name %>"
+          />
+
+          <label for="last_name">APELLIDO</label>
+          <input
+            class="inputs"
+            type="text"
+            name="last_name"
+            placeholder="Apellido del usuario"
+            value="<%= user.last_name %>"
+          />
+
+          <label for="email">EMAIL</label>
+          <input
+            class="inputs"
+            type="email"
+            name="email"
+            placeholder="Email"
+            value="<%= user.email %>"
+          />
+
+          <label for="role_id">ID DE ROL</label>
+          <input
+            class="inputs"
+            type="role_id"
+            name="role_id"
+            placeholder="role_id"
+            value="<%= user.role_id %>"
+          />
+
+          <label for="contact_number">TELÉFONO</label>
+          <input
+            class="inputs"
+            type="text"
+            name="contact_number"
+            placeholder="Número de contacto"
+            value="<%= user.contact_number %>"
+          />
+
+          <label for="birth_date">FECHA DE NACIMIENTO</label>
+          <input
+            class="inputs"
+            type="text"
+            name="birth_date"
+            placeholder="Fecha de cumpleaños"
+            value="<%= user.birth_date %>"
+          />
+
+          <label for="address">DOMICILIO</label>
+          <input
+            class="inputs"
+            type="text"
+            name="address"
+            placeholder="Dirección"
+            value="<%= user.address %>"
+          />
+          <div class="buttons-container">
+            <button class="delete-button" type="submit">Borrar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/products-dashboard.css" />
+    <link rel="stylesheet" href="/css/partials/card.css" />
+    <link rel="stylesheet" href="/css/partials/normalize.css" />
+    <link rel="stylesheet" href="/css/partials/styles.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <h2 class="title">ADMINISTRACIÓN DE PRODUCTOS</h2>
+      
+      <button class="btn-add">
+        <a href="/products/create">Agregar</a>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <section class="table-container">
+        <article>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <% products.slice(0, 40).forEach(product => { %> <%-
+            include('partials/product-table-item', {product}) %> <% }) %>
+          </table>
+        </article>
+
+        <article class="pagination-container">
+          <div class="rows-per-page-container">
+            <label for="rowsPerPage">Filas por página: </label>
+            <select name="rowsPerPage" id="rowsPerPage">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+
+          <div class="pagination-counter-container">
+            <span>1-5</span>
+            de
+            <span>15</span>
+          </div>
+
+          <div class="pagination-btns-container">
+            <button><i class="fa-solid fa-arrow-left"></i></button>
+            <button><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

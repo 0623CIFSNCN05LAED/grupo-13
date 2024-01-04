@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/product-list.css" />
+    <link rel="stylesheet" href="/css/partials/card.css" />
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main class="pl-products">
+      <section class="pl-products-title">
+        <h2>NUESTROS PRODUCTOS</h2>
+      </section>
+
+      <section class="pl-filters">
+        <article class="searchbar">
+          <form action="/products/search" method="GET">
+            <input type="text" name="search" placeholder="Buscar producto" />
+
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </article>
+      </section>
+
+      <section class="cards-container">
+        <% products.forEach(product => { %> <%-
+        include('./partials/card.ejs', {product}) %> <% }) %>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

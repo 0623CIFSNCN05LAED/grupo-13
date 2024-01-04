@@ -2,7 +2,12 @@ const { body } = require('express-validator');
 const path = require('path');
 
 module.exports = [
-  body('name').notEmpty().withMessage('Ingresá el nombre del producto'),
+  body('name')
+    .notEmpty()
+    .withMessage('Ingresá el nombre del producto')
+    .bail()
+    .isLength({ min: 5 })
+    .withMessage('Ingresá al menos 5 caractetes'),
   body('price').notEmpty().withMessage('Ingresá el precio'),
   body('description')
     .notEmpty()
@@ -17,9 +22,7 @@ module.exports = [
     let file = req.file;
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
-    if (!file) {
-      throw new Error('Subí una foto para el producto');
-    } else {
+    if (file) {
       let fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/my-profile.css" />
+    <script src="/js/users/myProfileUpdate.js" defer></script>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <section class="info-profile-container">
+        <article class="profile-picture">
+          <img
+            src="/images/users/<%= user.profile_picture %>"
+            alt="foto de perfil"
+          />
+        </article>
+
+        <article class="info-profile-container-desc">
+          <h3>Nombre:</h3>
+          <p><%= userLogged.first_name %> <%= userLogged.last_name %></p>
+        </article>
+      </section>
+
+      <section class="bottomProfile">
+        <article class="title">
+          <h2>Editar perfil</h2>
+        </article>
+
+        <form
+          class="form"
+          action="/users/my-profile/edit?_method=PUT"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <article class="input-container">
+            <label for="email">E-mail</label>
+            <input
+              class="inputs"  
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ingresá un nuevo e-mail"
+            />
+            
+            <div id="emailError" class="flash-errors"></div>
+            <% if (locals.errors && errors.email) { %>
+              <div class="flash-errors"><%= errors.email.msg %></div>             
+            <% } %>
+          </article>
+          
+          <article class="input-container">
+            <label for="profile_picture">Imagen de perfil</label>
+            <input
+              class="inputs"
+              type="file"
+              name="profile_picture"
+              id="profile_picture"
+            />
+            <div id="profile_pictureError" class="flash-errors"></div>
+            <% if (locals.errors && errors.profile_picture) { %>
+               <div class="flash-errors"><%= errors.profile_picture.msg %></div>             
+            <% } %>
+          </article>
+
+          <article class="input-container">
+            <label for="contact_number">Teléfono</label>
+            <input
+              class="inputs"  
+              type="number"
+              name="contact_number"
+              id="contact_number"
+              placeholder="Ingresá un nuevo número de teléfono"
+            />
+
+            <div id="contact_numberError" class="flash-errors"></div>
+            <% if (locals.errors && errors.contact_number) { %>
+              <div class="flash-errors"><%= errors.contact_number.msg %></div>             
+            <% } %>
+          </article>
+
+          <article class="input-container">
+            <label for="address">Domicilio</label>
+            <input
+              class="inputs"  
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Ingresá un nuevo domicilio"
+            />
+            <div id="addressError" class="flash-errors"></div>
+            <% if (locals.errors && errors.address) { %>
+              <div class="flash-errors"><%= errors.address.msg %></div>             
+            <% } %>
+          </article>
+
+          <button type="submit" class="btn-yellow btn-edit">Actualizar Mis Datos</button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

@@ -1,15 +1,14 @@
-// Require's
 const express = require('express');
 const mainRouter = express.Router();
-const ageAuth = require('../middlewares/ageAuthMiddleware');
-const ageInCookie = require('../middlewares/ageInCookie');
 
-// Controller require
+/* Middlewares */
+const ageAuth = require('../middlewares/age-auth');
+const ageInCookie = require('../middlewares/age-cookie');
+
+/* Controllers */
 const mainController = require('../controllers/mainController');
 
-// Main routes
-
-//comingAge
+/* Routes */
 mainRouter.get('/', ageInCookie, mainController.comingAgeForm);
 mainRouter.post('/', mainController.comingAge);
 
@@ -28,7 +27,7 @@ const usersRoutes = require('./usersRoutes.js');
 mainRouter.use('/users', ageAuth, usersRoutes);
 
 // API routes
-
+const apiRouter = require('./api/mainRoutes');
 mainRouter.use('/api', apiRouter);
 
 module.exports = mainRouter;

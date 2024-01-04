@@ -2,46 +2,53 @@
 <html lang="es">
   <head>
     <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/form-styles.css" />
     <link rel="stylesheet" href="/css/contact.css" />
   </head>
 
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
-      <section class="contact-container">
-        <article class="contact-title">
-          <h1>Contacto</h1>
-          <a href="mailto:@contacto@e-beer.com"
-            ><i class="fa-solid fa-envelope"></i> contacto@e-beer.com</a
-          >
+      <section class="contact">
+        
+        <h2 class="title">CONTACTANOS</h2>
+        
+        <article class="email">
+          <a href="mailto:@contacto@e-beer.com"><i class="fa-solid fa-envelope"></i> contacto@e-beer.com</a>  
         </article>
 
-        <article class="form-container">
-          <form class="contact-form">
-            <input
-              class="contact-input"
-              type="text"
-              name="nombre"
-              placeholder="Nombre completo"
-            />
-            <input
-              class="contact-input"
-              type="email"
-              name="email"
-              placeholder="E-mail"
-            />
-            <input
-              class="contact-input"
-              type="number"
-              name="telefono"
-              placeholder="Teléfono"
-            />
-            <textarea placeholder="Comentarios"></textarea>
-            <div class="contact-buttons-container">
-              <a href="/home"><input type="submit" class="contact-submit" /></a>
-              <input class="contact-reset" type="reset" name="reset" />
-            </div>
-          </form>
+        <form class="contact-form">
+          <label for="nombre">Nombre completo</label>
+          <input
+            class="inputs"
+            type="text"
+            name="nombre"
+            placeholder="Ingresá tu nombre completo"
+          />
+          
+          <label for="email">E-mail</label>
+          <input
+            class="inputs"
+            type="email"
+            name="email"
+            placeholder="Ingresá tu e-mail"
+          />
+
+          <label for="telefono">Teléfono</label>
+          <input
+            class="inputs"
+            type="number"
+            name="telefono"
+            placeholder="Ingresá tu número de contacto"
+          />
+          
+          <label for="comentarios">Comentarios</label>
+          <textarea class="inputs" name="comentarios" placeholder="Detallanos tu consulta"></textarea>
+
+          <div class="buttons-container">
+            <a href="/home" class="button">Enviar</a>
+          </div>
+        </form>
         </article>
       </section>
     </main>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/form-styles.css" />
+    <script src="/js/products/createProduct.js" defer></script>
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <section class="container">
+          <form
+            id="form"
+            action="/products/create"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <h2 class="title">CREAR PRODUCTO</h2>
+
+            <label for="name">NOMBRE DEL PRODUCTO</label>
+            <input
+              class="inputs"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombre del producto"
+              value="<%= oldData ? oldData.name : "" %>"
+            />
+
+            <div id="nameError" class="flash-errors"></div>
+
+            <% if (locals.errors && errors.name) { %>
+              <div class="flash-errors"><%= errors.name.msg %></div>           
+              <% } %>        
+
+            <label for="price">PRECIO</label>
+            <input
+              class="inputs"
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Precio"
+              value="<%= oldData ? oldData.price : "" %>"
+            />
+
+            <div id="priceError" class="flash-errors"></div>
+
+            <% if (locals.errors && errors.price) { %>
+              <div class="flash-errors"><%= errors.price.msg %></div>           
+              <% } %>  
+
+            <label for="description">DESCRIPCIÓN</label>
+            <textarea name="description" id="description" placeholder="Descripción del producto" value="<%= oldData ? oldData.description : "" %>"></textarea>
+
+            <div id="descriptionError" class="flash-errors"></div>
+
+            <% if (locals.errors && errors.description) { %>
+              <div class="flash-errors"><%= errors.description.msg %></div>           
+              <% } %>  
+
+
+            <label for="brand_id">MARCA</label>
+            <select name="brand_id" id="brand_id" class="inputs">
+              <option value="1">Tres Cordilleras</option>
+              <option value="2">Brahama</option>
+              <option value="3">Grolsch</option>
+              <option value="4">Patagonia</option>
+              <option value="5">Budweiser</option>
+              <option value="6">Heineken</option>
+              <option value="7">Warsteiner</option>
+              <option value="8">Corona</option>
+              <option value="9">Stella Artois</option>
+              <option value="10">Quilmes</option>
+            </select>
+
+            <div id="brand_idError" class="flash-errors"></div>
+
+            <% if (locals.errors && errors.brand_id) { %>
+              <div class="flash-errors"><%= errors.brand_id.msg %></div>           
+              <% } %>  
+
+            <label for="category_id">CATEGORÍA</label>
+            <select name="category_id" id="category_id" class="inputs">
+              <option value="1">Porter</option>
+              <option value="2">Brown Ale</option>
+              <option value="3">Lager</option>
+              <option value="4">Ipa</option>
+              <option value="5">Pilsner</option>
+              <option value="6">Stout</option>
+            </select>
+
+            <div id="category_idError" class="flash-errors"></div>
+
+            <% if (locals.errors && errors.category_id) { %>
+              <div class="flash-errors"><%= errors.category_id.msg %></div>           
+              <% } %>  
+
+            
+            <label for="size_id">TAMAÑO</label>
+            <select name="size_id" id="size_id" class="inputs">
+              <option value="1">330 cc</option>
+              <option value="2">473 cc</option>
+              <option value="3">1000 cc</option>
+            </select>
+
+            <div id="size_idError" class="flash-errors"></div>
+
+            <% if (locals.errors && errors.size_id) { %>
+              <div class="flash-errors"><%= errors.size_id.msg %></div>           
+              <% } %>  
+
+            <div class="picture">
+              <label for="image">Seleccioná una imagen del producto</label>
+              <input
+                type="file"
+                id="image"
+                name="image"
+                accept=".jpg"
+              />
+            </div>
+
+            <div id="imageError" class="flash-errors"></div>
+
+            <% if (locals.errors && errors.image) { %>
+              <div class="flash-errors">
+                <%= errors.image.msg %>
+              </div>             
+            <% } %>
+
+            <div class="buttons-container">
+              <button class="button">Agregar</button>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

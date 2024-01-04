@@ -82,7 +82,6 @@ header {
   color: white;
 }
 
-/*Celular*/
 @media (max-width: 768px) {
   .form-div {
     padding-left: 5%;

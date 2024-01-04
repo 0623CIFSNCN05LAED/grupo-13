@@ -1,10 +1,20 @@
 const { Products } = require('../database/models');
 const { v4: uuidv4 } = require('uuid');
+const Sequelize = require('sequelize');
 
 module.exports = {
-  getAllProducts: () => {
-    return Products.findAll({
-      include: [{ association: 'p_category' }, { association: 'p_size' }],
+  getAllProducts: async () => {
+    return await Products.findAll();
+  },
+  getAllProductsAndCount: ({ pageSize, offset }) => {
+    return Products.findAndCountAll({
+      limit: pageSize,
+      offset: offset,
+      include: [
+        { association: 'p_brand' },
+        { association: 'p_category' },
+        { association: 'p_size' },
+      ],
     });
   },
   getProduct: async (id) => {
@@ -25,7 +35,6 @@ module.exports = {
     });
   },
   createProduct: (body, file) => {
-    console.log('Creando producto');
     return Products.create({
       id: uuidv4(),
       name: body.name,
@@ -38,12 +47,10 @@ module.exports = {
     });
   },
   updateProduct: async (id, body, file) => {
-    console.log('Updating product');
-
     const product = await Products.findByPk(id);
     return await Products.update(
       {
-        id: id,
+        id: product.id,
         name: body.name,
         price: Number(body.price),
         description: body.description,
@@ -61,5 +68,20 @@ module.exports = {
     return Products.destroy({
       where: { id: id },
     });
+  },
+  searchProducts: async (query) => {
+    const products = await Products.findAll({
+      where: {
+        name: {
+          [Sequelize.Op.like]: '%' + query + '%',
+        },
+      },
+      include: [
+        { association: 'p_brand' },
+        { association: 'p_category' },
+        { association: 'p_size' },
+      ],
+    });
+    return products;
   },
 };

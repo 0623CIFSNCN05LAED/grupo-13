@@ -1,13 +1,13 @@
 const express = require('express');
-const api = express.Router();
+const apiRouter = express.Router();
 const apiProductsRouter = require('./productsRoutes');
 const apiUsersRouter = require('./usersRoutes.js');
 
-api.use('/users', apiUsersRouter);
-api.use('/products', apiProductsRouter);
+apiRouter.use('/users', apiUsersRouter);
+apiRouter.use('/products', apiProductsRouter);
 
-api.get('/', (req, res) => {
-  res.send('Bienvenido a la API de e-Beer');
+apiRouter.get('/', (req, res) => {
+  res.send('Bienvenido a la API de E-Beer');
 });
 
-module.exports = api;
+module.exports = apiRouter;

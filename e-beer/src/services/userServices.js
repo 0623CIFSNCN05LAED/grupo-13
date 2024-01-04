@@ -3,8 +3,14 @@ const { v4: uuidv4 } = require('uuid');
 const bcryptjs = require('bcryptjs');
 
 const userServices = {
-  getAllUsers: () => {
-    return Users.findAll();
+  getAllUsers: async () => {
+    return await Users.findAll();
+  },
+  getAllUsersAndCount: ({ pageSize, offset }) => {
+    return Users.findAndCountAll({
+      limit: pageSize,
+      offset: offset,
+    });
   },
   getUser: async (id) => {
     return await Users.findByPk(id);
@@ -31,15 +37,46 @@ const userServices = {
       role_id: body.email.includes('@ebeer.com') ? 1 : 2,
     });
   },
-  updateUser: async (id, body, file) => {
+  updateProfile: async (id, body, file) => {
     const user = await Users.findByPk(id);
 
     return await Users.update(
       {
-        email: body.email,
+        id: user.id,
+        email: body.email ? body.email : user.email,
         profile_picture: file ? file.filename : user.profile_picture,
-        contact_number: Number(body.contact_number),
-        address: body.address,
+        contact_number: body.contact_number
+          ? Number(body.contact_number)
+          : Number(user.contact_number),
+        address: body.address ? body.address : user.adress,
+      },
+      {
+        where: { id: id },
+      }
+    );
+  },
+  updateUser: async (id, user) => {
+    return await Users.update(
+      {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        contact_number: Number(user.contact_number),
+        address: user.address,
+        birth_date: user.birth_date,
+      },
+      {
+        where: { id: id },
+      }
+    );
+  },
+  updatePassword: async (id, body) => {
+    const user = await Users.findByPk(id);
+
+    return await Users.update(
+      {
+        id: user.id,
+        password: bcryptjs.hashSync(body.password, 10),
       },
       {
         where: { id: id },

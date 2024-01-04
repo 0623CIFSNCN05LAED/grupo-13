@@ -32,7 +32,7 @@
         </li>
         <% if (locals.isLogged) { %>
           <li>
-            <a href="/users/myProfile"> <i class="fa-solid fa-user"></i> <span> <%= locals.userLogged.first_name %> </span></a>
+            <a href="/users/my-profile"> <i class="fa-solid fa-user"></i> <span> <%= locals.userLogged.first_name %> </span></a>
           </li>  
         <% } else { %>
           <li>
@@ -41,13 +41,13 @@
         <% } %>
         <% if (locals.isLogged && locals.userLogged.role_id == 1) { %>
           <li>
-            <a href="/users/crud"> <i class="fa-solid fa-screwdriver-wrench"></i> <span>Users</span></a>
+            <a href="/users/dashboard"> <i class="fa-solid fa-screwdriver-wrench"></i> <span>Users</span></a>
           </li>  
         <% } else { %>
         <% } %>
         <% if (locals.isLogged && locals.userLogged.role_id == 1) { %>
           <li>
-            <a href="/products/crud"> <i class="fa-solid fa-toolbox"></i> <span>Products</span></a>
+            <a href="/products/dashboard"> <i class="fa-solid fa-toolbox"></i> <span>Products</span></a>
           </li>  
         <% } else { %>
         <% } %>

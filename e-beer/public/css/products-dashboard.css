@@ -1,0 +1,121 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 1000;
+  margin: 80px 0px 50px 0px;
+  text-align: center;
+}
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: rgba(28, 145, 28, 0.705);
+  color: white;
+}
+.btn-add a {
+  color: white;
+}
+
+.dashboard-container {
+  margin-top: 30px;
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 1024px;
+}
+
+table {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  margin-top: 15px;
+}
+
+th {
+  padding: 5px;
+}
+
+td {
+  border: none;
+  padding-bottom: 20px;
+}
+
+button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: rgba(82, 82, 82, 0.7);
+}
+
+.btn-delete {
+  background-color: rgba(206, 9, 9, 0.7);
+}
+
+.btn-view {
+  background-color: cadetblue;
+}
+
+i {
+  font-size: var(--text-md);
+  color: white;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  font-size: var(--text-sm);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10px 10px;
+  padding-right: 20px;
+  margin-bottom: 15px;
+}
+
+.rows-per-page-container select {
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-btns-container button:nth-child(1) {
+  margin-right: 25px;
+}
+.pagination-btns-container button {
+  border: none;
+  background-color: unset;
+}
+.pagination-btns-container button i {
+  color: var(--black);
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  table {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pagination-container {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+}
