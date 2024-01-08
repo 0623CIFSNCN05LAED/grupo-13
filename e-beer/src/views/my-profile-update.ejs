@@ -10,12 +10,21 @@
 
     <main>
       <section class="info-profile-container">
-        <article class="profile-picture">
-          <img
-            src="/images/users/<%= user.profile_picture %>"
-            alt="foto de perfil"
-          />
-        </article>
+        <% if (user == 'undefined') { %>
+          <article class="profile-picture">
+            <img
+              src="/images/users/<%= userLogged.profile_picture %>"
+              alt="foto de perfil"
+            />
+          </article>
+          <% } else { %>
+            <article class="profile-picture">
+              <img
+                src="/images/users/<%= user.profile_picture %>"
+                alt="foto de perfil"
+              />
+            </article>
+          <% } %>
 
         <article class="info-profile-container-desc">
           <h3>Nombre:</h3>
@@ -42,6 +51,7 @@
               name="email"
               id="email"
               placeholder="Ingresá un nuevo e-mail"
+              required
             />
             
             <div id="emailError" class="flash-errors"></div>
@@ -57,6 +67,7 @@
               type="file"
               name="profile_picture"
               id="profile_picture"
+              required
             />
             <div id="profile_pictureError" class="flash-errors"></div>
             <% if (locals.errors && errors.profile_picture) { %>
@@ -72,6 +83,7 @@
               name="contact_number"
               id="contact_number"
               placeholder="Ingresá un nuevo número de teléfono"
+              required
             />
 
             <div id="contact_numberError" class="flash-errors"></div>
@@ -88,6 +100,7 @@
               name="address"
               id="address"
               placeholder="Ingresá un nuevo domicilio"
+              required
             />
             <div id="addressError" class="flash-errors"></div>
             <% if (locals.errors && errors.address) { %>
